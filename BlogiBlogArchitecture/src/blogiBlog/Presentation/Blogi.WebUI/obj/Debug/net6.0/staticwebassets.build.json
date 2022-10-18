@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "n+my7uZqKACm/gCgN8PKIPzUPHdSZ8s9iEVl9XNjuxk=",
+  "Hash": "ujOaraTVRBobG6O9ULRqbJIqJoHB2xjDJ7ZSBW3Ixhc=",
   "Source": "Blogi.WebUI",
   "BasePath": "_content/Blogi.WebUI",
   "Mode": "Default",
@@ -340,12 +340,12 @@
       "OriginalItemSpec": "wwwroot\\css\\style.scss"
     },
     {
-      "Identity": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.WebUI\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.WebUI\\wwwroot\\favicon.png",
       "SourceId": "Blogi.WebUI",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.WebUI\\wwwroot\\",
       "BasePath": "_content/Blogi.WebUI",
-      "RelativePath": "favicon.ico",
+      "RelativePath": "favicon.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -354,7 +354,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.ico"
+      "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
       "Identity": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.WebUI\\wwwroot\\fonts\\glyphicons-halflings-regular.eot",
