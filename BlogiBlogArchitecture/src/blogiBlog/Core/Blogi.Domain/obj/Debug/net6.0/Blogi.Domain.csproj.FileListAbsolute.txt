@@ -1,0 +1,12 @@
+C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Domain\bin\Debug\net6.0\Blogi.Domain.deps.json
+C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Domain\bin\Debug\net6.0\Blogi.Domain.dll
+C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Domain\bin\Debug\net6.0\ref\Blogi.Domain.dll
+C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Domain\bin\Debug\net6.0\Blogi.Domain.pdb
+C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Domain\obj\Debug\net6.0\Blogi.Domain.csproj.AssemblyReference.cache
+C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Domain\obj\Debug\net6.0\Blogi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Domain\obj\Debug\net6.0\Blogi.Domain.AssemblyInfoInputs.cache
+C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Domain\obj\Debug\net6.0\Blogi.Domain.AssemblyInfo.cs
+C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Domain\obj\Debug\net6.0\Blogi.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Domain\obj\Debug\net6.0\Blogi.Domain.dll
+C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Domain\obj\Debug\net6.0\ref\Blogi.Domain.dll
+C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Domain\obj\Debug\net6.0\Blogi.Domain.pdb
