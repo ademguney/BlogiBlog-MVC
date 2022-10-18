@@ -1,0 +1,26 @@
+/* 
+===============
+    Invoice
+===============
+*/
+
+.xp-invoice {	
+	.xp-invoice-logo {
+		img {
+			width: 120px;
+		}
+	}
+	.xp-invoice-meta {
+		text-align: right;
+		li.list-inline-item:not(:last-child) {
+		    margin-right: 40px;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.xp-invoice {	
+		.xp-invoice-meta {
+			text-align: left;
+		}
+	}
+}

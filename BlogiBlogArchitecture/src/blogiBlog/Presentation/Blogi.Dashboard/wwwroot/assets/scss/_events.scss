@@ -1,0 +1,103 @@
+/* 
+=================
+    Calendar
+================= 
+*/
+
+.fc-toolbar {
+    h2 {
+        margin: 0;
+        font-size: 18px;
+        color: $black;
+    }
+    .fc-state-active {
+        z-index: 4;
+        background-color: $primary;
+        border-color: $primary;
+        color: $white;
+    }
+    .ui-state-active {
+        z-index: 4;
+        background-color: $primary;
+        border-color: $primary;
+        color: $white;
+    }
+    .fc-left {
+        margin-bottom: 10px;
+    }
+    .fc-center {
+        margin-bottom: 10px;
+    }
+    .fc-right {
+        margin-bottom: 10px;
+    }
+}
+.fc-button {
+    background: $light;
+    border: 1px solid darken($light, 5%);
+    color: $black;    
+    outline: 0;
+    box-shadow: none;
+    text-transform: capitalize;
+    height: auto !important;
+    padding: 6px 15px !important;
+}
+.fc-state-hover {
+    background: darken($light, 5%);
+    border: 1px solid darken($light, 5%);
+}
+.fc-state-default.fc-corner-left {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.fc-state-default.fc-corner-right {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+.fc-widget-header {
+    background-color: lighten($light, 5%);
+    border: 1px solid darken($light, 5%);    
+}
+.fc th.fc-widget-header {
+    padding: 12px 0;
+    font-size: 14px; 
+    line-height: 20px;
+    text-transform: uppercase;
+}
+.fc-unthemed {
+    .fc-content {
+        border-color: darken($light, 5%);
+    }
+    .fc-divider {
+        border-color: darken($light, 5%);
+    }
+    .fc-popover {
+        border-color: darken($light, 5%);
+    }
+    .fc-row {
+        border-color: darken($light, 5%);
+    }
+    tbody {
+        border-color: darken($light, 5%);
+    }
+    td {
+        border-color: darken($light, 5%);
+    }
+    th {
+        border-color: darken($light, 5%);
+    }
+    thead {
+        border-color: darken($light, 5%);
+    }
+}
+.fc-event {
+    background-color: $primary;
+    color: $white !important;
+    border: none;
+    border-radius: 50px;  
+    text-align: center;
+    font-size: 14px;
+    margin: 5px 0;
+    padding: 5px 5px;   
+    cursor: move;
+}

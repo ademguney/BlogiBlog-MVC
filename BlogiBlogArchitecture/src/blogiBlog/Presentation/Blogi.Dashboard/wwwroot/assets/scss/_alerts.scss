@@ -1,0 +1,77 @@
+/* 
+==============
+    Alerts
+==============
+*/
+
+.alert {
+  border: 0;
+
+  .alert-link {
+    font-weight: 600;
+  }
+}
+.alert-primary {
+	color: $primary;
+    background-color: lighten($primary, 30%);
+    border-color: lighten($primary, 30%);
+    .alert-link {
+        color: $primary;
+    }
+}
+.alert-secondary {
+	color: $secondary;
+    background-color: lighten($secondary, 30%);
+    border-color: lighten($secondary, 30%);
+    .alert-link {
+        color: $secondary;
+    }
+}
+.alert-success {
+	color: $success;
+    background-color: lighten($success, 30%);
+    border-color: lighten($success, 30%);
+    .alert-link {
+        color: $success;
+    }
+}
+.alert-danger {
+	color: $danger;
+    background-color: lighten($danger, 30%);
+    border-color: lighten($danger, 30%);
+    .alert-link {
+        color: $danger;
+    }
+}
+.alert-warning {
+	color: $warning;
+    background-color: lighten($warning, 30%);
+    border-color: lighten($warning, 30%);
+    .alert-link {
+        color: $warning;
+    }
+}
+.alert-info {
+	color: $info;
+    background-color: lighten($info, 30%);
+    border-color: lighten($info, 30%);
+    .alert-link {
+        color: $info;
+    }
+}
+.alert-light {
+	color: $muted;
+    background-color: lighten($light, 5%);
+    border-color: lighten($light, 5%);
+    .alert-link {
+        color: $muted;
+    }
+}
+.alert-dark {
+	color: $dark;
+    background-color: lighten($dark, 30%);
+    border-color: lighten($dark, 30%);
+    .alert-link {
+        color: $dark;
+    }
+}

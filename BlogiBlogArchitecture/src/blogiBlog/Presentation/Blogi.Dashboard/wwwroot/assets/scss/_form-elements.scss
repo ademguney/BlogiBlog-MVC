@@ -1,0 +1,203 @@
+/* 
+=====================
+    Form Elements
+=====================
+*/
+
+label {
+  font-weight: 500;
+}
+.form-control {
+  background-color: lighten($light, 5%);
+  font-size: $base-font;
+  color: $muted;
+  border: none;
+  border-radius: 5px;
+  &:focus { 
+    background-color: lighten($primary, 30%);
+    border-color: none;
+    box-shadow: none;
+  &:disabled {
+      background-color: $light;
+      opacity: 1;
+    }
+  }
+  .form-check-input {
+    margin-top: 0.25rem;
+  }
+}
+.custom-radio {
+  .custom-control-input {
+    &:checked~.custom-control-label {
+      &::before {
+        background-color: $primary;
+      }
+    }
+  }
+}
+.custom-checkbox {
+  .custom-control-input {
+    &:checked~.custom-control-label {
+      &::before {
+        background-color: $primary;
+      }
+    }
+  }
+}
+.custom-control-input {
+  &:checked~.custom-control-label {
+    &::before {
+      color: $white;
+      background-color: $primary;
+    }
+  }
+  &:focus~.custom-control-label {
+    &::before {
+      box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem lighten($primary, 25%);
+    }
+  }
+}
+.custom-control-label {
+  &::before {
+    top: .15rem;
+  }
+  &::after {
+    top: .15rem;
+  }
+}
+.input-group-addon {
+  border-radius: 5px;
+  border: none;
+}
+.input-group-text {
+  border: none;
+  background: $light;
+  color: $muted;
+}
+.custom-select {
+  background-color: lighten($light, 5%);
+  border: none;
+  &:focus {
+    background-color: lighten($primary, 30%);
+    border-color: lighten($primary, 30%);
+    outline: 0;
+    box-shadow: none;
+  }
+}
+.custom-file-label {
+  color: $muted;
+  background-color: lighten($light, 5%);
+  border: none;
+  line-height: 1.9;
+  font-weight: 400;
+  &::after {
+    background-color: #4c7cf3;
+    border: none;
+    color: $white;
+    height: 2.35rem;
+    line-height: 1.9;
+  }
+}
+.custom-file-input {
+  &:focus~.custom-file-label {
+    border-color: lighten($primary, 30%);
+    box-shadow: none;
+  }
+}
+.form-control[readonly] {
+  background-color: $light;
+  opacity: 1;
+}
+.custom-select.is-valid {
+  border-color: lighten($success, 30%);
+  background-color: lighten($success, 30%);
+}
+.form-control.is-valid {
+  border-color: lighten($success, 30%);
+  background-color: lighten($success, 30%);
+}
+.was-validated {
+  .custom-select {
+    &:valid {
+      border-color: lighten($success, 30%);
+      background-color: lighten($success, 30%);
+    }
+    &:invalid {
+      border-color: lighten($danger, 30%);
+      background-color: lighten($danger, 30%);
+    }
+  }
+  .form-control {
+    &:valid {
+      border-color: lighten($success, 30%);
+      background-color: lighten($success, 30%);
+    }
+    &:invalid {
+      border-color: lighten($danger, 30%);
+      background-color: lighten($danger, 30%);
+    }
+  }
+  .custom-control-input {
+    &:valid~.custom-control-label {
+      color: $success;
+    }
+    &:invalid~.custom-control-label {
+      color: $danger;
+      &::before {
+        background-color: $danger;
+      }
+    }
+    &:valid {
+      &:checked~.custom-control-label {
+        &::before {
+          background-color: $success;
+        }
+      }
+    }
+  }
+}
+.custom-select.is-invalid {
+  border-color: lighten($danger, 30%);
+  background-color: lighten($danger, 30%);
+}
+.form-control.is-invalid {
+  border-color: lighten($danger, 30%);
+  background-color: lighten($danger, 30%);
+}
+.valid-tooltip {
+  background-color: lighten($success, 5%);
+}
+.invalid-tooltip {
+  background-color: lighten($danger, 5%);
+}
+.custom-control-input.is-valid~.custom-control-label {
+  color: $success;
+}
+.custom-control-input.is-invalid~.custom-control-label {
+  color: $danger;
+  &::before {
+    background-color: $danger;
+  }
+}
+.custom-control-input.is-valid {
+  &:checked~.custom-control-label {
+    &::before {
+      background-color: $success;
+    }
+  }
+}
+.invalid-feedback {
+  color: $danger;
+}
+.editable-click, a.editable-click, a.editable-click:hover {
+  border-bottom: dashed 1px $primary;
+}
+.editable-empty, .editable-empty:hover, .editable-empty:focus {
+    color: $danger;
+}
+.editable-submit {
+  padding: 4px 8px;
+}
+.editable-cancel {
+  padding: 4px 8px;
+}

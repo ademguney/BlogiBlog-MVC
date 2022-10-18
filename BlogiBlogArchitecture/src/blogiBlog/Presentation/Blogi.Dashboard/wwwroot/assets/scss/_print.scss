@@ -1,0 +1,23 @@
+/* 
+=============
+    Print
+=============
+*/
+
+@media print {
+  .xp-leftbar {
+    display: none;
+  }
+  .xp-topbar {
+    display: none;
+  }
+  .xp-footerbar {
+    display: none;
+  }
+  .xp-breadcrumbbar {
+    display: none
+  }
+  .xp-rightbar {
+    margin-left: 0;
+  }  
+}

@@ -1,0 +1,93 @@
+/* 
+===================
+    Sweet Alert
+===================
+*/
+
+.swal2-modal {
+  font-family: $font-primary;
+
+  .swal2-title {
+    font-weight: 500;
+    font-size: 20px;
+    color: $muted;
+  }
+  .swal2-content {
+    font-size: 16px;
+  }
+  .swal2-spacer {
+    margin: 10px 0;
+  }
+  .swal2-file, .swal2-input, .swal2-textarea {
+    border: 2px solid $muted;
+    font-size: 16px;
+    box-shadow: none !important;
+  }
+  .swal2-styled {
+    border: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 5px;
+    padding: 8px 18px;
+    border-radius: 50px;
+  }
+  .swal2-confirm {
+    background-color: $primary !important;
+    border: none;
+    border-radius: 50px;
+
+    &.btn-success {
+      background-color: $success !important;
+      box-shadow: none;
+      border: none;
+      border-radius: 50px;
+    }
+  }
+  .swal2-cancel {
+    background-color: $danger !important;
+    border: none;
+    border-radius: 50px;
+  }
+
+  .swal2-icon.swal2-error {
+    background-color: $danger;
+  }
+  .swal2-icon.swal2-question {
+   color: $primary; 
+   border-color: lighten($primary, 20%); 
+  }
+  .swal2-icon.swal2-warning {
+    color: $warning;
+    border-color: lighten($warning, 20%);
+  }
+  .swal2-icon.swal2-info {
+    color: $info;
+    border-color: lighten($info, 20%);
+  }
+  .swal2-icon.swal2-success {
+    color: $success;
+    border-color: $success;
+    .line {
+      background-color: $success;
+    }
+    .placeholder {
+      border: 4px solid lighten($success, 30%);
+    }
+  }
+
+  .swal2-progresssteps {
+    .swal2-progresscircle.swal2-activeprogressstep {
+      background: $primary;
+    }
+    .swal2-progresscircle.swal2-activeprogressstep~.swal2-progresscircle {
+      background: lighten($primary, 20%);
+    }
+    .swal2-progresscircle.swal2-activeprogressstep~.swal2-progressline {
+      background: lighten($primary, 20%);
+    }
+    .swal2-progresscircle {
+      background: $primary;
+    }
+  }
+
+}

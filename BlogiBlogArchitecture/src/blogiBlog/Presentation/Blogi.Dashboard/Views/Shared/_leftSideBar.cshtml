@@ -1,0 +1,38 @@
+﻿@{
+
+    //var roleName = User.FindFirst(ClaimTypes.Role).Value;
+}
+<div class="xp-leftbar">
+    <!-- Start XP Sidebar -->
+    <div class="xp-sidebar">
+
+        <!-- Start XP Logobar -->
+        <div class="xp-logobar text-center">
+            <a asp-controller="Dashboard" asp-action="Home" class="xp-logo">
+                <img src="~/favicon.png" class="rounded-circle" alt="arjin.io" style="width:40px; height:40px;">
+
+            </a>
+        </div>
+        <!-- End XP Logobar -->
+        <!-- Start XP Navigationbar -->
+        <div class="xp-navigationbar">
+            <ul class="xp-vertical-menu">
+
+                <li class="xp-vertical-header">Dil</li>
+                <li>
+                    <a href="javaScript:void();">
+                        <i class="icon-doc"></i><span>Çeviri</span><i class="icon-arrow-right pull-right"></i>
+                    </a>
+                    <ul class="xp-vertical-submenu">
+                        <li><a asp-controller="#" asp-action="#">Dil</a></li>
+                        <li><a asp-controller="#" asp-action="#">Dil</a></li>
+                    </ul>
+                </li>
+               
+            </ul>
+        </div>
+        <!-- End XP Navigationbar -->
+
+    </div>
+    <!-- End XP Sidebar -->
+</div>

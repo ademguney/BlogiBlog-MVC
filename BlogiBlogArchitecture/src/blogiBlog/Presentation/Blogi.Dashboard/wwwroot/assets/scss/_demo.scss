@@ -1,0 +1,108 @@
+/* 
+============
+    Demo
+============
+*/
+
+/* ----- Model ----- */
+.xp-example-modal {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: 1;
+  display: block;
+}
+
+/* ----- Icons ----- */
+.xp-icon-box {
+
+  div {
+    color: $muted;
+    border-radius: 50px;
+    line-height: 38px;
+    white-space: nowrap;
+
+    p {
+      margin-bottom:0;
+      line-height: inherit;
+
+      i {
+        display: inline-block;
+        font-size: 18px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        vertical-align: middle;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 50%;
+        margin-right: 12px;
+        margin-left: -14px;
+        margin-bottom: 1px;
+        margin-top: 1px;
+      }
+      span.text-alias {
+        color: $lightgray;
+      }
+
+    }
+    &:hover {
+      color: $white;
+      background-color: $primary;
+
+       p {
+
+        i { 
+          color: $primary;
+        } 
+        span.text-alias { 
+          color: $white;
+        }
+      }
+
+    }
+  }  
+}
+
+/* ----- Grid ----- */
+
+.xp-example-row {
+    
+    .xp-grid-example {
+        position: relative;
+        padding: 1rem;
+        margin: 1rem -15px 0;
+        border: solid lighten($primary, 35%);
+        border-width: .2rem 0 0;
+    }
+
+    .row {
+      >.col, >[class^=col-] {
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+        background-color: lighten($primary, 30%);
+        border: 1px solid lighten($primary, 20%);
+      }
+      +.row {
+          margin-top: 1rem;
+      }      
+    }
+
+    &.xp-example-row-flex-cols {
+        .row {
+            min-height: 10rem;
+            background-color: lighten($primary, 35%);
+        }
+    }    
+}
+
+@media (min-width: 576px) {
+    .xp-grid-example {
+      padding: 1.5rem;
+      margin-right: 0;
+      margin-left: 0;
+      border-width: .2rem;
+    }
+}

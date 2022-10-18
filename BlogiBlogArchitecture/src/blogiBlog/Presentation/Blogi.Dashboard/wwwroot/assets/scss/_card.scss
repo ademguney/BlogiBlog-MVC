@@ -1,0 +1,86 @@
+/* 
+============
+    Card
+============
+*/
+
+.card {
+  border:none;
+  box-shadow: $shadow;
+  border-radius: 15px;
+}
+.card.border-primary {
+  border: 1px solid;
+}
+.card.border-secondary {
+  border: 1px solid;
+}
+.card.border-success {
+  border: 1px solid;
+}
+.card.border-danger {
+  border: 1px solid;
+}
+.card.border-warning {
+  border: 1px solid;
+}
+.card.border-info {
+  border: 1px solid;
+}
+.card.border-light {
+  border: 1px solid;
+}
+.card.border-dark {
+  border: 1px solid;
+}
+
+.card-primary {
+  background-color: $primary;
+  border-color: $primary;
+}
+.card-secondary {
+  background-color: $secondary;
+  border-color: $secondary;
+}
+.card-success {
+  background-color: $success;
+  border-color: $success;
+}
+.card-danger {
+  background-color: $danger;
+  border-color: $danger;
+}
+.card-warning {
+  background-color: $warning;
+  border-color: $warning;
+}
+.card-info {
+  background-color: $info;
+  border-color: $info;
+}
+.card-light {
+  background-color: $light;
+  border-color: $light;
+}
+.card-dark {
+  background-color: $dark;
+  border-color: $dark;
+}
+.card-header {
+  border-bottom: 1px solid rgba($black,0.05);
+}
+.card-header:first-child {
+    border-radius: calc(15px - 1px) calc(15px - 1px) 0 0;
+}
+.card-title {
+    font-size: 16px;
+}
+.card-subtitle {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+    color: $muted;
+}
+.card-footer {
+  border-top: 1px solid rgba($black,0.05);
+}

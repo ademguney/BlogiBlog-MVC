@@ -1,0 +1,242 @@
+/* 
+===================
+    Form Wizard
+===================
+*/
+
+.wizard {
+    >.steps {
+        position: relative;
+        display: block;
+        width: 100%;
+        >ul {
+            >li {
+                float: left;
+                width: 25%;
+            }
+        }
+        a {
+            display: block;
+            width: auto;
+            background-color: lighten($light, 5%);
+            color: $muted;
+            font-size: 16px;
+            margin: 0 .5em .5em;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 30px;
+            cursor: default;
+            &:hover {
+                display: block;
+                width: auto;
+                background-color: lighten($light, 5%);
+                color: $muted;
+                font-size: 16px;
+                margin: 0 .5em .5em;
+                padding: 14px 28px;
+                text-decoration: none;
+                border-radius: 30px;
+                cursor: default;
+            }
+            &:active {
+                display: block;
+                width: auto;
+                background-color: lighten($light, 5%);
+                color: $muted;
+                font-size: 16px;
+                margin: 0 .5em .5em;
+                padding: 14px 28px;
+                text-decoration: none;
+                border-radius: 30px;
+                cursor: default;
+            }
+        }
+        .current {
+            a {
+                background: $primary;
+                color: $white;
+                cursor: default;
+                &:hover {
+                    background: $primary;
+                    color: $white;
+                    cursor: default;
+                }
+                &:active {
+                    background: $primary;
+                    color: $white;
+                    cursor: default;
+                }
+            }
+        }
+        .done {
+            a {
+                background: $light;
+                color: $muted;
+                &:hover {
+                    background: $light;
+                    color: $muted;
+                }
+                &:active {
+                    background: $light;
+                    color: $muted;
+                }
+            }
+        }
+        .current-info {
+            position: absolute;
+            left: -999em;
+        }
+        .number {
+            font-size: 18px;
+        }
+    }
+    ul {
+        list-style: none !important;
+        padding: 0;
+        margin: 0;
+    }
+    >.actions {
+        >ul {
+            >li {
+                float: left;
+                margin: 0 .5em;
+            }
+            display: inline-block;
+            text-align: right;
+        }
+        position: relative;
+        display: block;
+        text-align: right;
+        width: 100%;
+        a {
+            background: $primary;
+            color: $white;
+            display: block;
+            padding: 8px 18px;
+            text-decoration: none;
+            border-radius: 30px;
+            &:hover {
+                background: $primary;
+                color: $white;
+                display: block;
+                padding: 8px 18px;
+                text-decoration: none;
+                border-radius: 30px;
+            }
+            &:active {
+                background: $primary;
+                color: $white;
+                display: block;
+                padding: 8px 18px;
+                text-decoration: none;
+                border-radius: 30px;
+            }
+        }
+        .disabled {
+            a {
+                background: lighten($light, 5%);
+                color: $muted;
+                cursor: default;
+                &:hover {
+                    background: lighten($light, 5%);
+                    color: $muted;
+                    cursor: default;
+                }
+                &:active {
+                    background: lighten($light, 5%);
+                    color: $muted;
+                    cursor: default;
+                }
+            }
+        }
+    }
+    >.content {
+        background: $white;
+        display: block;
+        margin: 8px;
+        padding: 30px;
+        min-height: 250px;
+        overflow: hidden;
+        position: relative;
+        width: auto;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        >.title {
+            position: absolute;
+            left: -999em;
+        }
+        >.body {
+            ul {
+                >li {
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+}
+.tabcontrol {
+    ul {
+        list-style: none !important;
+        padding: 0;
+        margin: 0;
+    }
+    >.steps {
+        .current-info {
+            position: absolute;
+            left: -999em;
+        }
+    }
+    >.content {
+        >.title {
+            position: absolute;
+            left: -999em;
+        }
+    }
+}
+
+/* -----  Vertical Wizard  ----- */
+.wizard.vertical {
+    >.steps {
+        display: inline;
+        float: left;
+        width: 30%;
+        >ul {
+            >li {
+                float: none;
+                width: 100%;
+            }
+        }
+    }
+    >.content {
+        display: inline;
+        float: left;
+        margin: 0 2.5% .5em 2.5%;
+        width: 65%;
+    }
+    >.actions {
+        display: inline;
+        float: right;
+        margin: 0 2.5%;
+        width: 95%;
+    }
+}
+@media (max-width: 991px) {    
+    .wizard.vertical {
+        >.content {
+            width: 100%;
+        }
+        >.steps {
+            width: 100%;
+        }
+    }
+    .wizard {
+        >.steps {
+            >ul {
+                >li {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

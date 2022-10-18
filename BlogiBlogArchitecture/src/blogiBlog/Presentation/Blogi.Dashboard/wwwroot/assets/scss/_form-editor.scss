@@ -1,0 +1,52 @@
+/* 
+===================
+    Form Editor
+=================== 
+*/
+
+.mce-panel {
+	border-color: $light !important;
+	background-color: lighten($light, 5%) !important;
+	border-radius: 3px !important;
+}
+.mce-flow-layout-item {
+    margin: 5px 0 5px 5px !important;
+}
+.mce-menubar {
+	.mce-menubtn {
+		border-color: transparent !important;
+		background: $light !important;
+		border-radius: 3px;
+		button {
+			span {
+				color: $muted !important;
+			}
+		}
+	}
+}
+.mce-btn {
+	border: 1px solid transparent !important;
+	background-color: $light !important;
+	border-radius: 3px;
+	.mce-txt {
+		color: $muted !important;
+	}
+	button {
+	    padding: 5px 10px !important;
+	}
+}
+.mce-btn-group {
+	.mce-btn {
+		margin-left: 5px !important;
+	}
+	&:not(:first-child) {
+		border-left: 1px solid $light !important;
+		padding-left: 0 !important;
+	}
+}
+.mce-caret {
+    border-top-color: $muted !important;
+}
+.mce-ico {
+	color: $muted !important;
+}

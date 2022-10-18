@@ -1,0 +1,136 @@
+/* 
+============
+    Menu
+============
+*/
+
+$xp-vertical-menu-bg: transparent;
+$xp-vertical-menu-color: $muted;
+$xp-vertical-menu-hover-color: $primary;
+$xp-vertical-menu-hover-bg: lighten($primary, 30%);
+$xp-vertical-menu-hover-border-color: transparent;
+$xp-vertical-menu-submenu-bg: lighten($xp-vertical-menu-bg, 5%);
+$xp-vertical-submenu-color: $muted;
+$xp-vertical-submenu-hover-color: $primary;
+
+@mixin xp-vertical-menu($rtl:false) {
+  list-style: none;
+  margin: 0;
+  padding: 0;  
+  > li {
+    position: relative;
+    margin: 5px 0;
+    padding: 0 0 0 15px;
+    > a {
+      @if $rtl {
+        padding: 10px 20px;;
+      }
+      @else {
+        padding: 10px 20px;;
+      }
+      display: block;
+      color: $xp-vertical-menu-color;
+      > i {
+        display: inline-block;
+        width: 30px;
+        font-size: 16px;
+        vertical-align: middle;
+      }
+      > span {
+        vertical-align: middle;
+      }
+    }
+    &:hover > a, &.active > a {
+      color: $white;
+      background-image: $bg-primary-gradient;
+      border-radius: 50px 0 0 50px;
+      box-shadow: $btn-shadow;
+    }
+    .label,
+    .badge {
+      margin-top: 1px;
+    }
+  }
+  li.xp-vertical-header {
+    @if $rtl {
+      padding: 10px 15px 10px 25px;
+    }
+    @else {
+      padding: 14px 25px;
+    }
+
+    font-size: 12px;
+  }
+  li > a > .icon-arrow-right {
+    width: auto;
+    height: auto;
+    padding: 0;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+  li.active {
+    > a > .icon-arrow-right {
+      transform: rotate(-270deg);
+    }
+    > .xp-vertical-submenu {
+      display: block;
+    }
+  }
+  a {
+    color: $xp-vertical-menu-color;
+    text-decoration: none;
+  }  
+  .xp-vertical-submenu {
+    display: none;
+    list-style: none;
+
+    @if $rtl {
+      padding-right: 5px;
+    }
+    @else {
+      padding-left: 5px;
+    }
+
+    margin: 0 1px;
+    background: $xp-vertical-menu-submenu-bg;
+    .xp-vertical-submenu {
+      @if $rtl {
+        padding-right: 20px;
+      }
+      @else {
+        padding-left: 20px;
+      }
+    }
+    > li {
+      > a {
+        @if $rtl {
+          padding: 8px 45px 8px 25px;
+        }
+        @else {
+          padding: 8px 25px 8px 45px;
+        }
+
+        display: block;
+        font-size: 14px;
+        color: $xp-vertical-submenu-color;
+        > .fa {
+          width: 20px;
+        }
+        > .icon-arrow-right,
+        > .mdi-chevron-down {
+          width: auto;
+        }
+      }
+      &.active > a, > a:hover {
+        color: $xp-vertical-submenu-hover-color;
+      }
+    }
+  }
+}
+.xp-vertical-menu {
+  @include xp-vertical-menu;
+}
+.xp-vertical-menu-rtl {
+  @include xp-vertical-menu(true);
+}

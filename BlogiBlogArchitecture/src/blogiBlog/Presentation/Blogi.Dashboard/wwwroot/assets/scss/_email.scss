@@ -1,0 +1,98 @@
+/* 
+=============
+    Email
+=============
+*/
+
+.xp-email-leftbar {
+  .card-header .btn { 
+    border-radius: 50px;
+  }
+  ul {
+    li {
+      border: none;
+      padding: 12px 0 !important;
+      a {
+        color: $muted;
+        &:hover {
+          color: $dark;
+        }
+      }
+      a.active {
+        color: $primary;
+      }
+    }
+  }
+}
+.xp-email-rightbar {
+  .card-header {
+    ul {
+      li {
+        a {
+          i {
+            padding: 8px 5px;
+            color: $muted;
+          }
+          &:hover {
+            i {
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+  .card-body {
+    tr {
+      td {
+        color: $muted;
+        a {
+          color: $muted;
+        }
+      }
+    }
+    tr.email-unread {
+      td {
+        font-weight: 500;
+        color: $dark;
+        a {
+          color: $dark;
+        }
+      }
+    }
+  }
+  .email-open-box {
+     .media {
+        img {
+          width: 50px;
+          border-radius: 50%;
+        }
+     } 
+     .open-email-head ul {
+       text-align: right;
+     }
+     .open-email-head ul li a i {
+       color: $muted;
+     }
+     .open-email-head ul li a:hover i {
+       color: $primary;
+     }
+    .open-email-head {
+      ul {
+        text-align: right;
+        li {
+          a {
+            i {
+              color: $muted;
+            }
+            &:hover {
+              i {
+                color: $primary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

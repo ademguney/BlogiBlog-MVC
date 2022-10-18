@@ -1,0 +1,235 @@
+/* 
+==================
+    Topbar
+==================
+*/
+
+.xp-toggle-menu {
+  .xp-leftbar {
+    position: fixed;
+    left: -250px;
+    transition: all 0.3s ease;
+  }
+  .xp-rightbar {
+    margin-left: 0px;
+  }
+}
+.xp-topbar {
+    background-color: $topbar-bg-color;
+    padding: 15px 30px;
+    .dropdown-toggle {
+      &::after {
+        display: none;
+      }
+    }
+    .xp-badge-up {
+        position: relative;
+        top: -10px;
+        margin: 0 -10px;
+        border: 2px solid $white;
+        padding: 3px 4px 1px;
+    }
+    .xp-search {
+      a > i {
+        vertical-align: middle;
+      }
+      .modal-content {
+        border: none;
+        border-radius: 50px;
+        box-shadow: $shadow;
+        .modal-body {
+          padding: 5px;
+        }
+      }
+    }
+    .xp-profilebar > ul > li {
+          margin-right: 15px;
+          &:last-child {
+            margin-right: 0;
+          }
+    }
+    .xp-searchbar {
+      input[type="search"] {
+        background-color: $white;
+        color: $black;
+        font-size: 18px;
+        padding-left: 20px;
+        border: none;
+        border-radius: 50px 0 0 50px;
+      }
+      .btn {
+        background-color: $primary;
+        color: $white;
+        font-weight: 700;
+        font-size: 16px;
+        font-weight: 700;
+        border-radius: 50px;
+        padding: 5px 15px 3px 15px;
+        box-shadow: none;
+      }
+    }
+    .xp-userprofile {    
+        a {
+          img {
+            width: 40px;        
+          }
+          .xp-user-live {
+              position: absolute;
+              bottom: -2px;
+              right: -2px;
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              border: 2px solid $white;
+              background-image: $bg-success-gradient;
+          }
+        }
+        .dropdown-menu {
+            top: 26px !important;
+            background-color: $white;
+            border: 1px solid darken($bg-body, 5%);
+            border-radius: 15px;
+            padding: 0;
+
+            .dropdown-item:first-child {
+              background-image: $bg-primary-gradient;
+              border-radius: 15px 15px 0 0;
+              font-weight: 700;
+              line-height: 1.2;
+            } 
+            .dropdown-item:last-child {
+              border-radius: 0 0 15px 15px;
+            } 
+
+            a:hover {
+                background-color: $bg-body;
+            }
+        }
+    }
+    .xp-notification {
+        .dropdown-menu {
+          width:310px;
+          top: 26px !important;
+          background-color: $white;
+          border: 1px solid darken($bg-body, 5%);
+          border-radius: 15px;
+          padding: 0;
+        }
+        li.media:first-child {
+          background-image: $bg-primary-gradient;
+          border-radius: 15px 15px 0 0;
+        }
+        li.media:last-child {
+          border-radius: 0 0 15px 15px;
+          border-top: 1px solid $bg-body;
+        }
+        li.media.xp-noti {
+          padding: 15px;
+          background-color: $white;
+          border: none;
+          a {
+            h5 {
+              color: $black;
+              span {
+                color: $muted;
+              }
+            }
+            p {
+              color: $muted;
+            }
+          }    
+          .xp-noti-icon {    
+              width: 40px;
+              height: 40px;
+              line-height: 42px;
+              font-size: 16px;
+              border-radius: 50%;
+              text-align: center;
+              vertical-align: middle;
+              box-shadow: $btn-shadow;
+          }
+          &:hover {
+            background-color: $bg-body; 
+          }
+        }
+    }
+    .xp-message {
+        .dropdown-menu {
+          width:310px;
+          top: 26px !important;
+          background-color: $white;
+          border: 1px solid darken($bg-body, 5%);
+          border-radius: 15px;
+          padding: 0;
+        }
+        li.media:first-child {
+          background-image: $bg-primary-gradient;
+          border-radius: 15px 15px 0 0;
+        }
+        li.media:last-child {
+          border-radius: 0 0 15px 15px;
+          border-top: 1px solid $bg-body;
+        }
+        li.media.xp-msg {
+          padding: 15px;
+          background-color: $white;
+          border: none;
+
+          img {
+            box-shadow: $btn-shadow;
+          }
+
+          a {
+            h5 {
+              color: $black;
+              span {
+                color: $muted;
+              }
+            }
+            p {
+              color: $muted;
+            }
+          }    
+          .xp-noti-icon {    
+              width: 40px;
+              height: 40px;
+              line-height: 40px;
+              background: lighten($primary, 30%);
+              color: $primary;
+              font-size: 20px;
+              border-radius: 50%;
+              text-align: center;
+              vertical-align: middle;
+          }
+          &:hover {
+            background-color: $bg-body;            
+            .xp-noti-icon {    
+              background: $white;
+            }
+          }
+        }
+    }
+}
+.xp-breadcrumbbar {
+    padding: 30px 30px 0 30px;
+    .xp-page-title {
+      font-size: 20px;
+      color: $black;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+    .xp-breadcrumb {
+      text-align: right;
+    }
+    .breadcrumb {
+      padding: 0 0 0;
+      .breadcrumb-item {
+        a {
+          color: $muted;
+        }
+      }
+      .breadcrumb-item.active {
+        color: $black;
+      }
+    }    
+}

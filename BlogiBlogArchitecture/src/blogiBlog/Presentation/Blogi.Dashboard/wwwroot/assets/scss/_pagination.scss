@@ -1,0 +1,26 @@
+/* 
+==================
+    Pagination
+==================
+*/
+
+.page-item {	
+	.page-link {
+	  color: $primary;
+	  	&:focus {
+		  color: $dark;
+		  background-color: $light;
+		  border-color: $light;
+		}
+		&:hover {
+		  color: $dark;		
+		  background-color: $light;
+		  border-color: $light;
+		}
+	}
+	&.active .page-link {
+		color: $white;
+	  	background-color: $primary;
+	  	border-color: $primary;
+	}
+}

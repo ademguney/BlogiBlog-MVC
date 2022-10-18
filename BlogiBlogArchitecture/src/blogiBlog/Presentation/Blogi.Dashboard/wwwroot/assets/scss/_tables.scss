@@ -1,0 +1,139 @@
+/* 
+==============
+    Tables
+==============
+*/
+
+.table {
+  margin-bottom: 10px;
+  th {
+      font-weight: 700;
+    } 
+    td {
+      vertical-align: middle;
+    }
+}
+.table-hover {
+    tbody {
+        tr {
+            &:hover {
+                background-color: lighten($light, 5%);
+            }
+        }
+    }
+}
+.table-striped {
+    tbody {
+        tr {
+            &:nth-of-type(odd) {
+                background-color: lighten($light, 5%);
+            }
+        }
+    }
+}
+.thead-default {
+    th {
+        background-color: lighten($light, 5%);
+    }
+}
+
+.table.dataTable {
+    border-spacing: 0;
+}
+
+/* -----  Table Editable CSS  ----- */
+button.tabledit-edit-button {
+    background-color: $primary;
+    border: none;
+    border-radius: 50% !important;
+    width: 35px;
+    height: 35px;
+    &:active {
+        background-color: darken($primary, 5%) !important;
+        box-shadow: none !important;
+    }
+    &:hover {
+        background-color: darken($primary, 5%) !important;
+        box-shadow: none !important;
+    }
+    &:focus {
+        background-color: darken($primary, 5%) !important;
+        box-shadow: none !important;
+    }
+    &:visited {
+        background-color: darken($primary, 5%) !important;
+        box-shadow: none !important;
+    }
+    &:not(:disabled) {
+        &:not(.disabled).active {
+            background-color: darken($primary, 5%) !important;
+            box-shadow: none !important;
+        }
+    }
+}
+button.tabledit-delete-button {
+    background-color: $danger;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 35px;
+    height: 35px;
+    &:active {
+        background-color: darken($danger, 5%) !important;
+        box-shadow: none !important;
+    }
+    &:hover {
+        background-color: darken($danger, 5%) !important;
+        box-shadow: none !important;
+    }
+    &:focus {
+        background-color: darken($danger, 5%) !important;
+        box-shadow: none !important;
+    }
+    &:visited {
+        background-color: darken($danger, 5%) !important;
+        box-shadow: none !important;
+    }
+    &:not(:disabled) {
+        &:not(.disabled).active {
+            background-color: darken($danger, 5%) !important;
+            box-shadow: none !important;
+        }
+    }
+}
+.tabledit-save-button {
+    border-radius: 20px;
+}
+.tabledit-confirm-button {
+    border-radius: 20px;
+}
+
+/* -----  RWD Table CSS  ----- */
+table.focus-on {
+    tbody {
+        tr.focused {
+            th {
+                background-color: $primary;
+                color: $white;
+            }
+            td {
+                background-color: $primary;
+                color: $white;
+            }
+        }
+    }
+    tfoot {
+        tr.focused {
+            th {
+                background-color: $primary;
+                color: $white;
+            }
+            td {
+                background-color: $primary;
+                color: $white;
+            }
+        }
+    }
+}
+.table-wrapper .btn-toolbar {
+    display: block;
+}

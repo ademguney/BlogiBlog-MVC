@@ -1,0 +1,120 @@
+/* 
+===============
+	Widgets
+===============
+*/
+
+/*  -----  Widget - Basic  -----  */
+.xp-widget-icon-bg {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+/*  -----  Widget - To Do Lists  -----  */
+.xp-to-do-list {
+	.list-group-item {
+		border: none;
+	}	
+    .custom-control-label {
+        color: $black;
+    }
+}
+.xp-to-do-list-remove {
+	float: right;
+    vertical-align: middle;
+    cursor: pointer;
+    &:hover {
+    	color: $danger !important;
+    }
+}
+
+/*  -----  Widget - Social Profile  -----  */
+.xp-social-profile-avatar {
+    img {
+        border: 5px solid #fff;
+        margin-top: -10px;
+    }
+    .xp-social-profile-live {
+        position: absolute;
+        bottom: 15px;
+        margin: 0px -20px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 2px solid $white;
+        background-color: $success;
+    }
+} 
+
+/*  -----  Widget - Action History  -----  */
+.xp-actions-history-list {
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;  
+        top: 2px;
+        width: 15px;
+        height: 15px;
+        border: 2px solid $primary;
+        border-radius: 50%;
+        background-color: lighten($primary, 30%);
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        top: 24px;
+        left: 7px;
+        background: lighten($primary, 30%);
+    }
+    .xp-actions-history-item {
+        margin-left: 30px;
+    }
+}
+
+.xp-icon-timer i {
+    width: 30px;
+    height: 30px;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.2);
+}
+.xp-widget-newsletter {
+    .form-control {
+        background-color: $white;
+        border-radius: 50px;
+        &:focus {
+            background-color: $white;
+        }
+    }
+    .input-group-append {
+        padding: 3px;
+        background: $white;
+        border-radius: 0 50px 50px 0;
+        .btn {
+            border-radius: 50px;
+            background-color: $danger;
+            color: $white;
+            padding: 4px 10px;
+            font-weight: 700;
+        }
+    }
+}
+.xp-chartist-widget-color {
+    height: 194px !important;
+    .ct-series-a .ct-bar {
+        stroke: #ffffff;
+    }
+    .ct-label {
+        fill: #ffffff;
+        color: #ffffff;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+}

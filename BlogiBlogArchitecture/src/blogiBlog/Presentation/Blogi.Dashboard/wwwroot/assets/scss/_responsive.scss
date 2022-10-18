@@ -1,0 +1,79 @@
+/* 
+==================
+    Responsive
+==================
+*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    overflow-x: hidden;
+  }
+  
+}
+
+@media (max-width: 991px) {
+   
+}
+@media (max-width: 768px) {
+  .xp-rightbar {
+    margin-left: 0;
+  }  
+}
+
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
+  .xp-leftbar {
+     position:fixed;
+     left: -250px;
+  }
+  .xp-toggle-menu .xp-leftbar {
+     position:fixed;
+     left: 0px;
+  }
+  .xp-rightbar {
+    margin-left: 0 !important;
+  }
+  .xp-menubar {
+      text-align: right;
+  }
+  .xp-footerbar {
+      left: 0;
+  }  
+  .xp-email-rightbar {
+    .email-open-box {
+      .open-email-head {
+        ul {
+          text-align: left;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+  .xp-breadcrumbbar {
+    .xp-page-title {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .xp-breadcrumb {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+ 
+}
+
+@media (max-width: 576px) {
+
+}
+
+@media (max-width: 480px) {
+
+}
+
+@media (max-width: 420px) {
+
+}

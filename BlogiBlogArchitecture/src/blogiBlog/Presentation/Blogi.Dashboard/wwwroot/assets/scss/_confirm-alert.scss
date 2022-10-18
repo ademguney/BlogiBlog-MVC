@@ -1,0 +1,90 @@
+/*
+=====================
+    Confirm Alert
+=====================
+*/
+
+.jconfirm.jconfirm-white {
+	.jconfirm-box {
+		.jconfirm-buttons {
+			button {
+				border-radius: 50px;
+				border: none;
+				padding: 8px 18px;
+				font-size: 14px;
+				font-weight: 500;
+				text-transform: capitalize;
+			}
+		}
+	}
+}
+.jconfirm.jconfirm-light {
+	.jconfirm-box {
+		.jconfirm-buttons {
+			button {
+				border-radius: 50px;
+				border: none;
+				padding: 8px 18px;
+				font-size: 14px;
+				font-weight: 500;
+				text-transform: capitalize;
+			}
+		}
+	}
+}
+.jconfirm {
+	.jconfirm-box {
+		.jconfirm-buttons {
+			button.btn-default {
+				background-color: $secondary;
+				color: $white !important;
+			}
+			button.btn-blue {
+				background-color: $primary;
+				&:hover {
+					background-color: darken($primary, 5%);
+				}
+			}
+			button.btn-green {
+				&:hover {
+					background-color: darken($success, 5%);
+				}
+				&:focus {
+					background-color: darken($success, 5%);
+					box-shadow: 0 0 0 0.2rem lighten($success, 20%);
+				}
+			}
+			button.btn-red {
+				&:hover {
+					background-color: darken($danger, 5%);
+				}
+				&:focus {
+					background-color: darken($danger, 5%);
+					box-shadow: 0 0 0 0.2rem lighten($danger, 20%);
+				}
+			}
+		}
+	}
+}
+.jconfirm.jconfirm-white {
+	.jconfirm-box {
+		.jconfirm-buttons {
+			button.btn-default {
+				&:hover {
+					background: darken($secondary, 5%);
+				}
+			}
+		}
+	}
+}
+.jconfirm.jconfirm-light {
+	.jconfirm-box {
+		.jconfirm-buttons {
+			button.btn-default {
+				&:hover {
+					background: darken($secondary, 5%);
+				}
+			}
+		}
+	}
+}
