@@ -6,14 +6,14 @@
       "DisplayName": "Core.Application",
       "ColorIndex": 0
     },
+    "61182a48-4f92-42fa-954a-83f6f927269e": {
+      "ProjectGuid": "61182a48-4f92-42fa-954a-83f6f927269e",
+      "DisplayName": "Blogi.Domain",
+      "ColorIndex": 1
+    },
     "1f2fd62d-bcf1-460c-9cc4-d7bff182d246": {
       "ProjectGuid": "1f2fd62d-bcf1-460c-9cc4-d7bff182d246",
       "DisplayName": "Core.Persistence",
-      "ColorIndex": 1
-    },
-    "fdc15194-87b4-4319-b0b4-412ccad128f5": {
-      "ProjectGuid": "fdc15194-87b4-4319-b0b4-412ccad128f5",
-      "DisplayName": "Core.Infrastructure",
       "ColorIndex": 2
     }
   },

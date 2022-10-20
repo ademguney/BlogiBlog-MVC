@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Sz1lxcPDn613WhU+AVOg0w6f4EvIxSFzUta9u9PJ1jYzT6q97uJJ5mmkDQvkZNlx8fRMorw/Bd8HfoY6NRXAOg==",
+  "dgSpecHash": "qxbOryzHLLhFctw8CiTC93duzNM2rLOF7lUNiXk59K3JNaLlRMm238YkuXqWXbiTqOJDY6UiX4gBVoP84GiCUA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Application\\Core.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ademg\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512"
+  ],
   "logs": []
 }
