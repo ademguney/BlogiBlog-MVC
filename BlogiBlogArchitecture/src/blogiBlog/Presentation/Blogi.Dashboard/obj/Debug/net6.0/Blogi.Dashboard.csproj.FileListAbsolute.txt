@@ -398,3 +398,5 @@ C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog
 C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\bin\Debug\net6.0\Blogi.Persistence.pdb
 C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\bin\Debug\net6.0\Blogi.Domain.pdb
 C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\bin\Debug\net6.0\Core.Persistence.pdb
+C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\bin\Debug\net6.0\Core.Application.dll
+C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\bin\Debug\net6.0\Core.Application.pdb

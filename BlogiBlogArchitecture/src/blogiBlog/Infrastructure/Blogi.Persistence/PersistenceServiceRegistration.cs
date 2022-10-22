@@ -9,7 +9,9 @@
 
 
             // Repositories
-           
+            services.AddScoped<ILanguageReadRepository, LanguageReadRepository>();
+            services.AddScoped<ILanguageWriteRepository, LanguageWriteRepository>();
+
 
 
 

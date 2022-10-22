@@ -7,3 +7,4 @@ global using Core.Persistence.Repositories.Abstracts;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
 global using Blogi.Application.Repositories.LanguageRepository;
+global using Blogi.Persistence.Repositories.LanguageRepository;

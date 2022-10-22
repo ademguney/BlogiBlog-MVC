@@ -298,6 +298,19 @@
           "bin/placeholder/Blogi.Domain.dll": {}
         }
       },
+      "Core.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FluentValidation": "11.2.2"
+        },
+        "compile": {
+          "bin/placeholder/Core.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.Application.dll": {}
+        }
+      },
       "Core.Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -821,6 +834,11 @@
       "path": "../Blogi.Domain/Blogi.Domain.csproj",
       "msbuildProject": "../Blogi.Domain/Blogi.Domain.csproj"
     },
+    "Core.Application/1.0.0": {
+      "type": "project",
+      "path": "../../../coreLibraries/Core.Application/Core.Application.csproj",
+      "msbuildProject": "../../../coreLibraries/Core.Application/Core.Application.csproj"
+    },
     "Core.Persistence/1.0.0": {
       "type": "project",
       "path": "../../../coreLibraries/Core.Persistence/Core.Persistence.csproj",
@@ -832,6 +850,7 @@
       "AutoMapper >= 12.0.0",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.0",
       "Blogi.Domain >= 1.0.0",
+      "Core.Application >= 1.0.0",
       "Core.Persistence >= 1.0.0",
       "FluentValidation >= 11.2.2",
       "FluentValidation.DependencyInjectionExtensions >= 11.2.2",
@@ -869,6 +888,9 @@
           "projectReferences": {
             "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Core\\Blogi.Domain\\Blogi.Domain.csproj": {
               "projectPath": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Core\\Blogi.Domain\\Blogi.Domain.csproj"
+            },
+            "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Application\\Core.Application.csproj": {
+              "projectPath": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Application\\Core.Application.csproj"
             },
             "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Persistence\\Core.Persistence.csproj": {
               "projectPath": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Persistence\\Core.Persistence.csproj"

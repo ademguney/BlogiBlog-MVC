@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zSqqvz+dsLh9SKo4QwiluWwzxlyy4qefFSFv2IC8eL+39KI7k707oXBr+iF1u5Y8sfQdkKWUH3TbFo+oH0Qtfg==",
+  "dgSpecHash": "Mlus3kLWUOQ1+Fy722S9ydQwE+tv37UMusD3WdQq+6s0MT2Ra8JsvsI5ItYy2nDmS4dgk2ASVUGw8cfi42FyKw==",
   "success": true,
   "projectFilePath": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Infrastructure\\Blogi.Persistence\\Blogi.Persistence.csproj",
   "expectedPackageFiles": [

@@ -2,10 +2,10 @@
 {
     public interface IAuditable
     {
-        public int CreatedById { get; set; }
-        public int UpdatedById { get; set; }
-        public DateTime CreationTime { get; set; }
-        public DateTime? UpdationTime { get; set; }
-       
+        int CreatedById { get; set; }
+        int UpdatedById { get; set; }
+        DateTime CreationTime { get; set; }
+        DateTime? UpdationTime { get; set; }
+
     }
 }

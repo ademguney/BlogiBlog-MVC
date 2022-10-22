@@ -13,6 +13,11 @@ namespace Core.Persistence.Repositories.Abstracts
             Context = context;
         }
 
+        public Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate = null)
+        {
+            return Context.Set<TEntity>().AnyAsync(predicate);
+        }
+
         public TEntity Get(Expression<Func<TEntity, bool>> predicate = null)
         {
             return Context.Set<TEntity>().FirstOrDefault(predicate);

@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Blogi.Application.Features.Languages.Commands.Create;
+using Blogi.Application.Features.Languages.Queries.Get;
+using Blogi.Application.Features.Languages.Queries.GetList;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Blogi.Dashboard.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var result = await Mediator.Send(new CreateLanguageCommand() { Name= "Türkçe", Culture="aa"});
             return View();
         }
 

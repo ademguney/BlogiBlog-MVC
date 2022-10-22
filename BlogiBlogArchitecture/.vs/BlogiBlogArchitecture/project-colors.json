@@ -15,7 +15,27 @@
       "ProjectGuid": "1f2fd62d-bcf1-460c-9cc4-d7bff182d246",
       "DisplayName": "Core.Persistence",
       "ColorIndex": 2
+    },
+    "1cb1e678-6d83-46f8-85a6-186fba92c58e": {
+      "ProjectGuid": "1cb1e678-6d83-46f8-85a6-186fba92c58e",
+      "DisplayName": "Blogi.Application",
+      "ColorIndex": 3
+    },
+    "3897d5f8-b97a-48a4-82c9-0911c921b80d": {
+      "ProjectGuid": "3897d5f8-b97a-48a4-82c9-0911c921b80d",
+      "DisplayName": "Blogi.Persistence",
+      "ColorIndex": 4
+    },
+    "40749248-04ca-4400-bc10-fc003441724c": {
+      "ProjectGuid": "40749248-04ca-4400-bc10-fc003441724c",
+      "DisplayName": "Blogi.Dashboard",
+      "ColorIndex": 5
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 6
 }

@@ -1103,6 +1103,9 @@
         "dependencies": {
           "AutoMapper": "12.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
+          "Blogi.Domain": "1.0.0",
+          "Core.Application": "1.0.0",
+          "Core.Persistence": "1.0.0",
           "FluentValidation": "11.2.2",
           "FluentValidation.DependencyInjectionExtensions": "11.2.2",
           "MediatR": "11.0.0",
@@ -1136,6 +1139,7 @@
       },
       "Blogi.Persistence/1.0.0": {
         "dependencies": {
+          "Blogi.Application": "1.0.0",
           "Blogi.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.10",
@@ -1146,6 +1150,17 @@
         },
         "compile": {
           "Blogi.Persistence.dll": {}
+        }
+      },
+      "Core.Application/1.0.0": {
+        "dependencies": {
+          "FluentValidation": "11.2.2"
+        },
+        "runtime": {
+          "Core.Application.dll": {}
+        },
+        "compile": {
+          "Core.Application.dll": {}
         }
       },
       "Core.Persistence/1.0.0": {
@@ -3353,6 +3368,11 @@
       "sha512": ""
     },
     "Blogi.Persistence/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.Application/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
