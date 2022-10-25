@@ -10,6 +10,7 @@
         }
 
         public DbSet<Language> Languages { get; set; }
+        public DbSet<StringResource> StringResources { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
