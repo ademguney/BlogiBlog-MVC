@@ -25,7 +25,8 @@
         private async Task<bool> NameCanNotBeDuplicatedWhenInserted(CreateLanguageCommand e,
         CancellationToken token)
         {
-            return !await _languageReadRepository.AnyAsync(x => x.Name == e.Name);
+            var result = await _languageReadRepository.GetAsync(x => x.Name == e.Name);
+            return result == null;
         }
     }
 }

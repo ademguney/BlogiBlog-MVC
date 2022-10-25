@@ -15,7 +15,8 @@
 
         private async Task<bool> IdIsNotExists(DeleteLanguageCommand e, CancellationToken token)
         {
-            return !await _languageReadRepository.AnyAsync(x => x.Id == e.Id);
+            var result = await _languageReadRepository.GetAsync(x => x.Id == e.Id);
+            return result != null;
         }
     }
 }

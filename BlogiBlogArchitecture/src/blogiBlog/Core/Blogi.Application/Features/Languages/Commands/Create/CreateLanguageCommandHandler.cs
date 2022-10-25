@@ -22,9 +22,9 @@ namespace Blogi.Application.Features.Languages.Commands.Create
         public async Task<BaseCommandResponse<CreateLanguageOutput>> Handle(CreateLanguageCommand request, CancellationToken cancellationToken)
         {
             var response = new BaseCommandResponse<CreateLanguageOutput>();
-
             var validator = new CreateLanguageCommandHandlerValidatior(_languageReadRepository);
             var validatorResult = await validator.ValidateAsync(request, cancellationToken);
+
             if (!validatorResult.IsValid)
             {
                 response.Data = null;

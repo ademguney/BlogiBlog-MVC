@@ -5,7 +5,12 @@
         public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<BlogiBlogDbContext>(
-                opt => opt.UseSqlServer(configuration.GetConnectionString("BlogiBlogConnectionString")));
+                opt =>
+                {
+                    opt.UseSqlServer(configuration.GetConnectionString("BlogiBlogConnectionString"));
+                    opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+
+                });
 
 
             // Repositories

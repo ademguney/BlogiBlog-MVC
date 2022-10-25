@@ -22,7 +22,7 @@ namespace Core.Persistence.Repositories.Abstracts
 
         public async Task<TEntity> AddAsync(TEntity entity)
         {
-            Context.Entry(entity).State |= EntityState.Added;
+            Context.Entry(entity).State = EntityState.Added;
             await Context.SaveChangesAsync();
             return entity;
         }

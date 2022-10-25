@@ -32,13 +32,15 @@
 
         private async Task<bool> IdIsNotExists(UpdateLanguageCommand e, CancellationToken token)
         {
-            return !await _languageReadRepository.AnyAsync(x => x.Id == e.Id);
+            var result = await _languageReadRepository.GetAsync(x => x.Id == e.Id);
+            return result != null;
         }
 
         private async Task<bool> NameCanNotBeDuplicatedWhenInserted(UpdateLanguageCommand e,
         CancellationToken token)
         {
-            return !await _languageReadRepository.AnyAsync(x => x.Name == e.Name);
+            var result = await _languageReadRepository.GetAsync(x => x.Name == e.Name);
+            return result == null;
         }
     }
 }

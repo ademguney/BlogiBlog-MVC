@@ -18,7 +18,7 @@ namespace Blogi.Application.Features.Languages.Queries.GetList
             var response = new BaseCommandResponse<List<GetListLanguageOutput>>();
             var result = await _languageReadRepository.GetListAsync();
 
-            if (result.Any())
+            if (!result.Any())
             {
                 response.Success = false;
                 response.Message = LanguageMessages.GetListNotExists;
