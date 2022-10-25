@@ -16,6 +16,8 @@
             // Repositories
             services.AddScoped<ILanguageReadRepository, LanguageReadRepository>();
             services.AddScoped<ILanguageWriteRepository, LanguageWriteRepository>();
+            services.AddScoped<IStringResourceReadRepository, StringResourceReadRepository>();
+            services.AddScoped<IStringResourceWriteRepository, StringResourceWriteRepository>();
 
 
 
