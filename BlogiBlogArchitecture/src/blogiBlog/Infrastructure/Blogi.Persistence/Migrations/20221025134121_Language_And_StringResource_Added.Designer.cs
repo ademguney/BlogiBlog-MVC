@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blogi.Persistence.Migrations
 {
     [DbContext(typeof(BlogiBlogDbContext))]
-    [Migration("20221025081050_StringResource_Entity_Added")]
-    partial class StringResource_Entity_Added
+    [Migration("20221025134121_Language_And_StringResource_Added")]
+    partial class Language_And_StringResource_Added
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -83,6 +83,8 @@ namespace Blogi.Persistence.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("LanguageId");
+
                     b.ToTable("StringResources", (string)null);
 
                     b.HasData(
@@ -142,6 +144,22 @@ namespace Blogi.Persistence.Migrations
                             LanguageId = 2,
                             Value = "Language list..."
                         });
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.StringResource", b =>
+                {
+                    b.HasOne("Blogi.Domain.Entities.Language", "Languages")
+                        .WithMany("StringResources")
+                        .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Languages");
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.Language", b =>
+                {
+                    b.Navigation("StringResources");
                 });
 #pragma warning restore 612, 618
         }

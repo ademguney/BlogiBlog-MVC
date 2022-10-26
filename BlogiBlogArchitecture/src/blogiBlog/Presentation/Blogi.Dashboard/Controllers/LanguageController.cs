@@ -38,7 +38,7 @@ namespace Blogi.Dashboard.Controllers
             }
         }
 
-        [HttpPost, ValidateAntiForgeryToken]
+        [HttpPost]
         public async Task<JsonResult> Delete(DeleteLanguageCommand input)
         {
             var result = await Mediator.Send(input);

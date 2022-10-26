@@ -13,18 +13,27 @@
         <!-- Start XP Navigationbar -->
         <div class="xp-navigationbar">
             <ul class="xp-vertical-menu">
-
-                <li class="xp-vertical-header">Dil</li>
+                <li class="xp-vertical-header"><i class="icon-settings"></i> System Configuration</li>
                 <li>
                     <a href="javaScript:void();">
-                        <i class="icon-doc"></i><span>Çeviri</span><i class="icon-arrow-right pull-right"></i>
+                        <i class="fa fa-language"></i><span>Language</span><i class="icon-arrow-right pull-right"></i>
                     </a>
                     <ul class="xp-vertical-submenu">
+                        <li><a asp-controller="Language" asp-action="Create">Create</a></li>
                         <li><a asp-controller="Language" asp-action="Home">List</a></li>
-                      
+
                     </ul>
                 </li>
-               
+                <li>
+                    <a href="javaScript:void();">
+                        <i class="fa fa-language"></i><span>String Resource</span><i class="icon-arrow-right pull-right"></i>
+                    </a>
+                    <ul class="xp-vertical-submenu">
+                        <li><a asp-controller="StringResource" asp-action="Create">Create</a></li>
+                        <li><a asp-controller="StringResource" asp-action="Home">List</a></li>
+
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- End XP Navigationbar -->

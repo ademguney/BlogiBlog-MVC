@@ -81,6 +81,8 @@ namespace Blogi.Persistence.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("LanguageId");
+
                     b.ToTable("StringResources", (string)null);
 
                     b.HasData(
@@ -140,6 +142,22 @@ namespace Blogi.Persistence.Migrations
                             LanguageId = 2,
                             Value = "Language list..."
                         });
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.StringResource", b =>
+                {
+                    b.HasOne("Blogi.Domain.Entities.Language", "Languages")
+                        .WithMany("StringResources")
+                        .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Languages");
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.Language", b =>
+                {
+                    b.Navigation("StringResources");
                 });
 #pragma warning restore 612, 618
         }

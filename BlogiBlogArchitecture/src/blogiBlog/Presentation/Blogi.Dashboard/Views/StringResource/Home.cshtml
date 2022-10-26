@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "String Resource";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+ <partial name="_breadCrumb" />
+
+<div class="row">
+    <div class="col-12">
+        <div class="card m-b-30">
+            <div class="card-header bg-secondary" style="color:white">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">  <i class='ion ion-ios-information-circle'></i> String Resource List</li>
+                    <li class="list-inline-item float-right">
+                        <a asp-controller="StringResource" asp-action="Create" class="btn btn-rounded btn-success">Create New String Resource <i class="mdi mdi-plus ml-2"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive m-b-30">
+                    <table class="table table-hover" id="stringResourceTable">
+                        <thead>
+                            <tr>
+                                <th>Language</th>
+                                <th>Key</th>
+                                <th>Value</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+<script src="~/js/views/stringResource/home.js" asp-append-version="true"></script>
+}
+
+

@@ -12,5 +12,8 @@ global using System.Collections.Generic;
 global using Microsoft.Extensions.DependencyInjection;
 global using Core.Persistence.Repositories.Interfaces;
 global using Blogi.Application.Features.Languages.Constants;
+global using Blogi.Application.Services.StringResourceService;
 global using Blogi.Application.Repositories.LanguageRepository;
+global using Blogi.Application.Features.StringResources.Constants;
 global using Blogi.Application.Repositories.StringResourceRepository;
+
