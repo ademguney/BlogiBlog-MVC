@@ -1,4 +1,11 @@
-﻿using Blogi.Application.Features.StringResources.Dtos.GitList;
+﻿using Blogi.Application.Features.StringResources.Commands.Create;
+using Blogi.Application.Features.StringResources.Commands.Delete;
+using Blogi.Application.Features.StringResources.Commands.Update;
+using Blogi.Application.Features.StringResources.Dtos.Create;
+using Blogi.Application.Features.StringResources.Dtos.Delete;
+using Blogi.Application.Features.StringResources.Dtos.Get;
+using Blogi.Application.Features.StringResources.Dtos.GitList;
+using Blogi.Application.Features.StringResources.Dtos.Update;
 
 namespace Blogi.Application.Features.StringResources.Profiles
 {
@@ -6,7 +13,17 @@ namespace Blogi.Application.Features.StringResources.Profiles
     {
         public MappingProfile()
         {
+            CreateMap<StringResource, GetStringResourceOutput>();
             CreateMap<StringResource, GetListStringResourceOutput>();
+
+            CreateMap<StringResource, CreateStringResourceOutput>().ReverseMap();
+            CreateMap<StringResource, CreateStringResourceCommand>().ReverseMap();
+
+            CreateMap<StringResource, DeleteStringResourceOutput>().ReverseMap();
+            CreateMap<StringResource, DeleteStringResourceCommand>().ReverseMap();
+
+            CreateMap<StringResource, UpdateStringResourceOutput>().ReverseMap();
+            CreateMap<StringResource, UpdateStringResourceCommand>().ReverseMap();
         }
     }
 }

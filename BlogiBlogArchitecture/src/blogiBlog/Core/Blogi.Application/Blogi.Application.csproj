@@ -21,15 +21,4 @@
     <ProjectReference Include="..\Blogi.Domain\Blogi.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\StringResources\Commands\Create\" />
-    <Folder Include="Features\StringResources\Commands\Delete\" />
-    <Folder Include="Features\StringResources\Commands\Update\" />
-    <Folder Include="Features\StringResources\Dtos\Create\" />
-    <Folder Include="Features\StringResources\Dtos\Delete\" />
-    <Folder Include="Features\StringResources\Dtos\Get\" />
-    <Folder Include="Features\StringResources\Dtos\Update\" />
-    <Folder Include="Features\StringResources\Queries\Get\" />
-  </ItemGroup>
-
 </Project>

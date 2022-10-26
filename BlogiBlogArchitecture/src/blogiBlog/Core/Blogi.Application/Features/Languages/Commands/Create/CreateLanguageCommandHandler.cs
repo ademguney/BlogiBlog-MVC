@@ -46,8 +46,7 @@ namespace Blogi.Application.Features.Languages.Commands.Create
                 response.Errors = null;
             }
 
-            return response;
-            
+            return response;            
         }
     }
 }

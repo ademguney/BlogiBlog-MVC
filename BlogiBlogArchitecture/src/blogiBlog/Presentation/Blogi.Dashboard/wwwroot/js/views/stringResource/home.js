@@ -1,5 +1,5 @@
 ﻿(function () {
-    $("#languageTable").DataTable({
+    $("#stringResourceTable").DataTable({
         "ajax": {
             "type": "GET",
             "url": "/StringResource/DataTable"
@@ -16,7 +16,7 @@
         ],
         "columns": [
             {
-                "data": "languages", "autoWidth": true
+                "data": "language", "autoWidth": true
             },
             {
                 "data": "key", "autoWidth": true

@@ -22,20 +22,9 @@
                  .NotNull();
 
             RuleFor(x => x)
-                .MustAsync(IdIsNotExists)
-                .WithMessage(LanguageMessages.GetByIdNotExists);
-
-            RuleFor(x => x)
                 .MustAsync(NameCanNotBeDuplicatedWhenInserted)
                 .WithMessage(LanguageMessages.NameExists);
         }
-
-        private async Task<bool> IdIsNotExists(UpdateLanguageCommand e, CancellationToken token)
-        {
-            var result = await _languageReadRepository.GetAsync(x => x.Id == e.Id);
-            return result != null;
-        }
-
         private async Task<bool> NameCanNotBeDuplicatedWhenInserted(UpdateLanguageCommand e,
         CancellationToken token)
         {

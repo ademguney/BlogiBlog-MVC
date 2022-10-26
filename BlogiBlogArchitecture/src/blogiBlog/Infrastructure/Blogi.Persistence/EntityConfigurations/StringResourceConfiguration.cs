@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Blogi.Persistence.EntityConfigurations
+﻿namespace Blogi.Persistence.EntityConfigurations
 {
     public class StringResourceConfiguration : IEntityTypeConfiguration<StringResource>
     {

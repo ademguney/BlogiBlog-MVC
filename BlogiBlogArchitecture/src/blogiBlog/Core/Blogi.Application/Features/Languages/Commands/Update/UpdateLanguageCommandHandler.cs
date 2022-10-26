@@ -35,8 +35,8 @@ namespace Blogi.Application.Features.Languages.Commands.Update
             else
             {
 
-                var languageMap = _mapper.Map<Language>(request);
-                var result = await _languageWriteRepository.UpdateAsync(languageMap);
+                var languageMapp = _mapper.Map<Language>(request);
+                var result = await _languageWriteRepository.UpdateAsync(languageMapp);
                 var resultMapp = _mapper.Map<UpdateLanguageOutput>(result);
 
                 response.Id = resultMapp.Id;
