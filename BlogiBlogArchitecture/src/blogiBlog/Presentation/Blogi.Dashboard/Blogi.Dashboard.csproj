@@ -28,8 +28,4 @@
     <ProjectReference Include="..\..\Infrastructure\Blogi.Persistence\Blogi.Persistence.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewModels\Languages\" />
-  </ItemGroup>
-
 </Project>

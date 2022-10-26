@@ -12,6 +12,12 @@ namespace Blogi.Dashboard.Controllers
         }
 
         [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpGet]
         public async Task<JsonResult> DataTable()
         {
             var result = await Mediator.Send(new GetListStringResourceQuery());
