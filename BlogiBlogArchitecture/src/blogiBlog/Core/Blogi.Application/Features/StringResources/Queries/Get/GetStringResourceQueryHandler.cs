@@ -5,12 +5,18 @@ namespace Blogi.Application.Features.StringResources.Queries.Get
     public class GetStringResourceQueryHandler : IRequestHandler<GetStringResourceQuery, BaseCommandResponse<GetStringResourceOutput>>
     {
         private readonly IMapper _mapper;
+        private readonly IStringResourceService _stringResourceService;
         private readonly IStringResourceReadRepository _stringResourceReadRepository;
 
-        public GetStringResourceQueryHandler(IMapper mapper, IStringResourceReadRepository stringResourceReadRepository)
+        public GetStringResourceQueryHandler(
+            IMapper mapper,
+            IStringResourceReadRepository stringResourceReadRepository,
+            IStringResourceService stringResourceService
+            )
         {
             _mapper = mapper;
             _stringResourceReadRepository = stringResourceReadRepository;
+            _stringResourceService = stringResourceService;
         }
 
         public async Task<BaseCommandResponse<GetStringResourceOutput>> Handle(GetStringResourceQuery request, CancellationToken cancellationToken)
@@ -29,7 +35,7 @@ namespace Blogi.Application.Features.StringResources.Queries.Get
             }
             else
             {
-                var result = await _stringResourceReadRepository.GetAsync(x => x.Id == request.Id);
+                var result = await _stringResourceService.GetAsync(request.Id);
                 var resultMapp = _mapper.Map<GetStringResourceOutput>(result);
 
                 response.Id = resultMapp.Id;

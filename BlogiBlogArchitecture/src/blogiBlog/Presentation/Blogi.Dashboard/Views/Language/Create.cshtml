@@ -11,13 +11,19 @@
         <div class="xp-breadcrumbbar">
             <div class="row">
                 <div class="col-md-6 col-lg-6">
-                    <h4 class="xp-page-title"><a href="/Dashboard/Home" style="color: #8A98AC"><i class="icon-home"></i> Home</a></h4>
+                    <h4 class="xp-page-title">
+                        <a asp-controller="Dashboard" asp-action="Home" style="color: #8A98AC"><i class="icon-home"></i> Home</a>
+                    </h4>
                 </div>
                 <div class="col-md-6 col-lg-6">
                     <div class="xp-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/Language/Home"><i class="icon-home"></i></a></li>
-                            <li class="breadcrumb-item active" aria-current="page"><a href="/Language/Home">Back to List</a></li>
+                            <li class="breadcrumb-item">
+                                <a asp-controller="Language" asp-action="Home"><i class="icon-home"></i></a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <a asp-controller="Language" asp-action="Home">Back to List</a>
+                            </li>
                         </ol>
                     </div>
                 </div>
