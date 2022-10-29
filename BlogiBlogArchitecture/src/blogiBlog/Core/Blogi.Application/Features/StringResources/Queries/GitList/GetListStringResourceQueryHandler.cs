@@ -13,7 +13,7 @@ namespace Blogi.Application.Features.StringResources.Queries.GitList
             _stringResourceService = stringResourceService;
         }
 
-        public async Task<BaseCommandResponse<List<GetListStringResourceOutput>>> Handle(GetListStringResourceQuery request, CancellationToken cancellationToken)
+        public Task<BaseCommandResponse<List<GetListStringResourceOutput>>> Handle(GetListStringResourceQuery request, CancellationToken cancellationToken)
         {
             var response= new BaseCommandResponse<List<GetListStringResourceOutput>>();
             var result =  _stringResourceService.GetList();
@@ -34,7 +34,7 @@ namespace Blogi.Application.Features.StringResources.Queries.GitList
                 response.Errors = null;
             }
 
-            return response;
+            return Task.FromResult(response);
         }
     }
 }
