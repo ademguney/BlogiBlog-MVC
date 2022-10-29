@@ -21,4 +21,8 @@
     <ProjectReference Include="..\Blogi.Domain\Blogi.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\MailSettings\Dtos\Update\" />
+  </ItemGroup>
+
 </Project>

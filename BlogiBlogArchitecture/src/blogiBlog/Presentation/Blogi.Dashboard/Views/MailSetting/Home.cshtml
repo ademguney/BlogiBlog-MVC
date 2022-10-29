@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewData["Title"] = "Mail Setting";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@model Blogi.Application.Features.MailSettings.Dtos.Get.GetMailSettingOutput
+
+<partial name="_breadCrumb" />
+<div class="col-lg-12">
+    <div class="card m-b-30">
+
+        <div class="card-body">
+
+
+            <form method="post" asp-controller="MailSetting" asp-action="Edit">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Host</label>
+                    <div class="col-sm-8">
+                        <input asp-for="Host" type="text" class="form-control" required>
+                        <span class="text-danger" asp-validation-for="Host"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Port</label>
+                    <div class="col-sm-8">
+                        <input asp-for="Port" type="text" class="form-control" required>
+                        <span class="text-danger" asp-validation-for="Port"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">FullName</label>
+                    <div class="col-sm-8">
+                        <input asp-for="FullName" type="text" class="form-control">
+                        <span class="text-danger" asp-validation-for="FullName" required></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Email</label>
+                    <div class="col-sm-8">
+                        <input asp-for="Email" type="email" class="form-control">
+                        <span class="text-danger" asp-validation-for="Email" required></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Password</label>
+                    <div class="col-sm-8">
+                        <input asp-for="Password" type="text" class="form-control" required>
+                        <span class="text-danger" asp-validation-for="Password"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-4">SslEnabled</div>
+                    <div class="col-sm-8">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="SslEnabled">
+                            <span class="text-danger" asp-validation-for="SslEnabled"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-4">UseDefaultCredentials</div>
+                    <div class="col-sm-8">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="UseDefaultCredentials">
+                            <span class="text-danger" asp-validation-for="UseDefaultCredentials"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-rounded btn-block btn-warning">Update <i class="mdi mdi-progress-upload"></i></button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

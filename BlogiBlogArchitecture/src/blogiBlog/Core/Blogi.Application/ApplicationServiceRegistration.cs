@@ -1,6 +1,4 @@
-﻿using Blogi.Application.Services.StringResourceService;
-
-namespace Blogi.Application
+﻿namespace Blogi.Application
 {
     public static class ApplicationServiceRegistration
     {

@@ -18,8 +18,8 @@
             services.AddScoped<ILanguageWriteRepository, LanguageWriteRepository>();
             services.AddScoped<IStringResourceReadRepository, StringResourceReadRepository>();
             services.AddScoped<IStringResourceWriteRepository, StringResourceWriteRepository>();
-
-
+            services.AddScoped<IMailSettingReadRepository, MailSettingReadRepository>();
+            services.AddScoped<IMailSettingWriteRepository, MailSettingWriteRepository>();
 
 
             return services;

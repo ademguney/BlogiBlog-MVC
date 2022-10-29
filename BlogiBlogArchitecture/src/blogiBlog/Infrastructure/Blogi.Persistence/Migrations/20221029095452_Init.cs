@@ -4,7 +4,7 @@
 
 namespace Blogi.Persistence.Migrations
 {
-    public partial class Language_And_StringResource_Added : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -20,6 +20,25 @@ namespace Blogi.Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Languages", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MailConfigs",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Host = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Port = table.Column<int>(type: "int", nullable: false),
+                    FullName = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SslEnabled = table.Column<bool>(type: "bit", nullable: false),
+                    UseDefaultCredentials = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MailConfigs", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -54,6 +73,11 @@ namespace Blogi.Persistence.Migrations
                 values: new object[] { 2, "en-ENG", "English (United States)" });
 
             migrationBuilder.InsertData(
+                table: "MailConfigs",
+                columns: new[] { "Id", "Email", "FullName", "Host", "Password", "Port", "SslEnabled", "UseDefaultCredentials" },
+                values: new object[] { 1, "blogi_blog@gmail.com", "BlogiBlog", "smtp.gmail.com", "Zci5rfPjWMrks1rK4ECRsvrRCYUZnTSCVxsQtK+QaAXgRmUQmZFBB0SlPi5GKOlW", 587, false, false });
+
+            migrationBuilder.InsertData(
                 table: "StringResources",
                 columns: new[] { "Id", "Key", "LanguageId", "Value" },
                 values: new object[,]
@@ -76,6 +100,9 @@ namespace Blogi.Persistence.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "MailConfigs");
+
             migrationBuilder.DropTable(
                 name: "StringResources");
 

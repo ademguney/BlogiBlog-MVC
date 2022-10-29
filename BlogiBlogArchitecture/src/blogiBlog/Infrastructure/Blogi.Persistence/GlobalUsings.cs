@@ -8,5 +8,7 @@ global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
 global using Blogi.Application.Repositories.LanguageRepository;
 global using Blogi.Persistence.Repositories.LanguageRepository;
+global using Blogi.Application.Repositories.MailSettingRepository;
+global using Blogi.Persistence.Repositories.MailSettingRepository;
 global using Blogi.Application.Repositories.StringResourceRepository;
 global using Blogi.Persistence.Repositories.StringResourceRepository;

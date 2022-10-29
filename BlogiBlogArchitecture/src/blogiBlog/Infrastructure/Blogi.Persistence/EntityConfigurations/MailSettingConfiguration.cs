@@ -11,12 +11,9 @@ namespace Blogi.Persistence.EntityConfigurations
             builder.Property(u => u.Port).IsRequired(true);
             builder.Property(u => u.FullName).IsRequired(true).HasMaxLength(500);
             builder.Property(u => u.Email).IsRequired(true).HasMaxLength(255);
-            builder.Property(u => u.PasswordHash).IsRequired(true);
-            builder.Property(u => u.PasswordSalt).IsRequired(true);
+            builder.Property(u => u.Password).IsRequired(true);           
             builder.Property(u => u.SslEnabled);
-            builder.Property(u => u.UseDefaultCredentials);
-
-            EnDecode.Encrypt("test_password", out byte[] passwordHash, out byte[] passwordSalt);
+            builder.Property(u => u.UseDefaultCredentials);           
 
             builder.HasData(
               new MailSetting
@@ -25,9 +22,8 @@ namespace Blogi.Persistence.EntityConfigurations
                   Host = "smtp.gmail.com",
                   Port = 587,
                   FullName = "BlogiBlog",
-                  Email = "email_@_adresiniz.com",
-                  PasswordHash = passwordHash,
-                  PasswordSalt = passwordSalt,
+                  Email = "blogi_blog@gmail.com",
+                  Password = EnDecode.Encrypt("..TEST..", StaticParams.PasswordParams),                  
                   SslEnabled = false,
                   UseDefaultCredentials = false
               });

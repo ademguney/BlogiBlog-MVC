@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blogi.Persistence.Migrations
 {
     [DbContext(typeof(BlogiBlogDbContext))]
-    [Migration("20221025134121_Language_And_StringResource_Added")]
-    partial class Language_And_StringResource_Added
+    [Migration("20221029095452_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -57,6 +57,60 @@ namespace Blogi.Persistence.Migrations
                             Id = 2,
                             Culture = "en-ENG",
                             Name = "English (United States)"
+                        });
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.MailSetting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Host")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Port")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("SslEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("UseDefaultCredentials")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MailConfigs", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "blogi_blog@gmail.com",
+                            FullName = "BlogiBlog",
+                            Host = "smtp.gmail.com",
+                            Password = "Zci5rfPjWMrks1rK4ECRsvrRCYUZnTSCVxsQtK+QaAXgRmUQmZFBB0SlPi5GKOlW",
+                            Port = 587,
+                            SslEnabled = false,
+                            UseDefaultCredentials = false
                         });
                 });
 

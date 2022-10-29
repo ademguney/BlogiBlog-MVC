@@ -2,7 +2,6 @@
 using Blogi.Application.Features.StringResources.Commands.Create;
 using Blogi.Application.Features.StringResources.Commands.Delete;
 using Blogi.Application.Features.StringResources.Commands.Update;
-using Blogi.Application.Features.StringResources.Dtos.Get;
 using Blogi.Application.Features.StringResources.Queries.Get;
 using Blogi.Application.Features.StringResources.Queries.GitList;
 using Blogi.Dashboard.Models;
