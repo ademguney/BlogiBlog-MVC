@@ -1,9 +1,9 @@
 ﻿namespace Blogi.Application.Features.Tags.Queries.Get
 {
-    public class GetTagQueryValidator : AbstractValidator<GetTagQuery>
+    public class GetTagQueryHandlerValidatior : AbstractValidator<GetTagQuery>
     {
         private readonly ITagReadRepository _tagReadRepository;
-        public GetTagQueryValidator(ITagReadRepository tagReadRepository)
+        public GetTagQueryHandlerValidatior(ITagReadRepository tagReadRepository)
         {
             _tagReadRepository = tagReadRepository;
 

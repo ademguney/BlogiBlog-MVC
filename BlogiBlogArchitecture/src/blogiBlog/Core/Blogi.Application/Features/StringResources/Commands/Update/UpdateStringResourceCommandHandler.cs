@@ -16,7 +16,7 @@ namespace Blogi.Application.Features.StringResources.Commands.Update
         public async Task<BaseCommandResponse<GetStringResourceOutput>> Handle(UpdateStringResourceCommand request, CancellationToken cancellationToken)
         {
             var response = new BaseCommandResponse<GetStringResourceOutput>();
-            var validator = new UpdateStringResourceCommandHandlerValidator();
+            var validator = new UpdateStringResourceCommandHandlerValidatior();
             var validatorResult = await validator.ValidateAsync(request, cancellationToken);
 
             if (!validatorResult.IsValid)

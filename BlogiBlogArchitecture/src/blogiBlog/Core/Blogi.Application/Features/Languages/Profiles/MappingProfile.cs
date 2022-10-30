@@ -1,4 +1,5 @@
 ﻿using Blogi.Application.Features.Languages.Commands.Create;
+using Blogi.Application.Features.Languages.Commands.Delete;
 using Blogi.Application.Features.Languages.Commands.Update;
 using Blogi.Application.Features.Languages.Dtos.Create;
 using Blogi.Application.Features.Languages.Dtos.Get;
@@ -19,6 +20,8 @@ namespace Blogi.Application.Features.Languages.Profiles
 
             CreateMap<Language, UpdateLanguageCommand>().ReverseMap();
             CreateMap<Language, UpdateLanguageOutput>().ReverseMap();
+
+            CreateMap<Language, DeleteLanguageCommand>().ReverseMap();
         }
     }
 }

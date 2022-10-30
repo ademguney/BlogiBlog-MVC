@@ -17,7 +17,7 @@ namespace Blogi.Application.Features.Languages.Queries.Get
         public async Task<BaseCommandResponse<GetLanguageOutput>> Handle(GetLanguageQuery request, CancellationToken cancellationToken)
         {
             var response = new BaseCommandResponse<GetLanguageOutput>();
-            var validator = new GetLanguageQueryHandlerValidator(_languageReadRepository);
+            var validator = new GetLanguageQueryHandlerValidatior(_languageReadRepository);
             var validatorResult = await validator.ValidateAsync(request, cancellationToken);
 
             if (!validatorResult.IsValid)

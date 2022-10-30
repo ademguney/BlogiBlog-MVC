@@ -1,8 +1,8 @@
 ﻿namespace Blogi.Application.Features.StringResources.Commands.Update
 {
-    public class UpdateStringResourceCommandHandlerValidator : AbstractValidator<UpdateStringResourceCommand>
+    public class UpdateStringResourceCommandHandlerValidatior : AbstractValidator<UpdateStringResourceCommand>
     {
-        public UpdateStringResourceCommandHandlerValidator()
+        public UpdateStringResourceCommandHandlerValidatior()
         {
             RuleFor(x => x.Id)
                 .NotEmpty()

@@ -1,22 +1,27 @@
 ﻿using Blogi.Application.Features.Tags.Dtos.Get;
 
-namespace Blogi.Application.Features.Tags.Queries.Get
+namespace Blogi.Application.Features.Tags.Commands.Update
 {
-    public class GetTagQueryHandler : IRequestHandler<GetTagQuery, BaseCommandResponse<GetTagOutput>>
+    public class UpdateTagCommandHandler : IRequestHandler<UpdateTagCommand, BaseCommandResponse<GetTagOutput>>
     {
         private readonly IMapper _mapper;
         private readonly ITagReadRepository _tagReadRepository;
+        private readonly ITagWriteRepository _tagWriteRepository;
 
-        public GetTagQueryHandler(IMapper mapper, ITagReadRepository tagReadRepository)
+        public UpdateTagCommandHandler(
+            IMapper mapper,
+            ITagReadRepository tagReadRepository,
+            ITagWriteRepository tagWriteRepository
+            )
         {
             _mapper = mapper;
             _tagReadRepository = tagReadRepository;
+            _tagWriteRepository = tagWriteRepository;
         }
-
-        public async Task<BaseCommandResponse<GetTagOutput>> Handle(GetTagQuery request, CancellationToken cancellationToken)
+        public async Task<BaseCommandResponse<GetTagOutput>> Handle(UpdateTagCommand request, CancellationToken cancellationToken)
         {
             var response = new BaseCommandResponse<GetTagOutput>();
-            var validator = new GetTagQueryHandlerValidatior(_tagReadRepository);
+            var validator = new UpdateTagCommandHandlerValidatior(_tagReadRepository);
             var validatorResult = await validator.ValidateAsync(request, cancellationToken);
 
             if (!validatorResult.IsValid)
@@ -25,16 +30,19 @@ namespace Blogi.Application.Features.Tags.Queries.Get
                 response.Success = false;
                 response.Message = null;
                 response.Errors = validatorResult.Errors.Select(e => e.ErrorMessage).ToList();
+
             }
             else
             {
-                var result = await _tagReadRepository.GetAsync(x => x.Id == request.Id);
+
+                var tagMapp = _mapper.Map<Tag>(request);
+                var result = await _tagWriteRepository.UpdateAsync(tagMapp);
                 var resultMapp = _mapper.Map<GetTagOutput>(result);
 
                 response.Id = resultMapp.Id;
                 response.Data = resultMapp;
                 response.Success = true;
-                response.Message = TagMessages.GetByIdExists;
+                response.Message = TagMessages.UpdatedSuccess;
                 response.Errors = null;
             }
             return response;

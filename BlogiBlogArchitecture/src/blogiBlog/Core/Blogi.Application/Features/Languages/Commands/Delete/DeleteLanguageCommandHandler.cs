@@ -4,13 +4,16 @@ namespace Blogi.Application.Features.Languages.Commands.Delete
 {
     public class DeleteLanguageCommandHandler : IRequestHandler<DeleteLanguageCommand, BaseCommandResponse<DeleteLanguageOutput>>
     {
+        private readonly IMapper _mapper;
         private readonly ILanguageReadRepository _languageReadRepository;
         private readonly ILanguageWriteRepository _languageWriteRepository;
 
         public DeleteLanguageCommandHandler(
+            IMapper mapper,
             ILanguageReadRepository languageReadRepository,
             ILanguageWriteRepository languageWriteRepository)
         {
+            _mapper=mapper;
             _languageReadRepository = languageReadRepository;
             _languageWriteRepository = languageWriteRepository;
         }
@@ -30,8 +33,8 @@ namespace Blogi.Application.Features.Languages.Commands.Delete
             }
             else
             {
-                var language = await _languageReadRepository.GetAsync(x => x.Id == request.Id);
-                var result = await _languageWriteRepository.DeleteAsync(language);
+                var languageMapp = _mapper.Map<Language>(request);
+                var result = await _languageWriteRepository.DeleteAsync(languageMapp);
 
                 response.Id = result.Id;
                 response.Data = null;

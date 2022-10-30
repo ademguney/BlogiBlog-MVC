@@ -1,10 +1,10 @@
 ﻿namespace Blogi.Application.Features.StringResources.Commands.Delete
 {
-    public class DeleteStringResourceCommandHandlerValidator : AbstractValidator<DeleteStringResourceCommand>
+    public class DeleteStringResourceCommandHandlerValidatior : AbstractValidator<DeleteStringResourceCommand>
     {
         private readonly IStringResourceReadRepository _stringResourceReadRepository;
 
-        public DeleteStringResourceCommandHandlerValidator(IStringResourceReadRepository stringResourceReadRepository)
+        public DeleteStringResourceCommandHandlerValidatior(IStringResourceReadRepository stringResourceReadRepository)
         {
             _stringResourceReadRepository = stringResourceReadRepository;
 

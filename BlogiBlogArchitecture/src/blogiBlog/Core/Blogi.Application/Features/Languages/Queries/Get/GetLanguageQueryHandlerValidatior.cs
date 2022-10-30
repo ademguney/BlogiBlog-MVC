@@ -1,9 +1,9 @@
 ﻿namespace Blogi.Application.Features.Languages.Queries.Get
 {
-    public class GetLanguageQueryHandlerValidator : AbstractValidator<GetLanguageQuery>
+    public class GetLanguageQueryHandlerValidatior : AbstractValidator<GetLanguageQuery>
     {
         private readonly ILanguageReadRepository _languageReadRepository;
-        public GetLanguageQueryHandlerValidator(ILanguageReadRepository languageReadRepository)
+        public GetLanguageQueryHandlerValidatior(ILanguageReadRepository languageReadRepository)
         {
             _languageReadRepository = languageReadRepository;
 
