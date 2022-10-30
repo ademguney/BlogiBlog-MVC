@@ -31,7 +31,6 @@ namespace Blogi.Application.Features.StringResources.Queries.Get
                 response.Success = false;
                 response.Message = null;
                 response.Errors = validatorResult.Errors.Select(e => e.ErrorMessage).ToList();
-
             }
             else
             {
@@ -41,7 +40,7 @@ namespace Blogi.Application.Features.StringResources.Queries.Get
                 response.Id = resultMapp.Id;
                 response.Data = resultMapp;
                 response.Success = true;
-                response.Message = StringResourceMessages.GetListExists;
+                response.Message = StringResourceMessages.GetByIdExists;
                 response.Errors = null;
             }
             return response;

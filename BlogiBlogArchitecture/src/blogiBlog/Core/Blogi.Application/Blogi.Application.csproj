@@ -23,6 +23,13 @@
 
   <ItemGroup>
     <Folder Include="Features\MailSettings\Dtos\Update\" />
+    <Folder Include="Features\Tags\Commands\Create\" />
+    <Folder Include="Features\Tags\Commands\Delete\" />
+    <Folder Include="Features\Tags\Commands\Update\" />
+    <Folder Include="Features\Tags\Dtos\Create\" />
+    <Folder Include="Features\Tags\Dtos\Delete\" />
+    <Folder Include="Features\Tags\Dtos\GetList\" />
+    <Folder Include="Features\Tags\Dtos\Update\" />
   </ItemGroup>
 
 </Project>

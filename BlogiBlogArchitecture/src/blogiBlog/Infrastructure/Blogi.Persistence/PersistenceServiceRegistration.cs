@@ -1,4 +1,6 @@
-﻿namespace Blogi.Persistence
+﻿using Blogi.Persistence.Repositories.TagRepository;
+
+namespace Blogi.Persistence
 {
     public static class PersistenceServiceRegistration
     {
@@ -14,12 +16,15 @@
 
 
             // Repositories
+            services.AddScoped<ITagReadRepository, TagReadRepository>();
+            services.AddScoped<ITagWriteRepository, TagWriteRepository>();
             services.AddScoped<ILanguageReadRepository, LanguageReadRepository>();
             services.AddScoped<ILanguageWriteRepository, LanguageWriteRepository>();
-            services.AddScoped<IStringResourceReadRepository, StringResourceReadRepository>();
-            services.AddScoped<IStringResourceWriteRepository, StringResourceWriteRepository>();
             services.AddScoped<IMailSettingReadRepository, MailSettingReadRepository>();
             services.AddScoped<IMailSettingWriteRepository, MailSettingWriteRepository>();
+            services.AddScoped<IStringResourceReadRepository, StringResourceReadRepository>();
+            services.AddScoped<IStringResourceWriteRepository, StringResourceWriteRepository>();
+
 
 
             return services;
