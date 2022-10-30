@@ -1,5 +1,5 @@
-# (Blogi Blog) - Onion Architecture In Asp.net Core MVC With CQRS
-
+# Blogi Blog Open Source Multi Language Blog Project
+An Open-Source multi language blogging platform built with Onion Architecture In Asp.net Core MVC With CQRS.
 
 ## Used Technologies
 <ul>
