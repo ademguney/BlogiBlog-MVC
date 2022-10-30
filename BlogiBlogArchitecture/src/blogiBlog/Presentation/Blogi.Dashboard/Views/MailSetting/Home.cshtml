@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Mail Setting";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
@@ -48,7 +47,8 @@
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Password</label>
                     <div class="col-sm-8">
-                        <input asp-for="Password" type="text" class="form-control" required>
+                        <input type="checkbox" onclick="passShowHide()"> Show Password
+                        <input asp-for="Password" type="password" class="form-control" id="passInput" value="@Model.Password" required>
                         <span class="text-danger" asp-validation-for="Password"></span>
                     </div>
                 </div>
@@ -80,3 +80,14 @@
         </div>
     </div>
 </div>
+
+
+@section scripts {
+<script>
+    function passShowHide(){       
+      const type = passInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passInput.setAttribute('type', type);
+
+    }
+</script>
+}
