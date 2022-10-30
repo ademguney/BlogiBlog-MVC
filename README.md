@@ -1,3 +1,7 @@
+<p align="center">
+<img src="https://raw.githubusercontent.com/ademguney/BlogiBlog-MVC/main/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/wwwroot/favicon.png" width="200" alt="blogiblog">
+</p>
+
 # Blogi Blog Open Source Multi Language Blog Project
 An Open-Source multi language blogging platform built with Onion Architecture In Asp.net Core MVC With CQRS.
 
@@ -17,3 +21,7 @@ An Open-Source multi language blogging platform built with Onion Architecture In
 
 ## Give a Star!:star:
 If you like or are using this project to learn or start your solution, please give it a star. Thanks!
+
+## License
+
+This blog is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
