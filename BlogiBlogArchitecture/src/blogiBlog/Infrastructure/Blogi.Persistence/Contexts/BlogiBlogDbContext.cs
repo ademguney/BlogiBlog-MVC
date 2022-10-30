@@ -9,9 +9,10 @@
             Configuration = configuration;
         }
 
+        public DbSet<Tag> Tags { get; set; }
         public DbSet<Language> Languages { get; set; }
-        public DbSet<StringResource> StringResources { get; set; }
         public DbSet<MailSetting> MailSettings { get; set; }
+        public DbSet<StringResource> StringResources { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
