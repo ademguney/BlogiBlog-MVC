@@ -5,13 +5,13 @@ An Open-Source multi language blogging platform built with Onion Architecture In
 <ul>
   
   <li>CQRS</li>
-  <li>MediatR</li>     
+  <li>MediatR version="11.0.0"</li>     
   <li>SOLID</li>
   <li>Repository Pattern</li>
-  <li>AutoMapper</li>
-  <li>FluentValidation</li>
+  <li>AutoMapper version="12.0.0"</li>
+  <li>FluentValidation version="11.2.2"</li>
   <li>.NET CORE 6</li>
-  <li>EntityFrameworkCore</li>
+  <li>EntityFrameworkCore version="6.0.10"</li>
   <li>Asp.net Core MVC</li>  
 </ul>
 
