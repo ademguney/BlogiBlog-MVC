@@ -1,8 +1,8 @@
-﻿using Blogi.Application.Features.StringResources.Dtos.Update;
+﻿using Blogi.Application.Features.StringResources.Dtos.Get;
 
 namespace Blogi.Application.Features.StringResources.Commands.Update
 {
-    public class UpdateStringResourceCommand : IRequest<BaseCommandResponse<UpdateStringResourceOutput>>
+    public class UpdateStringResourceCommand : IRequest<BaseCommandResponse<GetStringResourceOutput>>
     {
         public int Id { get; set; }
         public int LanguageId { get; set; }

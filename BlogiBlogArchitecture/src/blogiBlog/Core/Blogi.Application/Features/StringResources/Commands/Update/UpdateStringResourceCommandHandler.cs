@@ -1,8 +1,8 @@
-﻿using Blogi.Application.Features.StringResources.Dtos.Update;
+﻿using Blogi.Application.Features.StringResources.Dtos.Get;
 
 namespace Blogi.Application.Features.StringResources.Commands.Update
 {
-    public class UpdateStringResourceCommandHandler : IRequestHandler<UpdateStringResourceCommand, BaseCommandResponse<UpdateStringResourceOutput>>
+    public class UpdateStringResourceCommandHandler : IRequestHandler<UpdateStringResourceCommand, BaseCommandResponse<GetStringResourceOutput>>
     {
         private readonly IMapper _mapper;
         private readonly IStringResourceWriteRepository _stringResourceWriteRepository;
@@ -13,9 +13,9 @@ namespace Blogi.Application.Features.StringResources.Commands.Update
             _stringResourceWriteRepository = stringResourceWriteRepository;
         }
 
-        public async Task<BaseCommandResponse<UpdateStringResourceOutput>> Handle(UpdateStringResourceCommand request, CancellationToken cancellationToken)
+        public async Task<BaseCommandResponse<GetStringResourceOutput>> Handle(UpdateStringResourceCommand request, CancellationToken cancellationToken)
         {
-            var response = new BaseCommandResponse<UpdateStringResourceOutput>();
+            var response = new BaseCommandResponse<GetStringResourceOutput>();
             var validator = new UpdateStringResourceCommandHandlerValidator();
             var validatorResult = await validator.ValidateAsync(request, cancellationToken);
 
@@ -32,7 +32,7 @@ namespace Blogi.Application.Features.StringResources.Commands.Update
 
                 var stringResourceMapp = _mapper.Map<StringResource>(request);
                 var result = await _stringResourceWriteRepository.UpdateAsync(stringResourceMapp);
-                var resultMapp = _mapper.Map<UpdateStringResourceOutput>(result);
+                var resultMapp = _mapper.Map<GetStringResourceOutput>(result);
 
                 response.Id = resultMapp.Id;
                 response.Data = resultMapp;

@@ -5,7 +5,6 @@ using Blogi.Application.Features.StringResources.Dtos.Create;
 using Blogi.Application.Features.StringResources.Dtos.Delete;
 using Blogi.Application.Features.StringResources.Dtos.Get;
 using Blogi.Application.Features.StringResources.Dtos.GitList;
-using Blogi.Application.Features.StringResources.Dtos.Update;
 
 namespace Blogi.Application.Features.StringResources.Profiles
 {
@@ -22,7 +21,7 @@ namespace Blogi.Application.Features.StringResources.Profiles
             CreateMap<StringResource, DeleteStringResourceOutput>().ReverseMap();
             CreateMap<StringResource, DeleteStringResourceCommand>().ReverseMap();
 
-            CreateMap<StringResource, UpdateStringResourceOutput>().ReverseMap();
+           
             CreateMap<StringResource, UpdateStringResourceCommand>().ReverseMap();
         }
     }
