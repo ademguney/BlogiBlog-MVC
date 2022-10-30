@@ -1,6 +1,8 @@
 <p align="center">
 <img src="https://raw.githubusercontent.com/ademguney/BlogiBlog-MVC/main/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/wwwroot/favicon.png" width="200" alt="blogiblog">
 </p>
+<hr>
+
 
 # Blogi Blog Open Source Multi Language Blog Project
 An Open-Source multi language blogging platform built with Onion Architecture In Asp.net Core MVC With CQRS.
