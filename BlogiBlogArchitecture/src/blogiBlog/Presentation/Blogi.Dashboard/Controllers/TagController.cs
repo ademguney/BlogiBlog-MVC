@@ -34,8 +34,6 @@ namespace Blogi.Dashboard.Controllers
         public async Task<IActionResult> Create(TagCreateViewModel input)
         {
             var result = await Mediator.Send(input.TagCommand);
-            var model = new TagCreateViewModel();
-
             if (result.Success)
             {
                 NotifySuccess(result.Message);
@@ -44,8 +42,11 @@ namespace Blogi.Dashboard.Controllers
             else
             {
                 var languageList = await Mediator.Send(new GetListLanguageQuery());
-                model.LanguageList = languageList.Data;
-                model.TagCommand = input.TagCommand;
+                var model = new TagCreateViewModel
+                {
+                    LanguageList = languageList.Data,
+                    TagCommand = input.TagCommand
+                };
 
                 NotifyError(result.Errors);
                 return View(model);

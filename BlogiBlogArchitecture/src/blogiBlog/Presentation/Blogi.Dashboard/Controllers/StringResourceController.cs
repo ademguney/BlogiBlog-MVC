@@ -32,7 +32,7 @@ namespace Blogi.Dashboard.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(StringResourceCreateViewModel input)
         {
-            var result = await Mediator.Send(input.StringResourceCommand);
+            var result = await Mediator.Send(input.StringResourceCommand);          
             if (result.Success)
             {
                 NotifySuccess(result.Message);

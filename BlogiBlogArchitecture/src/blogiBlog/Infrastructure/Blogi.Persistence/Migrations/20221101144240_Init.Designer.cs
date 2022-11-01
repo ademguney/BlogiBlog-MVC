@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blogi.Persistence.Migrations
 {
     [DbContext(typeof(BlogiBlogDbContext))]
-    [Migration("20221101132048_Init")]
+    [Migration("20221101144240_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,6 +22,72 @@ namespace Blogi.Persistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("Blogi.Domain.Entities.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("LanguageId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(225)
+                        .HasColumnType("nvarchar(225)");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LanguageId");
+
+                    b.ToTable("Categories", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "asp.net core mvc",
+                            LanguageId = 1,
+                            Name = ".Net Core",
+                            Slug = "net-core"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "asp.net core mvc",
+                            LanguageId = 2,
+                            Name = ".Net Core",
+                            Slug = "net-core"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "solid principles",
+                            LanguageId = 1,
+                            Name = "Design Pattern",
+                            Slug = "design-pattern"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "solid principles",
+                            LanguageId = 2,
+                            Name = "Design Pattern",
+                            Slug = "design-pattern"
+                        });
+                });
 
             modelBuilder.Entity("Blogi.Domain.Entities.Language", b =>
                 {
@@ -107,7 +173,7 @@ namespace Blogi.Persistence.Migrations
                             Email = "blogi_blog@gmail.com",
                             FullName = "BlogiBlog",
                             Host = "smtp.gmail.com",
-                            Password = "69uWlKOKMmaRsiCn+cNEbWCk+9WX7n+3cMscCZL3dPAcSipNFwmjYlf7MOrGXTbG",
+                            Password = "EHPjrx047JJP7qSKThZ3v1vC1t+rxCsoqHj8M12uPXf6MxMTmNWJhqUZpICrKkKJ",
                             Port = 587,
                             SslEnabled = false,
                             UseDefaultCredentials = false
@@ -343,6 +409,17 @@ namespace Blogi.Persistence.Migrations
                             LanguageId = 1,
                             Name = "Design Pattern"
                         });
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.Category", b =>
+                {
+                    b.HasOne("Blogi.Domain.Entities.Language", "Languages")
+                        .WithMany()
+                        .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Languages");
                 });
 
             modelBuilder.Entity("Blogi.Domain.Entities.StringResource", b =>

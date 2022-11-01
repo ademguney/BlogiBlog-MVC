@@ -7,6 +7,7 @@
             builder.ToTable("Tags");
             builder.Property(u => u.LanguageId).IsRequired(true);
             builder.Property(u => u.Name).IsRequired(true).HasMaxLength(225);
+            builder.HasOne(u => u.Languages);
 
             builder.HasData(
                 new Tag { Id = 1, LanguageId = 2, Name = "C#" },

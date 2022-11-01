@@ -42,6 +42,28 @@ namespace Blogi.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Categories",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    LanguageId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(225)", maxLength: 225, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    Slug = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Categories", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Categories_Languages_LanguageId",
+                        column: x => x.LanguageId,
+                        principalTable: "Languages",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "StringResources",
                 columns: table => new
                 {
@@ -95,7 +117,18 @@ namespace Blogi.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "MailConfigs",
                 columns: new[] { "Id", "Email", "FullName", "Host", "Password", "Port", "SslEnabled", "UseDefaultCredentials" },
-                values: new object[] { 1, "blogi_blog@gmail.com", "BlogiBlog", "smtp.gmail.com", "69uWlKOKMmaRsiCn+cNEbWCk+9WX7n+3cMscCZL3dPAcSipNFwmjYlf7MOrGXTbG", 587, false, false });
+                values: new object[] { 1, "blogi_blog@gmail.com", "BlogiBlog", "smtp.gmail.com", "EHPjrx047JJP7qSKThZ3v1vC1t+rxCsoqHj8M12uPXf6MxMTmNWJhqUZpICrKkKJ", 587, false, false });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Description", "LanguageId", "Name", "Slug" },
+                values: new object[,]
+                {
+                    { 1, "asp.net core mvc", 1, ".Net Core", "net-core" },
+                    { 2, "asp.net core mvc", 2, ".Net Core", "net-core" },
+                    { 3, "solid principles", 1, "Design Pattern", "design-pattern" },
+                    { 4, "solid principles", 2, "Design Pattern", "design-pattern" }
+                });
 
             migrationBuilder.InsertData(
                 table: "StringResources",
@@ -140,6 +173,11 @@ namespace Blogi.Persistence.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Categories_LanguageId",
+                table: "Categories",
+                column: "LanguageId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_StringResources_LanguageId",
                 table: "StringResources",
                 column: "LanguageId");
@@ -152,6 +190,9 @@ namespace Blogi.Persistence.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Categories");
+
             migrationBuilder.DropTable(
                 name: "MailConfigs");
 

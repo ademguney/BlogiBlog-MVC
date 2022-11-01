@@ -8,7 +8,6 @@ namespace Blogi.Domain.Entities
 
         public StringResource(int id, int languageId, string key, string value, Language languages) : base(id)
         {
-            Id = id;
             LanguageId = languageId;
             Key = key;
             Value = value;

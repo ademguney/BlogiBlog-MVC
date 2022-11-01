@@ -6,9 +6,8 @@ namespace Blogi.Domain.Entities
     {
         public Tag() { }
 
-        public Tag(int id, int languageId, string name, Language languages)
-        {
-            Id = id;
+        public Tag(int id, int languageId, string name, Language languages) : base(id)
+        {           
             LanguageId = languageId;
             Name = name;
             Languages = languages;
