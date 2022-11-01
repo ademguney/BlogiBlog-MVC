@@ -13,6 +13,17 @@
         <!-- Start XP Navigationbar -->
         <div class="xp-navigationbar">
             <ul class="xp-vertical-menu">
+                <li class="xp-vertical-header"><i class="dripicons-article"></i> Blog</li>
+                 <li>
+                    <a href="javaScript:void();">
+                        <i class="ion-md-list"></i><span>Tag</span><i class="icon-arrow-right pull-right"></i>
+                    </a>
+                    <ul class="xp-vertical-submenu">
+                        <li><a asp-controller="Tag" asp-action="Home">List</a></li>
+                        <li><a asp-controller="Tag" asp-action="Create">Create</a></li>
+                    </ul>
+                </li>
+
                 <li class="xp-vertical-header"><i class="icon-settings"></i> System Configuration</li>
                 <li>
                     <a href="javaScript:void();">

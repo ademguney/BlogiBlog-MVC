@@ -1,7 +1,9 @@
-﻿@{
-    ViewData["Title"] = "Language Home";
+﻿
+@{
+    ViewData["Title"] = "Tag List";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
  <partial name="_breadCrumb" />
 
 <div class="row">
@@ -9,19 +11,18 @@
         <div class="card m-b-30">
             <div class="card-header bg-secondary" style="color:white">
                 <ul class="list-inline mb-0">
-                    <li class="list-inline-item">  <i class='ion ion-ios-information-circle'></i> Language List</li>
+                    <li class="list-inline-item">  <i class='ion ion-ios-information-circle'></i> Tag List</li>
                     <li class="list-inline-item float-right">
-                        <a asp-controller="Language" asp-action="Create" class="btn btn-rounded btn-success">Create New Language <i class="mdi mdi-plus ml-2"></i></a>
+                        <a asp-controller="Tag" asp-action="Create" class="btn btn-rounded btn-success">Create New Tag <i class="mdi mdi-plus ml-2"></i></a>
                     </li>
                 </ul>
             </div>
             <div class="card-body">
                 <div class="table-responsive m-b-30">
-                    <table class="table table-hover" id="languageTable">
+                    <table class="table table-hover" id="tagTable">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Culture</th>
+                                <th>Name</th>                               
                                 <th>Update</th>
                                 <th>Delete</th>
 
@@ -36,5 +37,6 @@
 </div>
 
 @section scripts {
-<script src="~/js/views/language/home.js" asp-append-version="true"></script>
+<script src="~/js/views/tag/home.js" asp-append-version="true"></script>
 }
+

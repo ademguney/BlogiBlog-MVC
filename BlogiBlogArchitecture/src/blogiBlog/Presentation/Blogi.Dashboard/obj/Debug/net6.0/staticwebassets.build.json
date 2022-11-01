@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "glazVSOKw8S8IzXPzk6YEHnV/q5enLHc5Le9uH32hzc=",
+  "Hash": "kHCop/LPA4vZ9TziX0aMWTSQyZ0XGc/ThwsaFnWHs3o=",
   "Source": "Blogi.Dashboard",
   "BasePath": "_content/Blogi.Dashboard",
   "Mode": "Default",
@@ -32910,6 +32910,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\views\\stringResource\\home.js"
+    },
+    {
+      "Identity": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\wwwroot\\js\\views\\tag\\home.js",
+      "SourceId": "Blogi.Dashboard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\wwwroot\\",
+      "BasePath": "_content/Blogi.Dashboard",
+      "RelativePath": "js/views/tag/home.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\views\\tag\\home.js"
     },
     {
       "Identity": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\wwwroot\\summernote\\font\\summernote.eot",
