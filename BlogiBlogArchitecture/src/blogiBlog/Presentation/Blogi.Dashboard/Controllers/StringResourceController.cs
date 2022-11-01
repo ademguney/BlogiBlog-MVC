@@ -64,13 +64,19 @@ namespace Blogi.Dashboard.Controllers
         {
             var result = await Mediator.Send(input);
             var languageList = await Mediator.Send(new GetListLanguageQuery());
+            var model = new StringResourceEditViewModel();
 
-            var model = new StringResourceEditViewModel
+            if (result.Success)
             {
-                StringResource = result.Data,
-                LanguageList = languageList.Data
-            };
-            return View(model);
+                model.StringResource = result.Data;
+                model.LanguageList = languageList.Data;
+                return View(model);
+            }
+            else
+            {
+                NotifyError(result.Errors);
+                return View(model);
+            }
         }
 
         [HttpPost, ValidateAntiForgeryToken]

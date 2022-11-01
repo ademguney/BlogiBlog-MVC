@@ -5,11 +5,13 @@ namespace Blogi.Application.Features.Tags.Queries.Get
     public class GetTagQueryHandler : IRequestHandler<GetTagQuery, BaseCommandResponse<GetTagOutput>>
     {
         private readonly IMapper _mapper;
+        private readonly ITagService _tagService;
         private readonly ITagReadRepository _tagReadRepository;
 
-        public GetTagQueryHandler(IMapper mapper, ITagReadRepository tagReadRepository)
+        public GetTagQueryHandler(IMapper mapper, ITagService tagService, ITagReadRepository tagReadRepository)
         {
             _mapper = mapper;
+            _tagService = tagService;
             _tagReadRepository = tagReadRepository;
         }
 
@@ -28,7 +30,7 @@ namespace Blogi.Application.Features.Tags.Queries.Get
             }
             else
             {
-                var result = await _tagReadRepository.GetAsync(x => x.Id == request.Id);
+                var result = await _tagService.GetAsync(request.Id);
                 var resultMapp = _mapper.Map<GetTagOutput>(result);
 
                 response.Id = resultMapp.Id;

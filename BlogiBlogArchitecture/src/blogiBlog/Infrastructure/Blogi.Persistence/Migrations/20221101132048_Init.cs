@@ -62,6 +62,26 @@ namespace Blogi.Persistence.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Tags",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    LanguageId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(225)", maxLength: 225, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tags", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Tags_Languages_LanguageId",
+                        column: x => x.LanguageId,
+                        principalTable: "Languages",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "Languages",
                 columns: new[] { "Id", "Culture", "Name" },
@@ -75,7 +95,7 @@ namespace Blogi.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "MailConfigs",
                 columns: new[] { "Id", "Email", "FullName", "Host", "Password", "Port", "SslEnabled", "UseDefaultCredentials" },
-                values: new object[] { 1, "blogi_blog@gmail.com", "BlogiBlog", "smtp.gmail.com", "Zci5rfPjWMrks1rK4ECRsvrRCYUZnTSCVxsQtK+QaAXgRmUQmZFBB0SlPi5GKOlW", 587, false, false });
+                values: new object[] { 1, "blogi_blog@gmail.com", "BlogiBlog", "smtp.gmail.com", "69uWlKOKMmaRsiCn+cNEbWCk+9WX7n+3cMscCZL3dPAcSipNFwmjYlf7MOrGXTbG", 587, false, false });
 
             migrationBuilder.InsertData(
                 table: "StringResources",
@@ -92,9 +112,41 @@ namespace Blogi.Persistence.Migrations
                     { 8, "page_language_label_list", 2, "Language list..." }
                 });
 
+            migrationBuilder.InsertData(
+                table: "Tags",
+                columns: new[] { "Id", "LanguageId", "Name" },
+                values: new object[,]
+                {
+                    { 1, 2, "C#" },
+                    { 2, 2, "Csharp" },
+                    { 3, 2, "SQL" },
+                    { 4, 2, "JavaScript" },
+                    { 5, 2, "Html" },
+                    { 6, 2, "Css" },
+                    { 7, 2, "Vue" },
+                    { 8, 2, "Angular" },
+                    { 9, 2, "React" },
+                    { 10, 2, "Design Pattern" },
+                    { 11, 1, "C#" },
+                    { 12, 1, "Csharp" },
+                    { 13, 1, "SQL" },
+                    { 14, 1, "JavaScript" },
+                    { 15, 1, "Html" },
+                    { 16, 1, "Css" },
+                    { 17, 1, "Vue" },
+                    { 18, 1, "Angular" },
+                    { 19, 1, "React" },
+                    { 20, 1, "Design Pattern" }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_StringResources_LanguageId",
                 table: "StringResources",
+                column: "LanguageId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Tags_LanguageId",
+                table: "Tags",
                 column: "LanguageId");
         }
 
@@ -105,6 +157,9 @@ namespace Blogi.Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "StringResources");
+
+            migrationBuilder.DropTable(
+                name: "Tags");
 
             migrationBuilder.DropTable(
                 name: "Languages");

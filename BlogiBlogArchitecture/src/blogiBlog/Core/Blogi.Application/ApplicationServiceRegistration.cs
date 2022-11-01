@@ -1,4 +1,6 @@
-﻿namespace Blogi.Application
+﻿using Blogi.Application.Services.TagService;
+
+namespace Blogi.Application
 {
     public static class ApplicationServiceRegistration
     {
@@ -10,6 +12,8 @@
 
             // Services
             services.AddScoped<IStringResourceService, StringResourceService>();
+            services.AddScoped<ITagService, TagService>();
+
             return services;
         }
     }

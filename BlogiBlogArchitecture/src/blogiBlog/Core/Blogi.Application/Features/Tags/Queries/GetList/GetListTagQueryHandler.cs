@@ -1,22 +1,23 @@
 ﻿using Blogi.Application.Features.Tags.Dtos.Get;
 
+
 namespace Blogi.Application.Features.Tags.Queries.GetList
 {
     public class GetListTagQueryHandler : IRequestHandler<GetListTagQuery, BaseCommandResponse<List<GetTagOutput>>>
     {
         private readonly IMapper _mapper;
-        private readonly ITagReadRepository _tagReadRepository;
+        private readonly ITagService _tagService;
 
-        public GetListTagQueryHandler(IMapper mapper, ITagReadRepository tagReadRepository)
+        public GetListTagQueryHandler(IMapper mapper, ITagService tagService)
         {
             _mapper = mapper;
-            _tagReadRepository = tagReadRepository;
+            _tagService = tagService;
         }
 
         public async Task<BaseCommandResponse<List<GetTagOutput>>> Handle(GetListTagQuery request, CancellationToken cancellationToken)
         {
             var response= new BaseCommandResponse<List<GetTagOutput>>();
-            var result = await _tagReadRepository.GetListAsync();
+            var result = await _tagService.GetListAsync();
 
             if (!result.Any())
             {

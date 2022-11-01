@@ -105,7 +105,7 @@ namespace Blogi.Persistence.Migrations
                             Email = "blogi_blog@gmail.com",
                             FullName = "BlogiBlog",
                             Host = "smtp.gmail.com",
-                            Password = "edH3YTav2q/sjbIGo8yirB8H1+FPjzdjqW+6hW+ZWUjWTDPjzlco8GDOreEJp6K9",
+                            Password = "69uWlKOKMmaRsiCn+cNEbWCk+9WX7n+3cMscCZL3dPAcSipNFwmjYlf7MOrGXTbG",
                             Port = 587,
                             SslEnabled = false,
                             UseDefaultCredentials = false
@@ -206,6 +206,9 @@ namespace Blogi.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("LanguageId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(225)
@@ -213,57 +216,129 @@ namespace Blogi.Persistence.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("LanguageId");
+
                     b.ToTable("Tags", (string)null);
 
                     b.HasData(
                         new
                         {
                             Id = 1,
+                            LanguageId = 2,
                             Name = "C#"
                         },
                         new
                         {
                             Id = 2,
+                            LanguageId = 2,
                             Name = "Csharp"
                         },
                         new
                         {
                             Id = 3,
+                            LanguageId = 2,
                             Name = "SQL"
                         },
                         new
                         {
                             Id = 4,
+                            LanguageId = 2,
                             Name = "JavaScript"
                         },
                         new
                         {
                             Id = 5,
+                            LanguageId = 2,
                             Name = "Html"
                         },
                         new
                         {
                             Id = 6,
+                            LanguageId = 2,
                             Name = "Css"
                         },
                         new
                         {
                             Id = 7,
+                            LanguageId = 2,
                             Name = "Vue"
                         },
                         new
                         {
                             Id = 8,
+                            LanguageId = 2,
                             Name = "Angular"
                         },
                         new
                         {
                             Id = 9,
+                            LanguageId = 2,
                             Name = "React"
                         },
                         new
                         {
                             Id = 10,
+                            LanguageId = 2,
+                            Name = "Design Pattern"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            LanguageId = 1,
+                            Name = "C#"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            LanguageId = 1,
+                            Name = "Csharp"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            LanguageId = 1,
+                            Name = "SQL"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            LanguageId = 1,
+                            Name = "JavaScript"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            LanguageId = 1,
+                            Name = "Html"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            LanguageId = 1,
+                            Name = "Css"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            LanguageId = 1,
+                            Name = "Vue"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            LanguageId = 1,
+                            Name = "Angular"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            LanguageId = 1,
+                            Name = "React"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            LanguageId = 1,
                             Name = "Design Pattern"
                         });
                 });
@@ -272,6 +347,17 @@ namespace Blogi.Persistence.Migrations
                 {
                     b.HasOne("Blogi.Domain.Entities.Language", "Languages")
                         .WithMany("StringResources")
+                        .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Languages");
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.Tag", b =>
+                {
+                    b.HasOne("Blogi.Domain.Entities.Language", "Languages")
+                        .WithMany()
                         .HasForeignKey("LanguageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

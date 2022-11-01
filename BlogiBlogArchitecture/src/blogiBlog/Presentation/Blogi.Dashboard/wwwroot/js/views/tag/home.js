@@ -15,7 +15,9 @@
             'copy', 'csv', 'excel', 'pdf', 'print'
         ],
         "columns": [
-
+            {
+                "data": "languageName", "autoWidth": true
+            },
             {
                 "data": "name", "autoWidth": true
             },            

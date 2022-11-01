@@ -1,4 +1,4 @@
-﻿@model Blogi.Application.Features.Tags.Dtos.Get.GetTagOutput
+﻿@model Blogi.Dashboard.Models.TagEditViewModel
 @{
     ViewData["Title"] = "Tag Edit";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -36,15 +36,30 @@
         <div class="card">
             <div class="card-body">
                 <form asp-controller="Tag" asp-action="Edit" method="post">
-                     <input type="hidden" asp-for="Id" name="Id" />
+                     <input type="hidden" asp-for="Tag.Id" name="Tag.Id" />
                     @Html.AntiForgeryToken()
                     <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
                     
+                     <fieldset class="form-group">
+                        <div class="row">
+                            <div class="col-form-label col-sm-4 pt-0">Language</div>
+                            <div class="col-sm-8">
+                                <select asp-for="Tag.LanguageId" class="form-control" required>
+                                    <option selected="selected" value="0">Select Language</option>
+                                    @foreach (var item in Model.LanguageList)
+                                    {
+                                        <option value="@item.Id">@item.Name</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" asp-for="Name" required>
-                            <span class="text-danger" asp-validation-for="Name"></span>
+                            <input type="text" class="form-control" asp-for="Tag.Name" required>
+                            <span class="text-danger" asp-validation-for="Tag.Name"></span>
                         </div>
                     </div>
 

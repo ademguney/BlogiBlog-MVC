@@ -9,3 +9,4 @@ C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibra
 C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\Core.Infrastructure.dll
 C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\ref\Core.Infrastructure.dll
 C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\Core.Infrastructure.pdb
+C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\Core.Infrastructure.csproj.AssemblyReference.cache

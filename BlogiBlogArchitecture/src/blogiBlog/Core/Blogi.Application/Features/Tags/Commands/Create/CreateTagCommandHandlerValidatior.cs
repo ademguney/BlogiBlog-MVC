@@ -8,6 +8,10 @@
         {
             _tagReadRepository = tagReadRepository;
 
+            RuleFor(x => x.LanguageId)                
+                .NotEmpty()
+                .NotNull();
+
             RuleFor(x => x.Name)
                 .MaximumLength(255)
                 .NotEmpty()
