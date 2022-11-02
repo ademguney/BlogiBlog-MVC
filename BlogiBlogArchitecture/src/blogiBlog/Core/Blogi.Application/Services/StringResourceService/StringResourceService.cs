@@ -26,18 +26,17 @@ namespace Blogi.Application.Services.StringResourceService
             }).FirstOrDefaultAsync();
         }
 
-        public List<GetListStringResourceOutput> GetList()
+        public async Task<List<GetListStringResourceOutput>> GetListAsync()
         {
-            var result = _stringResourceReadRepository.GetAll().Include(x => x.Languages);
-            var query = result.Select(x => new GetListStringResourceOutput
+            return await _stringResourceReadRepository.GetAll().Include(x => x.Languages).Select(x => new GetListStringResourceOutput
             {
                 Id = x.Id,
                 LanguageId = x.LanguageId,
-                Language = x.Languages.Name,
                 Key = x.Key,
-                Value = x.Value
-            }).ToList();
-            return query;
+                Value = x.Value,
+                Language = x.Languages.Name
+
+            }).ToListAsync();
         }
     }
 }

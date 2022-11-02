@@ -25,15 +25,13 @@ namespace Blogi.Application.Services.TagService
 
         public async Task<List<GetTagOutput>> GetListAsync()
         {
-            var result = _tagReadRepository.GetAll().Include(x => x.Languages);
-            var query = result.Select(x => new GetTagOutput
+            return await _tagReadRepository.GetAll().Include(x => x.Languages).Select(x => new GetTagOutput
             {
                 Id = x.Id,
                 LanguageId = x.Languages.Id,
                 LanguageName = x.Languages.Name,
                 Name = x.Name
             }).ToListAsync();
-            return await query;
         }
     }
 }

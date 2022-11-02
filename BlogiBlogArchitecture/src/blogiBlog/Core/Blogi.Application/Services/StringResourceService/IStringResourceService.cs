@@ -6,6 +6,6 @@ namespace Blogi.Application.Services.StringResourceService
     public interface IStringResourceService
     {
         Task<GetStringResourceOutput> GetAsync(int id);
-        List<GetListStringResourceOutput> GetList();
+        Task<List<GetListStringResourceOutput>> GetListAsync();
     }
 }
