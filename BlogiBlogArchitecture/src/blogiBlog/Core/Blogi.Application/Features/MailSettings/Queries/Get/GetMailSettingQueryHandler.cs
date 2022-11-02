@@ -1,5 +1,6 @@
 ﻿using Blogi.Application.Features.MailSettings.Dtos.Get;
 using Core.Application.Security.Hashing;
+using Microsoft.EntityFrameworkCore;
 
 namespace Blogi.Application.Features.MailSettings.Queries.Get
 {
@@ -14,11 +15,11 @@ namespace Blogi.Application.Features.MailSettings.Queries.Get
             _mailSettingReadRepository = mailSettingReadRepository;
         }
 
-        public Task<BaseCommandResponse<GetMailSettingOutput>> Handle(GetMailSettingQuery request, CancellationToken cancellationToken)
+        public async Task<BaseCommandResponse<GetMailSettingOutput>> Handle(GetMailSettingQuery request, CancellationToken cancellationToken)
         {
             var response = new BaseCommandResponse<GetMailSettingOutput>();
 
-            var result = _mailSettingReadRepository.GetAll().FirstOrDefault();
+            var result =await _mailSettingReadRepository.GetAll().FirstOrDefaultAsync();
             result.Password = EnDecode.Decrypt(result.Password, StaticParams.PasswordParams);
 
             var resultMapp = _mapper.Map<GetMailSettingOutput>(result);
@@ -28,7 +29,7 @@ namespace Blogi.Application.Features.MailSettings.Queries.Get
             response.Message = MailSettingMessages.GetByIdExists;
             response.Errors = null;
 
-            return Task.FromResult(response);
+            return response;
         }
     }
 }

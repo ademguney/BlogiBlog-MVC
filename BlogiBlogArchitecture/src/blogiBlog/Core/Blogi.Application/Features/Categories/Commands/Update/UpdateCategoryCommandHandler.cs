@@ -1,14 +1,14 @@
 ﻿using Blogi.Application.Features.Categories.Dtos.Get;
 
-namespace Blogi.Application.Features.Categories.Commands.Delete
+namespace Blogi.Application.Features.Categories.Commands.Update
 {
-    public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryCommand, BaseCommandResponse<GetCategoryOutput>>
+    public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryCommand, BaseCommandResponse<GetCategoryOutput>>
     {
         private readonly IMapper _mapper;
         private readonly ICategoryReadRepository _categoryReadRepository;
         private readonly ICategoryWriteRepository _categoryWriteRepository;
 
-        public DeleteCategoryCommandHandler(
+        public UpdateCategoryCommandHandler(
             IMapper mapper,
             ICategoryReadRepository categoryReadRepository,
             ICategoryWriteRepository categoryWriteRepository
@@ -19,10 +19,10 @@ namespace Blogi.Application.Features.Categories.Commands.Delete
             _categoryWriteRepository = categoryWriteRepository;
         }
 
-        public async Task<BaseCommandResponse<GetCategoryOutput>> Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
+        public async Task<BaseCommandResponse<GetCategoryOutput>> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
         {
             var response = new BaseCommandResponse<GetCategoryOutput>();
-            var validator = new DeleteCategoryCommandHandlerValidatior(_categoryReadRepository);
+            var validator = new UpdateCategoryCommandHandlerValidatior(_categoryReadRepository);
             var validatorResult = await validator.ValidateAsync(request, cancellationToken);
 
             if (!validatorResult.IsValid)
@@ -31,16 +31,19 @@ namespace Blogi.Application.Features.Categories.Commands.Delete
                 response.Success = false;
                 response.Message = null;
                 response.Errors = validatorResult.Errors.Select(e => e.ErrorMessage).ToList();
+
             }
             else
             {
-                var categoryMapp = _mapper.Map<Category>(request);
-                var result = await _categoryWriteRepository.DeleteAsync(categoryMapp);
 
-                response.Id = result.Id;
-                response.Data = null;
+                var categoryMapp = _mapper.Map<Category>(request);
+                var result = await _categoryWriteRepository.UpdateAsync(categoryMapp);
+                var resultMapp = _mapper.Map<GetCategoryOutput>(result);
+
+                response.Id = resultMapp.Id;
+                response.Data = resultMapp;
                 response.Success = true;
-                response.Message = CategoryMessages.DeletedSuccess;
+                response.Message = CategoryMessages.UpdatedSuccess;
                 response.Errors = null;
             }
             return response;

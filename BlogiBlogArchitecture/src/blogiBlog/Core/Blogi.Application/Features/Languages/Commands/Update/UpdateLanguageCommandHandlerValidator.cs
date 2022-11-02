@@ -27,7 +27,7 @@
         }
         private async Task<bool> NameCanNotBeDuplicatedWhenUpdated(UpdateLanguageCommand e, CancellationToken token)
         {
-            var result = await _languageReadRepository.GetAsync(x => x.Name == e.Name);
+            var result = await _languageReadRepository.GetAsync(x => x.Name == e.Name && x.Culture==e.Culture);
             return result == null;
         }
     }

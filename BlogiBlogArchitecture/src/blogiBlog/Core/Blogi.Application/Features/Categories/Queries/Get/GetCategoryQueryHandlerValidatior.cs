@@ -1,6 +1,4 @@
-﻿using Blogi.Application.Repositories.CategoryRepository;
-
-namespace Blogi.Application.Features.Categories.Queries.Get
+﻿namespace Blogi.Application.Features.Categories.Queries.Get
 {
     public class GetCategoryQueryHandlerValidatior : AbstractValidator<GetCategoryQuery>
     {

@@ -15,7 +15,6 @@
                .MustAsync(IdIsNotExists)
                .WithMessage(TagMessages.GetByIdNotExists);
         }
-
         private async Task<bool> IdIsNotExists(GetTagQuery e, CancellationToken token)
         {
             var result = await _tagReadRepository.GetAsync(x => x.Id == e.Id);

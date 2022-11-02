@@ -22,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Categories\Commands\Update\" />
     <Folder Include="Features\Categories\Dtos\Create\" />
     <Folder Include="Features\Categories\Dtos\Delete\" />
     <Folder Include="Features\Categories\Dtos\GetList\" />

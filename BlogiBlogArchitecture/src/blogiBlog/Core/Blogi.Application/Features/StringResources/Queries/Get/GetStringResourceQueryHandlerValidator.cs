@@ -17,7 +17,6 @@
                 .WithMessage(StringResourceMessages.GetByIdNotExists);
 
         }
-
         private async Task<bool> IdIsNotExists(GetStringResourceQuery e, CancellationToken token)
         {
             var result = await _stringResourceReadRepository.GetAsync(x => x.Id == e.Id);
