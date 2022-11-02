@@ -1,0 +1,84 @@
+﻿@model Blogi.Dashboard.Models.CategoryEditViewModel
+@{
+    ViewData["Title"] = "Category Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="xp-breadcrumbbar">
+            <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <h4 class="xp-page-title">
+                        <a asp-controller="Dashboard" asp-action="Home" style="color: #8A98AC"><i class="icon-home"></i> Home</a>
+                    </h4>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="xp-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a asp-controller="Category" asp-action="Home"><i class="icon-home"></i></a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <a asp-controller="Category" asp-action="Home">Back to List</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <form asp-controller="Category" asp-action="Edit" method="post">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                      <input type="hidden" asp-for="Category.Id" name="Category.Id" />
+                    <fieldset class="form-group">
+                        <div class="row">
+                            <div class="col-form-label col-sm-4 pt-0">Language</div>
+                            <div class="col-sm-8">
+                                <select asp-for="Category.LanguageId" class="form-control" required>
+                                    <option selected="selected" value="0">Select Language</option>
+                                    @foreach (var item in Model.LanguageList)
+                                    {
+                                        <option value="@item.Id">@item.Name</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" asp-for="Category.Name" required>
+                            <span class="text-danger" asp-validation-for="Category.Name"></span>
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Description</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" asp-for="Category.Description">
+                            <span class="text-danger" asp-validation-for="Category.Description"></span>
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Slug</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" asp-for="Category.Slug" required>
+                            <span class="text-danger" asp-validation-for="Category.Slug"></span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-block btn-warning"> Update<i class="mdi mdi-plus ml-2"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

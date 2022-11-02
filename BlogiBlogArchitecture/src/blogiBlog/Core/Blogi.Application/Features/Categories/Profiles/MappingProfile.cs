@@ -10,9 +10,9 @@ namespace Blogi.Application.Features.Categories.Profiles
         public MappingProfile()
         {
             CreateMap<Category, GetCategoryOutput>().ReverseMap();
-            CreateMap<Tag, CreateCategoryCommand>().ReverseMap();
-            CreateMap<Tag, DeleteCategoryCommand>().ReverseMap();
-            CreateMap<Tag, UpdateCategoryCommand>().ReverseMap();
+            CreateMap<Category, CreateCategoryCommand>().ReverseMap();
+            CreateMap<Category, DeleteCategoryCommand>().ReverseMap();
+            CreateMap<Category, UpdateCategoryCommand>().ReverseMap();
         }
     }
 }

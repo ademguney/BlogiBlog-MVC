@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kHCop/LPA4vZ9TziX0aMWTSQyZ0XGc/ThwsaFnWHs3o=",
+  "Hash": "A9pIPCV9mbssnBGunAbSCGS2uesGVAAioE23L5HTo4k=",
   "Source": "Blogi.Dashboard",
   "BasePath": "_content/Blogi.Dashboard",
   "Mode": "Default",
@@ -32876,6 +32876,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\wwwroot\\js\\views\\category\\home.js",
+      "SourceId": "Blogi.Dashboard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\wwwroot\\",
+      "BasePath": "_content/Blogi.Dashboard",
+      "RelativePath": "js/views/category/home.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\views\\category\\home.js"
     },
     {
       "Identity": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\wwwroot\\js\\views\\language\\home.js",

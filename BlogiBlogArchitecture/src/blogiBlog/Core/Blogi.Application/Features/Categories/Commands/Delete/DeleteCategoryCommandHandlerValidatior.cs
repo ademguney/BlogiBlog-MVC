@@ -10,7 +10,7 @@
 
             RuleFor(x => x.Id)
                 .NotEmpty()
-                .Null();
+                .NotNull();
 
             RuleFor(x => x)
                 .MustAsync(IdIsNotExists)
