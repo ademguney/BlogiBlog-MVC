@@ -10,6 +10,7 @@
         }
 
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<User> Users { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<MailSetting> MailSettings { get; set; }

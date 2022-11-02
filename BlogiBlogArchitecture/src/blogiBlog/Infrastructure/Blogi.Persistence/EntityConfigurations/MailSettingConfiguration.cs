@@ -22,8 +22,8 @@ namespace Blogi.Persistence.EntityConfigurations
                   Host = "smtp.gmail.com",
                   Port = 587,
                   FullName = "BlogiBlog",
-                  Email = "blogi_blog@gmail.com",
-                  Password = EnDecode.Encrypt("..TEST..", StaticParams.PasswordParams),                  
+                  Email = "blogi@blog.com",
+                  Password = EnDecode.Encrypt("..Test_Pass..", StaticParams.PasswordParams),
                   SslEnabled = false,
                   UseDefaultCredentials = false
               });
