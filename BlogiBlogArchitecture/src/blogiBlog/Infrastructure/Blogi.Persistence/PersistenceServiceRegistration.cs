@@ -1,5 +1,6 @@
 ﻿using Blogi.Persistence.Repositories.CategoryRepository;
 using Blogi.Persistence.Repositories.TagRepository;
+using Blogi.Persistence.Repositories.UserRepository;
 
 namespace Blogi.Persistence
 {
@@ -19,6 +20,8 @@ namespace Blogi.Persistence
             // Repositories
             services.AddScoped<ITagReadRepository, TagReadRepository>();
             services.AddScoped<ITagWriteRepository, TagWriteRepository>();
+            services.AddScoped<IUserReadRepository, UserReadRepository>();
+            services.AddScoped<IUserWriteRepository, UserWriteRepository>();
             services.AddScoped<ICategoryReadRepository, CategoryReadRepository>();
             services.AddScoped<ICategoryWriteRepository, CategoryWriteRepository>();
             services.AddScoped<ILanguageReadRepository, LanguageReadRepository>();
@@ -26,7 +29,7 @@ namespace Blogi.Persistence
             services.AddScoped<IMailSettingReadRepository, MailSettingReadRepository>();
             services.AddScoped<IMailSettingWriteRepository, MailSettingWriteRepository>();
             services.AddScoped<IStringResourceReadRepository, StringResourceReadRepository>();
-            services.AddScoped<IStringResourceWriteRepository, StringResourceWriteRepository>();
+            services.AddScoped<IStringResourceWriteRepository, StringResourceWriteRepository>();           
 
 
             return services;
