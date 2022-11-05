@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/ademg/Desktop/MyRepos/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Account/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ademg/Desktop/MyRepos/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

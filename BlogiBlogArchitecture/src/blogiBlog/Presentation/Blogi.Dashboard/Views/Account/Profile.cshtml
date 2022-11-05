@@ -1,0 +1,83 @@
+﻿@model Blogi.Dashboard.Models.ProfileCreateViewModel
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card m-b-30">
+            <div class="card-body">
+                <form asp-controller="Account" asp-action="Profile" method="post" enctype="multipart/form-data">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                    <input type="hidden" asp-for="User.Id" name="User.Id" />
+
+
+                    <div class="card m-b-30">
+                        <div class="card-header bg-white text-center">
+                            @if (Model.User.Photo is null)
+                            {
+                                <img src="~/favicon.png" alt="Rounded Image" class="rounded-circle" width="150" height="150">
+
+                            }
+                            else
+                            {
+
+                                <img src="@string.Format("data:image/gif;base64,{0}", Model.User.Photo)" alt="Rounded Image" class="rounded-circle" width="150" height="150" />
+                            }
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <input type="file" class="form-control" name="File">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" asp-for="User.Name" required>
+                            <span class="text-danger" asp-validation-for="User.Name"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Surname</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" asp-for="User.Surname" required>
+                            <span class="text-danger" asp-validation-for="User.Surname"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Email</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control" asp-for="User.Email" required>
+                            <span class="text-danger" asp-validation-for="User.Email"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Password</label>
+                        <div class="col-sm-8">
+                            <input type="checkbox" onclick="passShowHide()"> Show Password
+                            <input type="password" class="form-control" value="@Model.User.Password" asp-for="User.Password" id="passInput" required>
+                            <span class="text-danger" asp-validation-for="User.Password"></span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-block btn-warning"> Update<i class="mdi mdi-plus ml-2"></i></button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section scripts {
+<script>
+    function passShowHide(){
+      const type = passInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passInput.setAttribute('type', type);
+
+    }
+</script>
+}

@@ -31,6 +31,7 @@
     <Folder Include="Features\Tags\Dtos\Delete\" />
     <Folder Include="Features\Tags\Dtos\GetList\" />
     <Folder Include="Features\Tags\Dtos\Update\" />
+    <Folder Include="Features\Users\Dtos\Update\" />
   </ItemGroup>
 
 </Project>

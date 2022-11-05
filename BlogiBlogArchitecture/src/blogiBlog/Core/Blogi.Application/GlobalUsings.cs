@@ -13,7 +13,9 @@ global using Blogi.Application.Services.TagService;
 global using Microsoft.Extensions.DependencyInjection;
 global using Core.Persistence.Repositories.Interfaces;
 global using Blogi.Application.Features.Tags.Constants;
+global using Blogi.Application.Features.Users.Constants;
 global using Blogi.Application.Repositories.TagRepository;
+global using Blogi.Application.Repositories.UserRepository;
 global using Blogi.Application.Features.Languages.Constants;
 global using Blogi.Application.Features.Categories.Constants;
 global using Blogi.Application.Services.StringResourceService;
@@ -23,7 +25,3 @@ global using Blogi.Application.Features.MailSettings.Constants;
 global using Blogi.Application.Repositories.MailSettingRepository;
 global using Blogi.Application.Features.StringResources.Constants;
 global using Blogi.Application.Repositories.StringResourceRepository;
-
-
-
-
