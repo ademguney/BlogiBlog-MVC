@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0MO6OLRD0zuQJ8H5K3UlKgCApBTkQN4DmqJiJWw2+7Y5JMQXZCF52QOywrkOJ9YUnpmQPZMv/QikF1cZnzuubQ==",
+  "dgSpecHash": "JZ/yFq+gO2EhDkySZSc56ZG4SqjfiFZusn/xrzPl9iBMW9ytwgL9kzpUGxmQRx/T+pcNKeD1wyp7dR2aXTuoog==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Persistence\\Core.Persistence.csproj",
+  "projectFilePath": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Persistence\\Core.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ademg\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.10\\microsoft.entityframeworkcore.6.0.10.nupkg.sha512",
     "C:\\Users\\ademg\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.10\\microsoft.entityframeworkcore.abstractions.6.0.10.nupkg.sha512",

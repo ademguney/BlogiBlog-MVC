@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x9+lXJQxgcyf0v796NrYb3+LsSyzI1CSr2OTU5FlHGX99FAYjlQlXMfq8r1CqDrAUBHvCtxCJQ518Gb8xi6TOg==",
+  "dgSpecHash": "DYYlu9S2pZepnCtS+H/VCMLHytXXLnelAVIXcwKba0dEGK8kfZVsRC7Da/65KxZvSEbx0E4HcEfsH/5PmYQQ4A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Infrastructure\\Core.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Infrastructure\\Core.Infrastructure.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

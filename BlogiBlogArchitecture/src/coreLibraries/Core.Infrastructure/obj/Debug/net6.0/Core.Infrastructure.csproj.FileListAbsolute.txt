@@ -10,3 +10,15 @@ C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibra
 C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\ref\Core.Infrastructure.dll
 C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\Core.Infrastructure.pdb
 C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\Core.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\bin\Debug\net6.0\Core.Infrastructure.deps.json
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\bin\Debug\net6.0\Core.Infrastructure.dll
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\bin\Debug\net6.0\ref\Core.Infrastructure.dll
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\bin\Debug\net6.0\Core.Infrastructure.pdb
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\Core.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\Core.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\Core.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\Core.Infrastructure.AssemblyInfo.cs
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\Core.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\Core.Infrastructure.dll
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\ref\Core.Infrastructure.dll
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\Core.Infrastructure.pdb

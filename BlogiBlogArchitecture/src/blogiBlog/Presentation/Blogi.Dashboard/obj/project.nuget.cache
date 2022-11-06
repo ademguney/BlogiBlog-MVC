@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YgoeNIvQNiNURUthH1vqrfSPWx9MxbD6zkwzpNaCc4KiODrtKlKVrlz+xkK+pOjkxUAO4MtiqvvEZ92vgesu9Q==",
+  "dgSpecHash": "zF/ssnT/3MLt9JSixIdQcYo4kPTcpdFLRx0lymb4M487AbgA0luNl1EHR6eaDCalx5ZwYbDfAPsBnp3VMkoYrA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\Blogi.Dashboard.csproj",
+  "projectFilePath": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\Blogi.Dashboard.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ademg\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\ademg\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

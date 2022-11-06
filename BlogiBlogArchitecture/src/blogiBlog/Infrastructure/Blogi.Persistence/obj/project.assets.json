@@ -2146,11 +2146,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Infrastructure\\Blogi.Persistence\\Blogi.Persistence.csproj",
+      "projectUniqueName": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Infrastructure\\Blogi.Persistence\\Blogi.Persistence.csproj",
       "projectName": "Blogi.Persistence",
-      "projectPath": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Infrastructure\\Blogi.Persistence\\Blogi.Persistence.csproj",
+      "projectPath": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Infrastructure\\Blogi.Persistence\\Blogi.Persistence.csproj",
       "packagesPath": "C:\\Users\\ademg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Infrastructure\\Blogi.Persistence\\obj\\",
+      "outputPath": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Infrastructure\\Blogi.Persistence\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ademg\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2168,11 +2168,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Core\\Blogi.Application\\Blogi.Application.csproj": {
-              "projectPath": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Core\\Blogi.Application\\Blogi.Application.csproj"
+            "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Core\\Blogi.Application\\Blogi.Application.csproj": {
+              "projectPath": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Core\\Blogi.Application\\Blogi.Application.csproj"
             },
-            "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Core\\Blogi.Domain\\Blogi.Domain.csproj": {
-              "projectPath": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Core\\Blogi.Domain\\Blogi.Domain.csproj"
+            "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Core\\Blogi.Domain\\Blogi.Domain.csproj": {
+              "projectPath": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Core\\Blogi.Domain\\Blogi.Domain.csproj"
             }
           }
         }

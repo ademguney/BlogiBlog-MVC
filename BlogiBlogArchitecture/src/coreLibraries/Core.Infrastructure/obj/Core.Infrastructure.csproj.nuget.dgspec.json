@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Infrastructure\\Core.Infrastructure.csproj": {}
+    "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Infrastructure\\Core.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Infrastructure\\Core.Infrastructure.csproj": {
+    "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Infrastructure\\Core.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Infrastructure\\Core.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Infrastructure\\Core.Infrastructure.csproj",
         "projectName": "Core.Infrastructure",
-        "projectPath": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Infrastructure\\Core.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Infrastructure\\Core.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\ademg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\coreLibraries\\Core.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ademg\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Mlus3kLWUOQ1+Fy722S9ydQwE+tv37UMusD3WdQq+6s0MT2Ra8JsvsI5ItYy2nDmS4dgk2ASVUGw8cfi42FyKw==",
+  "dgSpecHash": "aDRSAPohgT1fct+3W3Vnz72yS+KyhM/jUaewg09DiMFxNsiucG4dSpxRd4LLszmvlruikwtM+ue+rtPa33rbEQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ademg\\Desktop\\MyRepos\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Infrastructure\\Blogi.Persistence\\Blogi.Persistence.csproj",
+  "projectFilePath": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Infrastructure\\Blogi.Persistence\\Blogi.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ademg\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\ademg\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
