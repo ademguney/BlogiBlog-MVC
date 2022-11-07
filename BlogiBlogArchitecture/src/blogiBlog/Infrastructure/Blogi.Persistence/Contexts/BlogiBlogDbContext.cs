@@ -2,20 +2,21 @@
 {
     public class BlogiBlogDbContext : DbContext
     {
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<PostTags> PostTags { get; set; }
+        public DbSet<Language> Languages { get; set; }
+        public DbSet<Category> Categories { get; set; }        
+        public DbSet<MailSetting> MailSettings { get; set; }
+        public DbSet<StringResource> StringResources { get; set; }
+
         protected IConfiguration Configuration { get; set; }
 
         public BlogiBlogDbContext(DbContextOptions dbContextOptions, IConfiguration configuration) : base(dbContextOptions)
         {
             Configuration = configuration;
         }
-
-        public DbSet<Tag> Tags { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Post> Posts { get; set; }
-        public DbSet<Language> Languages { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<MailSetting> MailSettings { get; set; }
-        public DbSet<StringResource> StringResources { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -10,6 +10,7 @@
             builder.Property(u => u.Description).IsRequired(false).HasMaxLength(500);
             builder.Property(u => u.Slug).IsRequired(true).HasMaxLength(500);
             builder.HasOne(u => u.Languages);
+            builder.HasMany(u => u.Posts);
 
             builder.HasData(
                 new Category { Id = 1, LanguageId = 1, Name = ".Net Core", Description = "asp.net core mvc", Slug = "net-core" },

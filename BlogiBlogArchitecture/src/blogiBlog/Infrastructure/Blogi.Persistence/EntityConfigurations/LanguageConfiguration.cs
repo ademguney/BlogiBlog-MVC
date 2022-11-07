@@ -8,7 +8,8 @@
             builder.ToTable("Languages");
             builder.Property(u => u.Name).IsRequired(true).HasMaxLength(255);
             builder.Property(u => u.Culture).IsRequired(true).HasMaxLength(10);
-            builder.HasMany(u => u.StringResources);           
+            builder.HasMany(u => u.StringResources);
+           
 
             builder.HasData(
                 new Language { Id = 1, Name = "Türkçe", Culture = "tr-TR" },

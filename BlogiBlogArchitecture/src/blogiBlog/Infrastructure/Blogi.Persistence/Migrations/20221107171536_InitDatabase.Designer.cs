@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blogi.Persistence.Migrations
 {
     [DbContext(typeof(BlogiBlogDbContext))]
-    [Migration("20221102183909_User_Added")]
-    partial class User_Added
+    [Migration("20221107171536_InitDatabase")]
+    partial class InitDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -174,11 +174,129 @@ namespace Blogi.Persistence.Migrations
                             Email = "blogi@blog.com",
                             FullName = "BlogiBlog",
                             Host = "smtp.gmail.com",
-                            Password = "MR5CPXT0HEfV7lpwCGEdhPQZlrbqXeUIWSAUS6Zn3eU2MCXPt8RScDGthtjzzBJQ",
+                            Password = "HsXmu9qftDs5Fy1u+Bo0VarB768HDmePGDVlrh/PGMNCKHh0k9zMrILBN0V5vfjB",
                             Port = 587,
                             SslEnabled = false,
                             UseDefaultCredentials = false
                         });
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.Post", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CreatedById")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DisplayCount")
+                        .HasColumnType("int");
+
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("ImageAlt")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<bool>("IsPublished")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("LanguageId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MetaDescription")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("MetaKeywords")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("LanguageId")
+                        .IsUnique();
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Posts", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            Content = "Test_Content",
+                            CreatedById = 1,
+                            CreationTime = new DateTime(2022, 11, 7, 17, 15, 36, 118, DateTimeKind.Utc).AddTicks(7807),
+                            DisplayCount = 0,
+                            ImageAlt = "blogiBlog",
+                            IsPublished = true,
+                            LanguageId = 1,
+                            MetaDescription = "is an open source multi language blog project Blog BLOG",
+                            MetaKeywords = "blogiblog,open source, blog project",
+                            Slug = "test-content",
+                            Title = "Test_Title",
+                            UserId = 1
+                        });
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.PostTags", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("PostId")
+                        .HasColumnType("int")
+                        .HasColumnName("PostId");
+
+                    b.Property<int>("TagId")
+                        .HasColumnType("int")
+                        .HasColumnName("TagId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostId");
+
+                    b.HasIndex("TagId");
+
+                    b.ToTable("PostTags", (string)null);
                 });
 
             modelBuilder.Entity("Blogi.Domain.Entities.StringResource", b =>
@@ -452,7 +570,7 @@ namespace Blogi.Persistence.Migrations
                             Id = 1,
                             Email = "blogi@blog.com",
                             Name = "BLOGI",
-                            Password = "BfcAugaoDnosJfiD02Xoqxagd2YPBlsseVxwfpkYjReWnOIwt9x9ZnZFSsOP3Kmc",
+                            Password = "c3ZEPQeWmJ/L5jqWgLVZ8WMOlm74QhrMDK8NFiycjRXPRYLVJvOniHlR4Ti7cORK",
                             Surname = "BLOG"
                         });
                 });
@@ -466,6 +584,50 @@ namespace Blogi.Persistence.Migrations
                         .IsRequired();
 
                     b.Navigation("Languages");
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.Post", b =>
+                {
+                    b.HasOne("Blogi.Domain.Entities.Category", "Categories")
+                        .WithMany("Posts")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Blogi.Domain.Entities.Language", "Languages")
+                        .WithOne()
+                        .HasForeignKey("Blogi.Domain.Entities.Post", "LanguageId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Blogi.Domain.Entities.User", "Users")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Categories");
+
+                    b.Navigation("Languages");
+
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.PostTags", b =>
+                {
+                    b.HasOne("Blogi.Domain.Entities.Post", null)
+                        .WithMany("PostTags")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Blogi.Domain.Entities.Tag", "Tags")
+                        .WithMany()
+                        .HasForeignKey("TagId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Tags");
                 });
 
             modelBuilder.Entity("Blogi.Domain.Entities.StringResource", b =>
@@ -490,9 +652,19 @@ namespace Blogi.Persistence.Migrations
                     b.Navigation("Languages");
                 });
 
+            modelBuilder.Entity("Blogi.Domain.Entities.Category", b =>
+                {
+                    b.Navigation("Posts");
+                });
+
             modelBuilder.Entity("Blogi.Domain.Entities.Language", b =>
                 {
                     b.Navigation("StringResources");
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.Post", b =>
+                {
+                    b.Navigation("PostTags");
                 });
 #pragma warning restore 612, 618
         }

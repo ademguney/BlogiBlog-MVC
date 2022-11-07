@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace Blogi.Persistence.Migrations
 {
-    public partial class Init : Migration
+    public partial class InitDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -39,6 +40,23 @@ namespace Blogi.Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_MailConfigs", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Surname = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    Photo = table.Column<byte[]>(type: "varbinary(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -104,20 +122,92 @@ namespace Blogi.Persistence.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "Languages",
-                columns: new[] { "Id", "Culture", "Name" },
-                values: new object[] { 1, "tr-TR", "Türkçe" });
+            migrationBuilder.CreateTable(
+                name: "Posts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    LanguageId = table.Column<int>(type: "int", nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Slug = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Image = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    ImageAlt = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    DisplayCount = table.Column<int>(type: "int", nullable: false),
+                    MetaKeywords = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    MetaDescription = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    IsPublished = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedById = table.Column<int>(type: "int", nullable: false),
+                    CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Posts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Posts_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Posts_Languages_LanguageId",
+                        column: x => x.LanguageId,
+                        principalTable: "Languages",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Posts_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PostTags",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PostId = table.Column<int>(type: "int", nullable: false),
+                    TagId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PostTags", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_PostTags_Posts_PostId",
+                        column: x => x.PostId,
+                        principalTable: "Posts",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_PostTags_Tags_TagId",
+                        column: x => x.TagId,
+                        principalTable: "Tags",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
             migrationBuilder.InsertData(
                 table: "Languages",
                 columns: new[] { "Id", "Culture", "Name" },
-                values: new object[] { 2, "en-ENG", "English (United States)" });
+                values: new object[,]
+                {
+                    { 1, "tr-TR", "Türkçe" },
+                    { 2, "en-ENG", "English (United States)" }
+                });
 
             migrationBuilder.InsertData(
                 table: "MailConfigs",
                 columns: new[] { "Id", "Email", "FullName", "Host", "Password", "Port", "SslEnabled", "UseDefaultCredentials" },
-                values: new object[] { 1, "blogi_blog@gmail.com", "BlogiBlog", "smtp.gmail.com", "EHPjrx047JJP7qSKThZ3v1vC1t+rxCsoqHj8M12uPXf6MxMTmNWJhqUZpICrKkKJ", 587, false, false });
+                values: new object[] { 1, "blogi@blog.com", "BlogiBlog", "smtp.gmail.com", "HsXmu9qftDs5Fy1u+Bo0VarB768HDmePGDVlrh/PGMNCKHh0k9zMrILBN0V5vfjB", 587, false, false });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Email", "Name", "Password", "Photo", "Surname" },
+                values: new object[] { 1, "blogi@blog.com", "BLOGI", "c3ZEPQeWmJ/L5jqWgLVZ8WMOlm74QhrMDK8NFiycjRXPRYLVJvOniHlR4Ti7cORK", null, "BLOG" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
@@ -172,10 +262,41 @@ namespace Blogi.Persistence.Migrations
                     { 20, 1, "Design Pattern" }
                 });
 
+            migrationBuilder.InsertData(
+                table: "Posts",
+                columns: new[] { "Id", "CategoryId", "Content", "CreatedById", "CreationTime", "DisplayCount", "Image", "ImageAlt", "IsPublished", "LanguageId", "MetaDescription", "MetaKeywords", "Slug", "Title", "UserId" },
+                values: new object[] { 1, 1, "Test_Content", 1, new DateTime(2022, 11, 7, 17, 15, 36, 118, DateTimeKind.Utc).AddTicks(7807), 0, null, "blogiBlog", true, 1, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "test-content", "Test_Title", 1 });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Categories_LanguageId",
                 table: "Categories",
                 column: "LanguageId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Posts_CategoryId",
+                table: "Posts",
+                column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Posts_LanguageId",
+                table: "Posts",
+                column: "LanguageId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Posts_UserId",
+                table: "Posts",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PostTags_PostId",
+                table: "PostTags",
+                column: "PostId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PostTags_TagId",
+                table: "PostTags",
+                column: "TagId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_StringResources_LanguageId",
@@ -191,16 +312,25 @@ namespace Blogi.Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Categories");
+                name: "MailConfigs");
 
             migrationBuilder.DropTable(
-                name: "MailConfigs");
+                name: "PostTags");
 
             migrationBuilder.DropTable(
                 name: "StringResources");
 
             migrationBuilder.DropTable(
+                name: "Posts");
+
+            migrationBuilder.DropTable(
                 name: "Tags");
+
+            migrationBuilder.DropTable(
+                name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "Users");
 
             migrationBuilder.DropTable(
                 name: "Languages");

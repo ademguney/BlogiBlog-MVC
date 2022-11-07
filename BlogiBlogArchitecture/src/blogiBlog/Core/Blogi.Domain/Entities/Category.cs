@@ -4,16 +4,17 @@ namespace Blogi.Domain.Entities
 {
     public class Category : BaseDomainEntity
     {
-        public Category() { }
-
-        public Category(int id, int languageId, string name, string description, string slug, Language languages) : base(id)
+        public Category()
         {
-            Id = id;
+            Posts = new HashSet<Post>();
+        }
+
+        public Category(int id, int languageId, string name, string description, string slug) : base(id)
+        {
             LanguageId = languageId;
             Name = name;
             Description = description;
             Slug = slug;
-            Languages = languages;
         }
 
         public int LanguageId { get; set; }
@@ -22,5 +23,6 @@ namespace Blogi.Domain.Entities
         public string Slug { get; set; }
 
         public Language Languages { get; set; }
+        public ICollection<Post> Posts { get; set; }
     }
 }
