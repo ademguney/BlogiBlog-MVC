@@ -10,7 +10,7 @@ namespace Blogi.Domain.Entities
             PostTags = new HashSet<PostTags>();
         }
 
-        public Post(int id, int userId, int languageId, int categoryId, string title, string content, string slug, byte[] image, string imageAlt, int displayCount, string metaKeywords, string metaDescription, bool isPublished, int createdById, DateTime creationTime) : base(id)
+        public Post(int id, int userId, int languageId, int categoryId, string title, string content, string slug, byte[] image, string imageAlt, int displayCount, string metaKeywords, string metaDescription, bool isPublished, int createdById, DateTime creationTime, DateTime? updationDate, int? updatedById) : base(id)
         {
             UserId = userId;
             LanguageId = languageId;
@@ -25,8 +25,11 @@ namespace Blogi.Domain.Entities
             MetaDescription = metaDescription;
             IsPublished = isPublished;
             CreatedById = createdById;
-            CreationTime = creationTime;
+            UpdatedById = updatedById;
+            CreationDate = creationTime;
+            UpdationDate = updationDate;
         }
+
         public int UserId { get; set; }
         public int LanguageId { get; set; }
         public int CategoryId { get; set; }
@@ -41,8 +44,9 @@ namespace Blogi.Domain.Entities
 
         public bool IsPublished { get; set; }
         public int CreatedById { get; set; }
-        public DateTime CreationTime { get; set; }
-
+        public int? UpdatedById { get; set; }
+        public DateTime CreationDate { get; set; }
+        public DateTime? UpdationDate { get; set; }
 
         public User Users { get; set; }
         public Language Languages { get; set; }

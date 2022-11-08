@@ -7,6 +7,39 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\Categories\Dtos\Create\**" />
+    <Compile Remove="Features\Categories\Dtos\Delete\**" />
+    <Compile Remove="Features\Categories\Dtos\GetList\**" />
+    <Compile Remove="Features\Categories\Dtos\Update\**" />
+    <Compile Remove="Features\MailSettings\Dtos\Update\**" />
+    <Compile Remove="Features\Tags\Dtos\Create\**" />
+    <Compile Remove="Features\Tags\Dtos\Delete\**" />
+    <Compile Remove="Features\Tags\Dtos\GetList\**" />
+    <Compile Remove="Features\Tags\Dtos\Update\**" />
+    <Compile Remove="Features\Users\Dtos\Update\**" />
+    <EmbeddedResource Remove="Features\Categories\Dtos\Create\**" />
+    <EmbeddedResource Remove="Features\Categories\Dtos\Delete\**" />
+    <EmbeddedResource Remove="Features\Categories\Dtos\GetList\**" />
+    <EmbeddedResource Remove="Features\Categories\Dtos\Update\**" />
+    <EmbeddedResource Remove="Features\MailSettings\Dtos\Update\**" />
+    <EmbeddedResource Remove="Features\Tags\Dtos\Create\**" />
+    <EmbeddedResource Remove="Features\Tags\Dtos\Delete\**" />
+    <EmbeddedResource Remove="Features\Tags\Dtos\GetList\**" />
+    <EmbeddedResource Remove="Features\Tags\Dtos\Update\**" />
+    <EmbeddedResource Remove="Features\Users\Dtos\Update\**" />
+    <None Remove="Features\Categories\Dtos\Create\**" />
+    <None Remove="Features\Categories\Dtos\Delete\**" />
+    <None Remove="Features\Categories\Dtos\GetList\**" />
+    <None Remove="Features\Categories\Dtos\Update\**" />
+    <None Remove="Features\MailSettings\Dtos\Update\**" />
+    <None Remove="Features\Tags\Dtos\Create\**" />
+    <None Remove="Features\Tags\Dtos\Delete\**" />
+    <None Remove="Features\Tags\Dtos\GetList\**" />
+    <None Remove="Features\Tags\Dtos\Update\**" />
+    <None Remove="Features\Users\Dtos\Update\**" />
+  </ItemGroup>
+
+  <ItemGroup>
 	  <PackageReference Include="AutoMapper" Version="12.0.0" />
 	  <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
 	  <PackageReference Include="FluentValidation" Version="11.2.2" />
@@ -22,16 +55,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Categories\Dtos\Create\" />
-    <Folder Include="Features\Categories\Dtos\Delete\" />
-    <Folder Include="Features\Categories\Dtos\GetList\" />
-    <Folder Include="Features\Categories\Dtos\Update\" />
-    <Folder Include="Features\MailSettings\Dtos\Update\" />
-    <Folder Include="Features\Tags\Dtos\Create\" />
-    <Folder Include="Features\Tags\Dtos\Delete\" />
-    <Folder Include="Features\Tags\Dtos\GetList\" />
-    <Folder Include="Features\Tags\Dtos\Update\" />
-    <Folder Include="Features\Users\Dtos\Update\" />
+    <Folder Include="Features\Post\Commands\" />
+    <Folder Include="Features\Post\Dtos\Create\" />
+    <Folder Include="Features\Post\Dtos\Delete\" />
+    <Folder Include="Features\Post\Dtos\Get\" />
+    <Folder Include="Features\Post\Dtos\Update\" />
   </ItemGroup>
 
 </Project>

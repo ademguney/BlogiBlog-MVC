@@ -141,7 +141,9 @@ namespace Blogi.Persistence.Migrations
                     MetaDescription = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     IsPublished = table.Column<bool>(type: "bit", nullable: false),
                     CreatedById = table.Column<int>(type: "int", nullable: false),
-                    CreationTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UpdatedById = table.Column<int>(type: "int", nullable: true),
+                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdationDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -202,12 +204,12 @@ namespace Blogi.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "MailConfigs",
                 columns: new[] { "Id", "Email", "FullName", "Host", "Password", "Port", "SslEnabled", "UseDefaultCredentials" },
-                values: new object[] { 1, "blogi@blog.com", "BlogiBlog", "smtp.gmail.com", "HsXmu9qftDs5Fy1u+Bo0VarB768HDmePGDVlrh/PGMNCKHh0k9zMrILBN0V5vfjB", 587, false, false });
+                values: new object[] { 1, "blogi@blog.com", "BlogiBlog", "smtp.gmail.com", "3S8doe36sJ1WFEK4SzOwXVaAAM1bimbxPGTt82E6sKUfcfukQpAZ1A5CSKj5AlHu", 587, false, false });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Email", "Name", "Password", "Photo", "Surname" },
-                values: new object[] { 1, "blogi@blog.com", "BLOGI", "c3ZEPQeWmJ/L5jqWgLVZ8WMOlm74QhrMDK8NFiycjRXPRYLVJvOniHlR4Ti7cORK", null, "BLOG" });
+                values: new object[] { 1, "blogi@blog.com", "BLOGI", "+6ghHSBsQMPS9LXY69NKvSypAGQrlXY+Tnf8GjRHPZRKAKesAxFEGkXBAeVC5/pJ", null, "BLOG" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
@@ -264,8 +266,8 @@ namespace Blogi.Persistence.Migrations
 
             migrationBuilder.InsertData(
                 table: "Posts",
-                columns: new[] { "Id", "CategoryId", "Content", "CreatedById", "CreationTime", "DisplayCount", "Image", "ImageAlt", "IsPublished", "LanguageId", "MetaDescription", "MetaKeywords", "Slug", "Title", "UserId" },
-                values: new object[] { 1, 1, "Test_Content", 1, new DateTime(2022, 11, 7, 17, 15, 36, 118, DateTimeKind.Utc).AddTicks(7807), 0, null, "blogiBlog", true, 1, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "test-content", "Test_Title", 1 });
+                columns: new[] { "Id", "CategoryId", "Content", "CreatedById", "CreationDate", "DisplayCount", "Image", "ImageAlt", "IsPublished", "LanguageId", "MetaDescription", "MetaKeywords", "Slug", "Title", "UpdatedById", "UpdationDate", "UserId" },
+                values: new object[] { 1, 1, "Blogi blog an open source project.", 1, new DateTime(2022, 11, 8, 6, 53, 50, 363, DateTimeKind.Utc).AddTicks(2662), 0, null, "blogiBlog", true, 1, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "test-content", "Multi Language Blogi Blog", null, null, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Categories_LanguageId",

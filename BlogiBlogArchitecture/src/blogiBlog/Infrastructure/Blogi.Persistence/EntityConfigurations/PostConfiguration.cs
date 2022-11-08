@@ -17,9 +17,10 @@
             builder.Property(u => u.IsPublished).IsRequired(true);
             builder.Property(u => u.MetaKeywords).IsRequired(true).HasMaxLength(500);
             builder.Property(u => u.MetaDescription).IsRequired(true).HasMaxLength(500);
-
+            builder.Property(u => u.UpdatedById).IsRequired(false);
             builder.Property(u => u.CreatedById).IsRequired(true);
-            builder.Property(i => i.CreationTime).IsRequired(true);
+            builder.Property(i => i.CreationDate).IsRequired(true);
+            builder.Property(i => i.UpdationDate).IsRequired(false);
 
 
             builder.HasOne(u => u.Users);
@@ -35,8 +36,8 @@
                     LanguageId = 1,
                     CategoryId = 1,
                     UserId = 1,
-                    Title = "Test_Title",
-                    Content = "Test_Content",
+                    Title = "Multi Language Blogi Blog",
+                    Content = "Blogi blog an open source project.",
                     Slug = "test-content",
                     Image = null,
                     ImageAlt = "blogiBlog",
@@ -45,7 +46,7 @@
                     MetaDescription = "is an open source multi language blog project Blog BLOG",
                     IsPublished = true,
                     CreatedById = 1,
-                    CreationTime = DateTime.UtcNow
+                    CreationDate = DateTime.UtcNow
 
                 });
         }

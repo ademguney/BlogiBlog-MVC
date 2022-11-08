@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Article List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<partial name="_breadCrumb" />
+
+<div class="row">
+    <div class="col-12">
+        <div class="card m-b-30">
+            <div class="card-header bg-secondary" style="color:white">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">  <i class='ion ion-ios-information-circle'></i> Post List</li>
+                    <li class="list-inline-item float-right">
+                        <a asp-controller="Post" asp-action="Create" class="btn btn-rounded btn-success">Create New Post <i class="mdi mdi-plus ml-2"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive m-b-30">
+                    <table class="table table-hover" id="postTable">
+                        <thead>
+                            <tr>
+                                <th>Language</th>
+                                <th>Category</th>
+                                <th>Title</th>
+                                <th>DisplayCount</th>
+                                <th>IsPublished</th>
+                                <th>CreationDate</th>
+                                <th>UpdationDate</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+
+                            </tr>
+                        </thead>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+<script src="~/js/views/post/home.js" asp-append-version="true"></script>
+}
+

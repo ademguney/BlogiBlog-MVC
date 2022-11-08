@@ -1,7 +1,4 @@
-﻿using Blogi.Application.Services.CategoryService;
-using Blogi.Application.Services.TagService;
-
-namespace Blogi.Application
+﻿namespace Blogi.Application
 {
     public static class ApplicationServiceRegistration
     {
@@ -13,9 +10,10 @@ namespace Blogi.Application
 
             // Services
             services.AddScoped<ITagService, TagService>();
+            services.AddScoped<IPostService, PostService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IStringResourceService, StringResourceService>();
-            
+
 
             return services;
         }

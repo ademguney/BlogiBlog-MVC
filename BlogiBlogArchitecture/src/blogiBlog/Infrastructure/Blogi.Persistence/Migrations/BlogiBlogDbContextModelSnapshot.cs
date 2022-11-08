@@ -172,7 +172,7 @@ namespace Blogi.Persistence.Migrations
                             Email = "blogi@blog.com",
                             FullName = "BlogiBlog",
                             Host = "smtp.gmail.com",
-                            Password = "HsXmu9qftDs5Fy1u+Bo0VarB768HDmePGDVlrh/PGMNCKHh0k9zMrILBN0V5vfjB",
+                            Password = "3S8doe36sJ1WFEK4SzOwXVaAAM1bimbxPGTt82E6sKUfcfukQpAZ1A5CSKj5AlHu",
                             Port = 587,
                             SslEnabled = false,
                             UseDefaultCredentials = false
@@ -197,7 +197,7 @@ namespace Blogi.Persistence.Migrations
                     b.Property<int>("CreatedById")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreationTime")
+                    b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("DisplayCount")
@@ -237,6 +237,12 @@ namespace Blogi.Persistence.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
+                    b.Property<int?>("UpdatedById")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdationDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
@@ -256,9 +262,9 @@ namespace Blogi.Persistence.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            Content = "Test_Content",
+                            Content = "Blogi blog an open source project.",
                             CreatedById = 1,
-                            CreationTime = new DateTime(2022, 11, 7, 17, 15, 36, 118, DateTimeKind.Utc).AddTicks(7807),
+                            CreationDate = new DateTime(2022, 11, 8, 6, 53, 50, 363, DateTimeKind.Utc).AddTicks(2662),
                             DisplayCount = 0,
                             ImageAlt = "blogiBlog",
                             IsPublished = true,
@@ -266,7 +272,7 @@ namespace Blogi.Persistence.Migrations
                             MetaDescription = "is an open source multi language blog project Blog BLOG",
                             MetaKeywords = "blogiblog,open source, blog project",
                             Slug = "test-content",
-                            Title = "Test_Title",
+                            Title = "Multi Language Blogi Blog",
                             UserId = 1
                         });
                 });
@@ -568,7 +574,7 @@ namespace Blogi.Persistence.Migrations
                             Id = 1,
                             Email = "blogi@blog.com",
                             Name = "BLOGI",
-                            Password = "c3ZEPQeWmJ/L5jqWgLVZ8WMOlm74QhrMDK8NFiycjRXPRYLVJvOniHlR4Ti7cORK",
+                            Password = "+6ghHSBsQMPS9LXY69NKvSypAGQrlXY+Tnf8GjRHPZRKAKesAxFEGkXBAeVC5/pJ",
                             Surname = "BLOG"
                         });
                 });

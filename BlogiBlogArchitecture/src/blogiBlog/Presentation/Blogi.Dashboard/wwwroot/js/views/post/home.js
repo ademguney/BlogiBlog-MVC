@@ -1,0 +1,91 @@
+﻿(function () {
+    $("#postTable").DataTable({
+        "ajax": {
+            "type": "GET",
+            "url": "/Post/DataTable"
+
+        },
+        "pageLength": 10,
+        "bInfo": false,
+        "responsive": true,
+        "scrollY": false,
+        "bPaginate": false,
+        "dom": 'Bfrtip',
+        "buttons": [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
+        "columns": [
+            {
+                "data": "languageName", "autoWidth": true
+            },
+            {
+                "data": "categoryName", "autoWidth": true
+            },
+            {
+                "data": "title", "autoWidth": true
+            },
+            {
+                "data": "displayCount", "autoWidth": true
+            },
+            {
+                "data": "isPublished", "autoWidth": true
+            },
+            {
+                "data": "creationDate", "autoWidth": true
+            },
+            {
+                "data": "updationDate", "autoWidth": true
+            },
+            {
+                "data": "id",
+                "autoWidth": true,
+                "render": function (val) {
+                    return '<a href="/Post/Edit?id=' + val + '"  class="btn btn-rounded btn-warning">Update <i class="mdi mdi-upload ml-2"></i></a>';
+
+                }
+            },
+            {
+                "data": "id",
+                "autoWidth": true,
+                "render": function (val) {
+                    return '<button data-model-id="' + val + '" onclick="Delete(this)" class="btn btn-rounded btn-danger">Delete <i class="mdi mdi-delete-sweep ml-2"></i></button>';
+
+                }
+            }
+        ]
+    });
+})();
+
+
+function Delete(obj) {
+    var ele = $(obj);
+    var Id = ele.data("model-id");
+
+    Swal.fire({
+        title: 'Are sure wants to delete?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: '/Post/Delete',
+                type: "POST",
+                async: true,
+                data: { id: Id },
+                success: function (result) {
+
+                    if (result.data.success)
+                        toastr["success"](result.data.message, "BLOGI BLOG");
+                    else
+                        toastr["error"](result.data.errors, "BLOGI BLOG");
+
+                    $('#postTable').DataTable().ajax.reload();
+
+                }
+            });
+        }
+    })
+};
