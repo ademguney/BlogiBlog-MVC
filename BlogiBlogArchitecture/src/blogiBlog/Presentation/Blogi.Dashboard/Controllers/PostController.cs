@@ -77,6 +77,7 @@ namespace Blogi.Dashboard.Controllers
                 Post = input.Post
 
             };
+            NotifyError(result.Errors);
             return View(model);
         }
 

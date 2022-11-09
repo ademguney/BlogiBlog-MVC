@@ -12,5 +12,6 @@ namespace Blogi.Dashboard.Models
         public List<GetCategoryOutput> CategoryList { get; set; }
         public List<GetTagOutput> TagList { get; set; }
         public IFormFile File { get; set; }
+        public int[] TagIds { get; set; }
     }
 }
