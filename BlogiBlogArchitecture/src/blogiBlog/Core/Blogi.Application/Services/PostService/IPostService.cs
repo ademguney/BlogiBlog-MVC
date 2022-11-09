@@ -1,4 +1,4 @@
-﻿using Blogi.Application.Features.Post.Dtos.GetList;
+﻿using Blogi.Application.Features.Posts.Dtos.GetList;
 
 namespace Blogi.Application.Services.PostService
 {

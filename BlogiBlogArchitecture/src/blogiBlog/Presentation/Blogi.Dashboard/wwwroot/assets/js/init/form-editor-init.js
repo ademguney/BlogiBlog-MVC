@@ -25,37 +25,4 @@ $(document).ready(function() {
         });
     }
 
-    /* -----  Form Editor - Summernote ----- */
-    $('#xp-summernote').summernote({
-        height: 320,
-        minHeight: null,
-        maxHeight: null,
-        focus: true 
-    });
-
-    /* -----  Form Editor - Code Mirror ----- */
-    CodeMirror.fromTextArea(document.getElementById("xp-codemirror-html"), {
-        mode: "htmlmixed",
-        lineNumbers: true,
-        tags: {
-            style: [["type", /^text\/(x-)?scss$/, "text/x-scss"],
-                    [null, null, "css"]],
-            custom: [[null, null, "customMode"]]
-          }
-    });
-
-    CodeMirror.fromTextArea(document.getElementById("xp-codemirror-css"), {
-        mode: "css",
-        lineNumbers: true,
-        extraKeys: {"Ctrl-Space": "autocomplete"}
-    });
-
-    CodeMirror.fromTextArea(document.getElementById("xp-codemirror-javascript"), {
-        mode: "javascript",
-        lineNumbers: true,
-        matchBrackets: true,
-        continueComments: "Enter",
-        extraKeys: {"Ctrl-Q": "toggleComment"}
-    });
-
 });

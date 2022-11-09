@@ -172,7 +172,7 @@ namespace Blogi.Persistence.Migrations
                             Email = "blogi@blog.com",
                             FullName = "BlogiBlog",
                             Host = "smtp.gmail.com",
-                            Password = "3S8doe36sJ1WFEK4SzOwXVaAAM1bimbxPGTt82E6sKUfcfukQpAZ1A5CSKj5AlHu",
+                            Password = "dl0e3ak1ninDzaRyQbgQR6/hh0HSLkKdhR4hvKXE5JtcO/Ze0favlAP8PHlOsDJw",
                             Port = 587,
                             SslEnabled = false,
                             UseDefaultCredentials = false
@@ -250,8 +250,7 @@ namespace Blogi.Persistence.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("LanguageId")
-                        .IsUnique();
+                    b.HasIndex("LanguageId");
 
                     b.HasIndex("UserId");
 
@@ -264,7 +263,7 @@ namespace Blogi.Persistence.Migrations
                             CategoryId = 1,
                             Content = "Blogi blog an open source project.",
                             CreatedById = 1,
-                            CreationDate = new DateTime(2022, 11, 8, 6, 53, 50, 363, DateTimeKind.Utc).AddTicks(2662),
+                            CreationDate = new DateTime(2022, 11, 9, 19, 23, 3, 690, DateTimeKind.Utc).AddTicks(8029),
                             DisplayCount = 0,
                             ImageAlt = "blogiBlog",
                             IsPublished = true,
@@ -574,7 +573,7 @@ namespace Blogi.Persistence.Migrations
                             Id = 1,
                             Email = "blogi@blog.com",
                             Name = "BLOGI",
-                            Password = "+6ghHSBsQMPS9LXY69NKvSypAGQrlXY+Tnf8GjRHPZRKAKesAxFEGkXBAeVC5/pJ",
+                            Password = "t31bQKTLS6TtOpTcxn97kqb/shIK4pzGzfbEENRuAiwqJppqhnaSucIuYvE3zTC0",
                             Surname = "BLOG"
                         });
                 });
@@ -599,8 +598,8 @@ namespace Blogi.Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("Blogi.Domain.Entities.Language", "Languages")
-                        .WithOne()
-                        .HasForeignKey("Blogi.Domain.Entities.Post", "LanguageId")
+                        .WithMany()
+                        .HasForeignKey("LanguageId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 

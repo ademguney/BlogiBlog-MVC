@@ -25,7 +25,7 @@
 
             builder.HasOne(u => u.Users);
             builder.HasOne(u => u.Categories);
-            builder.HasOne(u => u.Languages).WithOne().OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(u => u.Languages).WithMany().OnDelete(DeleteBehavior.NoAction);
             builder.HasMany(u => u.PostTags).WithOne().OnDelete(DeleteBehavior.NoAction).HasForeignKey(x=>x.PostId);
 
 

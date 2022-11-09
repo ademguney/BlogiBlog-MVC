@@ -14,7 +14,7 @@ global using Blogi.Application.Services.PostService;
 global using Microsoft.Extensions.DependencyInjection;
 global using Core.Persistence.Repositories.Interfaces;
 global using Blogi.Application.Features.Tags.Constants;
-global using Blogi.Application.Features.Post.Constants;
+global using Blogi.Application.Features.Posts.Constants;
 global using Blogi.Application.Services.CategoryService;
 global using Blogi.Application.Features.Users.Constants;
 global using Blogi.Application.Repositories.TagRepository;

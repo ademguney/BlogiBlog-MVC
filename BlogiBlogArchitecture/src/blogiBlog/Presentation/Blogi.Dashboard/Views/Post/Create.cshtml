@@ -1,0 +1,169 @@
+﻿@model Blogi.Dashboard.Models.PostCreateViewModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section style{
+
+}
+
+
+<div class="col-lg-12">
+    <div class="card m-b-30">
+        <div class="card-header bg-white">
+            <h5 class="card-title text-black"><i class="icon-docs"></i> Post Settings</h5>
+
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-3">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Post</a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Seo</a>
+
+                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Header Image</a>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <form asp-controller="Post" asp-action="Create" method="post" enctype="multipart/form-data">
+                        @Html.AntiForgeryToken()
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                        <div class="tab-content" id="v-pills-tabContent">
+                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+                                <fieldset class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <select asp-for="Post.LanguageId" class="form-control" required>
+                                                <option selected="selected" value="0">Select Language</option>
+                                                @foreach (var item in Model.LanguageList)
+                                                {
+                                                    <option value="@item.Id">@item.Name</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <select asp-for="Post.CategoryId" class="form-control" required>
+                                                <option selected="selected" value="0">Select Category</option>
+                                                @foreach (var category in Model.CategoryList)
+                                                {
+                                                    <option value="@category.Id">@category.Name, @category.LanguageName</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <div class="form-group row">
+
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" asp-for="Post.Title" placeholder="Post Title" required>
+                                        <span class="text-danger" asp-validation-for="Post.Title"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+
+                                    <div class="col-sm-12">
+                                        <textarea id="xp-tinymce" asp-for="Post.Content">Hello, Blogi BLOG</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" asp-for="Post.IsPublished">
+                                    <label class="form-check-label" asp-for="Post.IsPublished">
+                                        Is Published
+                                    </label>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Meta Keywords</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" asp-for="Post.MetaKeywords" required>
+                                        <span class="text-danger" asp-validation-for="Post.MetaKeywords"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Meta Description</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" asp-for="Post.MetaDescription" required>
+                                        <span class="text-danger" asp-validation-for="Post.MetaDescription"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Url</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" asp-for="Post.Slug" required>
+                                        <span class="text-danger" asp-validation-for="Post.Slug"></span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                                <div class="card m-b-30">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="form-group row">
+                                                    <img id="imgPreview" class="img-fluid" style="width:400px; height:200px;">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 col-form-label">Image Alt</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" asp-for="Post.ImageAlt" required>
+                                                        <span class="text-danger" asp-validation-for="Post.ImageAlt"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 col-form-label">Image</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="file" class="form-control" name="File" onchange="previewImg(event)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <button type="submit" class="btn btn-success btn-rounded btn-lg btn-block"> Create Post<i class="mdi mdi-plus ml-2"></i></button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section scripts {
+<!-- Wysiwig JS -->
+<script src="~/assets/plugins/tinymce/tinymce.min.js"></script>
+<script src="~/assets/js/init/form-editor-init.js"></script>
+
+
+<script>
+    var previewImg=function (event){
+        var result= document.getElementById("imgPreview");
+        result.src=URL.createObjectURL(event.target.files[0]);
+    };
+</script>
+}
+
