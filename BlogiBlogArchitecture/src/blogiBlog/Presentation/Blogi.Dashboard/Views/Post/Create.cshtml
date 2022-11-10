@@ -4,11 +4,6 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-@section style{
-<link href="~/selectJs/dist/css/select2.min.css" rel="stylesheet" />
-}
-
-
 <div class="col-lg-12">
     <div class="card m-b-30">
         <div class="card-header bg-white">
@@ -20,9 +15,9 @@
                 <div class="col-3">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Post</a>
-                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Seo</a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Image</a>
 
-                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Header Image</a>
+                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Seo</a>
                     </div>
                 </div>
                 <div class="col-9">
@@ -54,7 +49,7 @@
                                                 <option selected="selected" value="0">Select Category</option>
                                                 @foreach (var category in Model.CategoryList)
                                                 {
-                                                    <option value="@category.Id">@category.Name, @category.LanguageName</option>
+                                                    <option value="@category.Id">@category.Name, @category.Culture</option>
                                                 }
                                             </select>
                                         </div>
@@ -72,62 +67,14 @@
                                 <div class="form-group row">
 
                                     <div class="col-sm-12">
-                                        <textarea id="xp-tinymce" asp-for="Post.Content">Hello, Blogi BLOG</textarea>
+                                        <textarea id="xp-tinymce" asp-for="Post.Content" required></textarea>
                                     </div>
                                 </div>
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" asp-for="Post.IsPublished">
-                                    <label class="form-check-label" asp-for="Post.IsPublished">
-                                        Is Published
-                                    </label>
-                                </div>
+
 
                             </div>
                             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Meta Keywords</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" asp-for="Post.MetaKeywords" required>
-                                        <span class="text-danger" asp-validation-for="Post.MetaKeywords"></span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Meta Description</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" asp-for="Post.MetaDescription" required>
-                                        <span class="text-danger" asp-validation-for="Post.MetaDescription"></span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Url</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" asp-for="Post.Slug" required>
-                                        <span class="text-danger" asp-validation-for="Post.Slug"></span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Tags</label>
-                                    <div class="col-sm-10">
-                                        <select
-                                               class="js-example-basic-multiple"                                                
-                                                name="TagIds[]"
-                                                multiple="multiple"
-                                                required>                                          
-                                            @foreach (var tag in Model.TagList)
-                                            {
-                                                <option value="@tag.Id">@tag.Name</option>
-                                            }
-                                        </select>
-
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                                 <div class="card m-b-30">
                                     <div class="card-body">
                                         <div class="row">
@@ -154,11 +101,57 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Meta Keywords</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" asp-for="Post.MetaKeywords" required>
+                                        <span class="text-danger" asp-validation-for="Post.MetaKeywords"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Meta Description</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" asp-for="Post.MetaDescription" required>
+                                        <span class="text-danger" asp-validation-for="Post.MetaDescription"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Url</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" asp-for="Post.Slug" required>
+                                        <span class="text-danger" asp-validation-for="Post.Slug"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Tags</label>
+                                    <div class="col-sm-10">
+                                        <select asp-for="TagIds"
+                                                class="js-example-basic-multiple"
+                                                name="TagIds[]"
+                                                multiple="multiple"
+                                                required>
+                                            @foreach (var tag in Model.TagList)
+                                            {
+                                                <option value="@tag.Id">@tag.Name</option>
+                                            }
+                                        </select>
 
 
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" asp-for="Post.IsPublished">
+                                    <label class="form-check-label" asp-for="Post.IsPublished">
+                                        Is Published
+                                    </label>
+                                </div>
                                 <button type="submit" class="btn btn-success btn-rounded btn-lg btn-block"> Create Post<i class="mdi mdi-plus ml-2"></i></button>
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>
@@ -170,22 +163,15 @@
 
 
 @section scripts {
-<!-- Wysiwig JS -->
-<script src="~/assets/plugins/tinymce/tinymce.min.js"></script>
-<script src="~/assets/js/init/form-editor-init.js"></script>
-<script src="~/selectJs/dist/js/select2.full.min.js"></script>
-
 <script>
+    $(document).ready(function() {
+           $('.js-example-basic-multiple').select2();
+      });
 
-        $(document).ready(function() {
-        $('.js-example-basic-multiple').select2();
-    });
-
-        var previewImg=function (event){
-            var result= document.getElementById("imgPreview");
-            result.src=URL.createObjectURL(event.target.files[0]);
-        };
-
+     var previewImg=function (event){
+               var result= document.getElementById("imgPreview");
+               result.src=URL.createObjectURL(event.target.files[0]);
+      };
 
 </script>
 }

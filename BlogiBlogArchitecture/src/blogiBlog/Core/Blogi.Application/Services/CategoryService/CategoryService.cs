@@ -20,6 +20,7 @@ namespace Blogi.Application.Services.CategoryService
                 Id = x.Id,
                 LanguageId = x.LanguageId,
                 LanguageName=x.Languages.Name,
+                Culture = x.Languages.Culture,
                 Name = x.Name,
                 Description = x.Description,
                 Slug = x.Slug
@@ -33,6 +34,7 @@ namespace Blogi.Application.Services.CategoryService
                 Id = x.Id,
                 LanguageId = x.LanguageId,
                 LanguageName = x.Languages.Name,
+                Culture=x.Languages.Culture,
                 Name = x.Name,
                 Description = x.Description,
                 Slug = x.Slug

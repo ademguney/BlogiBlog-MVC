@@ -27,7 +27,6 @@ namespace Blogi.Dashboard.Controllers
                 LanguageList = languageList.Data,
                 CategoryList = categoryList.Data,
                 TagList = tagList.Data
-
             };
             return View(model);
         }
@@ -58,27 +57,26 @@ namespace Blogi.Dashboard.Controllers
                 MetaKeywords = input.Post.MetaKeywords,
                 Slug = input.Post.Slug
             });
-
-            if (result.Success)
-            {
-                NotifySuccess(result.Message);
-                return RedirectToAction("Home", "Post");
+            if (!result.Success)
+            {               
+                var languageList = await Mediator.Send(new GetListLanguageQuery());
+                var categoryList = await Mediator.Send(new GetListCategoryQuery());
+                var tagList = await Mediator.Send(new GetListTagQuery());
+                var model = new PostCreateViewModel
+                {
+                    LanguageList = languageList.Data,
+                    CategoryList = categoryList.Data,
+                    TagList = tagList.Data,
+                    Post = input.Post,
+                    TagIds = input.TagIds,
+                    File = input.File
+                };
+                NotifyError(result.Errors);
+                return View(model);
             }
 
-
-            var languageList = await Mediator.Send(new GetListLanguageQuery());
-            var categoryList = await Mediator.Send(new GetListCategoryQuery());
-            var tagList = await Mediator.Send(new GetListTagQuery());
-            var model = new PostCreateViewModel
-            {
-                LanguageList = languageList.Data,
-                CategoryList = categoryList.Data,
-                TagList = tagList.Data,
-                Post = input.Post
-
-            };
-            NotifyError(result.Errors);
-            return View(model);
+            NotifySuccess(result.Message);
+            return RedirectToAction("Home", "Post");
         }
 
         [HttpGet]

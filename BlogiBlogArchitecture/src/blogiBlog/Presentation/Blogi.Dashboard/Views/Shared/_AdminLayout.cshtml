@@ -10,10 +10,9 @@
     <meta name="author" content="Software Engineer Adem Guney">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 
-
-
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="~/favicon.png">
+
 
 
     <!-- DataTables CSS -->
@@ -26,10 +25,10 @@
     <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="~/assets/css/icons.css" rel="stylesheet" type="text/css">
     <link href="~/assets/css/style.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
-    <!-- End CSS -->
-   
+    <link href="~/assets/plugins/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/plugins/toastrjs/toastr.min.css" rel="stylesheet" type="text/css" />
 
+    <!-- End CSS -->
     @RenderSection("style", required: false)
 </head>
 
@@ -82,9 +81,8 @@
     <script src="~/assets/js/detect.js"></script>
     <script src="~/assets/js/jquery.slimscroll.js"></script>
     <script src="~/assets/js/sidebar-menu.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
+    <script src="~/assets/plugins/sweet-alert2/sweetalert2@9.js"></script>
+    <script src="~/assets/plugins/toastrjs/toastr.min.js"></script>
 
 
     <!-- DataTable JS -->
@@ -99,9 +97,20 @@
     <script src="~/assets/plugins/datatables/buttons.html5.min.js"></script>
     <script src="~/assets/plugins/datatables/buttons.colVis.min.js"></script>
 
+    <!-- Wysiwig JS -->
+    <script src="~/assets/plugins/tinymce/tinymce.min.js"></script>
+    <script src="~/assets/js/init/form-editor-init.js"></script>
+    <script src="~/assets/plugins/select2/dist/js/select2.full.min.js"></script>
+
+    <!-- Validation JS -->
+    <script src="~/assets/plugins/validate/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/assets/plugins/validate/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+
     <!-- Main JS -->
     <script src="~/assets/js/main.js"></script>
-    <!-- End JS -->
+
+
     @await Html.PartialAsync("_notificationPartial")
     @RenderSection("Scripts", required: false)
 </body>
