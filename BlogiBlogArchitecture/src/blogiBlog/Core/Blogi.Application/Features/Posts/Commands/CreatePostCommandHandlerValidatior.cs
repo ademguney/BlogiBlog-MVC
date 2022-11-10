@@ -2,12 +2,8 @@
 {
     public class CreatePostCommandHandlerValidatior : AbstractValidator<CreatePostCommand>
     {
-        private readonly IPostReadRepository _postReadRepository;
-
-        public CreatePostCommandHandlerValidatior(IPostReadRepository postReadRepository)
+        public CreatePostCommandHandlerValidatior()
         {
-            _postReadRepository = postReadRepository;
-
             RuleFor(x => x.UserId)
                 .NotEmpty()
                 .NotNull();

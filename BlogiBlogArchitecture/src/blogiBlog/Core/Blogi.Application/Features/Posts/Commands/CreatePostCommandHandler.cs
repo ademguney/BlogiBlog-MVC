@@ -5,24 +5,22 @@ namespace Blogi.Application.Features.Posts.Commands
     public class CreatePostCommandHandler : IRequestHandler<CreatePostCommand, BaseCommandResponse<GetPostOutput>>
     {
         private readonly IMapper _mapper;
-        private readonly IPostReadRepository _postReadRepository;
+       
         private readonly IPostWriteRepository _postWriteRepository;
 
         public CreatePostCommandHandler(
-            IMapper mapper,
-            IPostReadRepository postReadRepository,
+            IMapper mapper,          
             IPostWriteRepository postWriteRepository
             )
         {
-            _mapper = mapper;
-            _postReadRepository = postReadRepository;
+            _mapper = mapper;            
             _postWriteRepository = postWriteRepository;
         }
 
         public async Task<BaseCommandResponse<GetPostOutput>> Handle(CreatePostCommand request, CancellationToken cancellationToken)
         {
             var response= new BaseCommandResponse<GetPostOutput>();
-            var validator = new CreatePostCommandHandlerValidatior(_postReadRepository);
+            var validator = new CreatePostCommandHandlerValidatior();
             var validatorResult= await validator.ValidateAsync(request, cancellationToken);
 
             if (!validatorResult.IsValid)

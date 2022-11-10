@@ -58,6 +58,8 @@
     <Folder Include="Features\Posts\Dtos\Create\" />
     <Folder Include="Features\Posts\Dtos\Delete\" />
     <Folder Include="Features\Posts\Dtos\Update\" />
+    <Folder Include="Features\PostsTags\Dtos\" />
+    <Folder Include="Features\PostsTags\Queries\" />
   </ItemGroup>
 
 </Project>

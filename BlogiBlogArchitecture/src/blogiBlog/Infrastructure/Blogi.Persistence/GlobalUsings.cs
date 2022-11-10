@@ -16,6 +16,8 @@ global using Blogi.Persistence.Repositories.CategoryRepository;
 global using Blogi.Application.Repositories.CategoryRepository;
 global using Blogi.Application.Repositories.LanguageRepository;
 global using Blogi.Persistence.Repositories.LanguageRepository;
+global using Blogi.Application.Repositories.PostTagsRepository;
+global using Blogi.Persistence.Repositories.PostTagsRepository;
 global using Blogi.Application.Repositories.MailSettingRepository;
 global using Blogi.Persistence.Repositories.MailSettingRepository;
 global using Blogi.Application.Repositories.StringResourceRepository;

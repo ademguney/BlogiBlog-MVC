@@ -2,6 +2,7 @@
 using Blogi.Application.Features.Languages.Queries.GetList;
 using Blogi.Application.Features.Posts.Commands;
 using Blogi.Application.Features.Posts.Queries.GetList;
+using Blogi.Application.Features.PostsTags.Commands.Create;
 using Blogi.Application.Features.Tags.Queries.GetList;
 using Blogi.Dashboard.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -58,7 +59,7 @@ namespace Blogi.Dashboard.Controllers
                 Slug = input.Post.Slug
             });
             if (!result.Success)
-            {               
+            {
                 var languageList = await Mediator.Send(new GetListLanguageQuery());
                 var categoryList = await Mediator.Send(new GetListCategoryQuery());
                 var tagList = await Mediator.Send(new GetListTagQuery());
@@ -74,9 +75,18 @@ namespace Blogi.Dashboard.Controllers
                 NotifyError(result.Errors);
                 return View(model);
             }
+            else
+            {
+                var postTagResult = await Mediator.Send(new CreatePostTagCommand() { PostId = result.Id, TagIds = input.TagIds });
+                if(!postTagResult.Success)
+                {
+                    NotifyError(result.Errors);
+                    return View();
+                }
 
-            NotifySuccess(result.Message);
-            return RedirectToAction("Home", "Post");
+                NotifySuccess(result.Message);
+                return RedirectToAction("Home", "Post");
+            }            
         }
 
         [HttpGet]

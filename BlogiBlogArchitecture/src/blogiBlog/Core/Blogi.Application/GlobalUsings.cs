@@ -18,6 +18,7 @@ global using Blogi.Application.Features.Posts.Constants;
 global using Blogi.Application.Services.CategoryService;
 global using Blogi.Application.Features.Users.Constants;
 global using Blogi.Application.Repositories.TagRepository;
+global using Blogi.Application.Features.PostsTags.Constants;
 global using Blogi.Application.Repositories.PostRepository;
 global using Blogi.Application.Repositories.UserRepository;
 global using Blogi.Application.Features.Languages.Constants;
@@ -26,8 +27,7 @@ global using Blogi.Application.Services.StringResourceService;
 global using Blogi.Application.Repositories.CategoryRepository;
 global using Blogi.Application.Repositories.LanguageRepository;
 global using Blogi.Application.Features.MailSettings.Constants;
+global using Blogi.Application.Repositories.PostTagsRepository;
 global using Blogi.Application.Repositories.MailSettingRepository;
 global using Blogi.Application.Features.StringResources.Constants;
 global using Blogi.Application.Repositories.StringResourceRepository;
-
-
