@@ -12,7 +12,7 @@ An Open-Source multi language blogging platform built with Onion Architecture In
   
   <li>CQRS</li>
   <li>MediatR version="11.0.0"</li>     
-  <li>SOLID</li>
+  <li>SOLID Principles</li>
   <li>Repository Pattern</li>
   <li>AutoMapper version="12.0.0"</li>
   <li>FluentValidation version="11.2.2"</li>
