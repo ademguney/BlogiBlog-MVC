@@ -2,14 +2,15 @@
     $("#languageTable").DataTable({
         "ajax": {
             "type": "GET",
-            "url": "/Language/DataTable"
-
+            "url": "/Language/DataTable"           
         },
+        "bProcessing": true,
+        "bServerSide": true,
         "pageLength": 10,
         "bInfo": false,
         "responsive": true,
         "scrollY": false,
-        "bPaginate": false,
+        "bPaginate": true,
         "dom": 'Bfrtip',
         "buttons": [
             'copy', 'csv', 'excel', 'pdf', 'print'

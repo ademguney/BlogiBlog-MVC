@@ -1,4 +1,4 @@
-﻿namespace Blogi.Application.Features.Posts.Commands
+﻿namespace Blogi.Application.Features.Posts.Commands.Create
 {
     public class CreatePostCommandHandlerValidatior : AbstractValidator<CreatePostCommand>
     {

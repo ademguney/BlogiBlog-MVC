@@ -1,8 +1,10 @@
 ﻿using Blogi.Application.Features.Categories.Queries.GetList;
 using Blogi.Application.Features.Languages.Queries.GetList;
-using Blogi.Application.Features.Posts.Commands;
+using Blogi.Application.Features.Posts.Commands.Create;
+using Blogi.Application.Features.Posts.Commands.Delete;
 using Blogi.Application.Features.Posts.Queries.GetList;
 using Blogi.Application.Features.PostsTags.Commands.Create;
+using Blogi.Application.Features.PostsTags.Commands.Delete;
 using Blogi.Application.Features.Tags.Queries.GetList;
 using Blogi.Dashboard.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -78,7 +80,7 @@ namespace Blogi.Dashboard.Controllers
             else
             {
                 var postTagResult = await Mediator.Send(new CreatePostTagCommand() { PostId = result.Id, TagIds = input.TagIds });
-                if(!postTagResult.Success)
+                if (!postTagResult.Success)
                 {
                     NotifyError(result.Errors);
                     return View();
@@ -86,7 +88,18 @@ namespace Blogi.Dashboard.Controllers
 
                 NotifySuccess(result.Message);
                 return RedirectToAction("Home", "Post");
-            }            
+            }
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> Delete(DeletePostCommand input)
+        {
+            var postTagDelete = await Mediator.Send(new DeletePostTagCommand() { PostId = input.Id });
+            if (!postTagDelete.Success)
+                return Json(new { data = postTagDelete.Errors });
+
+            var result = await Mediator.Send(input);
+            return Json(new { data = result });
         }
 
         [HttpGet]

@@ -8,8 +8,7 @@
             builder.Property(u => u.LanguageId).IsRequired(true);
             builder.Property(u => u.Key).IsRequired(true).HasMaxLength(500);
             builder.Property(u => u.Value).IsRequired(true).HasMaxLength(500);
-            builder.HasOne(u => u.Languages);
-
+          
             builder.HasData(
                 new StringResource
                 {

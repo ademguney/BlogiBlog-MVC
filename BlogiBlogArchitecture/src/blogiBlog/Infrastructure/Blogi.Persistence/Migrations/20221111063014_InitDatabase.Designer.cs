@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blogi.Persistence.Migrations
 {
     [DbContext(typeof(BlogiBlogDbContext))]
-    [Migration("20221109192303_InitDatabase")]
+    [Migration("20221111063014_InitDatabase")]
     partial class InitDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -174,7 +174,7 @@ namespace Blogi.Persistence.Migrations
                             Email = "blogi@blog.com",
                             FullName = "BlogiBlog",
                             Host = "smtp.gmail.com",
-                            Password = "dl0e3ak1ninDzaRyQbgQR6/hh0HSLkKdhR4hvKXE5JtcO/Ze0favlAP8PHlOsDJw",
+                            Password = "kh8gim1OUxgs9eFMxieoRmjI1SKVd0zEEysYWyRd6O9RgZ4XI7MA5LHeAL2o6LYq",
                             Port = 587,
                             SslEnabled = false,
                             UseDefaultCredentials = false
@@ -265,7 +265,7 @@ namespace Blogi.Persistence.Migrations
                             CategoryId = 1,
                             Content = "Blogi blog an open source project.",
                             CreatedById = 1,
-                            CreationDate = new DateTime(2022, 11, 9, 19, 23, 3, 690, DateTimeKind.Utc).AddTicks(8029),
+                            CreationDate = new DateTime(2022, 11, 11, 6, 30, 14, 430, DateTimeKind.Utc).AddTicks(6022),
                             DisplayCount = 0,
                             ImageAlt = "blogiBlog",
                             IsPublished = true,
@@ -575,7 +575,7 @@ namespace Blogi.Persistence.Migrations
                             Id = 1,
                             Email = "blogi@blog.com",
                             Name = "BLOGI",
-                            Password = "t31bQKTLS6TtOpTcxn97kqb/shIK4pzGzfbEENRuAiwqJppqhnaSucIuYvE3zTC0",
+                            Password = "W2IUlGinfiphfKUtpqt5hfPRj9JXtW0cFn8LKc/rzdotmqlbI1ktM1ah0fVogmgL",
                             Surname = "BLOG"
                         });
                 });
@@ -602,7 +602,7 @@ namespace Blogi.Persistence.Migrations
                     b.HasOne("Blogi.Domain.Entities.Language", "Languages")
                         .WithMany()
                         .HasForeignKey("LanguageId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Blogi.Domain.Entities.User", "Users")
@@ -623,13 +623,13 @@ namespace Blogi.Persistence.Migrations
                     b.HasOne("Blogi.Domain.Entities.Post", null)
                         .WithMany("PostTags")
                         .HasForeignKey("PostId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Blogi.Domain.Entities.Tag", "Tags")
                         .WithMany()
                         .HasForeignKey("TagId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Tags");

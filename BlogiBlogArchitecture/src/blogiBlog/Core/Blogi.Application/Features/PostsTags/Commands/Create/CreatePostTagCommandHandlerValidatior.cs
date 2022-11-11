@@ -20,11 +20,11 @@
 
             RuleFor(x => x)
                .MustAsync(PostIdIsNotExists)
-               .WithMessage(PostTagMessage.PostIdIsNotExists);
+               .WithMessage(PostTagMessages.PostIdIsNotExists);
 
             RuleFor(x => x)
                .MustAsync(TagIdsIsNotExists)
-               .WithMessage(PostTagMessage.TagIdsIsNotExists);
+               .WithMessage(PostTagMessages.TagIdsIsNotExists);
         }
 
         private async Task<bool> PostIdIsNotExists(CreatePostTagCommand e, CancellationToken token)
