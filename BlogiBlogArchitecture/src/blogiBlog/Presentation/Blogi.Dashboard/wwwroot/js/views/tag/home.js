@@ -3,11 +3,9 @@
         "ajax": {
             "type": "GET",
             "url": "/Tag/DataTable"
-        },
-        "bProcessing": true,
-        "bServerSide": true,
+        },       
         "pageLength": 10,
-        "bInfo": false,
+        "bInfo": true,
         "responsive": true,
         "scrollY": false,
         "bPaginate": true,

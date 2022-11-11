@@ -51,7 +51,7 @@
                 response.Id = request.PostId;
                 response.Data = request.PostId;
                 response.Success = true;
-                response.Message = PostTagMessages.GetList;
+                response.Message = PostTagMessages.GetListIsNotExists;
                 response.Errors = null;
             }
             return response;

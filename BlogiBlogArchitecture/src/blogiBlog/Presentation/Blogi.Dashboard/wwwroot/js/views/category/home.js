@@ -3,8 +3,7 @@
         "ajax": {
             "type": "GET",
             "url": "/Category/DataTable"
-        },
-        
+        },        
         "pageLength": 10,
         "bInfo": true,
         "responsive": true,

@@ -1,14 +1,40 @@
-﻿@model Blogi.Dashboard.Models.PostCreateViewModel
+﻿@model Blogi.Dashboard.Models.PostEditViewModel
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+<div class="row">
+    <div class="col-lg-12">
+        <div class="xp-breadcrumbbar">
+            <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <h4 class="xp-page-title">
+                        <a asp-controller="Dashboard" asp-action="Home" style="color: #8A98AC"><i class="icon-home"></i> Home</a>
+                    </h4>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="xp-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a asp-controller="Post" asp-action="Home"><i class="icon-home"></i></a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <a asp-controller="Post" asp-action="Home">Back to List</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
 
-<form asp-controller="Post" asp-action="Create" method="post" enctype="multipart/form-data">
+<form asp-controller="Post" asp-action="Edit" method="post" enctype="multipart/form-data">
     @Html.AntiForgeryToken()
     <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
-
+    <input type="hidden" asp-for="Post.Id" name="Post.Id" />
 
     <div class="row">
         <div class="col-lg-12">
@@ -18,26 +44,28 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                         <div class="col-lg-8">
+                        <div class="col-lg-8">
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Image</label>
                                 <div class="col-sm-10">
                                     <input type="file" class="form-control" name="File" onchange="previewImg(event)">
                                 </div>
                             </div>
-                             <div class="form-group row">
+                            <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Image Alt</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" asp-for="Post.ImageAlt" required>
                                     <span class="text-danger" asp-validation-for="Post.ImageAlt"></span>
                                 </div>
-                            </div>                           
-                        </div>
-                        <div class="col-lg-4">                            
-                            <div class="form-group row">                                
-                                <img id="imgPreview" class="img-fluid" style="width:400px; height:200px;">
                             </div>
-                        </div>                       
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group row">
+                                @{
+                                    <img src="@string.Format("data:image/gif;base64,{0}", Model.Post.Image)" id="imgPreview" class="img-fluid" style="width:400px; height:200px;">
+                                }
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -149,7 +177,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <button type="submit" class="btn btn-success btn-rounded btn-lg btn-block"> Create<i class="mdi mdi-plus ml-2"></i></button>
+                       <button type="submit" class="btn btn-block btn-warning"> Update<i class="mdi mdi-plus ml-2"></i></button>
                     </div>
 
                 </div>

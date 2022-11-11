@@ -23,7 +23,7 @@ namespace Blogi.Application.Features.StringResources.Queries.GitList
                 response.Success = false;
                 response.Message = StringResourceMessages.GetListNotExists;
                 response.Errors = null;
-                response.Data = null;
+                response.Data = new List<GetListStringResourceOutput>();
             }
             else
             {

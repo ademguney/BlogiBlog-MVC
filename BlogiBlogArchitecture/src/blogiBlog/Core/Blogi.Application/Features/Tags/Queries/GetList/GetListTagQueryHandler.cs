@@ -24,7 +24,7 @@ namespace Blogi.Application.Features.Tags.Queries.GetList
                 response.Success = false;
                 response.Message = TagMessages.GetListNotExists;
                 response.Errors = null;
-                response.Data = null;
+                response.Data = new List<GetTagOutput>();
             }
             else
             {

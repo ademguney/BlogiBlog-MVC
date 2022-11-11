@@ -24,7 +24,7 @@ namespace Blogi.Application.Features.Categories.Queries.GetList
                 response.Success = false;
                 response.Message = CategoryMessages.GetListNotExists;
                 response.Errors = null;
-                response.Data = null;
+                response.Data = new List<GetCategoryOutput>();
             }
             else
             {

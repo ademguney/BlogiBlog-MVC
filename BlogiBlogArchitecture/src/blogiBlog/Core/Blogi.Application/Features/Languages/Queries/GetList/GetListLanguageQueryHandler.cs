@@ -23,7 +23,7 @@ namespace Blogi.Application.Features.Languages.Queries.GetList
                 response.Success = false;
                 response.Message = LanguageMessages.GetListNotExists;
                 response.Errors = null;
-                response.Data = null;
+                response.Data = new List<GetListLanguageOutput>();
             }
             else
             {
