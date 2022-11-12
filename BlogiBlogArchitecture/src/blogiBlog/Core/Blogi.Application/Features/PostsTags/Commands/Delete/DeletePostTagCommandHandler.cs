@@ -2,22 +2,16 @@
 {
     public class DeletePostTagCommandHandler : IRequestHandler<DeletePostTagCommand, BaseCommandResponse<int>>
     {
-        private readonly IMapper _mapper;
         private readonly IPostReadRepository _postReadRepository;
-        private readonly IPostTagsWriteRepository _postTagsWriteRepository;
-        private readonly IPostTagsReadRepository _postTagsReadRepository;
+        private readonly IPostTagService _postTagService;
 
         public DeletePostTagCommandHandler(
-            IMapper mapper,
             IPostReadRepository postReadRepository,
-            IPostTagsWriteRepository postTagsWriteRepository,
-            IPostTagsReadRepository postTagsReadRepository
+            IPostTagService postTagService
             )
         {
-            _mapper = mapper;
             _postReadRepository = postReadRepository;
-            _postTagsWriteRepository = postTagsWriteRepository;
-            _postTagsReadRepository = postTagsReadRepository;
+            _postTagService = postTagService;
         }
 
         public async Task<BaseCommandResponse<int>> Handle(DeletePostTagCommand request, CancellationToken cancellationToken)
@@ -35,25 +29,14 @@
             }
             else
             {
-                var postTag = await _postTagsReadRepository.GetListAsync(x => x.PostId == request.PostId);
-                if (postTag is not null)
-                {
-                    foreach (var item in postTag)
-                        await _postTagsWriteRepository.DeleteAsync(item);
-
-                    response.Id = request.PostId;
-                    response.Data = request.PostId;
-                    response.Success = true;
-                    response.Message = PostTagMessages.DeletedSuccess;
-                    response.Errors = null;
-                }
-
+                await _postTagService.DeleteAsync(request.PostId);
                 response.Id = request.PostId;
                 response.Data = request.PostId;
                 response.Success = true;
-                response.Message = PostTagMessages.GetListIsNotExists;
+                response.Message = PostTagMessages.DeletedSuccess;
                 response.Errors = null;
             }
+
             return response;
         }
     }

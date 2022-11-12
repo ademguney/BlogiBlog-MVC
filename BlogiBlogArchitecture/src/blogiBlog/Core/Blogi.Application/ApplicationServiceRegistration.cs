@@ -11,7 +11,8 @@
             // Services
             services.AddScoped<ITagService, TagService>();
             services.AddScoped<IPostService, PostService>();
-            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IPostTagService, PostTagService>();
+            services.AddScoped<ICategoryService, CategoryService>();           
             services.AddScoped<IStringResourceService, StringResourceService>();
 
 

@@ -7,8 +7,8 @@
         private readonly IPostWriteRepository _postWriteRepository;
 
         public DeletePostCommandHandler(
-            IMapper mapper, 
-            IPostReadRepository postReadRepository, 
+            IMapper mapper,
+            IPostReadRepository postReadRepository,
             IPostWriteRepository postWriteRepository
             )
         {
@@ -33,8 +33,7 @@
             else
             {
                 var postMapp = _mapper.Map<Post>(request);
-                var entity=await _postReadRepository.GetAsync(x=>x.Id == request.Id);
-                var result = await _postWriteRepository.DeleteAsync(entity);
+                var result = await _postWriteRepository.DeleteAsync(postMapp);
 
                 response.Id = result.Id;
                 response.Data = result.Id;
@@ -42,6 +41,7 @@
                 response.Message = PostMessages.DeletedSuccess;
                 response.Errors = null;
             }
+           
             return response;
         }
     }

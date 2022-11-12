@@ -5,7 +5,6 @@ namespace Blogi.Application.Features.Posts.Commands.Create
     public class CreatePostCommandHandler : IRequestHandler<CreatePostCommand, BaseCommandResponse<GetPostOutput>>
     {
         private readonly IMapper _mapper;
-
         private readonly IPostWriteRepository _postWriteRepository;
 
         public CreatePostCommandHandler(

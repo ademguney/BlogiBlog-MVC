@@ -7,6 +7,7 @@ using Blogi.Application.Features.Posts.Queries.Get;
 using Blogi.Application.Features.Posts.Queries.GetList;
 using Blogi.Application.Features.PostsTags.Commands.Create;
 using Blogi.Application.Features.PostsTags.Commands.Delete;
+using Blogi.Application.Features.PostsTags.Commands.Update;
 using Blogi.Application.Features.PostsTags.Queries.Get;
 using Blogi.Application.Features.Tags.Queries.GetList;
 using Blogi.Dashboard.Models;
@@ -161,6 +162,8 @@ namespace Blogi.Dashboard.Controllers
             });
             if (result.Success)
             {
+                await Mediator.Send(new UpdatePostTagCommand() { PostId = result.Id, TagIds = input.TagIds });
+
                 NotifySuccess(result.Message);
                 return RedirectToAction("Home", "Post");
             }

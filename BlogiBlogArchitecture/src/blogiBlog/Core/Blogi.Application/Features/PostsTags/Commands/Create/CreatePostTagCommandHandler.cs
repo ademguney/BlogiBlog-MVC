@@ -2,22 +2,19 @@
 {
     public class CreatePostTagCommandHandler : IRequestHandler<CreatePostTagCommand, BaseCommandResponse<int>>
     {
-        private readonly IMapper _mapper;
         private readonly IPostReadRepository _postReadRepository;
-        private readonly IPostTagsWriteRepository _postTagsWriteRepository;
         private readonly ITagReadRepository _tagReadRepository;
+        private readonly IPostTagService _postTagService;
 
         public CreatePostTagCommandHandler(
-            IMapper mapper,
             IPostReadRepository postReadRepository,
-            IPostTagsWriteRepository postTagsWriteRepository,
-            ITagReadRepository tagReadRepository
+            ITagReadRepository tagReadRepository,
+            IPostTagService postTagService
             )
         {
-            _mapper = mapper;
             _postReadRepository = postReadRepository;
-            _postTagsWriteRepository = postTagsWriteRepository;
             _tagReadRepository = tagReadRepository;
+            _postTagService = postTagService;
         }
 
         public async Task<BaseCommandResponse<int>> Handle(CreatePostTagCommand request, CancellationToken cancellationToken)
@@ -28,23 +25,14 @@
 
             if (!validatorResult.IsValid)
             {
-                response.Data = 0;
+                response.Data = request.PostId;
                 response.Success = false;
                 response.Message = "";
                 response.Errors = validatorResult.Errors.Select(x => x.ErrorMessage).ToList();
             }
             else
             {
-                foreach (var item in request.TagIds)
-                {
-                    var postTags = new PostTags
-                    {
-                        PostId = request.PostId,
-                        TagId = item
-                    };
-                    await _postTagsWriteRepository.AddAsync(postTags);
-                }
-
+                var result = await _postTagService.AddAsync(request.PostId, request.TagIds);
                 response.Id = request.PostId;
                 response.Data = request.PostId;
                 response.Success = true;
