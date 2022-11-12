@@ -7,6 +7,14 @@ namespace Blogi.Dashboard.Controllers
 {
     public class AccountController : BaseController
     {
+
+        [HttpGet]
+        [Route("Account/Login")]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
         [HttpGet]
         public async Task<IActionResult> Profile()
         {
