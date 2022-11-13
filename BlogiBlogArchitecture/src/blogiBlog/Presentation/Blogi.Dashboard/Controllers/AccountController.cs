@@ -1,4 +1,5 @@
-﻿using Blogi.Application.Features.Users.Commands.Update;
+﻿using Blogi.Application.Features.Auth.Commands.Login;
+using Blogi.Application.Features.Users.Commands.Update;
 using Blogi.Application.Features.Users.Queries.Get;
 using Blogi.Dashboard.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -9,10 +10,22 @@ namespace Blogi.Dashboard.Controllers
     {
 
         [HttpGet]
-        [Route("Account/Login")]
         public IActionResult Login()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginUserCommand input)
+        {
+            var result = await Mediator.Send(input);
+            if (result.Success)
+            {
+                return RedirectToAction("Home", "Dashboard");
+            }
+
+            NotifyError(result.Errors);
+            return View(input);
         }
 
         [HttpGet]
@@ -29,7 +42,7 @@ namespace Blogi.Dashboard.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Profile(ProfileCreateViewModel input)
         {
-            byte[] fileBytes = null;           
+            byte[] fileBytes = null;
             if (input.File is not null)
             {
                 using var memoryStream = new MemoryStream();

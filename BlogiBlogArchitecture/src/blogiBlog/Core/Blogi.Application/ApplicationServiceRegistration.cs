@@ -11,8 +11,10 @@
             // Services
             services.AddScoped<ITagService, TagService>();
             services.AddScoped<IPostService, PostService>();
+            services.AddScoped<IClaimService, ClaimService>();
             services.AddScoped<IPostTagService, PostTagService>();
-            services.AddScoped<ICategoryService, CategoryService>();           
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IStringResourceService, StringResourceService>();
 
 

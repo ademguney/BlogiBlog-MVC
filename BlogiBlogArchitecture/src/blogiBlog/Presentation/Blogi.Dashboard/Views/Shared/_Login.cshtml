@@ -1,0 +1,55 @@
+﻿
+<!doctype html>
+<html class="no-js" lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Blogi Blog Login Page</title>
+    <meta name="author" content="Adem Guney" />
+    <meta name="description" content="Blogi Blog Open Source Blog Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/loginTemp/css/bootstrap.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="~/loginTemp/css/fontawesome-all.min.css">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="~/loginTemp/font/flaticon.css">
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/loginTemp/style.css">
+    <!-- Toastr CSS -->
+    <link href="~/assets/plugins/toastrjs/toastr.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <section class="fxt-template-animation fxt-template-layout19">
+        @RenderBody()
+    </section>
+    <!-- jquery-->
+    <script src="~/loginTemp/js/jquery-3.5.0.min.js"></script>
+    <!-- Popper js -->
+    <script src="~/loginTemp/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="~/loginTemp/js/bootstrap.min.js"></script>
+    <!-- Imagesloaded js -->
+    <script src="~/loginTemp/js/imagesloaded.pkgd.min.js"></script>
+    <!-- Validator js -->
+    <script src="~/loginTemp/js/validator.min.js"></script>
+    <!-- Custom Js -->
+    <script src="~/loginTemp/js/main.js"></script>
+    <!-- Toastr Js -->
+    <script src="~/assets/plugins/toastrjs/toastr.min.js"></script>
+
+
+    @await Html.PartialAsync("_notificationPartial")
+</body>
+
+</html>

@@ -1,100 +1,53 @@
 ﻿@{
-	Layout = null;
+    Layout = "~/Views/Shared/_Login.cshtml";
 }
-<!doctype html>
-<html class="no-js" lang="en-us">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-12 fxt-bg-img" data-bg-image="../favicon.png">
+            <div class="fxt-header">
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Blogi Blog Login Page</title>
-	<meta name="author" content="Adem Guney" />
-	<meta name="description" content="Blogi Blog Open Source Blog Project">	
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	 <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.png">
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="~/loginTemp/css/bootstrap.min.css">
-	<!-- Fontawesome CSS -->
-	<link rel="stylesheet" href="~/loginTemp/css/fontawesome-all.min.css">
-	<!-- Flaticon CSS -->
-	<link rel="stylesheet" href="~/loginTemp/font/flaticon.css">
-	<!-- Google Web Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
-	<!-- Custom CSS -->
-	<link rel="stylesheet" href="~/loginTemp/style.css">
-</head>
-
-<body>
-	<!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-	<section class="fxt-template-animation fxt-template-layout19">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-6 col-12 fxt-bg-img" data-bg-image="../favicon.png">
-					<div class="fxt-header">
-						
-						<h1>Welcome To Blogi BLoG</h1>
-						<p>Blogi Blog open source multi language web blog project.</p>
-						<a href="https://github.com/ademguney/BlogiBlog-MVC" target="_blank" class="fxt-btn-ghost">GitHub Repository</a>
-					</div>
-				</div>
-				<div class="col-md-6 col-12 fxt-bg-color">
-					<div class="fxt-content">
-						<div class="fxt-form">
-							<h2>Login into your account</h2>
-							<form method="POST">
-								<div class="form-group">
-									<div class="fxt-transformY-50 fxt-transition-delay-3">
-										<input type="email" class="form-control" name="email" placeholder="Email Address" required="required">
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="fxt-transformY-50 fxt-transition-delay-4">
-										<input id="password" type="password" class="form-control" name="password" placeholder="********" required="required">
-										<i toggle="#password" class="fa fa-fw fa-eye toggle-password field-icon"></i>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="fxt-transformY-50 fxt-transition-delay-3">
-										<div class="fxt-checkbox-area">
-											<div class="checkbox">
-												<input id="checkbox1" type="checkbox">
-												<label for="checkbox1">Keep me logged in</label>
-											</div>
-											<a href="forgot-password-19.html" class="switcher-text">Forgot Password</a>
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="fxt-transformY-50 fxt-transition-delay-5">
-										<div class="text-center">
-											<button type="submit" class="fxt-btn-fill">Log in</button>
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>						
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- jquery-->
-	<script src="~/loginTemp/js/jquery-3.5.0.min.js"></script>
-	<!-- Popper js -->
-	<script src="~/loginTemp/js/popper.min.js"></script>
-	<!-- Bootstrap js -->
-	<script src="~/loginTemp/js/bootstrap.min.js"></script>
-	<!-- Imagesloaded js -->
-	<script src="~/loginTemp/js/imagesloaded.pkgd.min.js"></script>
-	<!-- Validator js -->
-	<script src="~/loginTemp/js/validator.min.js"></script>
-	<!-- Custom Js -->
-	<script src="~/loginTemp/js/main.js"></script>
-
-</body>
-
-</html>
+                <h1>Welcome To Blogi BLoG</h1>
+                <p>Blogi Blog open source multi language web blog project.</p>
+                <a href="https://github.com/ademguney/BlogiBlog-MVC" target="_blank" class="fxt-btn-ghost">GitHub Repository</a>
+            </div>
+        </div>
+        <div class="col-md-6 col-12 fxt-bg-color">
+            <div class="fxt-content">
+                <div class="fxt-form">
+                    <h2>Login into your account</h2>
+                    <form asp-controller="Account" asp-action="Login" method="POST">
+                        <div class="form-group">
+                            <div class="fxt-transformY-50 fxt-transition-delay-3">
+                                <input type="email" class="form-control" name="email" placeholder="Email Address" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="fxt-transformY-50 fxt-transition-delay-4">
+                                <input id="password" type="password" class="form-control" name="password" placeholder="********" required="required">
+                                <i toggle="#password" class="fa fa-fw fa-eye toggle-password field-icon"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="fxt-transformY-50 fxt-transition-delay-3">
+                                <div class="fxt-checkbox-area">
+                                    <div class="checkbox">
+                                        <input id="checkbox1" name="rememberMe" type="checkbox" checked>
+                                        <label id="checkbox1" for="checkbox1">Keep me logged in</label>
+                                    </div>
+                                    <a href="forgot-password-19.html" class="switcher-text">Forgot Password</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="fxt-transformY-50 fxt-transition-delay-5">
+                                <div class="text-center">
+                                    <button type="submit" class="fxt-btn-fill">Log in</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
