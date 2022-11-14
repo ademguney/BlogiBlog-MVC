@@ -2,7 +2,7 @@
 
 namespace Core.Application.FormAuth.ClaimServices
 {
-    public interface IClaimService
+    public interface IClaimCoreService
     {
         Task CreateAsync(ClaimCoreInfo claimInformations, string scheme);
     }

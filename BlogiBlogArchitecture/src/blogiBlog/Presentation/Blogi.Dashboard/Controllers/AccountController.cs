@@ -2,6 +2,8 @@
 using Blogi.Application.Features.Users.Commands.Update;
 using Blogi.Application.Features.Users.Queries.Get;
 using Blogi.Dashboard.Models;
+using Core.Application.FormAuth.CookieScheme;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,12 +25,17 @@ namespace Blogi.Dashboard.Controllers
         {
             var result = await Mediator.Send(input);
             if (result.Success)
-            {
                 return RedirectToAction("Home", "Dashboard");
-            }
 
             NotifyError(result.Errors);
             return View(input);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(AuthDefaults.Scheme);
+            return RedirectToAction("Login", "Account");
         }
 
         [Authorize]

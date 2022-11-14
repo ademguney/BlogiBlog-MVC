@@ -7,12 +7,12 @@ namespace Blogi.Application.Features.Auth.Commands.Login
     public class LoginUserCommandHandler : IRequestHandler<LoginUserCommand, BaseCommandResponse<GetLoginOutput>>
     {
         private readonly IMapper _mapper;
-        private readonly IClaimService _claimService;
+        private readonly IClaimCoreService _claimService;
         private readonly IUserReadRepository _userReadRepository;
 
         public LoginUserCommandHandler(
             IMapper mapper,
-            IClaimService claimService,
+            IClaimCoreService claimService,
             IUserReadRepository userReadRepository
             )
         {
@@ -45,7 +45,7 @@ namespace Blogi.Application.Features.Auth.Commands.Login
                     Email = result.Email,
                     FirstName = result.Name,
                     LastName = result.Surname
-                }, AuthDefault.Scheme);
+                }, AuthDefaults.Scheme);
 
                 var resultMapp = _mapper.Map<GetLoginOutput>(result);
 

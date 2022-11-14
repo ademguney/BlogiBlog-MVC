@@ -13,7 +13,7 @@ namespace Blogi.Application
             // Services
             services.AddScoped<ITagService, TagService>();
             services.AddScoped<IPostService, PostService>();
-            services.AddScoped<IClaimService, ClaimService>();
+            services.AddScoped<IClaimCoreService, ClaimCoreService>();
             services.AddScoped<IPostTagService, PostTagService>();
             services.AddScoped<ICategoryService, CategoryService>();            
             services.AddScoped<IStringResourceService, StringResourceService>();

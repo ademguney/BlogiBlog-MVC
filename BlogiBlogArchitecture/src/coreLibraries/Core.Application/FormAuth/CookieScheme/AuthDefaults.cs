@@ -1,6 +1,6 @@
 ﻿namespace Core.Application.FormAuth.CookieScheme
 {
-    public class AuthDefault
+    public class AuthDefaults
     {
         public const string Scheme = "Authentication";
         public const string CookieName = "Blogi_Blog";
