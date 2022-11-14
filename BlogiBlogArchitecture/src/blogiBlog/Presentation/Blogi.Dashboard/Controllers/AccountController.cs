@@ -23,7 +23,7 @@ namespace Blogi.Dashboard.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginUserCommand input)
         {
-            var result = await Mediator.Send(input);
+            var result = await Mediator.Send(input);           
             if (result.Success)
                 return RedirectToAction("Home", "Dashboard");
 
@@ -40,9 +40,9 @@ namespace Blogi.Dashboard.Controllers
 
         [Authorize]
         [HttpGet]
-        public async Task<IActionResult> Profile()
+        public async Task<IActionResult> Profile(int id)
         {
-            var result = await Mediator.Send(new GetUserQuery() { Id = 1 });
+            var result = await Mediator.Send(new GetUserQuery() { Id = id });
             var model = new ProfileCreateViewModel
             {
                 User = result.Data

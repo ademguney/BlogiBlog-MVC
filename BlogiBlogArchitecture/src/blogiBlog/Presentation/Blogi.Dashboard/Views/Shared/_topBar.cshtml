@@ -47,8 +47,8 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="xp-userprofile">
                                 <a class="dropdown-item py-3 text-white text-center font-16" href="#">NameSurname</a>
-                                <a class="dropdown-item" asp-controller="Account" asp-action="Profile">
-                                    <i class="icon-user text-danger mr-2"></i> myAccount
+                                <a class="dropdown-item" asp-controller="Account" asp-action="Profile" asp-route-id="@User.FindFirst(ClaimTypes.NameIdentifier).Value">
+                                    <i class="icon-user text-danger mr-2"></i> @User.FindFirst(ClaimTypes.GivenName).Value @User.FindFirst(ClaimTypes.Surname).Value
                                 </a>
                                 <a class="dropdown-item" asp-controller="Account" asp-action="Logout">
                                     <i class="icon-power text-danger mr-2"></i> logOut

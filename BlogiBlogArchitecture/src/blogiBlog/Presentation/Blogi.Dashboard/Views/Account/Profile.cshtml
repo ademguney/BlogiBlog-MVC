@@ -12,8 +12,7 @@
                 <form asp-controller="Account" asp-action="Profile" method="post" enctype="multipart/form-data">
                     @Html.AntiForgeryToken()
                     <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
-                    <input type="hidden" asp-for="User.Id" name="User.Id" />
-
+                    <input type="hidden" asp-for="User.Id" name="User.Id" value="@User.FindFirst(ClaimTypes.NameIdentifier).Value" />
 
                     <div class="card m-b-30">
                         <div class="card-header bg-white text-center">

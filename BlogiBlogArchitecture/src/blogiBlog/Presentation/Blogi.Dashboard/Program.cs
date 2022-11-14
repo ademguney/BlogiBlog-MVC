@@ -16,7 +16,7 @@ builder.Services.AddAuthentication(options =>
 })
 .AddCookie(AuthDefaults.Scheme, options =>
                 {
-                    options.Cookie.Name = AuthDefaults.CookieName;
+                   
                     options.Cookie.HttpOnly = true;
                     options.ExpireTimeSpan = TimeSpan.FromDays(7);
                     options.LoginPath = new PathString(AuthDefaults.LogIn);

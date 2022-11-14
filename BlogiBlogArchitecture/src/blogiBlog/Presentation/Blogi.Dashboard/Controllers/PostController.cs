@@ -54,7 +54,7 @@ namespace Blogi.Dashboard.Controllers
 
             var result = await Mediator.Send(new CreatePostCommand()
             {
-                UserId = 1,
+                UserId = input.Post.UserId,
                 CategoryId = input.Post.CategoryId,
                 LanguageId = input.Post.LanguageId,
                 Title = input.Post.Title,
@@ -150,7 +150,7 @@ namespace Blogi.Dashboard.Controllers
             var result = await Mediator.Send(new UpdatePostCommand()
             {
                 Id = input.Post.Id,
-                UserId = 1,
+                UserId = input.Post.UserId,
                 LanguageId = input.Post.LanguageId,
                 CategoryId = input.Post.CategoryId,
                 Title = input.Post.Title,

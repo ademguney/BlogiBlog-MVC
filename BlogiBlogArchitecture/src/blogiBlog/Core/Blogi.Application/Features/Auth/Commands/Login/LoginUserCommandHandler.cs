@@ -46,7 +46,7 @@ namespace Blogi.Application.Features.Auth.Commands.Login
                     FirstName = result.Name,
                     LastName = result.Surname
                 }, AuthDefaults.Scheme);
-
+               
                 var resultMapp = _mapper.Map<GetLoginOutput>(result);
 
                 response.Id = result.Id;
