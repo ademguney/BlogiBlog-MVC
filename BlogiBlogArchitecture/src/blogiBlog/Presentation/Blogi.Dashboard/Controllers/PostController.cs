@@ -11,10 +11,12 @@ using Blogi.Application.Features.PostsTags.Commands.Update;
 using Blogi.Application.Features.PostsTags.Queries.Get;
 using Blogi.Application.Features.Tags.Queries.GetList;
 using Blogi.Dashboard.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blogi.Dashboard.Controllers
 {
+    [Authorize]
     public class PostController : BaseController
     {
         [HttpGet]

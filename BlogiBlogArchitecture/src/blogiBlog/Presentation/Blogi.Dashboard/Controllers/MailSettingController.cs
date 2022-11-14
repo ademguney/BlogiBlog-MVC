@@ -1,9 +1,11 @@
 ﻿using Blogi.Application.Features.MailSettings.Commands.Update;
 using Blogi.Application.Features.MailSettings.Queries.Get;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blogi.Dashboard.Controllers
 {
+    [Authorize]
     public class MailSettingController : BaseController
     {
         [HttpGet]

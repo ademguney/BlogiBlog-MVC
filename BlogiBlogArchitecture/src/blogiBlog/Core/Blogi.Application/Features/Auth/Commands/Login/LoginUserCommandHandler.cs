@@ -1,31 +1,35 @@
-﻿using Core.Application.FormAuth.CookieScheme;
+﻿using Blogi.Application.Features.Auth.Dto.GetLogin;
+using Core.Application.FormAuth.ClaimServices;
+using Core.Application.FormAuth.CookieScheme;
 
 namespace Blogi.Application.Features.Auth.Commands.Login
 {
-    public class LoginUserCommandHandler : IRequestHandler<LoginUserCommand, BaseCommandResponse<bool>>
+    public class LoginUserCommandHandler : IRequestHandler<LoginUserCommand, BaseCommandResponse<GetLoginOutput>>
     {
-
+        private readonly IMapper _mapper;
         private readonly IClaimService _claimService;
         private readonly IUserReadRepository _userReadRepository;
 
         public LoginUserCommandHandler(
+            IMapper mapper,
             IClaimService claimService,
             IUserReadRepository userReadRepository
             )
         {
+            _mapper = mapper;
             _claimService = claimService;
             _userReadRepository = userReadRepository;
         }
 
-        public async Task<BaseCommandResponse<bool>> Handle(LoginUserCommand request, CancellationToken cancellationToken)
+        public async Task<BaseCommandResponse<GetLoginOutput>> Handle(LoginUserCommand request, CancellationToken cancellationToken)
         {
-            var response = new BaseCommandResponse<bool>();
+            var response = new BaseCommandResponse<GetLoginOutput>();
             var validator = new LoginUserCommandHandlerValidatior(_userReadRepository);
             var validatorResult = await validator.ValidateAsync(request, cancellationToken);
 
             if (!validatorResult.IsValid)
             {
-                response.Data = false;
+                response.Data = null;
                 response.Success = false;
                 response.Message = "";
                 response.Errors = validatorResult.Errors.Select(x => x.ErrorMessage).ToList();
@@ -43,8 +47,10 @@ namespace Blogi.Application.Features.Auth.Commands.Login
                     LastName = result.Surname
                 }, AuthDefault.Scheme);
 
+                var resultMapp = _mapper.Map<GetLoginOutput>(result);
+
                 response.Id = result.Id;
-                response.Data = true;
+                response.Data = resultMapp;
                 response.Success = true;
                 response.Message = AuthMessages.EmailOrPassCorrect;
                 response.Errors = null;

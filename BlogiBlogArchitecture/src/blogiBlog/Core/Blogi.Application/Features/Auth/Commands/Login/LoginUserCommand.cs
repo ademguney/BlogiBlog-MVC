@@ -1,6 +1,8 @@
-﻿namespace Blogi.Application.Features.Auth.Commands.Login
+﻿using Blogi.Application.Features.Auth.Dto.GetLogin;
+
+namespace Blogi.Application.Features.Auth.Commands.Login
 {
-    public class LoginUserCommand : IRequest<BaseCommandResponse<bool>>
+    public class LoginUserCommand : IRequest<BaseCommandResponse<GetLoginOutput>>
     {
         public bool RememberMe { get; set; }
         public string Email { get; set; }

@@ -12,7 +12,6 @@ global using Core.Application.Responses;
 global using System.Collections.Generic;
 global using Blogi.Application.Services.TagService;
 global using Blogi.Application.Services.PostService;
-global using Core.Application.FormAuth.ClaimServices;
 global using Microsoft.Extensions.DependencyInjection;
 global using Core.Persistence.Repositories.Interfaces;
 global using Blogi.Application.Services.PostTagService;

@@ -1,16 +1,11 @@
 using Blogi.Application;
+using Blogi.Dashboard.FormAuth.CookieScheme;
 using Blogi.Persistence;
-using Core.Application.FormAuth.CookieScheme;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
-
-
-builder.Services.AddApplicationServices();
-builder.Services.AddPersistenceServices(builder.Configuration);
-builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddAuthentication(options =>
 {
@@ -18,13 +13,21 @@ builder.Services.AddAuthentication(options =>
     options.DefaultSignInScheme = AuthDefault.Scheme;
     options.DefaultChallengeScheme = AuthDefault.Scheme;
 })
-                .AddCookie(AuthDefault.Scheme, options =>
+.AddCookie(AuthDefault.Scheme, options =>
                 {
+                    options.Cookie.Name = AuthDefault.CookieName;
                     options.Cookie.HttpOnly = true;
                     options.ExpireTimeSpan = TimeSpan.FromDays(7);
                     options.LoginPath = new PathString(AuthDefault.LogIn);
                     options.LogoutPath = new PathString(AuthDefault.LogOut);
                 });
+
+// Add services to the container.
+builder.Services.AddApplicationServices();
+builder.Services.AddPersistenceServices(builder.Configuration);
+builder.Services.AddHttpContextAccessor();
+
+
 
 
 var app = builder.Build();
@@ -38,9 +41,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
-
 app.UseAuthentication();
+
+app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",

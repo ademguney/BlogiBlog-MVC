@@ -5,10 +5,12 @@ using Blogi.Application.Features.Categories.Queries.Get;
 using Blogi.Application.Features.Categories.Queries.GetList;
 using Blogi.Application.Features.Languages.Queries.GetList;
 using Blogi.Dashboard.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blogi.Dashboard.Controllers
 {
+    [Authorize]
     public class CategoryController : BaseController
     {
         [HttpGet]

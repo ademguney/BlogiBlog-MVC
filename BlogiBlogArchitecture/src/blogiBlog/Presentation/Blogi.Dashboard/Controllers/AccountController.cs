@@ -2,6 +2,7 @@
 using Blogi.Application.Features.Users.Commands.Update;
 using Blogi.Application.Features.Users.Queries.Get;
 using Blogi.Dashboard.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blogi.Dashboard.Controllers
@@ -9,12 +10,14 @@ namespace Blogi.Dashboard.Controllers
     public class AccountController : BaseController
     {
 
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Login(LoginUserCommand input)
         {
@@ -28,6 +31,7 @@ namespace Blogi.Dashboard.Controllers
             return View(input);
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Profile()
         {
@@ -39,6 +43,7 @@ namespace Blogi.Dashboard.Controllers
             return View(model);
         }
 
+        [Authorize]
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Profile(ProfileCreateViewModel input)
         {

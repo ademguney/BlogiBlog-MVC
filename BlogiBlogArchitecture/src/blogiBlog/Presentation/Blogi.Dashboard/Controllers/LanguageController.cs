@@ -3,10 +3,12 @@ using Blogi.Application.Features.Languages.Commands.Delete;
 using Blogi.Application.Features.Languages.Commands.Update;
 using Blogi.Application.Features.Languages.Queries.Get;
 using Blogi.Application.Features.Languages.Queries.GetList;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blogi.Dashboard.Controllers
 {
+    [Authorize]
     public class LanguageController : BaseController
     {
 

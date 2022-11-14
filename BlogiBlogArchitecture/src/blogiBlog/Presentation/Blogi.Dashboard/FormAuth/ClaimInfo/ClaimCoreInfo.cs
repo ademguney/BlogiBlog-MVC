@@ -1,4 +1,4 @@
-﻿namespace Core.Application.FormAuth.ClaimInfo
+﻿namespace Blogi.Dashboard.FormAuth.ClaimInfo
 {
     public class ClaimCoreInfo
     {

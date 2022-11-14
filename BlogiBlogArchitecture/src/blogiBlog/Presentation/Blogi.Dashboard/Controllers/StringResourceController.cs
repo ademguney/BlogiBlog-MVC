@@ -5,10 +5,12 @@ using Blogi.Application.Features.StringResources.Commands.Update;
 using Blogi.Application.Features.StringResources.Queries.Get;
 using Blogi.Application.Features.StringResources.Queries.GitList;
 using Blogi.Dashboard.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blogi.Dashboard.Controllers
 {
+    [Authorize]
     public class StringResourceController : BaseController
     {
         [HttpGet]
