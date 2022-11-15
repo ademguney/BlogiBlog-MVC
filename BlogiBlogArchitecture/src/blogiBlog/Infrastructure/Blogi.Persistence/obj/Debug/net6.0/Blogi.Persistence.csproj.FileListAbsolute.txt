@@ -44,3 +44,5 @@ C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\ref\Blogi.Persistence.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\Blogi.Persistence.pdb
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\Blogi.Persistence.genruntimeconfig.cache
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\bin\Debug\net6.0\Core.Infrastructure.dll
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\bin\Debug\net6.0\Core.Infrastructure.pdb

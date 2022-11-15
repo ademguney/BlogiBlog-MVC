@@ -1,6 +1,4 @@
-﻿using Core.Application.FormAuth.ClaimServices;
-
-namespace Blogi.Application
+﻿namespace Blogi.Application
 {
     public static class ApplicationServiceRegistration
     {
@@ -13,12 +11,14 @@ namespace Blogi.Application
             // Services
             services.AddScoped<ITagService, TagService>();
             services.AddScoped<IPostService, PostService>();
-            services.AddScoped<IClaimCoreService, ClaimCoreService>();
+            services.AddScoped<IMailService, MailService>();
             services.AddScoped<IPostTagService, PostTagService>();
-            services.AddScoped<ICategoryService, CategoryService>();            
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IClaimCoreService, ClaimCoreService>();
+            services.AddScoped<IMailFactoryService, MailFactoryService>();
             services.AddScoped<IStringResourceService, StringResourceService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-           
+
             return services;
         }
     }

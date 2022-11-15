@@ -1138,7 +1138,6 @@ C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\obj\Debug\net6.0\Blogi.Dashboard.AssemblyInfoInputs.cache
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\obj\Debug\net6.0\Blogi.Dashboard.AssemblyInfo.cs
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\obj\Debug\net6.0\Blogi.Dashboard.csproj.CoreCompileInputs.cache
-C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\obj\Debug\net6.0\Blogi.Dashboard.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\obj\Debug\net6.0\Blogi.Dashboard.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\obj\Debug\net6.0\Blogi.Dashboard.RazorAssemblyInfo.cache
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\obj\Debug\net6.0\Blogi.Dashboard.RazorAssemblyInfo.cs
@@ -1150,3 +1149,8 @@ C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\obj\Debug\net6.0\ref\Blogi.Dashboard.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\obj\Debug\net6.0\Blogi.Dashboard.pdb
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\obj\Debug\net6.0\Blogi.Dashboard.genruntimeconfig.cache
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\bin\Debug\net6.0\MailKit.dll
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\bin\Debug\net6.0\MimeKit.dll
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\bin\Debug\net6.0\Core.Infrastructure.dll
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\bin\Debug\net6.0\Core.Infrastructure.pdb

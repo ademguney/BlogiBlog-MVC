@@ -1,4 +1,5 @@
-﻿using Blogi.Application.Features.Auth.Commands.Login;
+﻿using Blogi.Application.Features.Auth.Commands.ForgotPassword;
+using Blogi.Application.Features.Auth.Commands.Login;
 using Blogi.Application.Features.Users.Commands.Update;
 using Blogi.Application.Features.Users.Queries.Get;
 using Blogi.Dashboard.Models;
@@ -12,18 +13,16 @@ namespace Blogi.Dashboard.Controllers
     public class AccountController : BaseController
     {
 
-        [AllowAnonymous]
-        [HttpGet]
+        [AllowAnonymous, HttpGet]
         public IActionResult Login()
         {
             return View();
         }
 
-        [AllowAnonymous]
-        [HttpPost]
+        [AllowAnonymous, HttpPost]
         public async Task<IActionResult> Login(LoginUserCommand input)
         {
-            var result = await Mediator.Send(input);           
+            var result = await Mediator.Send(input);
             if (result.Success)
                 return RedirectToAction("Home", "Dashboard");
 
@@ -31,15 +30,34 @@ namespace Blogi.Dashboard.Controllers
             return View(input);
         }
 
-        [HttpGet]
+        [Authorize, HttpGet]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(AuthDefaults.Scheme);
             return RedirectToAction("Login", "Account");
         }
 
-        [Authorize]
-        [HttpGet]
+        [AllowAnonymous, HttpGet]
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [AllowAnonymous, HttpPost]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordUserCommand input)
+        {
+            var result = await Mediator.Send(input);
+            if (!result.Success)
+            {
+                NotifyError(result.Errors);
+                return View();
+            }
+            NotifySuccess(result.Message);
+            return RedirectToAction("Login","Account");
+        }
+
+
+        [Authorize, HttpGet]
         public async Task<IActionResult> Profile(int id)
         {
             var result = await Mediator.Send(new GetUserQuery() { Id = id });
@@ -50,8 +68,7 @@ namespace Blogi.Dashboard.Controllers
             return View(model);
         }
 
-        [Authorize]
-        [HttpPost, ValidateAntiForgeryToken]
+        [Authorize, HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Profile(ProfileCreateViewModel input)
         {
             byte[] fileBytes = null;

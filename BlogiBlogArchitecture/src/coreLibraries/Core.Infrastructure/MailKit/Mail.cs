@@ -1,4 +1,4 @@
-﻿using System.Net.Mail;
+﻿using Microsoft.AspNetCore.Http;
 
 namespace Core.Infrastructure.MailKit
 {
@@ -6,21 +6,17 @@ namespace Core.Infrastructure.MailKit
     {
         public Mail() { }
 
-        public Mail(string subject, string textBody, string htmlBody, string toFullName, string toEmail, AttachmentCollection? attachments)
+        public Mail(string toEmail, string subject, string body, List<IFormFile> attachments)
         {
-            Subject = subject;
-            TextBody = textBody;
-            HtmlBody = htmlBody;
-            ToFullName = toFullName;
             ToEmail = toEmail;
+            Subject = subject;
+            Body = body;
             Attachments = attachments;
         }
 
-        public string Subject { get; set; }
-        public string TextBody { get; set; }
-        public string HtmlBody { get; set; }
-        public string ToFullName { get; set; }
         public string ToEmail { get; set; }
-        public AttachmentCollection? Attachments { get; set; }
+        public string Subject { get; set; }
+        public string Body { get; set; }
+        public List<IFormFile> Attachments { get; set; }
     }
 }
