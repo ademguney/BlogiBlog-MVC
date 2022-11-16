@@ -20,6 +20,8 @@
             services.AddScoped<IPostWriteRepository, PostWriteRepository>();
             services.AddScoped<IUserReadRepository, UserReadRepository>();
             services.AddScoped<IUserWriteRepository, UserWriteRepository>();
+            services.AddScoped<ICommentReadRepository, CommentReadRepository>();
+            services.AddScoped<ICommentWriteRepository, CommentWriteRepository>();
             services.AddScoped<ICategoryReadRepository, CategoryReadRepository>();
             services.AddScoped<ICategoryWriteRepository, CategoryWriteRepository>();
             services.AddScoped<IPostTagsReadRepository, PostTagsReadRepository>();
@@ -29,7 +31,9 @@
             services.AddScoped<IMailSettingReadRepository, MailSettingReadRepository>();
             services.AddScoped<IMailSettingWriteRepository, MailSettingWriteRepository>();
             services.AddScoped<IStringResourceReadRepository, StringResourceReadRepository>();
-            services.AddScoped<IStringResourceWriteRepository, StringResourceWriteRepository>();           
+            services.AddScoped<IStringResourceWriteRepository, StringResourceWriteRepository>();
+
+            
 
             return services;
         }

@@ -12,6 +12,8 @@ global using Blogi.Persistence.Repositories.UserRepository;
 global using Blogi.Application.Repositories.UserRepository;
 global using Blogi.Application.Repositories.PostRepository;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using Blogi.Persistence.Repositories.CommentRepository;
+global using Blogi.Application.Repositories.CommentRepository;
 global using Blogi.Persistence.Repositories.CategoryRepository;
 global using Blogi.Application.Repositories.CategoryRepository;
 global using Blogi.Application.Repositories.LanguageRepository;
