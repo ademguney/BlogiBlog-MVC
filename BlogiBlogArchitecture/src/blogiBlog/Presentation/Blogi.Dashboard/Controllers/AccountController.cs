@@ -56,7 +56,6 @@ namespace Blogi.Dashboard.Controllers
             return RedirectToAction("Login","Account");
         }
 
-
         [Authorize, HttpGet]
         public async Task<IActionResult> Profile(int id)
         {

@@ -10,6 +10,7 @@ global using System.Threading.Tasks;
 global using Microsoft.AspNetCore.Http;
 global using Core.Application.Responses;
 global using System.Collections.Generic;
+global using Core.Application.Extensions;
 global using Core.Infrastructure.MailKit.Service;
 global using Blogi.Application.Services.TagService;
 global using Blogi.Application.Services.PostService;

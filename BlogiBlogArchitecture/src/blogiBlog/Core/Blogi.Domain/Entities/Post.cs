@@ -52,5 +52,6 @@ namespace Blogi.Domain.Entities
         public Language Languages { get; set; }
         public Category Categories { get; set; }
         public ICollection<PostTags> PostTags { get; set; }
+        public ICollection<Comment> Comments { get; set; }
     }
 }

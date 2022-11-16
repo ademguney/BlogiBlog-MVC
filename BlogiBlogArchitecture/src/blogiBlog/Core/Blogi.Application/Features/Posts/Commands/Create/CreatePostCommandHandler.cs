@@ -31,6 +31,7 @@ namespace Blogi.Application.Features.Posts.Commands.Create
             }
             else
             {
+                request.Slug=request.Slug.FriendlyUrl();
                 var postMapp = _mapper.Map<Post>(request);
                 postMapp.CreatedById = request.UserId;
                 postMapp.CreationDate = DateTime.UtcNow;

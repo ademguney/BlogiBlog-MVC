@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Zy/T5hg9Q3jKu+8YJVsHDQr2gW9GqmXPzaAzWg4Ckb7RcGwv+DRqjr0fKLFYVZiKD24ZWkYwbFIbfth1lletIQ==",
+  "dgSpecHash": "VDAcSxlJ9Qsui3ggzp42JEfj7JqKLYgZHAn0c+lsKRU+MAgX0H+UYSTv3DoselSfsU0lhGlpRG+LHo++6DpeBA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\Blogi.Dashboard.csproj",
   "expectedPackageFiles": [
@@ -28,9 +28,11 @@
     "C:\\Users\\ademg\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\ademg\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.2.0\\microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
     "C:\\Users\\ademg\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\ademg\\.nuget\\packages\\microsoft.aspnetcore.mvc.abstractions\\2.2.0\\microsoft.aspnetcore.mvc.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\ademg\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.10\\microsoft.aspnetcore.mvc.razor.extensions.6.0.10.nupkg.sha512",
     "C:\\Users\\ademg\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\6.0.10\\microsoft.aspnetcore.mvc.razor.runtimecompilation.6.0.10.nupkg.sha512",
     "C:\\Users\\ademg\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.10\\microsoft.aspnetcore.razor.language.6.0.10.nupkg.sha512",
+    "C:\\Users\\ademg\\.nuget\\packages\\microsoft.aspnetcore.routing.abstractions\\2.2.0\\microsoft.aspnetcore.routing.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\ademg\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "C:\\Users\\ademg\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\ademg\\.nuget\\packages\\microsoft.build\\17.0.0\\microsoft.build.17.0.0.nupkg.sha512",

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blogi.Persistence.Migrations
 {
     [DbContext(typeof(BlogiBlogDbContext))]
-    [Migration("20221111063014_InitDatabase")]
+    [Migration("20221116163941_InitDatabase")]
     partial class InitDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -88,6 +88,47 @@ namespace Blogi.Persistence.Migrations
                             Name = "Design Pattern",
                             Slug = "design-pattern"
                         });
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<bool>("IsPublish")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("ParentId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PostId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostId");
+
+                    b.ToTable("Comments", (string)null);
                 });
 
             modelBuilder.Entity("Blogi.Domain.Entities.Language", b =>
@@ -174,7 +215,7 @@ namespace Blogi.Persistence.Migrations
                             Email = "blogi@blog.com",
                             FullName = "BlogiBlog",
                             Host = "smtp.gmail.com",
-                            Password = "kh8gim1OUxgs9eFMxieoRmjI1SKVd0zEEysYWyRd6O9RgZ4XI7MA5LHeAL2o6LYq",
+                            Password = "jceZ92eX5zM9JDueXGV5vApsahpGRyAOewPtixpPmNvxtmSNVPLzU2xM0Po9F5k0",
                             Port = 587,
                             SslEnabled = false,
                             UseDefaultCredentials = false
@@ -265,7 +306,7 @@ namespace Blogi.Persistence.Migrations
                             CategoryId = 1,
                             Content = "Blogi blog an open source project.",
                             CreatedById = 1,
-                            CreationDate = new DateTime(2022, 11, 11, 6, 30, 14, 430, DateTimeKind.Utc).AddTicks(6022),
+                            CreationDate = new DateTime(2022, 11, 16, 16, 39, 41, 462, DateTimeKind.Utc).AddTicks(5857),
                             DisplayCount = 0,
                             ImageAlt = "blogiBlog",
                             IsPublished = true,
@@ -575,7 +616,7 @@ namespace Blogi.Persistence.Migrations
                             Id = 1,
                             Email = "blogi@blog.com",
                             Name = "BLOGI",
-                            Password = "W2IUlGinfiphfKUtpqt5hfPRj9JXtW0cFn8LKc/rzdotmqlbI1ktM1ah0fVogmgL",
+                            Password = "cvHkjv6zCZvDrFqcO1AtrECTsBYwAFct/Ae0vXO8FdvgBj5ACzb7ZcYDw3AFYuwi",
                             Surname = "BLOG"
                         });
                 });
@@ -589,6 +630,15 @@ namespace Blogi.Persistence.Migrations
                         .IsRequired();
 
                     b.Navigation("Languages");
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.Comment", b =>
+                {
+                    b.HasOne("Blogi.Domain.Entities.Post", null)
+                        .WithMany("Comments")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Blogi.Domain.Entities.Post", b =>
@@ -669,6 +719,8 @@ namespace Blogi.Persistence.Migrations
 
             modelBuilder.Entity("Blogi.Domain.Entities.Post", b =>
                 {
+                    b.Navigation("Comments");
+
                     b.Navigation("PostTags");
                 });
 #pragma warning restore 612, 618

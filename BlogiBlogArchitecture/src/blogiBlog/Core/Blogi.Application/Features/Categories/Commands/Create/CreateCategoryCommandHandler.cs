@@ -34,6 +34,7 @@ namespace Blogi.Application.Features.Categories.Commands.Create
             }
             else
             {
+                request.Slug = request.Slug.FriendlyUrl();
                 var categoryMapp = _mapper.Map<Category>(request);
                 var result = await _categoryWriteRepository.AddAsync(categoryMapp);
                 var resultMapp = _mapper.Map<GetCategoryOutput>(result);
