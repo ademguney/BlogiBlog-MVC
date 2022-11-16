@@ -213,7 +213,7 @@ namespace Blogi.Persistence.Migrations
                             Email = "blogi@blog.com",
                             FullName = "BlogiBlog",
                             Host = "smtp.gmail.com",
-                            Password = "jceZ92eX5zM9JDueXGV5vApsahpGRyAOewPtixpPmNvxtmSNVPLzU2xM0Po9F5k0",
+                            Password = "ctlLeZYr7w8JWhMEDmRadjVpD1gFaJo5o1KmHZZfFmO6NV4Lf7IuNFsz/czp9A49",
                             Port = 587,
                             SslEnabled = false,
                             UseDefaultCredentials = false
@@ -304,7 +304,7 @@ namespace Blogi.Persistence.Migrations
                             CategoryId = 1,
                             Content = "Blogi blog an open source project.",
                             CreatedById = 1,
-                            CreationDate = new DateTime(2022, 11, 16, 16, 39, 41, 462, DateTimeKind.Utc).AddTicks(5857),
+                            CreationDate = new DateTime(2022, 11, 16, 18, 8, 45, 717, DateTimeKind.Utc).AddTicks(3614),
                             DisplayCount = 0,
                             ImageAlt = "blogiBlog",
                             IsPublished = true,
@@ -614,7 +614,7 @@ namespace Blogi.Persistence.Migrations
                             Id = 1,
                             Email = "blogi@blog.com",
                             Name = "BLOGI",
-                            Password = "cvHkjv6zCZvDrFqcO1AtrECTsBYwAFct/Ae0vXO8FdvgBj5ACzb7ZcYDw3AFYuwi",
+                            Password = "WR5dBZtFh5O3eUpN1cCh3Oq76AsTITOeIXq/56Z+U+F0dJwSEi7QtR7tM869Mcik",
                             Surname = "BLOG"
                         });
                 });
@@ -632,11 +632,13 @@ namespace Blogi.Persistence.Migrations
 
             modelBuilder.Entity("Blogi.Domain.Entities.Comment", b =>
                 {
-                    b.HasOne("Blogi.Domain.Entities.Post", null)
+                    b.HasOne("Blogi.Domain.Entities.Post", "Posts")
                         .WithMany("Comments")
                         .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Posts");
                 });
 
             modelBuilder.Entity("Blogi.Domain.Entities.Post", b =>

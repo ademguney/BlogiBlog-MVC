@@ -12,8 +12,9 @@
             services.AddScoped<ITagService, TagService>();
             services.AddScoped<IPostService, PostService>();
             services.AddScoped<IMailService, MailService>();
+            services.AddScoped<ICommentService, CommentService>();
             services.AddScoped<IPostTagService, PostTagService>();
-            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<ICategoryService, CategoryService>();            
             services.AddScoped<IClaimCoreService, ClaimCoreService>();
             services.AddScoped<IMailFactoryService, MailFactoryService>();
             services.AddScoped<IStringResourceService, StringResourceService>();

@@ -24,5 +24,7 @@ namespace Blogi.Domain.Entities
         public string Content { get; set; }
         public bool IsPublish { get; set; }
         public DateTime CreationDate { get; set; }
+
+        public Post Posts { get; set; }
     }
 }

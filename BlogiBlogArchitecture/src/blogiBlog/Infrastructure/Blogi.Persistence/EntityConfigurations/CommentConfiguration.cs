@@ -12,6 +12,7 @@
             builder.Property(u => u.Content).IsRequired(true);
             builder.Property(u => u.IsPublish).IsRequired(true);
             builder.Property(i => i.CreationDate).IsRequired(true);
+            builder.HasOne(x => x.Posts);
         }
     }
 }
