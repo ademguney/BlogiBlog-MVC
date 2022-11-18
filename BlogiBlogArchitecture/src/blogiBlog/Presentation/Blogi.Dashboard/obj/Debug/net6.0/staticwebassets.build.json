@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bLETUvy/G4Pe9B+spnNpGGndQTO1jFN5fUj9DTPS1DY=",
+  "Hash": "RRRmrN5HKkjGvnkjmS4EY4CgKY292BEUix8rlD3OMxs=",
   "Source": "Blogi.Dashboard",
   "BasePath": "_content/Blogi.Dashboard",
   "Mode": "Default",
@@ -29561,6 +29561,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\views\\category\\home.js"
+    },
+    {
+      "Identity": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\wwwroot\\js\\views\\comment\\home.js",
+      "SourceId": "Blogi.Dashboard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\wwwroot\\",
+      "BasePath": "_content/Blogi.Dashboard",
+      "RelativePath": "js/views/comment/home.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\views\\comment\\home.js"
     },
     {
       "Identity": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\wwwroot\\js\\views\\language\\home.js",

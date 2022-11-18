@@ -14,8 +14,9 @@
             services.AddScoped<IMailService, MailService>();
             services.AddScoped<ICommentService, CommentService>();
             services.AddScoped<IPostTagService, PostTagService>();
-            services.AddScoped<ICategoryService, CategoryService>();            
-            services.AddScoped<IClaimCoreService, ClaimCoreService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<ILanguageService, LanguageService>();
+            services.AddScoped<IClaimCoreService, ClaimCoreService>();            
             services.AddScoped<IMailFactoryService, MailFactoryService>();
             services.AddScoped<IStringResourceService, StringResourceService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

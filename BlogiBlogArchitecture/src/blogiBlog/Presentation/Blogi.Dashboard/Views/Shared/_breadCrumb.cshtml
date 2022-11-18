@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-6 col-lg-6">
                     <h4 class="xp-page-title">
-                        <a asp-controller="Dashboard" asp-action="Home" style="color: #8A98AC"><i class="icon-home"></i> Home</a>
+                        <a asp-controller="Dashboard" asp-action="Home" style="color: #8A98AC"><i class="icon-home"></i> @Localize("bread_crumb_home")</a>
                     </h4>
                 </div>
                 <div class="col-md-6 col-lg-6">
@@ -14,7 +14,7 @@
                                 <a asp-controller="Dashboard" asp-action="Home"><i class="icon-home"></i></a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                <a asp-controller="Dashboard" asp-action="Home">Back to Home page</a>
+                                <a asp-controller="Dashboard" asp-action="Home">@Localize("bread_crumb_back_to_home")</a>
                             </li>
                         </ol>
                     </div>

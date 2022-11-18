@@ -48,10 +48,10 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="xp-userprofile">
                                 <a class="dropdown-item py-3 text-white text-center font-16" href="#">@User.FindFirst(ClaimTypes.GivenName).Value @User.FindFirst(ClaimTypes.Surname).Value</a>
                                 <a class="dropdown-item" asp-controller="Account" asp-action="Profile" asp-route-id="@User.FindFirst(ClaimTypes.NameIdentifier).Value">
-                                    <i class="icon-user text-danger mr-2"></i> Profile
+                                    <i class="icon-user text-danger mr-2"></i> @Localize("top_menu_profile")
                                 </a>
                                 <a class="dropdown-item" asp-controller="Account" asp-action="Logout">
-                                    <i class="icon-power text-danger mr-2"></i> Logout
+                                    <i class="icon-power text-danger mr-2"></i> @Localize("top_menu_logout")
                                     </a>
                             </div>
                         </div>

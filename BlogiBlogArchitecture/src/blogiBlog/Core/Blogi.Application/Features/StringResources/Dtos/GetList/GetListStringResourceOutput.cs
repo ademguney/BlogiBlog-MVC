@@ -1,6 +1,6 @@
-﻿namespace Blogi.Application.Features.StringResources.Dtos.GitList
+﻿namespace Blogi.Application.Features.StringResources.Dtos.GetList
 {
-    public class GetListStringResourceOutput 
+    public class GetListStringResourceOutput
     {
         public int Id { get; set; }
         public int LanguageId { get; set; }

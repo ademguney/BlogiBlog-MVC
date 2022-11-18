@@ -5,6 +5,35 @@
 }
 
 
+<div class="row">
+    <div class="col-lg-12">
+        <div class="xp-breadcrumbbar">
+            <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <h4 class="xp-page-title">
+                        <a asp-controller="Dashboard" asp-action="Home" style="color: #8A98AC"><i class="icon-home"></i> Home</a>
+                    </h4>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="xp-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a asp-controller="Post" asp-action="Home"><i class="icon-home"></i></a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <a asp-controller="Post" asp-action="Home">Back to List</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
+
+
 <form asp-controller="Post" asp-action="Create" method="post" enctype="multipart/form-data">
     @Html.AntiForgeryToken()
     <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>

@@ -4,7 +4,7 @@ using Blogi.Application.Features.StringResources.Commands.Update;
 using Blogi.Application.Features.StringResources.Dtos.Create;
 using Blogi.Application.Features.StringResources.Dtos.Delete;
 using Blogi.Application.Features.StringResources.Dtos.Get;
-using Blogi.Application.Features.StringResources.Dtos.GitList;
+using Blogi.Application.Features.StringResources.Dtos.GetList;
 
 namespace Blogi.Application.Features.StringResources.Profiles
 {

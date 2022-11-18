@@ -1,15 +1,17 @@
 ﻿using Blogi.Application.Features.StringResources.Dtos.Get;
-using Blogi.Application.Features.StringResources.Dtos.GitList;
+using Blogi.Application.Features.StringResources.Dtos.GetList;
 using Microsoft.EntityFrameworkCore;
 
 namespace Blogi.Application.Services.StringResourceService
 {
     public class StringResourceService : IStringResourceService
     {
+        private readonly IMapper _mapper;
         private readonly IStringResourceReadRepository _stringResourceReadRepository;
 
-        public StringResourceService(IStringResourceReadRepository stringResourceReadRepository)
+        public StringResourceService(IMapper mapper, IStringResourceReadRepository stringResourceReadRepository)
         {
+            _mapper = mapper;
             _stringResourceReadRepository = stringResourceReadRepository;
         }
 
@@ -24,6 +26,13 @@ namespace Blogi.Application.Services.StringResourceService
                 Language=x.Languages.Name
                 
             }).FirstOrDefaultAsync();
+        }
+
+        public async Task<GetStringResourceOutput> GetAsync(string resourceKey, int languageId)
+        {
+            var result = await _stringResourceReadRepository.GetAsync(x => x.Key.Trim().ToLower() == resourceKey.Trim().ToLower() && x.LanguageId == languageId);
+            var resultMapp = _mapper.Map<GetStringResourceOutput>(result);
+            return resultMapp;
         }
 
         public async Task<List<GetListStringResourceOutput>> GetListAsync()

@@ -24,6 +24,7 @@ global using Blogi.Application.Features.Auth.Constants;
 global using Blogi.Application.Features.Posts.Constants;
 global using Blogi.Application.Services.CategoryService;
 global using Blogi.Application.Features.Users.Constants;
+global using Blogi.Application.Services.LanguageService;
 global using Blogi.Application.Features.Comment.Constants;
 global using Blogi.Application.Repositories.TagRepository;
 global using Blogi.Application.Repositories.PostRepository;

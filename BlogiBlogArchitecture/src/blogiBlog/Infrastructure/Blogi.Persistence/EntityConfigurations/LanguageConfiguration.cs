@@ -12,8 +12,8 @@
            
 
             builder.HasData(
-                new Language { Id = 1, Name = "Türkçe", Culture = "tr-TR" },
-                new Language { Id = 2, Name = "English (United States)", Culture = "en-ENG" }
+                new Language { Id = 1, Name = "Turkish", Culture = "tr-TR" },
+                new Language { Id = 2, Name = "English", Culture = "en-US" }
                 );
         }
     }

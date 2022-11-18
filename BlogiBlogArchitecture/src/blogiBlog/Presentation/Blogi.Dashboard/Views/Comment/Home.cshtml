@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Comment List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<partial name="_breadCrumb" />
+
+<div class="row">
+    <div class="col-12">
+        <div class="card m-b-30">
+            <div class="card-header bg-secondary" style="color:white">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">  <i class='ion ion-ios-information-circle'></i> Comment List</li>                   
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive m-b-30">
+                    <table class="table table-hover" id="commentTable">
+                        <thead>
+                            <tr>
+                                <th>Name Surname</th>
+                                <th>Email</th>
+                                <th>Published</th>
+                                <th>Creation Date</th>
+                                <th>Answer</th>
+                                <th>Delete</th>
+
+                            </tr>
+                        </thead>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+<script src="~/js/views/comment/home.js" asp-append-version="true"></script>
+}
+

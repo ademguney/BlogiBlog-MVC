@@ -3,7 +3,7 @@ using Blogi.Application.Features.StringResources.Commands.Create;
 using Blogi.Application.Features.StringResources.Commands.Delete;
 using Blogi.Application.Features.StringResources.Commands.Update;
 using Blogi.Application.Features.StringResources.Queries.Get;
-using Blogi.Application.Features.StringResources.Queries.GitList;
+using Blogi.Application.Features.StringResources.Queries.GetList;
 using Blogi.Dashboard.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

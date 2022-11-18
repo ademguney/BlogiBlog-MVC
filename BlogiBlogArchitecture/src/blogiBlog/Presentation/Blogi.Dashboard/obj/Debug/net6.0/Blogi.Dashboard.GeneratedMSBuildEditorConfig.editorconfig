@@ -39,6 +39,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSG9tZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Comment/Answer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxBbnN3ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Comment/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Dashboard/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEhvbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

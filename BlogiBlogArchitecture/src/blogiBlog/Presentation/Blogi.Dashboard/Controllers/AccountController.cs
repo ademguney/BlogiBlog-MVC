@@ -6,6 +6,7 @@ using Blogi.Dashboard.Models;
 using Core.Application.FormAuth.CookieScheme;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blogi.Dashboard.Controllers
@@ -96,6 +97,21 @@ namespace Blogi.Dashboard.Controllers
 
             NotifyError(result.Errors);
             return View(input);
+        }
+
+        [HttpPost]
+        public IActionResult ChangeLanguage(string culture, string returnUrl)
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions
+                {
+                    Expires = DateTimeOffset.UtcNow.AddDays(7)
+                }
+            );
+
+            return LocalRedirect(returnUrl);
         }
     }
 }

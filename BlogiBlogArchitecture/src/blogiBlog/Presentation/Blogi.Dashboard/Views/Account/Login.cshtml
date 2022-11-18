@@ -1,20 +1,30 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{
+    string returnUrl = ViewContext.HttpContext.Request.Path;
+    var cultureItems = LocOptions.Value.SupportedUICultures
+          .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
+          .ToList();
+}
+@{
     Layout = "~/Views/Shared/_Login.cshtml";
 }
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6 col-12 fxt-bg-img" data-bg-image="../favicon.png">
             <div class="fxt-header">
-
-                <h1>Welcome To Blogi BLoG</h1>
-                <p>Blogi Blog open source multi language web blog project.</p>
+                <h1>@Localize("page_login_label_welcome")</h1>
+                <p>@Localize("page_login_label_description")</p>
                 <a href="https://github.com/ademguney/BlogiBlog-MVC" target="_blank" class="fxt-btn-ghost">GitHub Repository</a>
             </div>
         </div>
         <div class="col-md-6 col-12 fxt-bg-color">
             <div class="fxt-content">
                 <div class="fxt-form">
-                    <h2>Login into your account</h2>
+                    <h2>@Localize("page_login_label_login_title")</h2>
                     <form asp-controller="Account" asp-action="Login" method="POST">
                         <div class="form-group">
                             <div class="fxt-transformY-50 fxt-transition-delay-3">
@@ -32,16 +42,16 @@
                                 <div class="fxt-checkbox-area">
                                     <div class="checkbox">
                                         <input id="checkbox1" name="rememberMe" type="checkbox" checked>
-                                        <label id="checkbox1" for="checkbox1">Keep me logged in</label>
+                                        <label id="checkbox1" for="checkbox1">@Localize("page_login_label_keep_me")</label>
                                     </div>
-                                    <a asp-controller="Account" asp-action="ForgotPassword" class="switcher-text">Forgot Password</a>
+                                    <a asp-controller="Account" asp-action="ForgotPassword" class="switcher-text">@Localize("page_login_label_forgot_pass")</a>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="fxt-transformY-50 fxt-transition-delay-5">
                                 <div class="text-center">
-                                    <button type="submit" class="fxt-btn-fill">Log in</button>
+                                    <button type="submit" class="fxt-btn-fill">@Localize("page_login_button_login")</button>
                                 </div>
                             </div>
                         </div>

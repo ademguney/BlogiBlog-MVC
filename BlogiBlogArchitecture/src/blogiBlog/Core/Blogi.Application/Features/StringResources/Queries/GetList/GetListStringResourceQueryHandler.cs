@@ -1,6 +1,6 @@
-﻿using Blogi.Application.Features.StringResources.Dtos.GitList;
+﻿using Blogi.Application.Features.StringResources.Dtos.GetList;
 
-namespace Blogi.Application.Features.StringResources.Queries.GitList
+namespace Blogi.Application.Features.StringResources.Queries.GetList
 {
     public class GetListStringResourceQueryHandler : IRequestHandler<GetListStringResourceQuery, BaseCommandResponse<List<GetListStringResourceOutput>>>
     {
