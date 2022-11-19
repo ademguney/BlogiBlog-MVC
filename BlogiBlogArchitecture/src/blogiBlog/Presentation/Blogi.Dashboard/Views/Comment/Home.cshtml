@@ -10,7 +10,7 @@
         <div class="card m-b-30">
             <div class="card-header bg-secondary" style="color:white">
                 <ul class="list-inline mb-0">
-                    <li class="list-inline-item">  <i class='ion ion-ios-information-circle'></i> Comment List</li>                   
+                    <li class="list-inline-item">  <i class='ion ion-ios-information-circle'></i> @Localize("page_comment_label_list")</li>                   
                 </ul>
             </div>
             <div class="card-body">
@@ -18,13 +18,12 @@
                     <table class="table table-hover" id="commentTable">
                         <thead>
                             <tr>
-                                <th>Name Surname</th>
-                                <th>Email</th>
-                                <th>Published</th>
-                                <th>Creation Date</th>
-                                <th>Answer</th>
-                                <th>Delete</th>
-
+                                <th>@Localize("datatable_comment_label_name_surname")</th>
+                                <th>@Localize("datatable_comment_label_email")</th>
+                                <th>@Localize("datatable_comment_label_published")</th>
+                                <th>@Localize("datatable_comment_label_creation_date")</th>
+                                <th>@Localize("datatable_comment_label_answer")</th>
+                              <th>@Localize("datatable_default_label_delete")</th>
                             </tr>
                         </thead>
 
@@ -38,4 +37,3 @@
 @section scripts {
 <script src="~/js/views/comment/home.js" asp-append-version="true"></script>
 }
-

@@ -10,9 +10,9 @@
         <div class="card m-b-30">
             <div class="card-header bg-secondary" style="color:white">
                 <ul class="list-inline mb-0">
-                    <li class="list-inline-item">  <i class='ion ion-ios-information-circle'></i> Category List</li>
+                    <li class="list-inline-item">  <i class='ion ion-ios-information-circle'></i> @Localize("page_category_label_category_list")</li>
                     <li class="list-inline-item float-right">
-                        <a asp-controller="Category" asp-action="Create" class="btn btn-rounded btn-success">Create New Category <i class="mdi mdi-plus ml-2"></i></a>
+                        <a asp-controller="Category" asp-action="Create" class="btn btn-rounded btn-success">@Localize("page_category_label_create_new_category") <i class="mdi mdi-plus ml-2"></i></a>
                     </li>
                 </ul>
             </div>
@@ -21,12 +21,12 @@
                     <table class="table table-hover" id="categoryTable">
                         <thead>
                             <tr>
-                                <th>Language</th>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Slug</th>
-                                <th>Update</th>
-                                <th>Delete</th>
+                                <th>@Localize("page_category_dt_label_language")</th>
+                                <th>@Localize("page_category_dt_label_category_name")</th>
+                                <th>@Localize("page_category_dt_label_category_description")</th>
+                                <th>@Localize("page_category_dt_label_category_slug")</th>
+                                <th>@Localize("datatable_default_label_update")</th>
+                                <th>@Localize("datatable_default_label_delete")</th>
 
                             </tr>
                         </thead>
@@ -41,4 +41,3 @@
 @section scripts {
 <script src="~/js/views/category/home.js" asp-append-version="true"></script>
 }
-

@@ -5,6 +5,8 @@
 
 @{
     string returnUrl = ViewContext.HttpContext.Request.Path;
+
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
     var cultureItems = LocOptions.Value.SupportedUICultures
           .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
           .ToList();
@@ -56,6 +58,21 @@
                             </div>
                         </div>
                     </form>
+
+                    <ul>
+                        <li class="nav-item">
+                        <form asp-action="ChangeLanguage" asp-controller="Account" method="post">
+                            <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
+                            <select id="culture"
+                                    name="culture"
+                                    class="form-control"
+                                    onchange="this.form.submit();"
+                                    asp-items="cultureItems"
+                                    asp-for="@requestCulture.RequestCulture.UICulture.Name">
+                            </select>
+                        </form>
+                    </li>
+                    </ul>
                 </div>
             </div>
         </div>

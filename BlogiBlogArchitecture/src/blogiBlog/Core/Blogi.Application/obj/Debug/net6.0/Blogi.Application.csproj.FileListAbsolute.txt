@@ -23,8 +23,10 @@ C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Application\bin\Debug\net6.0\Blogi.Application.pdb
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Application\bin\Debug\net6.0\Blogi.Domain.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Application\bin\Debug\net6.0\Core.Application.dll
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Application\bin\Debug\net6.0\Core.Infrastructure.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Application\bin\Debug\net6.0\Core.Persistence.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Application\bin\Debug\net6.0\Core.Application.pdb
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Application\bin\Debug\net6.0\Core.Infrastructure.pdb
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Application\bin\Debug\net6.0\Core.Persistence.pdb
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Application\bin\Debug\net6.0\Blogi.Domain.pdb
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Application\obj\Debug\net6.0\Blogi.Application.csproj.AssemblyReference.cache
@@ -36,5 +38,3 @@ C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Application\obj\Debug\net6.0\Blogi.Application.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Application\obj\Debug\net6.0\ref\Blogi.Application.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Application\obj\Debug\net6.0\Blogi.Application.pdb
-C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Application\bin\Debug\net6.0\Core.Infrastructure.dll
-C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Core\Blogi.Application\bin\Debug\net6.0\Core.Infrastructure.pdb

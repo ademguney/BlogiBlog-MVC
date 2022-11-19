@@ -10,9 +10,9 @@
         <div class="card m-b-30">
             <div class="card-header bg-secondary" style="color:white">
                 <ul class="list-inline mb-0">
-                    <li class="list-inline-item">  <i class='ion ion-ios-information-circle'></i> Post List</li>
+                    <li class="list-inline-item">  <i class='ion ion-ios-information-circle'></i> @Localize("page_post_label_list")</li>
                     <li class="list-inline-item float-right">
-                        <a asp-controller="Post" asp-action="Create" class="btn btn-rounded btn-success">Create New Post <i class="mdi mdi-plus ml-2"></i></a>
+                        <a asp-controller="Post" asp-action="Create" class="btn btn-rounded btn-success">@Localize("page_post_label_create_new_post") <i class="mdi mdi-plus ml-2"></i></a>
                     </li>
                 </ul>
             </div>
@@ -21,16 +21,15 @@
                     <table class="table table-hover" id="postTable">
                         <thead>
                             <tr>
-                                <th>Language</th>
-                                <th>Category</th>
-                                <th>Title</th>
-                                <th>DisplayCount</th>
-                                <th>Published</th>
-                                <th>CreationDate</th>
-                                <th>UpdationDate</th>
-                                <th>Update</th>
-                                <th>Delete</th>
-
+                                <th>@Localize("page_post_dt_label_language")</th>
+                                <th>@Localize("page_post_dt_label_category")</th>
+                                <th>@Localize("page_post_dt_label_title")</th>
+                                <th>@Localize("page_post_dt_label__display_count")</th>
+                                <th>@Localize("page_post_dt_label_puslished")</th>
+                                <th>@Localize("page_post_dt_label_creation_date")</th>
+                                <th>@Localize("page_post_dt_label_updation_date")</th>
+                                <th>@Localize("datatable_default_label_update")</th>
+                                <th>@Localize("datatable_default_label_delete")</th>
                             </tr>
                         </thead>
 
@@ -44,4 +43,3 @@
 @section scripts {
 <script src="~/js/views/post/home.js" asp-append-version="true"></script>
 }
-

@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-md-6 col-lg-6">
                     <h4 class="xp-page-title">
-                        <a asp-controller="Dashboard" asp-action="Home" style="color: #8A98AC"><i class="icon-home"></i> Home</a>
+                        <a asp-controller="Dashboard" asp-action="Home" style="color: #8A98AC"><i class="icon-home"></i> @Localize("page_tag_label_home")</a>
                     </h4>
                 </div>
                 <div class="col-md-6 col-lg-6">
@@ -21,7 +21,7 @@
                                 <a asp-controller="Tag" asp-action="Home"><i class="icon-home"></i></a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                <a asp-controller="Tag" asp-action="Home">Back to List</a>
+                                <a asp-controller="Tag" asp-action="Home">@Localize("page_tag_label_back_to_list")</a>
                             </li>
                         </ol>
                     </div>
@@ -38,14 +38,13 @@
             <div class="card-body">
                 <form asp-controller="Tag" asp-action="Create" method="post">
                     @Html.AntiForgeryToken()
-                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
-                    
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>                    
                     <fieldset class="form-group">
                         <div class="row">
-                            <div class="col-form-label col-sm-4 pt-0">Language</div>
+                            <div class="col-form-label col-sm-4 pt-0">@Localize("page_tag_label_language")</div>
                             <div class="col-sm-8">
                                 <select asp-for="TagCommand.LanguageId" class="form-control" required>
-                                    <option selected="selected" value="0">Select Language</option>
+                                    <option selected="selected" value="0">@Localize("page_tag_label_select_language")</option>
                                     @foreach (var item in Model.LanguageList)
                                     {
                                         <option value="@item.Id">@item.Name</option>
@@ -54,21 +53,16 @@
                             </div>
                         </div>
                     </fieldset>
-
                     <div class="form-group row">
-                        <label class="col-sm-4 col-form-label">Name</label>
+                        <label class="col-sm-4 col-form-label">@Localize("page_tag_label_tag_name")</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" asp-for="TagCommand.Name" required>
                             <span class="text-danger" asp-validation-for="TagCommand.Name"></span>
                         </div>
                     </div>
-
-                    <button type="submit" class="btn btn-success btn-rounded btn-lg btn-block"> Create<i class="mdi mdi-plus ml-2"></i></button>
+                    <button type="submit" class="btn btn-success btn-rounded btn-lg btn-block"> @Localize("page_tag_button_create")<i class="mdi mdi-plus ml-2"></i></button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-
-
