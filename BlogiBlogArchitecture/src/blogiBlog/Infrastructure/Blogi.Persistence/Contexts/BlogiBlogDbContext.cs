@@ -4,11 +4,14 @@
     {
         public DbSet<Tag> Tags { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<About> About { get; set; }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<About> Contact { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<PostTags> PostTags { get; set; }
         public DbSet<Language> Languages { get; set; }
-        public DbSet<Category> Categories { get; set; }        
+        public DbSet<WebConfig> WebConfig { get; set; }
+        public DbSet<Category> Categories { get; set; }       
         public DbSet<MailSetting> MailSettings { get; set; }
         public DbSet<StringResource> StringResources { get; set; }
 
