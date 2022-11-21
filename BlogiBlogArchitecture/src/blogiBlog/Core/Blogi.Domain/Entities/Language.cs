@@ -9,12 +9,11 @@ namespace Blogi.Domain.Entities
             StringResources = new HashSet<StringResource>();
         }
 
-        public Language(int id, string name, string culture, ICollection<StringResource> stringResources) : this()
+        public Language(int id, string name, string culture) : this()
         {
             Id = id;
             Name = name;
-            Culture = culture;
-            StringResources = stringResources;
+            Culture = culture;            
         }
 
         public string Name { get; set; }

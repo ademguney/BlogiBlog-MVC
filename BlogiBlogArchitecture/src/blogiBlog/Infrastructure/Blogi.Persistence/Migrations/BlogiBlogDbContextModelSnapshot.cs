@@ -22,6 +22,70 @@ namespace Blogi.Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("Blogi.Domain.Entities.About", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LanguageId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MetaDescription")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("MetaKeywords")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LanguageId");
+
+                    b.ToTable("Abouts", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Content = "Selamlar, Ben Adem!",
+                            LanguageId = 1,
+                            MetaDescription = "Blogi Blog acik kaynak kodlu cok dil destegi bulunan web blog projesidir.",
+                            MetaKeywords = "open source, blogi blog, blogiblog, web project, multi language",
+                            Slug = "hakkimda",
+                            Title = "Yazilimci :) Adem GUNEY"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Content = "He, I'm Adem :)",
+                            LanguageId = 2,
+                            MetaDescription = "Blogi Blog open source multi language web blog project.",
+                            MetaKeywords = "open source, blogi blog, blogiblog, web project, multi language",
+                            Slug = "about-me",
+                            Title = "Senior Software Developer Adem GUNEY"
+                        });
+                });
+
             modelBuilder.Entity("Blogi.Domain.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -129,6 +193,85 @@ namespace Blogi.Persistence.Migrations
                     b.ToTable("Comments", (string)null);
                 });
 
+            modelBuilder.Entity("Blogi.Domain.Entities.Contact", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<int>("LanguageId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Location")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("MetaDescription")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("MetaKeywords")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Phone")
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LanguageId");
+
+                    b.ToTable("Contacts", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Content = "iletisim bilgilerim",
+                            Email = "guneyadem63@gmail.com",
+                            LanguageId = 1,
+                            MetaDescription = "Blogi Blog acik kaynak kodlu cok dil destegi bulunan web blog projesidir.",
+                            MetaKeywords = "open source, blogi blog, blogiblog, web project, multi language",
+                            Phone = "009000000000063",
+                            Slug = "iletisim",
+                            Title = "Gel Gel Ne Olursan Ol Yine Gel, Mevlana!"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Content = "my contact information",
+                            Email = "guneyadem63@gmail.com",
+                            LanguageId = 2,
+                            MetaDescription = "Blogi Blog open source multi language web blog project.",
+                            MetaKeywords = "open source, blogi blog, blogiblog, web project, multi language",
+                            Phone = "009000000000063",
+                            Slug = "contact",
+                            Title = "Come, come, whoever you are, Jelaluddin Rumi!"
+                        });
+                });
+
             modelBuilder.Entity("Blogi.Domain.Entities.Language", b =>
                 {
                     b.Property<int>("Id")
@@ -156,13 +299,13 @@ namespace Blogi.Persistence.Migrations
                         {
                             Id = 1,
                             Culture = "tr-TR",
-                            Name = "Türkçe"
+                            Name = "Turkish"
                         },
                         new
                         {
                             Id = 2,
-                            Culture = "en-ENG",
-                            Name = "English (United States)"
+                            Culture = "en-US",
+                            Name = "English"
                         });
                 });
 
@@ -213,7 +356,7 @@ namespace Blogi.Persistence.Migrations
                             Email = "blogi@blog.com",
                             FullName = "BlogiBlog",
                             Host = "smtp.gmail.com",
-                            Password = "ctlLeZYr7w8JWhMEDmRadjVpD1gFaJo5o1KmHZZfFmO6NV4Lf7IuNFsz/czp9A49",
+                            Password = "hZk69MpQrx/s1kHW8Lm/k5yfbsyoFkKBckWgQ2a0mGPiy3n/SaWZ/c2e+u0QuWrd",
                             Port = 587,
                             SslEnabled = false,
                             UseDefaultCredentials = false
@@ -304,7 +447,7 @@ namespace Blogi.Persistence.Migrations
                             CategoryId = 1,
                             Content = "Blogi blog an open source project.",
                             CreatedById = 1,
-                            CreationDate = new DateTime(2022, 11, 16, 18, 8, 45, 717, DateTimeKind.Utc).AddTicks(3614),
+                            CreationDate = new DateTime(2022, 11, 20, 18, 19, 44, 315, DateTimeKind.Utc).AddTicks(8136),
                             DisplayCount = 0,
                             ImageAlt = "blogiBlog",
                             IsPublished = true,
@@ -418,14 +561,14 @@ namespace Blogi.Persistence.Migrations
                             Id = 7,
                             Key = "page_language_label_list",
                             LanguageId = 1,
-                            Value = "Dil listesi..."
+                            Value = "Dil Listesi"
                         },
                         new
                         {
                             Id = 8,
                             Key = "page_language_label_list",
                             LanguageId = 2,
-                            Value = "Language list..."
+                            Value = "Language List"
                         });
                 });
 
@@ -614,9 +757,134 @@ namespace Blogi.Persistence.Migrations
                             Id = 1,
                             Email = "blogi@blog.com",
                             Name = "BLOGI",
-                            Password = "WR5dBZtFh5O3eUpN1cCh3Oq76AsTITOeIXq/56Z+U+F0dJwSEi7QtR7tM869Mcik",
+                            Password = "yk8Juhmi6BF0Gc7kNq9ySkc0z7P/M38OWocNaz4nEEP5nPdrVAAbK7M3vN3S5hnL",
                             Surname = "BLOG"
                         });
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.WebSetting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Author")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("FacebookUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("GithubUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("InstagramUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsDisplayFacebbokUrl")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDisplayGithubUrl")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDisplayInstagramUrl")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDisplayLinkedinUrl")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDisplayMediumUrl")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDisplayTwitterUrl")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDisplayYouTubeUrl")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LinkedinUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("MediumUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("MetaDescription")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("MetaKeywords")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Slogan")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Title")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("TwitterUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("WebSiteUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("YouTubeUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("WebSettings", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Author = "Adem Guney",
+                            FacebookUrl = "https://github.com/ademguney/BlogiBlog-MVC",
+                            GithubUrl = "https://github.com/ademguney",
+                            InstagramUrl = "https://github.com/ademguney/BlogiBlog-MVC",
+                            IsDisplayFacebbokUrl = true,
+                            IsDisplayGithubUrl = true,
+                            IsDisplayInstagramUrl = true,
+                            IsDisplayLinkedinUrl = true,
+                            IsDisplayMediumUrl = true,
+                            IsDisplayTwitterUrl = true,
+                            IsDisplayYouTubeUrl = true,
+                            LinkedinUrl = "https://www.linkedin.com/in/ademguney/",
+                            MediumUrl = "https://github.com/ademguney/BlogiBlog-MVC",
+                            MetaDescription = "Blogi Blog open source multi language web blog project.",
+                            MetaKeywords = "open source, blogi blog, blogiblog, web project, multi language",
+                            Slogan = "SEMICOLON, PRIME SUSPECT;",
+                            Title = "Senior Software Developer Adem GUNEY",
+                            TwitterUrl = "https://twitter.com/AdemGuneyii",
+                            WebSiteUrl = "https://www.guneyadem.com/",
+                            YouTubeUrl = "https://www.youtube.com/@ademguney"
+                        });
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.About", b =>
+                {
+                    b.HasOne("Blogi.Domain.Entities.Language", "Languages")
+                        .WithMany()
+                        .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Languages");
                 });
 
             modelBuilder.Entity("Blogi.Domain.Entities.Category", b =>
@@ -639,6 +907,17 @@ namespace Blogi.Persistence.Migrations
                         .IsRequired();
 
                     b.Navigation("Posts");
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.Contact", b =>
+                {
+                    b.HasOne("Blogi.Domain.Entities.Language", "Languages")
+                        .WithMany()
+                        .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Languages");
                 });
 
             modelBuilder.Entity("Blogi.Domain.Entities.Post", b =>

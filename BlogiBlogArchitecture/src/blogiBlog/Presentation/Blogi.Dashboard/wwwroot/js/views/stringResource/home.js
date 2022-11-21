@@ -4,7 +4,7 @@
             "type": "GET",
             "url": "/StringResource/DataTable"
         },       
-        "pageLength": 10,
+        "pageLength": 20,
         "bInfo": true,
         "responsive": true,
         "scrollY": false,

@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Comment List";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
@@ -10,7 +9,7 @@
         <div class="card m-b-30">
             <div class="card-header bg-secondary" style="color:white">
                 <ul class="list-inline mb-0">
-                    <li class="list-inline-item">  <i class='ion ion-ios-information-circle'></i> @Localize("page_comment_label_list")</li>                   
+                    <li class="list-inline-item">  <i class='ion ion-ios-information-circle'></i> @Localize("page_comment_label_list")</li>
                 </ul>
             </div>
             <div class="card-body">
@@ -18,12 +17,12 @@
                     <table class="table table-hover" id="commentTable">
                         <thead>
                             <tr>
-                                <th>@Localize("datatable_comment_label_name_surname")</th>
-                                <th>@Localize("datatable_comment_label_email")</th>
-                                <th>@Localize("datatable_comment_label_published")</th>
-                                <th>@Localize("datatable_comment_label_creation_date")</th>
-                                <th>@Localize("datatable_comment_label_answer")</th>
-                              <th>@Localize("datatable_default_label_delete")</th>
+                                <th>@Localize("datatable_default_label_name_surname")</th>
+                                <th>@Localize("datatable_default_label_email")</th>
+                                <th>@Localize("datatable_default_label_puslished")</th>
+                                <th>@Localize("datatable_default_label_creation_date")</th>
+                                <th>@Localize("datatable_default_label_answer")</th>
+                                <th>@Localize("datatable_default_label_delete")</th>
                             </tr>
                         </thead>
 

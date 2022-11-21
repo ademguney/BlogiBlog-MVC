@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Blogi.Persistence.Migrations
 {
-    public partial class InitDatabase : Migration
+    public partial class CreateDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -60,6 +60,62 @@ namespace Blogi.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "WebSettings",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FacebookUrl = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    TwitterUrl = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    InstagramUrl = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    YouTubeUrl = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    MediumUrl = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    GithubUrl = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    LinkedinUrl = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    IsDisplayFacebbokUrl = table.Column<bool>(type: "bit", nullable: false),
+                    IsDisplayTwitterUrl = table.Column<bool>(type: "bit", nullable: false),
+                    IsDisplayInstagramUrl = table.Column<bool>(type: "bit", nullable: false),
+                    IsDisplayYouTubeUrl = table.Column<bool>(type: "bit", nullable: false),
+                    IsDisplayMediumUrl = table.Column<bool>(type: "bit", nullable: false),
+                    IsDisplayGithubUrl = table.Column<bool>(type: "bit", nullable: false),
+                    IsDisplayLinkedinUrl = table.Column<bool>(type: "bit", nullable: false),
+                    WebSiteUrl = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    Slogan = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    Title = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    Author = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    MetaDescription = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    MetaKeywords = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_WebSettings", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Abouts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    LanguageId = table.Column<int>(type: "int", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    MetaDescription = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    MetaKeywords = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Slug = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Abouts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Abouts_Languages_LanguageId",
+                        column: x => x.LanguageId,
+                        principalTable: "Languages",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Categories",
                 columns: table => new
                 {
@@ -75,6 +131,33 @@ namespace Blogi.Persistence.Migrations
                     table.PrimaryKey("PK_Categories", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Categories_Languages_LanguageId",
+                        column: x => x.LanguageId,
+                        principalTable: "Languages",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Contacts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    LanguageId = table.Column<int>(type: "int", nullable: false),
+                    Location = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    Phone = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
+                    Slug = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    MetaDescription = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    MetaKeywords = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Contacts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Contacts_Languages_LanguageId",
                         column: x => x.LanguageId,
                         principalTable: "Languages",
                         principalColumn: "Id",
@@ -224,19 +307,33 @@ namespace Blogi.Persistence.Migrations
                 columns: new[] { "Id", "Culture", "Name" },
                 values: new object[,]
                 {
-                    { 1, "tr-TR", "Türkçe" },
-                    { 2, "en-ENG", "English (United States)" }
+                    { 1, "tr-TR", "Turkish" },
+                    { 2, "en-US", "English" }
                 });
 
             migrationBuilder.InsertData(
                 table: "MailConfigs",
                 columns: new[] { "Id", "Email", "FullName", "Host", "Password", "Port", "SslEnabled", "UseDefaultCredentials" },
-                values: new object[] { 1, "blogi@blog.com", "BlogiBlog", "smtp.gmail.com", "ctlLeZYr7w8JWhMEDmRadjVpD1gFaJo5o1KmHZZfFmO6NV4Lf7IuNFsz/czp9A49", 587, false, false });
+                values: new object[] { 1, "blogi@blog.com", "BlogiBlog", "smtp.gmail.com", "hZk69MpQrx/s1kHW8Lm/k5yfbsyoFkKBckWgQ2a0mGPiy3n/SaWZ/c2e+u0QuWrd", 587, false, false });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Email", "Name", "Password", "Photo", "Surname" },
-                values: new object[] { 1, "blogi@blog.com", "BLOGI", "WR5dBZtFh5O3eUpN1cCh3Oq76AsTITOeIXq/56Z+U+F0dJwSEi7QtR7tM869Mcik", null, "BLOG" });
+                values: new object[] { 1, "blogi@blog.com", "BLOGI", "yk8Juhmi6BF0Gc7kNq9ySkc0z7P/M38OWocNaz4nEEP5nPdrVAAbK7M3vN3S5hnL", null, "BLOG" });
+
+            migrationBuilder.InsertData(
+                table: "WebSettings",
+                columns: new[] { "Id", "Author", "FacebookUrl", "GithubUrl", "InstagramUrl", "IsDisplayFacebbokUrl", "IsDisplayGithubUrl", "IsDisplayInstagramUrl", "IsDisplayLinkedinUrl", "IsDisplayMediumUrl", "IsDisplayTwitterUrl", "IsDisplayYouTubeUrl", "LinkedinUrl", "MediumUrl", "MetaDescription", "MetaKeywords", "Slogan", "Title", "TwitterUrl", "WebSiteUrl", "YouTubeUrl" },
+                values: new object[] { 1, "Adem Guney", "https://github.com/ademguney/BlogiBlog-MVC", "https://github.com/ademguney", "https://github.com/ademguney/BlogiBlog-MVC", true, true, true, true, true, true, true, "https://www.linkedin.com/in/ademguney/", "https://github.com/ademguney/BlogiBlog-MVC", "Blogi Blog open source multi language web blog project.", "open source, blogi blog, blogiblog, web project, multi language", "SEMICOLON, PRIME SUSPECT;", "Senior Software Developer Adem GUNEY", "https://twitter.com/AdemGuneyii", "https://www.guneyadem.com/", "https://www.youtube.com/@ademguney" });
+
+            migrationBuilder.InsertData(
+                table: "Abouts",
+                columns: new[] { "Id", "Content", "LanguageId", "MetaDescription", "MetaKeywords", "Slug", "Title" },
+                values: new object[,]
+                {
+                    { 1, "Selamlar, Ben Adem!", 1, "Blogi Blog acik kaynak kodlu cok dil destegi bulunan web blog projesidir.", "open source, blogi blog, blogiblog, web project, multi language", "hakkimda", "Yazilimci :) Adem GUNEY" },
+                    { 2, "He, I'm Adem :)", 2, "Blogi Blog open source multi language web blog project.", "open source, blogi blog, blogiblog, web project, multi language", "about-me", "Senior Software Developer Adem GUNEY" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Categories",
@@ -250,6 +347,15 @@ namespace Blogi.Persistence.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Contacts",
+                columns: new[] { "Id", "Content", "Email", "LanguageId", "Location", "MetaDescription", "MetaKeywords", "Phone", "Slug", "Title" },
+                values: new object[,]
+                {
+                    { 1, "iletisim bilgilerim", "guneyadem63@gmail.com", 1, null, "Blogi Blog acik kaynak kodlu cok dil destegi bulunan web blog projesidir.", "open source, blogi blog, blogiblog, web project, multi language", "009000000000063", "iletisim", "Gel Gel Ne Olursan Ol Yine Gel, Mevlana!" },
+                    { 2, "my contact information", "guneyadem63@gmail.com", 2, null, "Blogi Blog open source multi language web blog project.", "open source, blogi blog, blogiblog, web project, multi language", "009000000000063", "contact", "Come, come, whoever you are, Jelaluddin Rumi!" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "StringResources",
                 columns: new[] { "Id", "Key", "LanguageId", "Value" },
                 values: new object[,]
@@ -260,8 +366,8 @@ namespace Blogi.Persistence.Migrations
                     { 4, "page_language_button_delete", 2, "Delete" },
                     { 5, "page_language_button_update", 1, "Güncelle" },
                     { 6, "page_language_button_update", 2, "Update" },
-                    { 7, "page_language_label_list", 1, "Dil listesi..." },
-                    { 8, "page_language_label_list", 2, "Language list..." }
+                    { 7, "page_language_label_list", 1, "Dil Listesi" },
+                    { 8, "page_language_label_list", 2, "Language List" }
                 });
 
             migrationBuilder.InsertData(
@@ -294,7 +400,12 @@ namespace Blogi.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "Posts",
                 columns: new[] { "Id", "CategoryId", "Content", "CreatedById", "CreationDate", "DisplayCount", "Image", "ImageAlt", "IsPublished", "LanguageId", "MetaDescription", "MetaKeywords", "Slug", "Title", "UpdatedById", "UpdationDate", "UserId" },
-                values: new object[] { 1, 1, "Blogi blog an open source project.", 1, new DateTime(2022, 11, 16, 18, 8, 45, 717, DateTimeKind.Utc).AddTicks(3614), 0, null, "blogiBlog", true, 1, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "test-content", "Multi Language Blogi Blog", null, null, 1 });
+                values: new object[] { 1, 1, "Blogi blog an open source project.", 1, new DateTime(2022, 11, 20, 18, 19, 44, 315, DateTimeKind.Utc).AddTicks(8136), 0, null, "blogiBlog", true, 1, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "test-content", "Multi Language Blogi Blog", null, null, 1 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Abouts_LanguageId",
+                table: "Abouts",
+                column: "LanguageId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Categories_LanguageId",
@@ -305,6 +416,11 @@ namespace Blogi.Persistence.Migrations
                 name: "IX_Comments_PostId",
                 table: "Comments",
                 column: "PostId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Contacts_LanguageId",
+                table: "Contacts",
+                column: "LanguageId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Posts_CategoryId",
@@ -345,7 +461,13 @@ namespace Blogi.Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Abouts");
+
+            migrationBuilder.DropTable(
                 name: "Comments");
+
+            migrationBuilder.DropTable(
+                name: "Contacts");
 
             migrationBuilder.DropTable(
                 name: "MailConfigs");
@@ -355,6 +477,9 @@ namespace Blogi.Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "StringResources");
+
+            migrationBuilder.DropTable(
+                name: "WebSettings");
 
             migrationBuilder.DropTable(
                 name: "Posts");

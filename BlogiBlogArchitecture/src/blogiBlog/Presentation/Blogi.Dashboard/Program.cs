@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddApplicationServices();
-builder.Services.AddPersistenceServices(builder.Configuration);
+var lang=builder.Services.AddPersistenceServices(builder.Configuration);
 builder.Services.AddHttpContextAccessor();
 
 
@@ -17,7 +17,7 @@ builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation().AddViewL
 
 // Localization
 
-var languageService = builder.Services.AddApplicationServices().BuildServiceProvider().GetService<ILanguageService>();
+var languageService = lang.BuildServiceProvider().GetService<ILanguageService>();
 var languages = languageService.GetListAsync().Result;
 var cultures = languages.Select(x => new CultureInfo(x.Culture)).ToArray();
 

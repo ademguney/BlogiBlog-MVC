@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-6 col-lg-6">
                     <h4 class="xp-page-title">
-                        <a asp-controller="Dashboard" asp-action="Home" style="color: #8A98AC"><i class="icon-home"></i> @Localize("page_tag_label_home")</a>
+                        <a asp-controller="Dashboard" asp-action="Home" style="color: #8A98AC"><i class="icon-home"></i> @Localize("page_default_label_home")</a>
                     </h4>
                 </div>
                 <div class="col-md-6 col-lg-6">
@@ -20,7 +20,7 @@
                                 <a asp-controller="Tag" asp-action="Home"><i class="icon-home"></i></a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                <a asp-controller="Tag" asp-action="Home">@Localize("page_tag_label_back_to_list")</a>
+                                <a asp-controller="Tag" asp-action="Home">@Localize("page_default_back_to_list")</a>
                             </li>
                         </ol>
                     </div>
@@ -41,10 +41,10 @@
                     <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>                    
                      <fieldset class="form-group">
                         <div class="row">
-                            <div class="col-form-label col-sm-4 pt-0">@Localize("page_tag_label_language")</div>
+                            <div class="col-form-label col-sm-4 pt-0">@Localize("page_default_label_language")</div>
                             <div class="col-sm-8">
                                 <select asp-for="Tag.LanguageId" class="form-control" required>
-                                    <option selected="selected" value="0">@Localize("page_tag_label_select_language")</option>
+                                    <option selected="selected" value="0">@Localize("page_default_label_select_language")</option>
                                     @foreach (var item in Model.LanguageList)
                                     {
                                         <option value="@item.Id">@item.Name</option>
@@ -60,7 +60,7 @@
                             <span class="text-danger" asp-validation-for="Tag.Name"></span>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-block btn-warning"> @Localize("page_tag_button_update")<i class="mdi mdi-plus ml-2"></i></button>
+                    <button type="submit" class="btn btn-block btn-warning"> @Localize("page_default_button_update")<i class="mdi mdi-plus ml-2"></i></button>
                 </form>
             </div>
         </div>
