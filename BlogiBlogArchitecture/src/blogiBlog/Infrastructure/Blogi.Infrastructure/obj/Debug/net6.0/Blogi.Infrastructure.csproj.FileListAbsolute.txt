@@ -20,4 +20,3 @@ C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\obj\Debug\net6.0\Blogi.Infrastructure.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\obj\Debug\net6.0\ref\Blogi.Infrastructure.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\obj\Debug\net6.0\Blogi.Infrastructure.pdb
-C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\obj\Debug\net6.0\Blogi.Infrastructure.csproj.AssemblyReference.cache
