@@ -1,6 +1,5 @@
 ﻿using Core.Application.Security.Hashing;
 using Core.Infrastructure.MailKit;
-using Microsoft.EntityFrameworkCore;
 
 namespace Blogi.Application.Services.MailFactoryService
 {

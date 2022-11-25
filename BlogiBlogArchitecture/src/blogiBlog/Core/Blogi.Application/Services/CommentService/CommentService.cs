@@ -1,6 +1,5 @@
 ﻿using Blogi.Application.Features.Comment.Dtos.Get;
 using Blogi.Application.Features.Comment.Dtos.GetList;
-using Microsoft.EntityFrameworkCore;
 
 namespace Blogi.Application.Services.CommentService
 {

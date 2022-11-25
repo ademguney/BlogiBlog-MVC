@@ -1,5 +1,4 @@
-﻿using Blogi.Application.Features.Posts.Constants;
-using Blogi.Application.Features.Posts.Dtos.GetList;
+﻿using Blogi.Application.Features.Posts.Dtos.GetList;
 
 namespace Blogi.Application.Features.Posts.Queries.GetList
 {

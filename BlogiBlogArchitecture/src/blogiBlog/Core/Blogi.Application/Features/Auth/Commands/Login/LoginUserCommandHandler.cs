@@ -1,5 +1,4 @@
 ﻿using Blogi.Application.Features.Auth.Dto.GetLogin;
-using Core.Application.FormAuth.ClaimServices;
 using Core.Application.FormAuth.CookieScheme;
 
 namespace Blogi.Application.Features.Auth.Commands.Login

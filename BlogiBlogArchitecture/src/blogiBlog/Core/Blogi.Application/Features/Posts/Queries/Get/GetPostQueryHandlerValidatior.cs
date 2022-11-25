@@ -1,6 +1,4 @@
-﻿using Blogi.Application.Features.Posts.Constants;
-
-namespace Blogi.Application.Features.Posts.Queries.Get
+﻿namespace Blogi.Application.Features.Posts.Queries.Get
 {
     public class GetPostQueryHandlerValidatior : AbstractValidator<GetPostQuery>
     {

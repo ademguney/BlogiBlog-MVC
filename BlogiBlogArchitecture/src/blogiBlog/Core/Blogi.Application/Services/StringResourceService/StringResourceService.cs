@@ -1,6 +1,5 @@
 ﻿using Blogi.Application.Features.StringResources.Dtos.Get;
 using Blogi.Application.Features.StringResources.Dtos.GetList;
-using Microsoft.EntityFrameworkCore;
 
 namespace Blogi.Application.Services.StringResourceService
 {

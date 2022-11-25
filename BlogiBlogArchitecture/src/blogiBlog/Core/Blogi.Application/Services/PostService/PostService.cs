@@ -1,5 +1,4 @@
 ﻿using Blogi.Application.Features.Posts.Dtos.GetList;
-using Microsoft.EntityFrameworkCore;
 
 namespace Blogi.Application.Services.PostService
 {

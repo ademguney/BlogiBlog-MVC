@@ -1,5 +1,4 @@
 ﻿using Blogi.Application.Features.Tags.Dtos.Get;
-using Microsoft.EntityFrameworkCore;
 
 namespace Blogi.Application.Services.TagService
 {

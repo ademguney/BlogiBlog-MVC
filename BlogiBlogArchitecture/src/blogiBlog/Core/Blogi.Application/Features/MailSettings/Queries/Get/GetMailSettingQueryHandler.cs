@@ -1,6 +1,5 @@
 ﻿using Blogi.Application.Features.MailSettings.Dtos.Get;
 using Core.Application.Security.Hashing;
-using Microsoft.EntityFrameworkCore;
 
 namespace Blogi.Application.Features.MailSettings.Queries.Get
 {

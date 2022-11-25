@@ -1,5 +1,4 @@
 ﻿using Blogi.Application.Features.Categories.Dtos.Get;
-using Microsoft.EntityFrameworkCore;
 
 namespace Blogi.Application.Services.CategoryService
 {
