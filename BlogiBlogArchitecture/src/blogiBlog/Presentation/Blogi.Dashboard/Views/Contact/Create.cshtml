@@ -1,0 +1,122 @@
+﻿@model Blogi.Dashboard.Models.ContactCreateViewModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="xp-breadcrumbbar">
+            <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <h4 class="xp-page-title">
+                        <a asp-controller="Dashboard" asp-action="Home" style="color: #8A98AC"><i class="icon-home"></i> @Localize("page_default_label_home")</a>
+                    </h4>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="xp-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a asp-controller="Category" asp-action="Home"><i class="icon-home"></i></a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <a asp-controller="Contact" asp-action="Home">@Localize("page_default_back_to_list")</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <form asp-controller="Contact" asp-action="Create" method="post">
+                    @Html.AntiForgeryToken()
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                    <fieldset class="form-group">
+                        <div class="row">
+                            <div class="col-form-label col-sm-4 pt-0">@Localize("page_default_label_language")</div>
+                            <div class="col-sm-8">
+                                <select asp-for="ContactCommand.LanguageId" class="form-control" required>
+                                    <option selected="selected" value="0">@Localize("page_default_label_select_language")</option>
+                                    @foreach (var item in Model.LanguageList)
+                                    {
+                                        <option value="@item.Id">@item.Name</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Location</label>
+                        <div class="col-sm-8">
+                            <input asp-for="ContactCommand.Location" type="text" class="form-control" required>
+                            <span class="text-danger" asp-validation-for="ContactCommand.Location"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Phone</label>
+                        <div class="col-sm-8">
+                            <input asp-for="ContactCommand.Phone" type="text" class="form-control" required>
+                            <span class="text-danger" asp-validation-for="ContactCommand.Phone"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Email</label>
+                        <div class="col-sm-8">
+                            <input asp-for="ContactCommand.Email" type="email" class="form-control" required>
+                            <span class="text-danger" asp-validation-for="ContactCommand.Email"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Slug</label>
+                        <div class="col-sm-8">
+                            <input asp-for="ContactCommand.Slug" type="text" class="form-control" required>
+                            <span class="text-danger" asp-validation-for="ContactCommand.Slug"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Title</label>
+                        <div class="col-sm-8">
+                            <input asp-for="ContactCommand.Title" type="text" class="form-control" required>
+                            <span class="text-danger" asp-validation-for="ContactCommand.Title"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Slug</label>
+                        <div class="col-sm-8">
+                            <input asp-for="ContactCommand.Slug" type="text" class="form-control" required>
+                            <span class="text-danger" asp-validation-for="ContactCommand.Slug"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">MetaDescription</label>
+                        <div class="col-sm-8">
+                            <input asp-for="ContactCommand.MetaDescription" type="text" class="form-control" required>
+                            <span class="text-danger" asp-validation-for="ContactCommand.MetaDescription"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">MetaKeywords</label>
+                        <div class="col-sm-8">
+                            <input asp-for="ContactCommand.MetaKeywords" type="text" class="form-control" required>
+                            <span class="text-danger" asp-validation-for="ContactCommand.MetaKeywords"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <textarea id="xp-tinymce" asp-for="ContactCommand.Content"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-rounded btn-lg btn-block"> @Localize("page_default_button_create")<i class="mdi mdi-plus ml-2"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

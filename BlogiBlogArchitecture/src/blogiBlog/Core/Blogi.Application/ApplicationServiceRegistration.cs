@@ -12,6 +12,7 @@
             services.AddScoped<ITagService, TagService>();
             services.AddScoped<IPostService, PostService>();
             services.AddScoped<IMailService, MailService>();
+            services.AddScoped<IContactService, ContactService>();
             services.AddScoped<ICommentService, CommentService>();
             services.AddScoped<IPostTagService, PostTagService>();
             services.AddScoped<ICategoryService, CategoryService>();
@@ -20,7 +21,7 @@
             services.AddScoped<IMailFactoryService, MailFactoryService>();
             services.AddScoped<IStringResourceService, StringResourceService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
+           
             return services;
         }
     }

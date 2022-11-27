@@ -1,4 +1,5 @@
-﻿using Blogi.Application.Features.WebSettings.Dtos.Get;
+﻿using Blogi.Application.Features.WebSettings.Commands.Update;
+using Blogi.Application.Features.WebSettings.Dtos.Get;
 
 namespace Blogi.Application.Features.WebSettings.Profiles
 {
@@ -7,6 +8,7 @@ namespace Blogi.Application.Features.WebSettings.Profiles
         public MappingProfile()
         {
             CreateMap<WebSetting, GetWebSettingOutput>().ReverseMap();
+            CreateMap<WebSetting, UpdateWebSettingCommand>().ReverseMap();
         }
     }
 }

@@ -72,8 +72,6 @@ namespace Blogi.Dashboard.Controllers
                 NotifyError(result.Errors);
                 return View(model);
             }
-
-
         }
 
         [HttpPost, ValidateAntiForgeryToken]

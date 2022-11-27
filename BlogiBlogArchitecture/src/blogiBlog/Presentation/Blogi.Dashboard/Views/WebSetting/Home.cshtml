@@ -1,0 +1,151 @@
+﻿@model Blogi.Application.Features.WebSettings.Dtos.Get.GetWebSettingOutput
+@{
+    ViewData["Title"] = "Web Settings";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<partial name="_breadCrumb" />
+
+<form asp-controller="WebSetting" asp-action="Update" method="post">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+    <input type="hidden" asp-for="Id" />
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card m-b-30">
+                <div class="card-header bg-default" style="color:black">
+                    <i class='fa fa-fa-setting'></i> Meta Configuration
+                </div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">WebSiteUrl</label>
+                        <div class="col-sm-8">
+                            <input asp-for="WebSiteUrl" type="text" class="form-control" required>
+                            <span class="text-danger" asp-validation-for="WebSiteUrl"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Slogan</label>
+                        <div class="col-sm-8">
+                            <input asp-for="Slogan" type="text" class="form-control" required>
+                            <span class="text-danger" asp-validation-for="Slogan"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Title</label>
+                        <div class="col-sm-8">
+                            <input asp-for="Title" type="text" class="form-control" required>
+                            <span class="text-danger" asp-validation-for="Title"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Author</label>
+                        <div class="col-sm-8">
+                            <input asp-for="Author" type="text" class="form-control" required>
+                            <span class="text-danger" asp-validation-for="Author"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">MetaDescription</label>
+                        <div class="col-sm-8">
+                            <input asp-for="MetaDescription" type="text" class="form-control" required>
+                            <span class="text-danger" asp-validation-for="MetaDescription"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">MetaKeywords</label>
+                        <div class="col-sm-8">
+                            <input asp-for="MetaKeywords" type="text" class="form-control" required>
+                            <span class="text-danger" asp-validation-for="MetaKeywords"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="col-lg-12">
+            <div class="card m-b-30">
+                <div class="card-header bg-default" style="color:black">
+                    <i class='fa fa-fa-setting'></i> Social Site Links
+                </div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">FacebookUrl</label>
+                        <div class="col-sm-6">
+                            <input asp-for="FacebookUrl" type="text" class="form-control">
+                            <span class="text-danger" asp-validation-for="FacebookUrl"></span>
+                        </div>
+                        <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayFacebbokUrl">Show Facebook
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">TwitterUrl</label>
+                        <div class="col-sm-6">
+                            <input asp-for="TwitterUrl" type="text" class="form-control">
+                            <span class="text-danger" asp-validation-for="TwitterUrl"></span>
+                        </div>
+                        <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayTwitterUrl">Show Twitter
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">InstagramUrl</label>
+                        <div class="col-sm-6">
+                            <input asp-for="InstagramUrl" type="text" class="form-control">
+                            <span class="text-danger" asp-validation-for="InstagramUrl"></span>
+                        </div>
+                        <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayInstagramUrl">Show Instagram
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">YouTubeUrl</label>
+                        <div class="col-sm-6">
+                            <input asp-for="YouTubeUrl" type="text" class="form-control">
+                            <span class="text-danger" asp-validation-for="YouTubeUrl"></span>
+                        </div>
+                        <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayYouTubeUrl">Show Youtube
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">MediumUrl</label>
+                        <div class="col-sm-6">
+                            <input asp-for="MediumUrl" type="text" class="form-control">
+                            <span class="text-danger" asp-validation-for="MediumUrl"></span>
+                        </div>
+                        <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayMediumUrl">Show Medium
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">GithubUrl</label>
+                        <div class="col-sm-6">
+                            <input asp-for="GithubUrl" type="text" class="form-control">
+                            <span class="text-danger" asp-validation-for="GithubUrl"></span>
+                        </div>
+                        <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayGithubUrl">Show Github
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">LinkedinUrl</label>
+                        <div class="col-sm-6">
+                            <input asp-for="LinkedinUrl" type="text" class="form-control">
+                            <span class="text-danger" asp-validation-for="LinkedinUrl"></span>
+                        </div>
+                        <div class="col-sm-3">
+                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayLinkedinUrl">Show Linkedin
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn btn-rounded btn-block btn-warning">@Localize("page_default_button_update") <i class="mdi mdi-progress-upload"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

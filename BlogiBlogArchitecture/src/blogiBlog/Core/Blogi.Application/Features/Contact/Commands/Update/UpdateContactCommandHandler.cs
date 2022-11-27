@@ -36,7 +36,7 @@ namespace Blogi.Application.Features.Contact.Commands.Update
                 response.Id = resultMapp.Id;
                 response.Data = resultMapp;
                 response.Success = true;
-                response.Message = AboutMessages.UpdatedSuccess;
+                response.Message = ContactMessages.UpdatedSuccess;
                 response.Errors = null;
             }
 

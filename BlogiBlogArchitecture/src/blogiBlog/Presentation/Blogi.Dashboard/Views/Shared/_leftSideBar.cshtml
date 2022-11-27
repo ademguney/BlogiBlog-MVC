@@ -50,7 +50,16 @@
                         <li><a asp-controller="Tag" asp-action="Create">@Localize("left_menu_a_default_label_create")</a></li>
                     </ul>
                 </li>
-
+                <li class="xp-vertical-header"><i class="icon-action-redo"></i> Pages</li>
+                <li>
+                    <a href="javaScript:void();">
+                        <i class="fa ion-ios-contact"></i><span>Contact</span><i class="icon-arrow-right pull-right"></i>
+                    </a>
+                    <ul class="xp-vertical-submenu">
+                        <li><a asp-controller="Contact" asp-action="Home">@Localize("left_menu_a_default_label_list")</a></li>
+                        <li><a asp-controller="Contact" asp-action="Create">@Localize("left_menu_a_default_label_create")</a></li>
+                    </ul>
+                </li>
                 <li class="xp-vertical-header"><i class="icon-settings"></i> @Localize("left_menu_label_system_config")</li>
                 <li>
                     <a href="javaScript:void();">

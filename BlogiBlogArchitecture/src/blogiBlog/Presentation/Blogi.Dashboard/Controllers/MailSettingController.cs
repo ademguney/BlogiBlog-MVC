@@ -22,7 +22,7 @@ namespace Blogi.Dashboard.Controllers
         }
 
         [HttpPost,ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(UpdateMailSettingCommand input)
+        public async Task<IActionResult> Update(UpdateMailSettingCommand input)
         {
             var result = await Mediator.Send(input);
             if (result.Success)

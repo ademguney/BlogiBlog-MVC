@@ -49,4 +49,5 @@ global using Blogi.Application.Repositories.WebSettingRepository;
 global using Blogi.Application.Repositories.MailSettingRepository;
 global using Blogi.Application.Features.StringResources.Constants;
 global using Blogi.Application.Repositories.StringResourceRepository;
+global using Blogi.Application.Services.ContactService;
 
