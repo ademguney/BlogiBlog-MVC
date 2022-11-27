@@ -1,6 +1,6 @@
-﻿using Blogi.Application.Features.Contract.Dtos.Get;
+﻿using Blogi.Application.Features.Contacts.Dtos.Get;
 
-namespace Blogi.Application.Features.Contact.Queries.Get
+namespace Blogi.Application.Features.Contacts.Queries.Get
 {
     public class GetContactQuery : IRequest<BaseCommandResponse<GetContactOutput>>
     {

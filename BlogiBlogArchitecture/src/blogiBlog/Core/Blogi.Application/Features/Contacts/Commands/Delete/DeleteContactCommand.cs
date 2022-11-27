@@ -1,4 +1,4 @@
-﻿namespace Blogi.Application.Features.Contact.Commands.Delete
+﻿namespace Blogi.Application.Features.Contacts.Commands.Delete
 {
     public class DeleteContactCommand : IRequest<BaseCommandResponse<int>>
     {

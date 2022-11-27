@@ -1,8 +1,8 @@
-﻿using Blogi.Application.Features.Contact.Commands.Create;
-using Blogi.Application.Features.Contact.Commands.Delete;
-using Blogi.Application.Features.Contact.Commands.Update;
-using Blogi.Application.Features.Contact.Queries.Get;
-using Blogi.Application.Features.Contact.Queries.GetList;
+﻿using Blogi.Application.Features.Contacts.Commands.Create;
+using Blogi.Application.Features.Contacts.Commands.Update;
+using Blogi.Application.Features.Contacts.Queries.GetList;
+using Blogi.Application.Features.Contacts.Commands.Delete;
+using Blogi.Application.Features.Contacts.Queries.Get;
 using Blogi.Application.Features.Languages.Queries.GetList;
 using Blogi.Dashboard.Models;
 using Microsoft.AspNetCore.Mvc;

@@ -1,6 +1,7 @@
-﻿using Blogi.Application.Features.Contract.Dtos.Get;
+﻿using Blogi.Application.Features.Contacts.Constants;
+using Blogi.Application.Features.Contacts.Dtos.Get;
 
-namespace Blogi.Application.Features.Contact.Commands.Update
+namespace Blogi.Application.Features.Contacts.Commands.Update
 {
     public class UpdateContactCommandHandler : IRequestHandler<UpdateContactCommand, BaseCommandResponse<GetContactOutput>>
     {

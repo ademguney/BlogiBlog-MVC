@@ -56,6 +56,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Abouts\Commands\Create\" />
+    <Folder Include="Features\Abouts\Commands\Delete\" />
     <Folder Include="Features\Posts\Dtos\Create\" />
     <Folder Include="Features\Posts\Dtos\Delete\" />
     <Folder Include="Features\Posts\Dtos\Update\" />

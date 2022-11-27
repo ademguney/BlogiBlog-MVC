@@ -1,4 +1,6 @@
-﻿namespace Blogi.Application.Features.Contact.Commands.Delete
+﻿using Blogi.Application.Features.Contacts.Constants;
+
+namespace Blogi.Application.Features.Contacts.Commands.Delete
 {
     public class DeleteContactCommandHandler : IRequestHandler<DeleteContactCommand, BaseCommandResponse<int>>
     {

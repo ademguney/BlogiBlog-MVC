@@ -37,6 +37,7 @@
                 @Html.AntiForgeryToken()
                 <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
                 <input type="hidden" asp-for="Contact.Id" />
+                 <input type="hidden" asp-for="Contact.LanguageId" />
                  <fieldset class="form-group">
                         <div class="row">
                             <div class="col-form-label col-sm-4 pt-0">@Localize("page_default_label_language")</div>

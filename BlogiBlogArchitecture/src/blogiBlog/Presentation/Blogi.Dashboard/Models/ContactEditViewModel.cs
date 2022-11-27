@@ -1,4 +1,4 @@
-﻿using Blogi.Application.Features.Contract.Dtos.Get;
+﻿using Blogi.Application.Features.Contacts.Dtos.Get;
 using Blogi.Application.Features.Languages.Dtos.GetList;
 
 namespace Blogi.Dashboard.Models

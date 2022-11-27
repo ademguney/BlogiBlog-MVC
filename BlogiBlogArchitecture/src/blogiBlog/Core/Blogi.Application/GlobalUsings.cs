@@ -29,7 +29,7 @@ global using Blogi.Application.Services.LanguageService;
 global using Blogi.Application.Features.Abouts.Constants;
 global using Blogi.Application.Features.Comment.Constants;
 global using Blogi.Application.Repositories.TagRepository;
-global using Blogi.Application.Features.Contact.Constants;
+global using Blogi.Application.Features.Contacts.Constants;
 global using Blogi.Application.Repositories.PostRepository;
 global using Blogi.Application.Services.MailFactoryService;
 global using Blogi.Application.Repositories.UserRepository;

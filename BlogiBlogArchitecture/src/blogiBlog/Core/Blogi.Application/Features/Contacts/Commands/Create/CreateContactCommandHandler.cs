@@ -1,6 +1,7 @@
-﻿using Blogi.Application.Features.Contract.Dtos.Get;
+﻿using Blogi.Application.Features.Contacts.Constants;
+using Blogi.Application.Features.Contacts.Dtos.Get;
 
-namespace Blogi.Application.Features.Contact.Commands.Create
+namespace Blogi.Application.Features.Contacts.Commands.Create
 {
     public class CreateContactCommandHandler : IRequestHandler<CreateContactCommand, BaseCommandResponse<GetContactOutput>>
     {

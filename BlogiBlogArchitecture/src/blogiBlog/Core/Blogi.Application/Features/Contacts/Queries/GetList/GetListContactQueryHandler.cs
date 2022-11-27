@@ -1,6 +1,7 @@
-﻿using Blogi.Application.Features.Contact.Dtos.GetList;
+﻿using Blogi.Application.Features.Contacts.Constants;
+using Blogi.Application.Features.Contacts.Dtos.GetList;
 
-namespace Blogi.Application.Features.Contact.Queries.GetList
+namespace Blogi.Application.Features.Contacts.Queries.GetList
 {
     public class GetListContactQueryHandler : IRequestHandler<GetListContactQuery, BaseCommandResponse<List<GetListContactOutput>>>
     {
@@ -25,7 +26,7 @@ namespace Blogi.Application.Features.Contact.Queries.GetList
             }
             else
             {
-               
+
                 response.Data = result;
                 response.Success = true;
                 response.Message = ContactMessages.GetListExists;

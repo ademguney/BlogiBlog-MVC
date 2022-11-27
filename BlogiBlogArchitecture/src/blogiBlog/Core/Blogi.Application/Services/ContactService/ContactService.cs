@@ -1,5 +1,5 @@
-﻿using Blogi.Application.Features.Contact.Dtos.GetList;
-using Blogi.Application.Features.Contract.Dtos.Get;
+﻿using Blogi.Application.Features.Contacts.Dtos.Get;
+using Blogi.Application.Features.Contacts.Dtos.GetList;
 
 namespace Blogi.Application.Services.ContactService
 {

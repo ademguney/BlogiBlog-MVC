@@ -1,4 +1,4 @@
-﻿namespace Blogi.Application.Features.Contact.Dtos.GetList
+﻿namespace Blogi.Application.Features.Contacts.Dtos.GetList
 {
     public class GetListContactOutput
     {

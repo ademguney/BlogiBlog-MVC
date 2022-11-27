@@ -1,9 +1,8 @@
-﻿using Blogi.Application.Features.Contract.Dtos.Get;
-
-namespace Blogi.Application.Features.Contact.Commands.Create
+﻿namespace Blogi.Application.Features.Contacts.Dtos.Get
 {
-    public class CreateContactCommand : IRequest<BaseCommandResponse<GetContactOutput>>
+    public class GetContactOutput
     {
+        public int Id { get; set; }
         public int LanguageId { get; set; }
         public string Location { get; set; }
         public string Phone { get; set; }

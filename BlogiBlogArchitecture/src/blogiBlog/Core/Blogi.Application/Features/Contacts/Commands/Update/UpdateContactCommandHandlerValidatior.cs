@@ -1,4 +1,4 @@
-﻿namespace Blogi.Application.Features.Contact.Commands.Update
+﻿namespace Blogi.Application.Features.Contacts.Commands.Update
 {
     public class UpdateContactCommandHandlerValidatior : AbstractValidator<UpdateContactCommand>
     {

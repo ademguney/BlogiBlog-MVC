@@ -1,4 +1,4 @@
-﻿namespace Blogi.Application.Features.Contact.Constants
+﻿namespace Blogi.Application.Features.Contacts.Constants
 {
     public static class ContactMessages
     {

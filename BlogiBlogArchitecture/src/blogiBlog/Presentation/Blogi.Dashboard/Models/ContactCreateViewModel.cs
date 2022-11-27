@@ -1,4 +1,4 @@
-﻿using Blogi.Application.Features.Contact.Commands.Create;
+﻿using Blogi.Application.Features.Contacts.Commands.Create;
 using Blogi.Application.Features.Languages.Dtos.GetList;
 
 namespace Blogi.Dashboard.Models

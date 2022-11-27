@@ -53,7 +53,16 @@
                 <li class="xp-vertical-header"><i class="icon-action-redo"></i> Pages</li>
                 <li>
                     <a href="javaScript:void();">
-                        <i class="fa ion-ios-contact"></i><span>Contact</span><i class="icon-arrow-right pull-right"></i>
+                        <i class="mdi mdi-book-open-page-variant"></i><span>About</span><i class="icon-arrow-right pull-right"></i>
+                    </a>
+                    <ul class="xp-vertical-submenu">
+                        <li><a asp-controller="About" asp-action="Home">@Localize("left_menu_a_default_label_list")</a></li>
+                        <li><a asp-controller="About" asp-action="Create">@Localize("left_menu_a_default_label_create")</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javaScript:void();">
+                        <i class="mdi mdi-book-open-page-variant"></i><span>Contact</span><i class="icon-arrow-right pull-right"></i>
                     </a>
                     <ul class="xp-vertical-submenu">
                         <li><a asp-controller="Contact" asp-action="Home">@Localize("left_menu_a_default_label_list")</a></li>
@@ -85,6 +94,14 @@
                     </a>
                     <ul class="xp-vertical-submenu">
                         <li><a asp-controller="MailSetting" asp-action="Home">@Localize("left_menu_a_mail_setting_configure")</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javaScript:void();">
+                        <i class="ion-md-settings"></i><span>Web Ayari</span><i class="icon-arrow-right pull-right"></i>
+                    </a>
+                    <ul class="xp-vertical-submenu">
+                        <li><a asp-controller="WebSetting" asp-action="Home">Yapilandir</a></li>
                     </ul>
                 </li>
             </ul>

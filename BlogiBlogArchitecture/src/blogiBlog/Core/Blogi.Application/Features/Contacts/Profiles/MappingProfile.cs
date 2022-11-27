@@ -1,9 +1,9 @@
-﻿using Blogi.Application.Features.Contact.Commands.Create;
-using Blogi.Application.Features.Contact.Commands.Delete;
-using Blogi.Application.Features.Contact.Commands.Update;
-using Blogi.Application.Features.Contract.Dtos.Get;
+﻿using Blogi.Application.Features.Contacts.Commands.Create;
+using Blogi.Application.Features.Contacts.Commands.Delete;
+using Blogi.Application.Features.Contacts.Commands.Update;
+using Blogi.Application.Features.Contacts.Dtos.Get;
 
-namespace Blogi.Application.Features.Contact.Profiles
+namespace Blogi.Application.Features.Contacts.Profiles
 {
     public class MappingProfile : Profile
     {
