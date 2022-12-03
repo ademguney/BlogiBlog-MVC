@@ -1,8 +1,10 @@
-﻿
+﻿@model Blogi.Application.Features.Abouts.Dtos.Get.GetAboutOutput
 @{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = @Model.Title;
+    ViewData["Description"] = @Model.MetaDescription;
+    ViewData["Keywords"] = @Model.MetaKeywords;
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>About</h1>
-
+@Html.Raw(Model.Content)

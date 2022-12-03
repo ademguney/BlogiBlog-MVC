@@ -14,7 +14,7 @@ namespace Blogi.Application.Features.Abouts.Queries.Get
         public async Task<BaseCommandResponse<GetAboutOutput>> Handle(GetAboutQuery request, CancellationToken cancellationToken)
         {
             var response = new BaseCommandResponse<GetAboutOutput>();
-            var result = await _aboutService.GetAsync(request.Id);
+            var result = await _aboutService.GetAsync(request.Id, request.Culture);
             response.Id = result.Id;
             response.Data = result;
             response.Success = true;

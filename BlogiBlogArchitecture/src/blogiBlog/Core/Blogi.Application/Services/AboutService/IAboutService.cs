@@ -5,7 +5,7 @@ namespace Blogi.Application.Services.AboutService
 {
     public interface IAboutService
     {
-        Task<GetAboutOutput> GetAsync(int id);
-        Task<List<GetListAboutOutput>> GetListAsync();        
+        Task<GetAboutOutput> GetAsync(int id, string culture);
+        Task<List<GetListAboutOutput>> GetListAsync();
     }
 }

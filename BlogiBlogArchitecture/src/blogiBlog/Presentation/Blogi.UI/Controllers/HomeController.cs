@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Localization;
+﻿using Blogi.Application.Features.Abouts.Queries.Get;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blogi.UI.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
 
 
@@ -14,15 +15,19 @@ namespace Blogi.UI.Controllers
         }
 
         [HttpGet]
-        public IActionResult About()
+        public async Task<IActionResult> About()
         {
-            return View();
+            var currentCulture = Thread.CurrentThread.CurrentUICulture.Name;
+            var result = await Mediator.Send(new GetAboutQuery() { Culture = currentCulture });
+            return View(result.Data);
         }
 
         [HttpGet]
-        public IActionResult Contact()
+        public async Task<IActionResult> Contact()
         {
-            return View();
+            var currentCulture = Thread.CurrentThread.CurrentUICulture.Name;
+            var result = await Mediator.Send(new GetAboutQuery() { Culture = currentCulture });
+            return View(result.Data);
         }
 
         [HttpPost]

@@ -14,9 +14,21 @@ namespace Blogi.Application.Services.AboutService
             _aboutReadRepository = aboutReadRepository;
         }
 
-        public async Task<GetAboutOutput> GetAsync(int id)
+        public async Task<GetAboutOutput> GetAsync(int id, string culture)
         {
-            var result = await _aboutReadRepository.GetAsync(x => x.Id == id);
+            var result = new About();
+
+            if (id > 0)
+                result = await _aboutReadRepository.GetAsync(x => x.Id == id);
+
+            if (!string.IsNullOrEmpty(culture))
+            {
+                result = await _aboutReadRepository
+                        .GetAll(x => x.Languages.Culture.Trim().ToLower() == culture.Trim().ToLower())
+                        .Include(x => x.Languages)
+                        .FirstOrDefaultAsync();
+            }
+
             var resultMapp = _mapper.Map<GetAboutOutput>(result);
             return resultMapp;
         }
