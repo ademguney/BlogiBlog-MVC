@@ -1,5 +1,4 @@
-﻿using Blogi.Application.Features.Contacts.Constants;
-using Blogi.Application.Features.Contacts.Dtos.Get;
+﻿using Blogi.Application.Features.Contacts.Dtos.Get;
 using Blogi.Application.Features.Contacts.Queries.Get;
 
 namespace Blogi.Application.Features.Contact.Queries.Get

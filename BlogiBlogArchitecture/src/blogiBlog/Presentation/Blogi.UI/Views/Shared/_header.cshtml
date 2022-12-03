@@ -1,4 +1,18 @@
-﻿<div class="container-xl header-top">
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{
+    string returnUrl = ViewContext.HttpContext.Request.Path;
+
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = LocOptions.Value.SupportedUICultures
+          .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
+          .ToList();
+}
+
+<div class="container-xl header-top">
     <div class="row align-items-center">
 
         <!-- social icons -->
@@ -11,11 +25,27 @@
                 <li class="list-inline-item"><a href="#"><i class="fab fa-medium"></i></a></li>
                 <li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
             </ul>
+            <ul class="social-icons list-unstyled list-inline mb-0">
+                <li class="nav-item">
+                    <form asp-action="ChangeLanguage" asp-controller="Home" method="post">
+                        <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
+                        <select id="culture"
+                                name="culture"
+                                class="form-control"
+                                onchange="this.form.submit();"
+                                asp-items="cultureItems"
+                                asp-for="@requestCulture.RequestCulture.UICulture.Name">
+                        </select>
+                    </form>
+                </li>
+            </ul>
         </div>
+
+
 
         <!-- site logo -->
         <div class="col-md-4 col-sm-12 col-xs-12 text-center">
-            <a class="navbar-brand" href="personal.html"><img src="~/favicon.png" alt="blogiblog" style="width:80px; height:80px; border-radius: 50%;"/></a>
+            <a class="navbar-brand" href="personal.html"><img src="~/favicon.png" alt="blogiblog" style="width:80px; height:80px; border-radius: 50%;" /></a>
             <span class="slogan d-block">Professional Writer & Personal Blogger</span>
         </div>
 
@@ -40,14 +70,14 @@
         <div class="collapse navbar-collapse justify-content-center centered-nav">
             <ul class="navbar-nav">
                 <li class="nav-item dropdown active">
-                    <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                    <a class="nav-link" asp-controller="Home" asp-action="Index">@Localize("blog_ui_navbar_home")</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" asp-controller="Home" asp-action="About">About</a>
+                    <a class="nav-link" asp-controller="Home" asp-action="About">@Localize("blog_ui_navbar_about")</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" asp-controller="Home" asp-action="Contact">Contact</a>
+                    <a class="nav-link" asp-controller="Home" asp-action="Contact">@Localize("blog_ui_navbar_contact")</a>
                 </li>
             </ul>
         </div>

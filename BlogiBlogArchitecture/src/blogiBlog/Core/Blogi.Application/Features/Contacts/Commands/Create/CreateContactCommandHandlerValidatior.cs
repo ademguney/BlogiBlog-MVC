@@ -1,6 +1,4 @@
-﻿using Blogi.Application.Features.Contacts.Constants;
-
-namespace Blogi.Application.Features.Contacts.Commands.Create
+﻿namespace Blogi.Application.Features.Contacts.Commands.Create
 {
     public class CreateContactCommandHandlerValidatior : AbstractValidator<CreateContactCommand>
     {

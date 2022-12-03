@@ -12,6 +12,7 @@
             services.AddScoped<ITagService, TagService>();
             services.AddScoped<IPostService, PostService>();
             services.AddScoped<IMailService, MailService>();
+            services.AddScoped<IAboutService, AboutService>();
             services.AddScoped<IContactService, ContactService>();
             services.AddScoped<ICommentService, CommentService>();
             services.AddScoped<IPostTagService, PostTagService>();

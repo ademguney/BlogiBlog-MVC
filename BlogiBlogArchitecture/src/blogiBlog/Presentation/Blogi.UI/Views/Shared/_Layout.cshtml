@@ -112,17 +112,10 @@
                             <div class="widget rounded">
                                 <div class="widget-header text-center">
                                     <h3 class="widget-title">Explore Topics</h3>
-                                    <img src="images/wave.svg" class="wave" alt="wave" />
+                                    <img src="~/images/wave.svg" class="wave" alt="wave" />
                                 </div>
                                 <div class="widget-content">
-                                    <ul class="list">
-                                        <li><a href="#">Lifestyle</a><span>(5)</span></li>
-                                        <li><a href="#">Inspiration</a><span>(2)</span></li>
-                                        <li><a href="#">Fashion</a><span>(4)</span></li>
-                                        <li><a href="#">Politic</a><span>(1)</span></li>
-                                        <li><a href="#">Trending</a><span>(7)</span></li>
-                                        <li><a href="#">Culture</a><span>(3)</span></li>
-                                    </ul>
+                                      @await Component.InvokeAsync("CategoryMenu")
                                 </div>
 
                             </div>
@@ -131,7 +124,7 @@
                             <div class="widget rounded">
                                 <div class="widget-header text-center">
                                     <h3 class="widget-title">Popular Posts</h3>
-                                    <img src="images/wave.svg" class="wave" alt="wave" />
+                                    <img src="~/images/wave.svg" class="wave" alt="wave" />
                                 </div>
                                 <div class="widget-content">
                                     <!-- post -->
@@ -192,14 +185,10 @@
                             <div class="widget rounded">
                                 <div class="widget-header text-center">
                                     <h3 class="widget-title">Tag Clouds</h3>
-                                    <img src="images/wave.svg" class="wave" alt="wave" />
+                                    <img src="~/images/wave.svg" class="wave" alt="wave" />
                                 </div>
                                 <div class="widget-content">
-                                    <a href="#" class="tag">#Trending</a>
-                                    <a href="#" class="tag">#Video</a>
-                                    <a href="#" class="tag">#Featured</a>
-                                    <a href="#" class="tag">#Gallery</a>
-                                    <a href="#" class="tag">#Celebrities</a>
+                                    @await Component.InvokeAsync("TagMenu")
                                 </div>
                             </div>
 
@@ -273,35 +262,15 @@
 
         <!-- logo -->
         <div class="logo">
-            <img src="images/logo.svg" alt="Katen" />
+           <img src="~/favicon.png" alt="blogiblog" style="width:80px; height:80px; border-radius: 50%;" />
         </div>
 
         <!-- menu -->
         <nav>
             <ul class="vertical-menu">
-                <li class="active">
-                    <a href="index.html">Home</a>
-                    <ul class="submenu">
-                        <li><a href="index.html">Magazine</a></li>
-                        <li><a href="personal.html">Personal</a></li>
-                        <li><a href="personal-alt.html">Personal Alt</a></li>
-                        <li><a href="minimal.html">Minimal</a></li>
-                        <li><a href="classic.html">Classic</a></li>
-                    </ul>
-                </li>
-                <li><a href="category.html">Lifestyle</a></li>
-                <li><a href="category.html">Inspiration</a></li>
-                <li>
-                    <a href="#">Pages</a>
-                    <ul class="submenu">
-                        <li><a href="category.html">Category</a></li>
-                        <li><a href="blog-single.html">Blog Single</a></li>
-                        <li><a href="blog-single-alt.html">Blog Single Alt</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
+                <li class="active"><a asp-controller="Home" asp-action="Index">@Localize("blog_ui_navbar_home")</a></li>
+                <li><a asp-controller="Home" asp-action="About">@Localize("blog_ui_navbar_about")</a></li>
+                <li><a asp-controller="Home" asp-action="Contact">@Localize("blog_ui_navbar_contact")</a></li>               
             </ul>
         </nav>
 

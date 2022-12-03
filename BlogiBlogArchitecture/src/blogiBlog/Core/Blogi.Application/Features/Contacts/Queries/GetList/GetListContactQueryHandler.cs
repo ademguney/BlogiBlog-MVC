@@ -1,5 +1,4 @@
-﻿using Blogi.Application.Features.Contacts.Constants;
-using Blogi.Application.Features.Contacts.Dtos.GetList;
+﻿using Blogi.Application.Features.Contacts.Dtos.GetList;
 
 namespace Blogi.Application.Features.Contacts.Queries.GetList
 {
@@ -26,7 +25,6 @@ namespace Blogi.Application.Features.Contacts.Queries.GetList
             }
             else
             {
-
                 response.Data = result;
                 response.Success = true;
                 response.Message = ContactMessages.GetListExists;

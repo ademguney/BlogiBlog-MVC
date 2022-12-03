@@ -4,23 +4,19 @@ namespace Blogi.Application.Features.Abouts.Queries.Get
 {
     public class GetAboutQueryHandler : IRequestHandler<GetAboutQuery, BaseCommandResponse<GetAboutOutput>>
     {
-        private readonly IMapper _mapper;
-        private readonly IAboutReadRepository _aboutReadRepository;
+        private readonly IAboutService _aboutService;
 
-        public GetAboutQueryHandler(IMapper mapper, IAboutReadRepository aboutReadRepository)
+        public GetAboutQueryHandler(IAboutService aboutService)
         {
-            _mapper = mapper;
-            _aboutReadRepository = aboutReadRepository;
+            _aboutService = aboutService;
         }
 
         public async Task<BaseCommandResponse<GetAboutOutput>> Handle(GetAboutQuery request, CancellationToken cancellationToken)
         {
-            var response=new BaseCommandResponse<GetAboutOutput>();
-            var result= await _aboutReadRepository.GetAll().FirstOrDefaultAsync();
-
-            var resultMapp = _mapper.Map<GetAboutOutput>(result);
-            response.Id = resultMapp.Id;
-            response.Data = resultMapp;
+            var response = new BaseCommandResponse<GetAboutOutput>();
+            var result = await _aboutService.GetAsync(request.Id);
+            response.Id = result.Id;
+            response.Data = result;
             response.Success = true;
             response.Message = AboutMessages.GetByIdExists;
             response.Errors = null;

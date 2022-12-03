@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
 	  <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.10" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.10">
@@ -21,6 +20,11 @@
 	  </PackageReference>
 	  <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
 	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Blogi.Application\Blogi.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Blogi.Persistence\Blogi.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,9 +1,11 @@
 ﻿using Blogi.Application.Features.Comment.Queries.Get;
 using Blogi.Application.Features.Comment.Queries.GetList;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blogi.Dashboard.Controllers
 {
+    [Authorize]
     public class CommentController : BaseController
     {
         [HttpGet]

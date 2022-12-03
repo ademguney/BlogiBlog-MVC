@@ -1,4 +1,5 @@
 ﻿using Blogi.Application.Features.Categories.Dtos.Get;
+using Blogi.Application.Features.Categories.Dtos.GetCategoryList;
 
 namespace Blogi.Application.Services.CategoryService
 {
@@ -17,7 +18,7 @@ namespace Blogi.Application.Services.CategoryService
             {
                 Id = x.Id,
                 LanguageId = x.LanguageId,
-                LanguageName=x.Languages.Name,
+                LanguageName = x.Languages.Name,
                 Culture = x.Languages.Culture,
                 Name = x.Name,
                 Description = x.Description,
@@ -32,11 +33,27 @@ namespace Blogi.Application.Services.CategoryService
                 Id = x.Id,
                 LanguageId = x.LanguageId,
                 LanguageName = x.Languages.Name,
-                Culture=x.Languages.Culture,
+                Culture = x.Languages.Culture,
                 Name = x.Name,
                 Description = x.Description,
                 Slug = x.Slug
             }).ToListAsync();
+        }
+
+        public async Task<List<GetCategoryListOutput>> GetListAsync(string culture)
+        {
+            var query = await _categoryReadRepository
+                .GetAll(x => x.Languages.Culture.Trim().ToLower() == culture.Trim().ToLower())
+                .Select(x => new GetCategoryListOutput
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Slug = x.Slug,
+                    Count = x.Posts.Count()
+
+                }).ToListAsync();
+
+            return query;
         }
     }
 }

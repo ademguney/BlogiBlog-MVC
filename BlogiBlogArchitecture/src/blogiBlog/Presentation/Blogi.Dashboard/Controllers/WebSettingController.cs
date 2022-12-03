@@ -1,9 +1,11 @@
 ﻿using Blogi.Application.Features.WebSettings.Commands.Update;
 using Blogi.Application.Features.WebSettings.Queries.Get;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blogi.Dashboard.Controllers
 {
+    [Authorize]
     public class WebSettingController : BaseController
     {
         [HttpGet]

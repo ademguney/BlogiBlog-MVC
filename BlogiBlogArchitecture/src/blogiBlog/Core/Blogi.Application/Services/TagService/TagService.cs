@@ -1,4 +1,5 @@
 ﻿using Blogi.Application.Features.Tags.Dtos.Get;
+using Blogi.Application.Features.Tags.Dtos.GetTagList;
 
 namespace Blogi.Application.Services.TagService
 {
@@ -31,6 +32,19 @@ namespace Blogi.Application.Services.TagService
                 LanguageName = x.Languages.Name,
                 Name = x.Name
             }).ToListAsync();
+        }
+
+        public async Task<List<GetTagListOutput>> GetListAsync(string culture)
+        {
+            var query = await _tagReadRepository
+                .GetAll(x => x.Languages.Culture.Trim().ToLower() == culture.Trim().ToLower())
+                .Select(x => new GetTagListOutput
+                {
+                    Id = x.Id,
+                    Name = x.Name 
+                }).ToListAsync();
+
+            return query;
         }
     }
 }

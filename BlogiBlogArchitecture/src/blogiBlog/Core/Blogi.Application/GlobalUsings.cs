@@ -16,8 +16,10 @@ global using Core.Infrastructure.MailKit.Service;
 global using Blogi.Application.Services.TagService;
 global using Blogi.Application.Services.PostService;
 global using Core.Application.FormAuth.ClaimServices;
+global using Blogi.Application.Services.AboutService;
 global using Microsoft.Extensions.DependencyInjection;
 global using Core.Persistence.Repositories.Interfaces;
+global using Blogi.Application.Services.ContactService;
 global using Blogi.Application.Services.CommentService;
 global using Blogi.Application.Services.PostTagService;
 global using Blogi.Application.Features.Tags.Constants;
@@ -49,5 +51,3 @@ global using Blogi.Application.Repositories.WebSettingRepository;
 global using Blogi.Application.Repositories.MailSettingRepository;
 global using Blogi.Application.Features.StringResources.Constants;
 global using Blogi.Application.Repositories.StringResourceRepository;
-global using Blogi.Application.Services.ContactService;
-

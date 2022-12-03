@@ -6,9 +6,11 @@ using Blogi.Application.Features.Contacts.Queries.Get;
 using Blogi.Application.Features.Languages.Queries.GetList;
 using Blogi.Dashboard.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Blogi.Dashboard.Controllers
 {
+    [Authorize]
     public class ContactController : BaseController
     {
         [HttpGet]

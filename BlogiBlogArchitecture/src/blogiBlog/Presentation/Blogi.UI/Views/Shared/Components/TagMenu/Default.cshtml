@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Blogi.Application.Features.Tags.Dtos.GetTagList.GetTagListOutput>
+
+<ul class="list">
+
+    @foreach (var item in Model)
+    {
+        <a href="#" class="tag">#@item.Name</a>
+    }
+</ul>
+
+
+
