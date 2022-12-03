@@ -17,14 +17,7 @@
 
         <!-- social icons -->
         <div class="col-4 d-none d-md-block d-lg-block">
-            <ul class="social-icons list-unstyled list-inline mb-0">
-                <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                <li class="list-inline-item"><a href="#"><i class="fab fa-medium"></i></a></li>
-                <li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
-            </ul>
+            @await Html.PartialAsync("_socialLinks")
             <ul class="social-icons list-unstyled list-inline mb-0">
                 <li class="nav-item">
                     <form asp-action="ChangeLanguage" asp-controller="Home" method="post">
@@ -45,7 +38,7 @@
 
         <!-- site logo -->
         <div class="col-md-4 col-sm-12 col-xs-12 text-center">
-            <a class="navbar-brand" href="personal.html"><img src="~/favicon.png" alt="blogiblog" style="width:80px; height:80px; border-radius: 50%;" /></a>
+            <a class="navbar-brand" asp-controller="Home" asp-action="Action"><img src="~/favicon.png" alt="blogiblog" style="width:80px; height:80px; border-radius: 50%;" /></a>
             <span class="slogan d-block">Professional Writer & Personal Blogger</span>
         </div>
 

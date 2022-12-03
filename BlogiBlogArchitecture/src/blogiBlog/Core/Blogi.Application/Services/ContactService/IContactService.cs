@@ -6,6 +6,6 @@ namespace Blogi.Application.Services.ContactService
     public interface IContactService
     {
         Task<List<GetListContactOutput>> GetListAsync();
-        Task<GetContactOutput> GetAsync(int id);
+        Task<GetContactOutput> GetAsync(int id,string culture);
     }
 }

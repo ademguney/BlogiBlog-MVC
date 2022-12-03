@@ -115,7 +115,7 @@
                                     <img src="~/images/wave.svg" class="wave" alt="wave" />
                                 </div>
                                 <div class="widget-content">
-                                      @await Component.InvokeAsync("CategoryMenu")
+                                    @await Component.InvokeAsync("CategoryMenu")
                                 </div>
 
                             </div>
@@ -133,7 +133,7 @@
                                             <span class="number">1</span>
                                             <a href="blog-single.html">
                                                 <div class="inner">
-                                                    <img src="images/posts/tabs-1.jpg" alt="post-title" />
+                                                    <img src="~/images/posts/tabs-1.jpg" alt="post-title" />
                                                 </div>
                                             </a>
                                         </div>
@@ -150,7 +150,7 @@
                                             <span class="number">2</span>
                                             <a href="blog-single.html">
                                                 <div class="inner">
-                                                    <img src="images/posts/tabs-2.jpg" alt="post-title" />
+                                                    <img src="~/images/posts/tabs-2.jpg" alt="post-title" />
                                                 </div>
                                             </a>
                                         </div>
@@ -167,7 +167,7 @@
                                             <span class="number">3</span>
                                             <a href="blog-single.html">
                                                 <div class="inner">
-                                                    <img src="images/posts/tabs-3.jpg" alt="post-title" />
+                                                    <img src="~/images/posts/tabs-3.jpg" alt="post-title" />
                                                 </div>
                                             </a>
                                         </div>
@@ -196,7 +196,7 @@
                             <div class="widget rounded">
                                 <div class="widget-header text-center">
                                     <h3 class="widget-title">Newsletter</h3>
-                                    <img src="images/wave.svg" class="wave" alt="wave" />
+                                    <img src="~/images/wave.svg" class="wave" alt="wave" />
                                 </div>
                                 <div class="widget-content">
                                     <span class="newsletter-headline text-center mb-3">Join 70,000 subscribers!</span>
@@ -217,7 +217,7 @@
                             <div class="widget no-container rounded text-md-center">
                                 <span class="ads-title">- Sponsored Ad -</span>
                                 <a href="#" class="widget-ads">
-                                    <img src="images/ads/ad-360.png" alt="Advertisement" />
+                                    <img src="~/images/ads/ad-360.png" alt="Advertisement" />
                                 </a>
                             </div>
 
@@ -262,7 +262,7 @@
 
         <!-- logo -->
         <div class="logo">
-           <img src="~/favicon.png" alt="blogiblog" style="width:80px; height:80px; border-radius: 50%;" />
+            <img src="~/favicon.png" alt="blogiblog" style="width:80px; height:80px; border-radius: 50%;" />
         </div>
 
         <!-- menu -->
@@ -270,19 +270,12 @@
             <ul class="vertical-menu">
                 <li class="active"><a asp-controller="Home" asp-action="Index">@Localize("blog_ui_navbar_home")</a></li>
                 <li><a asp-controller="Home" asp-action="About">@Localize("blog_ui_navbar_about")</a></li>
-                <li><a asp-controller="Home" asp-action="Contact">@Localize("blog_ui_navbar_contact")</a></li>               
+                <li><a asp-controller="Home" asp-action="Contact">@Localize("blog_ui_navbar_contact")</a></li>
             </ul>
         </nav>
 
-        <!-- social icons -->
-        <ul class="social-icons list-unstyled list-inline mb-0 mt-auto w-100">
-            <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-            <li class="list-inline-item"><a href="#"><i class="fab fa-medium"></i></a></li>
-            <li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
-        </ul>
+        <!-- social icons -->       
+        @await Html.PartialAsync("_socialLinks")
     </div>
 
     <!-- JAVA SCRIPTS -->

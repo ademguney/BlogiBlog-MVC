@@ -17,7 +17,7 @@ namespace Blogi.Application.Features.Contact.Queries.Get
         public async Task<BaseCommandResponse<GetContactOutput>> Handle(GetContactQuery request, CancellationToken cancellationToken)
         {
             var response = new BaseCommandResponse<GetContactOutput>();
-            var result = await _contactService.GetAsync(request.Id);
+            var result = await _contactService.GetAsync(request.Id, request.Culture);
 
             var resultMapp = _mapper.Map<GetContactOutput>(result);
             response.Id = resultMapp.Id;
