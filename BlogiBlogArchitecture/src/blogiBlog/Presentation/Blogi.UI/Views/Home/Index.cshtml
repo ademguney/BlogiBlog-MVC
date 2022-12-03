@@ -1,5 +1,11 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model Blogi.Application.Features.WebSettings.Dtos.Get.GetWebSettingOutput
+
+@{
+    ViewData["Title"] = @Model.Title;
+    ViewData["Description"] = @Model.MetaDescription;
+    ViewData["Keywords"] = @Model.MetaKeywords;
+    ViewData["Author"] = @Model.Author;
+    ViewData["WebSite"] = @Model.WebSiteUrl;
 }
 
 <div class="row gy-4">
@@ -82,7 +88,7 @@
         </div>
     </div>
 
-  
+
 
 </div>
 

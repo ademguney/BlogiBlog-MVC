@@ -31,17 +31,7 @@ namespace Blogi.UI.Controllers
             var result = await Mediator.Send(new GetContactQuery() { Culture = currentCulture });
             return View(result.Data);
         }
-
-
-        [HttpGet]
-        public async Task<IActionResult> WebSettings()
-        {
-           
-            var result = await Mediator.Send(new GetWebSettingQuery());
-            return View(result.Data);
-        }
-
-
+         
 
         [HttpPost]
         public IActionResult ChangeLanguage(string culture, string returnUrl)

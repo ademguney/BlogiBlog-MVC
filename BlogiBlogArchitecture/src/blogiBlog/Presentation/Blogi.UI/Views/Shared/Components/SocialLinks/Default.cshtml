@@ -1,0 +1,34 @@
+﻿@model Blogi.Application.Features.WebSettings.Dtos.Get.GetWebSettingOutput
+
+<ul class="social-icons list-unstyled list-inline mb-0">
+
+    @if (Model.IsDisplayFacebbokUrl)
+    {
+        <li class="list-inline-item"><a href="@Model.FacebookUrl" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+    }
+
+    @if (Model.IsDisplayTwitterUrl)
+    {
+        <li class="list-inline-item"><a href="@Model.TwitterUrl" target="_blank"><i class="fab fa-twitter"></i></a></li>
+    }
+
+    @if (Model.IsDisplayInstagramUrl)
+    {
+        <li class="list-inline-item"><a href="@Model.InstagramUrl" target="_blank"><i class="fab fa-instagram"></i></a></li>
+    }
+
+    @if (Model.IsDisplayFacebbokUrl)
+    {
+        <li class="list-inline-item"><a href="@Model.GithubUrl" target="_blank"><i class="fab fa-github"></i></a></li>
+    }
+
+    @if (Model.IsDisplayMediumUrl)
+    {
+        <li class="list-inline-item"><a href="@Model.MediumUrl" target="_blank"><i class="fab fa-medium"></i></a></li>
+    }
+
+    @if (Model.IsDisplayYouTubeUrl)
+    {
+        <li class="list-inline-item"><a href="@Model.YouTubeUrl" target="_blank"><i class="fab fa-youtube"></i></a></li>
+    }
+</ul>

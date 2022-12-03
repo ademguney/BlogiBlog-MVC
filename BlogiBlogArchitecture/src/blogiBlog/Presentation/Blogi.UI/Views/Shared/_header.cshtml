@@ -17,7 +17,7 @@
 
         <!-- social icons -->
         <div class="col-4 d-none d-md-block d-lg-block">
-            @await Html.PartialAsync("_socialLinks")
+            @await Component.InvokeAsync("SocialLinks")
             <ul class="social-icons list-unstyled list-inline mb-0">
                 <li class="nav-item">
                     <form asp-action="ChangeLanguage" asp-controller="Home" method="post">
@@ -38,7 +38,7 @@
 
         <!-- site logo -->
         <div class="col-md-4 col-sm-12 col-xs-12 text-center">
-            <a class="navbar-brand" asp-controller="Home" asp-action="Action"><img src="~/favicon.png" alt="blogiblog" style="width:80px; height:80px; border-radius: 50%;" /></a>
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index"><img src="~/favicon.png" alt="blogiblog" style="width:80px; height:80px; border-radius: 50%;" /></a>
             <span class="slogan d-block">Professional Writer & Personal Blogger</span>
         </div>
 
