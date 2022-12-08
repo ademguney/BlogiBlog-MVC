@@ -1,103 +1,47 @@
-﻿@model Blogi.Application.Features.WebSettings.Dtos.Get.GetWebSettingOutput
+﻿@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@model Blogi.UI.Models.HomeIndexViewModel
 
 @{
-    ViewData["Title"] = @Model.Title;
-    ViewData["Description"] = @Model.MetaDescription;
-    ViewData["Keywords"] = @Model.MetaKeywords;
-    ViewData["Author"] = @Model.Author;
-    ViewData["WebSite"] = @Model.WebSiteUrl;
+    ViewData["Title"] = @Model.WebSettings.Title;
+    ViewData["Description"] = @Model.WebSettings.MetaDescription;
+    ViewData["Keywords"] = @Model.WebSettings.MetaKeywords;
+    ViewData["Author"] = @Model.WebSettings.Author;
+    ViewData["WebSite"] = @Model.WebSettings.WebSiteUrl;
 }
 
 <div class="row gy-4">
-    <div class="col-sm-6">
-        <!-- post -->
+
+    @foreach (var item in Model.BlogPost)
+    {
+        <div class="col-sm-6">
+            <!-- post -->
         <div class="post post-grid rounded bordered">
-            <div class="thumb top-rounded">
-                <a href="category.html" class="category-badge position-absolute">Lifestyle</a>
-                <span class="post-format">
-                    <i class="icon-picture"></i>
-                </span>
-                <a href="blog-single.html">
-                    <div class="inner">
-                        <img src="images/posts/post-md-1.jpg" alt="post-title" />
-                    </div>
-                </a>
-            </div>
-            <div class="details">
-                <ul class="meta list-inline mb-0">
-                    <li class="list-inline-item"><a href="#"><img src="images/other/author-sm.png" class="author" alt="author" />Katen Doe</a></li>
-                    <li class="list-inline-item">29 March 2021</li>
-                </ul>
-                <h5 class="post-title mb-3 mt-3"><a href="blog-single.html">How To Become Better With Building In 1 Month</a></h5>
-                <p class="excerpt mb-0">I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence.</p>
-            </div>
-            <div class="post-bottom clearfix d-flex align-items-center">
-                <div class="social-share me-auto">
-                    <button class="toggle-button icon-share"></button>
-                    <ul class="icons list-unstyled list-inline mb-0">
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-telegram-plane"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="far fa-envelope"></i></a></li>
+                <div class="thumb top-rounded">
+                    <a href="category.html" class="category-badge position-absolute">@item.CategoryName</a>
+                 
+                    <a href="@item.Slug-@item.Id">
+                        <div class="inner">
+                            <img src="@string.Format("data:image/gif;base64,{0}", item.Image)" alt="@item.ImageAlt" style="width:356px;height:238px;"/>
+                        </div>
+                    </a>
+                </div>
+                <div class="details">
+                    <ul class="meta list-inline mb-0">
+                        <li class="list-inline-item">
+                            <a href="@item.Slug-@item.Id">
+                                <img src="@string.Format("data:image/gif;base64,{0}", item.AuthorPhoto)" class="author" alt="@item.Author" style="width:16px;height:16px;" />
+                                @item.Author
+                            </a>
+                        </li>
+                        <li class="list-inline-item">@item.CreationDate</li>
                     </ul>
+                    <h5 class="post-title mb-3 mt-3"><a href="@item.Slug-@item.Id">@item.Title</a></h5>
                 </div>
-                <div class="more-button float-end">
-                    <a href="blog-single.html"><span class="icon-options"></span></a>
-                </div>
+               
             </div>
         </div>
-    </div>
-
-    <div class="col-sm-6">
-        <!-- post -->
-        <div class="post post-grid rounded bordered">
-            <div class="thumb top-rounded">
-                <a href="category.html" class="category-badge position-absolute">Inspiration</a>
-                <a href="blog-single.html">
-                    <div class="inner">
-                        <img src="images/posts/post-md-2.jpg" alt="post-title" />
-                    </div>
-                </a>
-            </div>
-            <div class="details">
-                <ul class="meta list-inline mb-0">
-                    <li class="list-inline-item"><a href="#"><img src="images/other/author-sm.png" class="author" alt="author" />Katen Doe</a></li>
-                    <li class="list-inline-item">29 March 2021</li>
-                </ul>
-                <h5 class="post-title mb-3 mt-3"><a href="blog-single.html">Most Important Thing You Need To Know About Swim</a></h5>
-                <p class="excerpt mb-0">I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence.</p>
-            </div>
-            <div class="post-bottom clearfix d-flex align-items-center">
-                <div class="social-share me-auto">
-                    <button class="toggle-button icon-share"></button>
-                    <ul class="icons list-unstyled list-inline mb-0">
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fab fa-telegram-plane"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="far fa-envelope"></i></a></li>
-                    </ul>
-                </div>
-                <div class="more-button float-end">
-                    <a href="blog-single.html"><span class="icon-options"></span></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    }
 
 </div>
-
-<nav>
-    <ul class="pagination justify-content-center">
-        <li class="page-item active" aria-current="page">
-            <span class="page-link">1</span>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-    </ul>
-</nav>
+ @Html.PagedListPager((IPagedList)Model.BlogPost,pageNo => Url.Action("Index",new{pageNo}))

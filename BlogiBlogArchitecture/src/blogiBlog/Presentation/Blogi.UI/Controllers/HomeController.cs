@@ -1,8 +1,12 @@
 ﻿using Blogi.Application.Features.Abouts.Queries.Get;
 using Blogi.Application.Features.Contacts.Queries.Get;
+using Blogi.Application.Features.Posts.Queries.GetBlogPost;
+using Blogi.Application.Features.Posts.Queries.GetListBlogPost;
 using Blogi.Application.Features.WebSettings.Queries.Get;
+using Blogi.UI.Models;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
+using X.PagedList;
 
 namespace Blogi.UI.Controllers
 {
@@ -10,11 +14,29 @@ namespace Blogi.UI.Controllers
     {
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNo = 1)
         {
-            var result = await Mediator.Send(new GetWebSettingQuery());
+
+            var currentCulture = Thread.CurrentThread.CurrentUICulture.Name;
+            var blogList = await Mediator.Send(new GetListBlogPostQuery() { Culture = currentCulture });
+            var webSettings = await Mediator.Send(new GetWebSettingQuery());
+            var viewModel = new HomeIndexViewModel
+            {
+                WebSettings = webSettings.Data,
+                BlogPost = blogList.Data.ToPagedList(pageNo, 8)
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpGet]
+        [Route("{title}-{id}")]
+        public async Task<IActionResult> Post(int id)
+        {
+            var result = await Mediator.Send(new GetBlogPostQuery() { Id = id });
             return View(result.Data);
         }
+
 
         [HttpGet]
         public async Task<IActionResult> About()
@@ -31,7 +53,7 @@ namespace Blogi.UI.Controllers
             var result = await Mediator.Send(new GetContactQuery() { Culture = currentCulture });
             return View(result.Data);
         }
-         
+
 
         [HttpPost]
         public IActionResult ChangeLanguage(string culture, string returnUrl)
