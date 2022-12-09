@@ -1,4 +1,4 @@
-﻿@model Blogi.UI.Models.HomeIndexViewModel
+﻿@model Blogi.UI.Models.CategoryViewModel
 
 @{
     ViewData["Title"] = @Model.WebSettings.Title;
@@ -6,7 +6,7 @@
     ViewData["Keywords"] = @Model.WebSettings.MetaKeywords;
     ViewData["Author"] = @Model.WebSettings.Author;
     ViewData["WebSite"] = @Model.WebSettings.WebSiteUrl;
-     Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="row gy-4">
@@ -19,7 +19,7 @@
                 <div class="thumb top-rounded">
                     <a href="categories/@item.CategorySlug-@item.CategoryId" class="category-badge position-absolute">@item.CategoryName</a>
 
-                    <a href="@item.Slug-@item.Id">
+                    <a href="/@item.Slug-@item.Id">
                         <div class="inner">
                             <img src="@string.Format("data:image/gif;base64,{0}", item.Image)" alt="@item.ImageAlt" style="width:356px;height:238px;" />
                         </div>
@@ -35,7 +35,7 @@
                         </li>
                         <li class="list-inline-item">@item.CreationDate</li>
                     </ul>
-                    <h5 class="post-title mb-3 mt-3"><a href="@item.Slug-@item.Id">@item.Title</a></h5>
+                    <h5 class="post-title mb-3 mt-3"><a href="/@item.Slug-@item.Id">@item.Title</a></h5>
                 </div>
 
             </div>

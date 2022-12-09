@@ -1,4 +1,5 @@
 ﻿using Blogi.Application.Features.Abouts.Queries.Get;
+using Blogi.Application.Features.Categories.Queries.GetListBlogCategory;
 using Blogi.Application.Features.Contacts.Queries.Get;
 using Blogi.Application.Features.Posts.Queries.GetBlogPost;
 using Blogi.Application.Features.Posts.Queries.GetListBlogPost;
@@ -14,7 +15,7 @@ namespace Blogi.UI.Controllers
     {
 
         [HttpGet]
-        public async Task<IActionResult> Index(int pageNo = 1)
+        public async Task<IActionResult> Index(int pageNo = 1, int pageSize = 8)
         {
 
             var currentCulture = Thread.CurrentThread.CurrentUICulture.Name;
@@ -23,7 +24,7 @@ namespace Blogi.UI.Controllers
             var viewModel = new HomeIndexViewModel
             {
                 WebSettings = webSettings.Data,
-                BlogPost = blogList.Data.ToPagedList(pageNo, 8)
+                BlogPost = blogList.Data.ToPagedList(pageNo, pageSize)
             };
 
             return View(viewModel);
@@ -37,6 +38,20 @@ namespace Blogi.UI.Controllers
             return View(result.Data);
         }
 
+        [HttpGet]
+        [Route("categories/{categoryName}-{id}")]
+        public async Task<IActionResult> Category(int id, int pageNo = 1, int pageSize = 8)
+        {
+            var result = await Mediator.Send(new GetListBlogCategoryQuery() { Id = id });
+            var webSettings = await Mediator.Send(new GetWebSettingQuery());
+            var viewModel = new CategoryViewModel
+            {
+                WebSettings = webSettings.Data,
+                BlogPost = result.Data.ToPagedList(pageNo, pageSize)
+            };
+           
+            return View(viewModel);
+        }
 
         [HttpGet]
         public async Task<IActionResult> About()

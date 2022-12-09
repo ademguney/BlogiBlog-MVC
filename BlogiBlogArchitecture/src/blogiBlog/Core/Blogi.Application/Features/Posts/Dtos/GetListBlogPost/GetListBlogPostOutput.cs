@@ -3,7 +3,9 @@
     public class GetListBlogPostOutput
     {
         public int Id { get; set; }
+        public int CategoryId { get; set; }
         public string CategoryName { get; set; }
+        public string CategorySlug { get; set; }
         public string Title { get; set; }       
         public string Author { get; set; }
         public string Slug { get; set; }

@@ -1,15 +1,18 @@
 ﻿using Blogi.Application.Features.Categories.Dtos.Get;
 using Blogi.Application.Features.Categories.Dtos.GetCategoryList;
+using Blogi.Application.Features.Posts.Dtos.GetListBlogPost;
 
 namespace Blogi.Application.Services.CategoryService
 {
     public class CategoryService : ICategoryService
     {
         private readonly ICategoryReadRepository _categoryReadRepository;
+        private readonly IPostReadRepository _postReadRepository;
 
-        public CategoryService(ICategoryReadRepository categoryReadRepository)
+        public CategoryService(ICategoryReadRepository categoryReadRepository, IPostReadRepository postReadRepository)
         {
             _categoryReadRepository = categoryReadRepository;
+            _postReadRepository = postReadRepository;
         }
 
         public async Task<GetCategoryOutput> GetAsync(int id)
@@ -54,6 +57,29 @@ namespace Blogi.Application.Services.CategoryService
                 }).ToListAsync();
 
             return query;
+        }
+
+        public async Task<List<GetListBlogPostOutput>> GetListBlogCategoryAsync(int id)
+        {
+            var query = _postReadRepository
+                .GetAll(x => x.CategoryId == id)
+                .Include(x => x.Categories)
+                .Include(x => x.Languages);
+            return await query.Select(x => new GetListBlogPostOutput
+            {
+                Id = x.Id,
+                CategoryId = x.CategoryId,
+                CategoryName = x.Categories.Name,
+                CategorySlug=x.Categories.Slug,
+                Title = x.Title,
+                Author = x.Users.Name + " " + x.Users.Surname,
+                AuthorPhoto = x.Users.Photo != null ? Convert.ToBase64String(x.Users.Photo) : null,
+                Slug = x.Slug,
+                CreationDate = x.CreationDate.ToLongDateString(),
+                DisplayCount = x.DisplayCount,
+                Image = x.Image != null ? Convert.ToBase64String(x.Image) : null,
+                ImageAlt = x.ImageAlt
+            }).ToListAsync();
         }
     }
 }

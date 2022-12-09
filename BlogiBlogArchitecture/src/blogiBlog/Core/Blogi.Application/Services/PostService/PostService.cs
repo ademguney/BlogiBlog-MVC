@@ -18,7 +18,7 @@ namespace Blogi.Application.Services.PostService
         public async Task<GetBlogPostOutput> GetBlogPost(int id)
         {
 
-            var tags = await _postTagsReadRepository.GetAll(x => x.PostId == id).Include(x=>x.Tags).ToListAsync();
+            var tags = await _postTagsReadRepository.GetAll(x => x.PostId == id).Include(x => x.Tags).ToListAsync();
             var tagList = new Dictionary<int, string>();
             if (tags is not null)
             {
@@ -37,7 +37,9 @@ namespace Blogi.Application.Services.PostService
                .Select(x => new GetBlogPostOutput
                {
                    Id = x.Id,
+                   CategoryId = x.CategoryId,
                    CategoryName = x.Categories.Name,
+                   CategorySlug=x.Categories.Slug,
                    Title = x.Title,
                    Author = x.Users.Name + " " + x.Users.Surname,
                    AuthorPhoto = x.Users.Photo != null ? Convert.ToBase64String(x.Users.Photo) : null,
@@ -57,7 +59,9 @@ namespace Blogi.Application.Services.PostService
 
         public async Task<List<GetListPostOutput>> GetListAsync()
         {
-            var query = _postReadRepository.GetAll().Include(x => x.Categories).Include(x => x.Languages);
+            var query = _postReadRepository.GetAll(x => x.IsPublished)
+                                           .Include(x => x.Categories)
+                                           .Include(x => x.Languages);
             return await query.Select(x => new GetListPostOutput
             {
                 Id = x.Id,
@@ -82,7 +86,9 @@ namespace Blogi.Application.Services.PostService
                 .Select(x => new GetListBlogPostOutput
                 {
                     Id = x.Id,
+                    CategoryId = x.CategoryId,
                     CategoryName = x.Categories.Name,
+                    CategorySlug = x.Categories.Slug,
                     Title = x.Title,
                     Author = x.Users.Name + " " + x.Users.Surname,
                     AuthorPhoto = x.Users.Photo != null ? Convert.ToBase64String(x.Users.Photo) : null,

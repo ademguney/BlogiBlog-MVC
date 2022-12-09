@@ -4,6 +4,6 @@
 
     @foreach (var item in Model)
     {
-        <li><a href="@item.Slug">@item.Name</a><span>(@item.Count)</span></li>
+        <li><a href="@item.Slug-@item.Id">@item.Name</a><span>(@item.Count)</span></li>
     }
 </ul>

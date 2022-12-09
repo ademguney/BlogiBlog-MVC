@@ -1,13 +1,17 @@
 ﻿@model Blogi.Application.Features.Posts.Dtos.GetBlogPost.GetBlogPostOutput
 @{
     ViewData["Title"] = @Model.Title;
+    ViewData["Description"] = @Model.MetaDescription;
+    ViewData["Keywords"] = @Model.MetaKeywords;
+    ViewData["Author"] = @Model.Author;
+    ViewData["WebSite"] = @Model.Slug;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">@Model.CategoryName</a></li>
+        <li class="breadcrumb-item"><a href="categories/@Model.CategorySlug-@Model.CategoryId">@Model.CategoryName</a></li>
         <li class="breadcrumb-item active" aria-current="page">@Model.Title</li>
     </ol>
 </nav>
@@ -25,7 +29,7 @@
                         @Model.Author
                     </a>
                 </li>
-                <li class="list-inline-item"><a href="#">@Model.CategoryName</a></li>
+                <li class="list-inline-item"><a href="categories/@Model.CategorySlug-@Model.CategoryId">@Model.CategoryName</a></li>
                 <li class="list-inline-item">@Model.CreationDate</li>
             </ul>
         </div>
@@ -41,15 +45,15 @@
         <div class="post-bottom">
             <div class="row d-flex align-items-center">
                 <div class="col-md-6 col-12 text-center text-md-start">
-                    <!-- tags -->                   
-                    @foreach(var tag in Model.Tags)
+                    <!-- tags -->
+                    @foreach (var tag in Model.Tags)
                     {
-                         <a href="@tag.Key" class="tag">#@tag.Value</a>
+                        <a href="@tag.Key" class="tag">#@tag.Value</a>
                     }
                 </div>
                 <div class="col-md-6 col-12">
                     <!-- social icons -->
-                   @await Component.InvokeAsync("SocialLinks")
+                    @await Component.InvokeAsync("SocialLinks")
                 </div>
             </div>
         </div>
