@@ -7,7 +7,7 @@
     string returnUrl = ViewContext.HttpContext.Request.Path;
     var requestCulture = Context.Features.Get<IRequestCultureFeature>();
     var cultureItems = LocOptions.Value.SupportedUICultures
-          .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
+          .Select(c => new SelectListItem { Value = c.Name, Text = c.NativeName })
           .ToList();
 }
 
@@ -21,31 +21,22 @@
                 </div>
                 <div class="header-nav d-none d-lg-flex">
                     <div class="main-categori-wrap d-none d-lg-block">
-                        <a class="categories-button-active" href="#">
-                            <span class="fi-rs-apps"></span> <span class="et">Select</span> Language
-                            <i class="fi-rs-angle-down"></i>
-                        </a>
-                        <div class="categories-dropdown-wrap categories-dropdown-active-large font-heading">
-                            <div class="d-flex categori-dropdown-inner">
-                                <ul>
-                                    <li>
-                                        <form asp-action="ChangeLanguage" asp-controller="Home" method="post">
-                                            <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
-                                            <select id="culture"
-                                                    name="culture"
-                                                    class="form-control"
-                                                    onchange="this.form.submit();"
-                                                    asp-items="cultureItems"
-                                                    asp-for="@requestCulture.RequestCulture.UICulture.Name">
-                                            </select>
-                                        </form>
-                                    </li>
+                        
+                        <ul class="categories-button-active">
+                            <li>
+                                <form asp-action="ChangeLanguage" asp-controller="Home" method="post">
+                                    <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
+                                    <select id="culture"
+                                            name="culture"
+                                            class="form-control"
+                                            onchange="this.form.submit();"
+                                            asp-items="cultureItems"
+                                            asp-for="@requestCulture.RequestCulture.UICulture.Name">
+                                    </select>
+                                </form>
+                            </li>
 
-                                </ul>
-
-                            </div>
-
-                        </div>
+                        </ul>                      
                     </div>
                     <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
                         <nav>
@@ -94,20 +85,20 @@
             </div>
         </div>
         <div class="mobile-header-content-area">
-          
+
             <div class="mobile-menu-wrap mobile-header-border">
                 <!-- mobile menu start -->
                 <nav>
                     <ul class="mobile-menu font-heading">
                         <li class="menu-item-has-children">
-                            <a asp-controller="Home" asp-action="Index">@Localize("blog_ui_navbar_home")</a>                         
-                        </li>        
-                          <li class="menu-item-has-children">
-                           <a asp-controller="Home" asp-action="About">@Localize("blog_ui_navbar_about")</a>                 
-                        </li> 
-                          <li class="menu-item-has-children">
-                            <a asp-controller="Home" asp-action="Contact">@Localize("blog_ui_navbar_contact")</a>                   
-                        </li> 
+                            <a asp-controller="Home" asp-action="Index">@Localize("blog_ui_navbar_home")</a>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a asp-controller="Home" asp-action="About">@Localize("blog_ui_navbar_about")</a>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a asp-controller="Home" asp-action="Contact">@Localize("blog_ui_navbar_contact")</a>
+                        </li>
                         <li class="menu-item-has-children">
                             <a href="#">Language</a>
                             <ul class="dropdown">
@@ -130,7 +121,7 @@
 
             <div class="mobile-social-icon mb-50">
                 <h6 class="mb-15">Follow Us</h6>
-                 @await Component.InvokeAsync("SocialLinks")              
+                @await Component.InvokeAsync("SocialLinks")
             </div>
             <div class="site-copyright">© Blogi Blog an Open Source Multi Language Blog Project</div>
         </div>
