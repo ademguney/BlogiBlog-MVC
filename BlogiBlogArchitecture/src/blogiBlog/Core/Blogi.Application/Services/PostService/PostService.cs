@@ -24,7 +24,7 @@ namespace Blogi.Application.Services.PostService
             {
                 foreach (var item in tags)
                 {
-                    tagList.Add(item.TagId, item.Tags.Name);
+                    tagList.Add(item.TagId, item.Tags.Slug);
                 }
             }
 

@@ -30,7 +30,8 @@ namespace Blogi.Application.Services.TagService
                 Id = x.Id,
                 LanguageId = x.Languages.Id,
                 LanguageName = x.Languages.Name,
-                Name = x.Name
+                Name = x.Name,
+                Slug = x.Slug
             }).ToListAsync();
         }
 
@@ -41,7 +42,8 @@ namespace Blogi.Application.Services.TagService
                 .Select(x => new GetTagListOutput
                 {
                     Id = x.Id,
-                    Name = x.Name 
+                    Name = x.Name,
+                    Slug = x.Slug
                 }).ToListAsync();
 
             return query;

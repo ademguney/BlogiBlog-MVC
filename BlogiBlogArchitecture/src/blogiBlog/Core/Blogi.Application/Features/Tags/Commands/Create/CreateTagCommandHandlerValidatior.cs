@@ -8,7 +8,7 @@
         {
             _tagReadRepository = tagReadRepository;
 
-            RuleFor(x => x.LanguageId)                
+            RuleFor(x => x.LanguageId)
                 .NotEmpty()
                 .NotNull();
 
@@ -17,13 +17,18 @@
                 .NotEmpty()
                 .NotNull();
 
+            RuleFor(x => x.Slug)
+               .MaximumLength(500)
+               .NotEmpty()
+               .NotNull();
+
             RuleFor(x => x)
                  .MustAsync(NameCanNotBeDuplicatedWhenInserted)
                  .WithMessage(TagMessages.NameExists);
         }
         private async Task<bool> NameCanNotBeDuplicatedWhenInserted(CreateTagCommand e, CancellationToken token)
         {
-            var result = await _tagReadRepository.GetAsync(x => x.Name == e.Name);
+            var result = await _tagReadRepository.GetAsync(x => x.Name == e.Name & x.LanguageId == e.LanguageId);
             return result == null;
         }
     }

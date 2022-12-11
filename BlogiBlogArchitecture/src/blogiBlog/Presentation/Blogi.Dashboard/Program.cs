@@ -15,7 +15,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddLocalization();
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation().AddViewLocalization();
 
-// Localization
+//Localization
 var languageService = lang.BuildServiceProvider().GetService<ILanguageService>();
 var languages = languageService.GetListAsync().Result;
 var cultures = languages.Select(x => new CultureInfo(x.Culture)).ToArray();

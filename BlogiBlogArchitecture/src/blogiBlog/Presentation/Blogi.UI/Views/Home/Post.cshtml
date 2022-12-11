@@ -8,160 +8,167 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
-        <li class="breadcrumb-item"><a href="categories/@Model.CategorySlug-@Model.CategoryId">@Model.CategoryName</a></li>
-        <li class="breadcrumb-item active" aria-current="page">@Model.Title</li>
-    </ol>
-</nav>
-
-<div class="col-lg-12">
-    <!-- post single -->
-    <div class="post post-single">
-        <!-- post header -->
-        <div class="post-header">
-            <h1 class="title mt-0 mb-3">@Model.Title</h1>
-            <ul class="meta list-inline mb-0">
-                <li class="list-inline-item">
-                    <a href="#">
-                        <img src="@string.Format("data:image/gif;base64,{0}", Model.AuthorPhoto)" class="author" alt="@Model.Author" style="width:16px;height:16px;">
-                        @Model.Author
-                    </a>
-                </li>
-                <li class="list-inline-item"><a href="categories/@Model.CategorySlug-@Model.CategoryId">@Model.CategoryName</a></li>
-                <li class="list-inline-item">@Model.CreationDate</li>
-            </ul>
-        </div>
-        <!-- featured image -->
-        <div class="featured-image">
-            <img src="@string.Format("data:image/gif;base64,{0}", Model.Image)" alt="@Model.ImageAlt">
-        </div>
-        <!-- post content -->
-        <div class="post-content clearfix">
-            @Html.Raw(Model.Content)
-        </div>
-        <!-- post bottom section -->
-        <div class="post-bottom">
-            <div class="row d-flex align-items-center">
-                <div class="col-md-6 col-12 text-center text-md-start">
-                    <!-- tags -->
-                    @foreach (var tag in Model.Tags)
-                    {
-                        <a href="@tag.Key" class="tag">#@tag.Value</a>
-                    }
-                </div>
-                <div class="col-md-6 col-12">
-                    <!-- social icons -->
-                    @await Component.InvokeAsync("SocialLinks")
-                </div>
+<main class="main">
+    <div class="page-header breadcrumb-wrap">
+        <div class="container">
+            <div class="breadcrumb">
+                <a asp-controller="Home" asp-action="Index" rel="nofollow"><i class="fi-rs-home mr-5"></i>@Localize("blog_ui_navbar_home")</a>
+                <span></span> <a href="category/@Model.Slug-@Model.CategoryId">@Model.CategoryName</a> <span></span> @Model.Title
             </div>
         </div>
-
     </div>
-
-    <div class="spacer" data-height="50" style="height: 50px;"></div>
-
-
-
-    <div class="spacer" data-height="50" style="height: 50px;"></div>
-
-    <!-- section header -->
-    <div class="section-header">
-        <h3 class="section-title">Comments (3)</h3>
-        <img src="~/images/wave.svg" class="wave" alt="wave">
-    </div>
-    <!-- post comments -->
-    <div class="comments bordered padding-30 rounded">
-
-        <ul class="comments">
-            <!-- comment item -->
-            <li class="comment rounded">
-                <div class="thumb">
-                    <img src="images/other/comment-1.png" alt="John Doe">
-                </div>
-                <div class="details">
-                    <h4 class="name"><a href="#">John Doe</a></h4>
-                    <span class="date">Jan 08, 2021 14:41 pm</span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae odio ut tortor fringilla cursus sed quis odio.</p>
-                    <a href="#" class="btn btn-default btn-sm">Reply</a>
-                </div>
-            </li>
-            <!-- comment item -->
-            <li class="comment child rounded">
-                <div class="thumb">
-                    <img src="images/other/comment-2.png" alt="John Doe">
-                </div>
-                <div class="details">
-                    <h4 class="name"><a href="#">Helen Doe</a></h4>
-                    <span class="date">Jan 08, 2021 14:41 pm</span>
-                    <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
-                    <a href="#" class="btn btn-default btn-sm">Reply</a>
-                </div>
-            </li>
-            <!-- comment item -->
-            <li class="comment rounded">
-                <div class="thumb">
-                    <img src="images/other/comment-3.png" alt="John Doe">
-                </div>
-                <div class="details">
-                    <h4 class="name"><a href="#">Anna Doe</a></h4>
-                    <span class="date">Jan 08, 2021 14:41 pm</span>
-                    <p>Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</p>
-                    <a href="#" class="btn btn-default btn-sm">Reply</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-
-    <div class="spacer" data-height="50" style="height: 50px;"></div>
-
-    <!-- section header -->
-    <div class="section-header">
-        <h3 class="section-title">Leave Comment</h3>
-        <img src="images/wave.svg" class="wave" alt="wave">
-    </div>
-    <!-- comment form -->
-    <div class="comment-form rounded bordered padding-30">
-
-        <form id="comment-form" class="comment-form" method="post">
-
-            <div class="messages"></div>
-
+    <div class="page-content mb-50">
+        <div class="container">
             <div class="row">
+                <div class="col-xl-11 col-lg-12 m-auto">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="single-page pt-50 pr-30">
+                                <div class="single-header style-2">
+                                    <div class="row">
+                                        <div class="col-xl-10 col-lg-12 m-auto">
+                                            <h2 class="mb-10">@Model.Title</h2>
+                                            <div class="single-header-meta">
+                                                <div class="entry-meta meta-1 font-xs mt-15 mb-15">
+                                                    <a class="author-avatar" asp-controller="Home" asp-action="About">
+                                                        <img class="img-circle" src="@string.Format("data:image/gif;base64,{0}", @Model.AuthorPhoto)" alt="@Model.Author" style="border-radius: 50%;" />
+                                                    </a>
+                                                    <span class="post-by">By <a asp-controller="Home" asp-action="About">@Model.Author</a></span>
+                                                    <span class="post-on has-dot">@Model.CreationDate</span>
+                                                    <span class="time-reading has-dot">8 mins read</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <figure class="single-thumbnail">
+                                    <img src="@string.Format("data:image/gif;base64,{0}", @Model.Image)" alt="@Model.ImageAlt" />
+                                </figure>
+                                <div class="single-content">
+                                    <div class="row">
+                                        <div class="col-xl-10 col-lg-12 m-auto">
+                                            @Html.Raw(Model.Content)
 
-                <div class="column col-md-12">
-                    <!-- Comment textarea -->
-                    <div class="form-group">
-                        <textarea name="InputComment" id="InputComment" class="form-control" rows="4" placeholder="Your comment here..." required="required"></textarea>
+                                            <div class="entry-bottom mt-50 mb-30">
+                                                <div class="tags w-50 w-sm-100">
+                                                    @foreach (var tag in Model.Tags)
+                                                    {
+                                                        <a href="/tag/@tag.Value-@tag.Key" rel="tag" class="hover-up btn btn-sm btn-rounded mr-10">@tag.Value</a>
+                                                    }
+
+                                                </div>
+                                                <div class="social-icons single-share">
+                                                    <ul class="text-grey-5 d-inline-block">
+                                                        @await Component.InvokeAsync("SocialLinks")
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="comment-form">
+                                                <h3 class="mb-15">Leave a Comment</h3>
+                                                <div class="product-rate d-inline-block mb-30"></div>
+                                                <div class="row">
+                                                    <div class="col-lg-9 col-md-12">
+                                                        <form class="form-contact comment_form mb-50" action="#" id="commentForm">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9" placeholder="Write Comment"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" name="name" id="name" type="text" placeholder="Name">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" name="email" id="email" type="email" placeholder="Email">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" name="website" id="website" type="text" placeholder="Website">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <button type="submit" class="button button-contactForm">Post Comment</button>
+                                                            </div>
+                                                        </form>
+                                                        <div class="comments-area">
+                                                            <h3 class="mb-30">Comments</h3>
+                                                            <div class="comment-list">
+                                                                <div class="single-comment justify-content-between d-flex mb-30">
+                                                                    <div class="user justify-content-between d-flex">
+                                                                        <div class="thumb text-center">
+                                                                            <img src="assets/imgs/blog/author-2.png" alt="">
+                                                                            <a href="#" class="font-heading text-brand">Sienna</a>
+                                                                        </div>
+                                                                        <div class="desc">
+                                                                            <div class="d-flex justify-content-between mb-10">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <span class="font-xs text-muted">December 4, 2021 at 3:12 pm </span>
+                                                                                </div>
+                                                                                <div class="product-rate d-inline-block">
+                                                                                    <div class="product-rating" style="width: 80%"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <p class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, suscipit exercitationem accusantium obcaecati quos voluptate nesciunt facilis itaque modi commodi dignissimos sequi repudiandae minus ab deleniti totam officia id incidunt? <a href="#" class="reply">Reply</a></p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="single-comment justify-content-between d-flex mb-30 ml-30">
+                                                                    <div class="user justify-content-between d-flex">
+                                                                        <div class="thumb text-center">
+                                                                            <img src="assets/imgs/blog/author-3.png" alt="">
+                                                                            <a href="#" class="font-heading text-brand">Brenna</a>
+                                                                        </div>
+                                                                        <div class="desc">
+                                                                            <div class="d-flex justify-content-between mb-10">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <span class="font-xs text-muted">December 4, 2021 at 3:12 pm </span>
+                                                                                </div>
+                                                                                <div class="product-rate d-inline-block">
+                                                                                    <div class="product-rating" style="width: 80%"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <p class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, suscipit exercitationem accusantium obcaecati quos voluptate nesciunt facilis itaque modi commodi dignissimos sequi repudiandae minus ab deleniti totam officia id incidunt? <a href="#" class="reply">Reply</a></p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="single-comment justify-content-between d-flex">
+                                                                    <div class="user justify-content-between d-flex">
+                                                                        <div class="thumb text-center">
+                                                                            <img src="assets/imgs/blog/author-4.png" alt="">
+                                                                            <a href="#" class="font-heading text-brand">Gemma</a>
+                                                                        </div>
+                                                                        <div class="desc">
+                                                                            <div class="d-flex justify-content-between mb-10">
+                                                                                <div class="d-flex align-items-center">
+                                                                                    <span class="font-xs text-muted">December 4, 2021 at 3:12 pm </span>
+                                                                                </div>
+                                                                                <div class="product-rate d-inline-block">
+                                                                                    <div class="product-rating" style="width: 80%"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <p class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, suscipit exercitationem accusantium obcaecati quos voluptate nesciunt facilis itaque modi commodi dignissimos sequi repudiandae minus ab deleniti totam officia id incidunt? <a href="#" class="reply">Reply</a></p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-
-                <div class="column col-md-6">
-                    <!-- Email input -->
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Email address" required="required">
-                    </div>
-                </div>
-
-                <div class="column col-md-6">
-                    <!-- Name input -->
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="InputWeb" id="InputWeb" placeholder="Website" required="required">
-                    </div>
-                </div>
-
-                <div class="column col-md-12">
-                    <!-- Email input -->
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="InputName" name="InputName" placeholder="Your name" required="required">
-                    </div>
-                </div>
-
             </div>
-
-            <button type="submit" name="submit" id="submit" value="Submit" class="btn btn-default">Submit</button><!-- Submit Button -->
-
-        </form>
+        </div>
     </div>
-</div>
+</main>

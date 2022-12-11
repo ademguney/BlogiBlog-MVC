@@ -174,8 +174,8 @@ namespace Blogi.Persistence.Migrations
 
                     b.Property<string>("FullName")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<bool>("IsPublish")
                         .HasColumnType("bit");
@@ -186,9 +186,14 @@ namespace Blogi.Persistence.Migrations
                     b.Property<int>("PostId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("PostsId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("PostId");
+
+                    b.HasIndex("PostsId");
 
                     b.ToTable("Comments", (string)null);
                 });
@@ -252,9 +257,10 @@ namespace Blogi.Persistence.Migrations
                             Content = "iletisim bilgilerim",
                             Email = "guneyadem63@gmail.com",
                             LanguageId = 1,
+                            Location = "Turkiye/SanliUrfa",
                             MetaDescription = "Blogi Blog acik kaynak kodlu cok dil destegi bulunan web blog projesidir.",
                             MetaKeywords = "open source, blogi blog, blogiblog, web project, multi language",
-                            Phone = "009000000000063",
+                            Phone = "0090 (XXX) 000 00 00",
                             Slug = "iletisim",
                             Title = "Gel Gel Ne Olursan Ol Yine Gel, Mevlana!"
                         },
@@ -264,9 +270,10 @@ namespace Blogi.Persistence.Migrations
                             Content = "my contact information",
                             Email = "guneyadem63@gmail.com",
                             LanguageId = 2,
+                            Location = "Turkey/SanliUrfa",
                             MetaDescription = "Blogi Blog open source multi language web blog project.",
                             MetaKeywords = "open source, blogi blog, blogiblog, web project, multi language",
-                            Phone = "009000000000063",
+                            Phone = "0090 (XXX) 000 00 00",
                             Slug = "contact",
                             Title = "Come, come, whoever you are, Jelaluddin Rumi!"
                         });
@@ -356,7 +363,7 @@ namespace Blogi.Persistence.Migrations
                             Email = "blogi@blog.com",
                             FullName = "BlogiBlog",
                             Host = "smtp.gmail.com",
-                            Password = "hZk69MpQrx/s1kHW8Lm/k5yfbsyoFkKBckWgQ2a0mGPiy3n/SaWZ/c2e+u0QuWrd",
+                            Password = "x4Bv5taY+v4UUtPqaOt56StJ+XfYx52OE7voN3H7ByBVe8kvdyoTNj1113AQgre2",
                             Port = 587,
                             SslEnabled = false,
                             UseDefaultCredentials = false
@@ -447,7 +454,7 @@ namespace Blogi.Persistence.Migrations
                             CategoryId = 1,
                             Content = "Blogi blog an open source project.",
                             CreatedById = 1,
-                            CreationDate = new DateTime(2022, 11, 20, 18, 19, 44, 315, DateTimeKind.Utc).AddTicks(8136),
+                            CreationDate = new DateTime(2022, 12, 11, 9, 31, 46, 956, DateTimeKind.Utc).AddTicks(6537),
                             DisplayCount = 0,
                             ImageAlt = "blogiBlog",
                             IsPublished = true,
@@ -464,18 +471,15 @@ namespace Blogi.Persistence.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("PostId")
-                        .HasColumnType("int")
-                        .HasColumnName("PostId");
+                        .HasColumnType("int");
 
                     b.Property<int>("TagId")
-                        .HasColumnType("int")
-                        .HasColumnName("TagId");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -588,6 +592,9 @@ namespace Blogi.Persistence.Migrations
                         .HasMaxLength(225)
                         .HasColumnType("nvarchar(225)");
 
+                    b.Property<string>("Slug")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("LanguageId");
@@ -599,121 +606,15 @@ namespace Blogi.Persistence.Migrations
                         {
                             Id = 1,
                             LanguageId = 2,
-                            Name = "C#"
+                            Name = "Csharp",
+                            Slug = "c-sharp"
                         },
                         new
                         {
                             Id = 2,
                             LanguageId = 2,
-                            Name = "Csharp"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            LanguageId = 2,
-                            Name = "SQL"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            LanguageId = 2,
-                            Name = "JavaScript"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            LanguageId = 2,
-                            Name = "Html"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            LanguageId = 2,
-                            Name = "Css"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            LanguageId = 2,
-                            Name = "Vue"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            LanguageId = 2,
-                            Name = "Angular"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            LanguageId = 2,
-                            Name = "React"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            LanguageId = 2,
-                            Name = "Design Pattern"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            LanguageId = 1,
-                            Name = "C#"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            LanguageId = 1,
-                            Name = "Csharp"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            LanguageId = 1,
-                            Name = "SQL"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            LanguageId = 1,
-                            Name = "JavaScript"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            LanguageId = 1,
-                            Name = "Html"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            LanguageId = 1,
-                            Name = "Css"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            LanguageId = 1,
-                            Name = "Vue"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            LanguageId = 1,
-                            Name = "Angular"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            LanguageId = 1,
-                            Name = "React"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            LanguageId = 1,
-                            Name = "Design Pattern"
+                            Name = "Csharp",
+                            Slug = "c-sharp"
                         });
                 });
 
@@ -757,7 +658,7 @@ namespace Blogi.Persistence.Migrations
                             Id = 1,
                             Email = "blogi@blog.com",
                             Name = "BLOGI",
-                            Password = "yk8Juhmi6BF0Gc7kNq9ySkc0z7P/M38OWocNaz4nEEP5nPdrVAAbK7M3vN3S5hnL",
+                            Password = "jUmK8bJpansi0tu9lJS/DYFdqvAcwoD6HSk2P22T6LqObXG8oJ7YlV81OYrTy/mh",
                             Surname = "BLOG"
                         });
                 });
@@ -900,11 +801,15 @@ namespace Blogi.Persistence.Migrations
 
             modelBuilder.Entity("Blogi.Domain.Entities.Comment", b =>
                 {
-                    b.HasOne("Blogi.Domain.Entities.Post", "Posts")
+                    b.HasOne("Blogi.Domain.Entities.Post", null)
                         .WithMany("Comments")
                         .HasForeignKey("PostId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("Blogi.Domain.Entities.Post", "Posts")
+                        .WithMany()
+                        .HasForeignKey("PostsId");
 
                     b.Navigation("Posts");
                 });
@@ -956,9 +861,9 @@ namespace Blogi.Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("Blogi.Domain.Entities.Tag", "Tags")
-                        .WithMany()
+                        .WithMany("PostTags")
                         .HasForeignKey("TagId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Tags");
@@ -1000,6 +905,11 @@ namespace Blogi.Persistence.Migrations
                 {
                     b.Navigation("Comments");
 
+                    b.Navigation("PostTags");
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.Tag", b =>
+                {
                     b.Navigation("PostTags");
                 });
 #pragma warning restore 612, 618

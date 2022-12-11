@@ -8,22 +8,23 @@
             builder.Property(u => u.LanguageId).IsRequired(true);
             builder.Property(u => u.Key).IsRequired(true).HasMaxLength(500);
             builder.Property(u => u.Value).IsRequired(true).HasMaxLength(500);
+            builder.HasOne(u => u.Languages);
 
             builder.HasData(
                   new StringResource
-                {
-                    Id = 1,
-                    LanguageId = 1,
-                    Key = "page_language_button_create",
-                    Value = "Yeni Dil Oluştur"
-                },
+                  {
+                      Id = 1,
+                      LanguageId = 1,
+                      Key = "page_language_button_create",
+                      Value = "Yeni Dil Oluştur"
+                  },
                   new StringResource
-                 {
-                     Id = 2,
-                     LanguageId = 2,
-                     Key = "page_language_button_create",
-                     Value = "Create New Language"
-                 },
+                  {
+                      Id = 2,
+                      LanguageId = 2,
+                      Key = "page_language_button_create",
+                      Value = "Create New Language"
+                  },
                   new StringResource
                   {
                       Id = 3,

@@ -1,21 +1,23 @@
-﻿<div class="container-xl">
-			<div class="footer-inner">
-				<div class="row d-flex align-items-center gy-4">
-					<!-- copyright text -->
-					<div class="col-md-4">
-						<span class="copyright"><a href="https://github.com/ademguney/BlogiBlog-MVC" target="_blank">Blogi Blog</a></span>
-						
-					</div>
+﻿<div class="container pb-30">
+    <div class="row align-items-center">
+        <div class="col-12 mb-30">
+            <div class="footer-bottom"></div>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-6">
+            <p class="font-sm mb-0">&copy;<strong class="text-brand">Blogi Blog</strong> - an Open Source Multi Language Blog Project <br /></p>
+        </div>
+        <div class="col-xl-4 col-lg-6 text-center d-none d-xl-block">
+            <div class="hotline d-lg-inline-flex mr-30">
+            </div>
+            <div class="hotline d-lg-inline-flex">
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-md-6 text-end d-none d-md-block">
+            <div class="mobile-social-icon">
+                <h6>Follow Us</h6>
+                @await Component.InvokeAsync("SocialLinks")
+            </div>
 
-					<!-- social icons -->
-					<div class="col-md-4 text-center">
-						  @await Component.InvokeAsync("SocialLinks")
-					</div>
-
-					<!-- go to top button -->
-					<div class="col-md-4">
-						<a href="#" id="return-to-top" class="float-md-end"><i class="icon-arrow-up"></i>Back to Top</a>
-					</div>
-				</div>
-			</div>
-		</div>
+        </div>
+    </div>
+</div>

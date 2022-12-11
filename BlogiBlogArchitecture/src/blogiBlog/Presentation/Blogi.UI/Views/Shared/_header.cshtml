@@ -5,74 +5,134 @@
 
 @{
     string returnUrl = ViewContext.HttpContext.Request.Path;
-
     var requestCulture = Context.Features.Get<IRequestCultureFeature>();
     var cultureItems = LocOptions.Value.SupportedUICultures
           .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
           .ToList();
 }
 
-<div class="container-xl header-top">
-    <div class="row align-items-center">
 
-        <!-- social icons -->
-        <div class="col-4 d-none d-md-block d-lg-block">
-            @await Component.InvokeAsync("SocialLinks")
-            <ul class="social-icons list-unstyled list-inline mb-0">
-                <li class="nav-item">
-                    <form asp-action="ChangeLanguage" asp-controller="Home" method="post">
-                        <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
-                        <select id="culture"
-                                name="culture"
-                                class="form-control"
-                                onchange="this.form.submit();"
-                                asp-items="cultureItems"
-                                asp-for="@requestCulture.RequestCulture.UICulture.Name">
-                        </select>
-                    </form>
-                </li>
-            </ul>
+<header class="header-area header-style-1 header-height-2">
+    <div class="header-bottom header-bottom-bg-color sticky-bar">
+        <div class="container">
+            <div class="header-wrap header-space-between position-relative">
+                <div class="logo logo-width-1 d-block d-lg-none">
+                    <a asp-controller="Home" asp-action="Index"><img src="~/favicon.png" alt="blogiblog" style="width:80px; height:80px;" /></a>
+                </div>
+                <div class="header-nav d-none d-lg-flex">
+                    <div class="main-categori-wrap d-none d-lg-block">
+                        <a class="categories-button-active" href="#">
+                            <span class="fi-rs-apps"></span> <span class="et">Select</span> Language
+                            <i class="fi-rs-angle-down"></i>
+                        </a>
+                        <div class="categories-dropdown-wrap categories-dropdown-active-large font-heading">
+                            <div class="d-flex categori-dropdown-inner">
+                                <ul>
+                                    <li>
+                                        <form asp-action="ChangeLanguage" asp-controller="Home" method="post">
+                                            <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
+                                            <select id="culture"
+                                                    name="culture"
+                                                    class="form-control"
+                                                    onchange="this.form.submit();"
+                                                    asp-items="cultureItems"
+                                                    asp-for="@requestCulture.RequestCulture.UICulture.Name">
+                                            </select>
+                                        </form>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
+                        <nav>
+                            <ul>
+                                <li class="hot-deals">
+                                    <img src="~/assets/imgs/theme/icons/icon-hot.svg" alt="blogiblog" />
+                                    <a asp-controller="Home" asp-action="Index">@Localize("blog_ui_navbar_home")</a>
+                                </li>
+
+                                <li>
+                                    <a asp-controller="Home" asp-action="About">@Localize("blog_ui_navbar_about")</a>
+                                </li>
+
+                                <li>
+                                    <a asp-controller="Home" asp-action="Contact">@Localize("blog_ui_navbar_contact")</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="header-action-icon-2 d-block d-lg-none">
+                    <div class="burger-icon burger-icon-white">
+                        <span class="burger-icon-top"></span>
+                        <span class="burger-icon-mid"></span>
+                        <span class="burger-icon-bottom"></span>
+                    </div>
+                </div>
+
+            </div>
         </div>
+    </div>
+</header>
 
-
-
-        <!-- site logo -->
-        <div class="col-md-4 col-sm-12 col-xs-12 text-center">
-            <a class="navbar-brand" asp-controller="Home" asp-action="Index"><img src="~/favicon.png" alt="blogiblog" style="width:80px; height:80px; border-radius: 50%;" /></a>
-            <span class="slogan d-block">Professional Writer & Personal Blogger</span>
-        </div>
-
-        <!-- header buttons -->
-        <div class="col-md-4 col-sm-12 col-xs-12">
-            <div class="header-buttons float-md-end mt-4 mt-md-0">
-                <button class="search icon-button">
-                    <i class="icon-magnifier"></i>
-                </button>
-                <button class="burger-menu icon-button ms-2 float-end float-md-none">
-                    <span class="burger-icon"></span>
+<div class="mobile-header-active mobile-header-wrapper-style">
+    <div class="mobile-header-wrapper-inner">
+        <div class="mobile-header-top">
+            <div class="mobile-header-logo">
+                <a href="index.html"><img src="~/assets/imgs/theme/logo.svg" alt="logo" /></a>
+            </div>
+            <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
+                <button class="close-style search-close">
+                    <i class="icon-top"></i>
+                    <i class="icon-bottom"></i>
                 </button>
             </div>
         </div>
+        <div class="mobile-header-content-area">
+          
+            <div class="mobile-menu-wrap mobile-header-border">
+                <!-- mobile menu start -->
+                <nav>
+                    <ul class="mobile-menu font-heading">
+                        <li class="menu-item-has-children">
+                            <a asp-controller="Home" asp-action="Index">@Localize("blog_ui_navbar_home")</a>                         
+                        </li>        
+                          <li class="menu-item-has-children">
+                           <a asp-controller="Home" asp-action="About">@Localize("blog_ui_navbar_about")</a>                 
+                        </li> 
+                          <li class="menu-item-has-children">
+                            <a asp-controller="Home" asp-action="Contact">@Localize("blog_ui_navbar_contact")</a>                   
+                        </li> 
+                        <li class="menu-item-has-children">
+                            <a href="#">Language</a>
+                            <ul class="dropdown">
+                                <form asp-action="ChangeLanguage" asp-controller="Home" method="post">
+                                    <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
+                                    <select id="culture"
+                                            name="culture"
+                                            class="form-control"
+                                            onchange="this.form.submit();"
+                                            asp-items="cultureItems"
+                                            asp-for="@requestCulture.RequestCulture.UICulture.Name">
+                                    </select>
+                                </form>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- mobile menu end -->
+            </div>
 
-    </div>
-</div>
-
-<!-- menus -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container-xl">
-        <div class="collapse navbar-collapse justify-content-center centered-nav">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown active">
-                    <a class="nav-link" asp-controller="Home" asp-action="Index">@Localize("blog_ui_navbar_home")</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-controller="Home" asp-action="About">@Localize("blog_ui_navbar_about")</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" asp-controller="Home" asp-action="Contact">@Localize("blog_ui_navbar_contact")</a>
-                </li>
-            </ul>
+            <div class="mobile-social-icon mb-50">
+                <h6 class="mb-15">Follow Us</h6>
+                 @await Component.InvokeAsync("SocialLinks")              
+            </div>
+            <div class="site-copyright">© Blogi Blog an Open Source Multi Language Blog Project</div>
         </div>
     </div>
-</nav>
+</div>

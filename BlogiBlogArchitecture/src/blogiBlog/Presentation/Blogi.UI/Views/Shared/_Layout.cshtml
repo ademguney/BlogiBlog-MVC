@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en-US">
+<html class="no-js" lang="en">
 <head>
     <title>@ViewData["Title"]</title>
     <meta name="description" content="@ViewData["Description"]">
@@ -17,7 +17,6 @@
     <meta property="og:url" content="@ViewData["WebSite"]" />
     <meta property="og:image" href="~/favicon.png" />
 
-
     <!-- Open Graph Tags -->
     <meta name="twitter:site" content="@ViewData["Author"]" />
     <meta name="twitter:card" content="@ViewData["Title"]" />
@@ -26,262 +25,81 @@
     <meta name="twitter:url" content="@ViewData["WebSite"]" />
     <meta name="twitter:image" href="~/favicon.png" />
 
-
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.png">
-
-    <!-- STYLES -->
-    <link rel="stylesheet" href="~/css/bootstrap.min.css" type="text/css" media="all">
-    <link rel="stylesheet" href="~/css/all.min.css" type="text/css" media="all">
-    <link rel="stylesheet" href="~/css/slick.css" type="text/css" media="all">
-    <link rel="stylesheet" href="~/css/simple-line-icons.css" type="text/css" media="all">
-    <link rel="stylesheet" href="~/css/style.css" type="text/css" media="all">
-
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.png" />
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="~/assets/css/main.css?v=3.2" />
 </head>
 
 <body>
 
-    <!-- preloader -->
-    <div id="preloader">
-        <div class="book">
-            <div class="inner">
-                <div class="left"></div>
-                <div class="middle"></div>
-                <div class="right"></div>
+    <partial name="_header" />
+
+    <!--End header-->
+    <main class="main">
+        <div class="page-header mt-30 mb-75">
+            <div class="container">
+                <div class="archive-header">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3">
+                            <h1 class="mb-15">Blog & News</h1>
+                            <div class="breadcrumb">
+                                <a asp-controller="Home" asp-action="Index" rel="nofollow"><i class="fi-rs-home mr-5"></i>@Localize("blog_ui_navbar_home")</a>
+                                <span></span> Blog & News
+                            </div>
+                        </div>
+                        <div class="col-xl-9 text-end d-none d-xl-block">
+                            <ul class="tags-list">
+                                @await Component.InvokeAsync("TagMenu")
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
         </div>
-    </div>
+        <div class="page-content mb-50">
+            <div class="container">
+                <div class="row">
 
-    <!-- site wrapper -->
-    <div class="site-wrapper">
-
-        <div class="main-overlay"></div>
-
-        <!-- header -->
-        <header class="header-personal">
-            <partial name="_header" />
-
-        </header>
-
-        <section class="hero-carousel">
-            <partial name="_slider" />
-        </section>
-
-        <!-- section main content -->
-        <section class="main-content">
-            <div class="container-xl">
-
-                <div class="row gy-4">
-                    <div class="col-lg-8">
+                    <div class="col-lg-9">
                         @RenderBody()
                     </div>
-                    <div class="col-lg-4">
 
-                        <!-- sidebar -->
-                        <div class="sidebar">
-
-                            <!-- widget categories -->
-                            <div class="widget rounded">
-                                <div class="widget-header text-center">
-                                    <h3 class="widget-title">Explore Topics</h3>
-                                    <img src="~/images/wave.svg" class="wave" alt="wave" />
-                                </div>
-                                <div class="widget-content">
-                                    @await Component.InvokeAsync("CategoryMenu")
-                                </div>
-
-                            </div>
-
-                            <!-- widget popular posts -->
-                            <div class="widget rounded">
-                                <div class="widget-header text-center">
-                                    <h3 class="widget-title">Popular Posts</h3>
-                                    <img src="~/images/wave.svg" class="wave" alt="wave" />
-                                </div>
-                                <div class="widget-content">
-                                    <!-- post -->
-                                    <div class="post post-list-sm circle">
-                                        <div class="thumb circle">
-                                            <span class="number">1</span>
-                                            <a href="blog-single.html">
-                                                <div class="inner">
-                                                    <img src="~/images/posts/tabs-1.jpg" alt="post-title" />
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="details clearfix">
-                                            <h6 class="post-title my-0"><a href="blog-single.html">3 Easy Ways To Make Your iPhone Faster</a></h6>
-                                            <ul class="meta list-inline mt-1 mb-0">
-                                                <li class="list-inline-item">29 March 2021</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- post -->
-                                    <div class="post post-list-sm circle">
-                                        <div class="thumb circle">
-                                            <span class="number">2</span>
-                                            <a href="blog-single.html">
-                                                <div class="inner">
-                                                    <img src="~/images/posts/tabs-2.jpg" alt="post-title" />
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="details clearfix">
-                                            <h6 class="post-title my-0"><a href="blog-single.html">An Incredibly Easy Method That Works For All</a></h6>
-                                            <ul class="meta list-inline mt-1 mb-0">
-                                                <li class="list-inline-item">29 March 2021</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <!-- post -->
-                                    <div class="post post-list-sm circle">
-                                        <div class="thumb circle">
-                                            <span class="number">3</span>
-                                            <a href="blog-single.html">
-                                                <div class="inner">
-                                                    <img src="~/images/posts/tabs-3.jpg" alt="post-title" />
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="details clearfix">
-                                            <h6 class="post-title my-0"><a href="blog-single.html">10 Ways To Immediately Start Selling Furniture</a></h6>
-                                            <ul class="meta list-inline mt-1 mb-0">
-                                                <li class="list-inline-item">29 March 2021</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- widget tags -->
-                            <div class="widget rounded">
-                                <div class="widget-header text-center">
-                                    <h3 class="widget-title">Tag Clouds</h3>
-                                    <img src="~/images/wave.svg" class="wave" alt="wave" />
-                                </div>
-                                <div class="widget-content">
-                                    @await Component.InvokeAsync("TagMenu")
-                                </div>
-                            </div>
-
-                            <!-- widget newsletter -->
-                            <div class="widget rounded">
-                                <div class="widget-header text-center">
-                                    <h3 class="widget-title">Newsletter</h3>
-                                    <img src="~/images/wave.svg" class="wave" alt="wave" />
-                                </div>
-                                <div class="widget-content">
-                                    <span class="newsletter-headline text-center mb-3">Join 70,000 subscribers!</span>
-                                    <form>
-                                        <div class="mb-2">
-                                            <input class="form-control w-100 text-center" placeholder="Email address…" type="email">
-                                        </div>
-                                        <button class="btn btn-default btn-full" type="submit">Sign Up</button>
-                                    </form>
-                                    <span class="newsletter-privacy text-center mt-3">By signing up, you agree to our <a href="#">Privacy Policy</a></span>
-                                </div>
-                            </div>
-
-                            <!-- widget advertisement -->
-                            <div class="widget no-container rounded text-md-center">
-                                <span class="ads-title">- Sponsored Ad -</span>
-                                <a href="#" class="widget-ads">
-                                    <img src="~/images/ads/ad-360.png" alt="Advertisement" />
-                                </a>
-                            </div>
-                            <div class="widget rounded">
-
-                            </div>
-
-                        </div>
-
+                    <div class="col-lg-3 primary-sidebar sticky-sidebar">
+                        <partial name="_rightMenu" />
                     </div>
-
-
                 </div>
-
             </div>
-        </section>
-
-
-        <!-- footer -->
-        <footer>
-            <partial name="_footer" />
-        </footer>
-
-    </div><!-- end site wrapper -->
-    <!-- search popup area -->
-    <div class="search-popup">
-        <!-- close button -->
-        <button type="button" class="btn-close" aria-label="Close"></button>
-        <!-- content -->
-        <div class="search-content">
-            <div class="text-center">
-                <h3 class="mb-4 mt-0">Press ESC to close</h3>
-            </div>
-            <!-- form -->
-            <form class="d-flex search-form">
-                <input class="form-control me-2" type="search" placeholder="Search and press enter ..." aria-label="Search">
-                <button class="btn btn-default btn-lg" type="submit"><i class="icon-magnifier"></i></button>
-            </form>
         </div>
-    </div>
+    </main>
 
-    <!-- canvas menu -->
-    <div class="canvas-menu d-flex align-items-end flex-column">
-        <!-- close button -->
-        <button type="button" class="btn-close" aria-label="Close"></button>
+    <footer class="main">
+        <partial name="_footer" />
+    </footer>
 
-        <!-- logo -->
-        <div class="logo">
-            <img src="~/favicon.png" alt="blogiblog" style="width:80px; height:80px; border-radius: 50%;" />
-        </div>
-
-        <!-- menu -->
-        <nav>
-            <ul class="vertical-menu">
-                <li class="active"><a asp-controller="Home" asp-action="Index">@Localize("blog_ui_navbar_home")</a></li>
-                <li><a asp-controller="Home" asp-action="About">@Localize("blog_ui_navbar_about")</a></li>
-                <li><a asp-controller="Home" asp-action="Contact">@Localize("blog_ui_navbar_contact")</a></li>
-            </ul>
-        </nav>
-
-        <!-- social icons -->
-        @await Component.InvokeAsync("SocialLinks")
-    </div>
-
-    <!-- JAVA SCRIPTS -->
-    <script src="~/js/jquery.min.js"></script>
-    <script src="~/js/popper.min.js"></script>
-    <script src="~/js/bootstrap.min.js"></script>
-    <script src="~/js/slick.min.js"></script>
-    <script src="~/js/jquery.sticky-sidebar.min.js"></script>
-    <script src="~/js/custom.js"></script>
-
+    <!-- Vendor JS-->
+    <script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="~/assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="~/assets/js/vendor/jquery-migrate-3.3.0.min.js"></script>
+    <script src="~/assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/js/plugins/slick.js"></script>
+    <script src="~/assets/js/plugins/jquery.syotimer.min.js"></script>
+    <script src="~/assets/js/plugins/wow.js"></script>
+    <script src="~/assets/js/plugins/jquery-ui.js"></script>
+    <script src="~/assets/js/plugins/perfect-scrollbar.js"></script>
+    <script src="~/assets/js/plugins/magnific-popup.js"></script>
+    <script src="~/assets/js/plugins/select2.min.js"></script>
+    <script src="~/assets/js/plugins/waypoints.js"></script>
+    <script src="~/assets/js/plugins/counterup.js"></script>
+    <script src="~/assets/js/plugins/jquery.countdown.min.js"></script>
+    <script src="~/assets/js/plugins/images-loaded.js"></script>
+    <script src="~/assets/js/plugins/isotope.js"></script>
+    <script src="~/assets/js/plugins/scrollup.js"></script>
+    <script src="~/assets/js/plugins/jquery.vticker-min.js"></script>
+    <script src="~/assets/js/plugins/jquery.theia.sticky.js"></script>
+    <script src="~/assets/js/plugins/jquery.elevatezoom.js"></script>
+    <!-- Template  JS -->
+    <script src="./assets/js/main.js?v=3.2"></script>
+    <script src="./assets/js/shop.js?v=3.2"></script>
 </body>
 </html>

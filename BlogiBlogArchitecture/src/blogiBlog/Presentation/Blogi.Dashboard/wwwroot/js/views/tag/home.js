@@ -3,7 +3,7 @@
         "ajax": {
             "type": "GET",
             "url": "/Tag/DataTable"
-        },       
+        },
         "pageLength": 10,
         "bInfo": true,
         "responsive": true,
@@ -19,7 +19,10 @@
             },
             {
                 "data": "name", "autoWidth": true
-            },            
+            },
+            {
+                "data": "slug", "autoWidth": true
+            },
             {
                 "data": "id",
                 "autoWidth": true,
@@ -39,7 +42,6 @@
         ]
     });
 })();
-
 
 function Delete(obj) {
     var ele = $(obj);

@@ -3,6 +3,7 @@ using Blogi.Application.Features.Categories.Queries.GetListBlogCategory;
 using Blogi.Application.Features.Contacts.Queries.Get;
 using Blogi.Application.Features.Posts.Queries.GetBlogPost;
 using Blogi.Application.Features.Posts.Queries.GetListBlogPost;
+using Blogi.Application.Features.PostsTags.Queries.GetListBlogPostTag;
 using Blogi.Application.Features.WebSettings.Queries.Get;
 using Blogi.UI.Models;
 using Microsoft.AspNetCore.Localization;
@@ -15,7 +16,7 @@ namespace Blogi.UI.Controllers
     {
 
         [HttpGet]
-        public async Task<IActionResult> Index(int pageNo = 1, int pageSize = 8)
+        public async Task<IActionResult> Index(int pageNo = 1, int pageSize = 2)
         {
 
             var currentCulture = Thread.CurrentThread.CurrentUICulture.Name;
@@ -39,8 +40,8 @@ namespace Blogi.UI.Controllers
         }
 
         [HttpGet]
-        [Route("categories/{categoryName}-{id}")]
-        public async Task<IActionResult> Category(int id, int pageNo = 1, int pageSize = 8)
+        [Route("category/{categoryName}-{id}")]
+        public async Task<IActionResult> Category(int id, int pageNo = 1, int pageSize = 9)
         {
             var result = await Mediator.Send(new GetListBlogCategoryQuery() { Id = id });
             var webSettings = await Mediator.Send(new GetWebSettingQuery());
@@ -49,7 +50,22 @@ namespace Blogi.UI.Controllers
                 WebSettings = webSettings.Data,
                 BlogPost = result.Data.ToPagedList(pageNo, pageSize)
             };
-           
+
+            return View(viewModel);
+        }
+
+        [HttpGet]
+        [Route("tag/{tagName}-{id}")]
+        public async Task<IActionResult> Tag(int id, int pageNo = 1, int pageSize = 9)
+        {
+            var result = await Mediator.Send(new GetListBlogPostTagQuery() { TagId = id });
+            var webSettings = await Mediator.Send(new GetWebSettingQuery());
+            var viewModel = new TagViewModel
+            {
+                WebSettings = webSettings.Data,
+                BlogPost = result.Data.ToPagedList(pageNo, pageSize)
+            };
+
             return View(viewModel);
         }
 

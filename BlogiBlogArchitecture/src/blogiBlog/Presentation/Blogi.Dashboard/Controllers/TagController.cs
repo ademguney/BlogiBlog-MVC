@@ -88,7 +88,7 @@ namespace Blogi.Dashboard.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(TagEditViewModel input)
         {
-            var result = await Mediator.Send(new UpdateTagCommand { Id = input.Tag.Id, LanguageId = input.Tag.LanguageId, Name = input.Tag.Name });
+            var result = await Mediator.Send(new UpdateTagCommand { Id = input.Tag.Id, LanguageId = input.Tag.LanguageId, Name = input.Tag.Name, Slug = input.Tag.Slug });
             if (result.Success)
             {
                 NotifySuccess(result.Message);

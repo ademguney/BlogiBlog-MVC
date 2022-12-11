@@ -1,0 +1,26 @@
+﻿  <div class="widget-area">
+                            <div class="sidebar-widget-2 widget_search mb-50">
+                                <div class="search-form">
+                                    <form action="#">
+                                        <input type="text" placeholder="Search…" />
+                                        <button type="submit"><i class="fi-rs-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="sidebar-widget widget-category-2 mb-50">
+                                <h5 class="section-title style-1 mb-30">Category</h5>
+                                <ul>
+                                    @await Component.InvokeAsync("CategoryMenu")
+                                </ul>
+                            </div>
+                          
+
+                            <!--Tags-->
+                            <div class="sidebar-widget widget-tags mb-50 pb-10">
+                                <h5 class="section-title style-1 mb-30">Popular Tags</h5>
+                                <ul class="tags-list">
+                                    @await Component.InvokeAsync("TagMenu")
+                                </ul>
+                            </div>
+
+                        </div>

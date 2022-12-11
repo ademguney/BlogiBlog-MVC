@@ -6,5 +6,6 @@ namespace Blogi.Application.Features.Tags.Commands.Create
     {
         public int LanguageId { get; set; }
         public string Name { get; set; }
+        public string Slug { get; set; }
     }
 }

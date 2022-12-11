@@ -1,9 +1,8 @@
 ﻿@model IEnumerable<Blogi.Application.Features.Categories.Dtos.GetCategoryList.GetCategoryListOutput>
 
-<ul class="list">
-
+<ul>
     @foreach (var item in Model)
     {
-        <li><a href="@item.Slug-@item.Id">@item.Name</a><span>(@item.Count)</span></li>
+        <li><a href="/category/@item.Slug-@item.Id">@item.Name</a><span class="count">@item.Count</span></li>
     }
 </ul>

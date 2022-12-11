@@ -82,7 +82,7 @@
                                     required>
                                 @foreach (var tag in Model.TagList)
                                 {
-                                    <option value="@tag.Id">@tag.Name</option>
+                                    <option value="@tag.Id">@tag.Name, @tag.LanguageName</option>
                                 }
                             </select>
                         </div>

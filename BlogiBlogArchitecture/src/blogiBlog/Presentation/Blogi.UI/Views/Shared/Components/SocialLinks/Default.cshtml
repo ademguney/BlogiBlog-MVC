@@ -1,34 +1,46 @@
 ﻿@model Blogi.Application.Features.WebSettings.Dtos.Get.GetWebSettingOutput
 
-<ul class="social-icons list-unstyled list-inline mb-0">
 
-    @if (Model.IsDisplayFacebbokUrl)
+@{
+    if (Model.IsDisplayFacebbokUrl)
     {
-        <li class="list-inline-item"><a href="@Model.FacebookUrl" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+        <a href="@Model.FacebookUrl" target="_blank">
+            <img src="~/assets/imgs/theme/icons/icons8-facebook.svg" alt="@Model.FacebookUrl"/>
+        </a>
     }
 
-    @if (Model.IsDisplayTwitterUrl)
+    if (Model.IsDisplayTwitterUrl)
     {
-        <li class="list-inline-item"><a href="@Model.TwitterUrl" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <a href="@Model.TwitterUrl" target="_blank">
+            <img src="~/assets/imgs/theme/icons/icons8-twitter.svg" alt="@Model.TwitterUrl" />
+        </a>
     }
 
-    @if (Model.IsDisplayInstagramUrl)
+    if (Model.IsDisplayInstagramUrl)
     {
-        <li class="list-inline-item"><a href="@Model.InstagramUrl" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <a href="@Model.InstagramUrl" target="_blank">
+            <img src="~/assets/imgs/theme/icons/icons8-instagram.svg" alt="@Model.InstagramUrl" />
+        </a>
     }
 
-    @if (Model.IsDisplayFacebbokUrl)
+    if (Model.IsDisplayGithubUrl)
     {
-        <li class="list-inline-item"><a href="@Model.GithubUrl" target="_blank"><i class="fab fa-github"></i></a></li>
+        <a href="@Model.GithubUrl" target="_blank">
+            <img src="~/assets/imgs/theme/icons/icons8-github.svg" alt="@Model.GithubUrl" />
+        </a>
     }
 
-    @if (Model.IsDisplayMediumUrl)
+    if (Model.IsDisplayMediumUrl)
     {
-        <li class="list-inline-item"><a href="@Model.MediumUrl" target="_blank"><i class="fab fa-medium"></i></a></li>
+        <a href="@Model.MediumUrl" target="_blank">
+            <img src="~/assets/imgs/theme/icons/icons8-medium-monogram.svg" alt="@Model.MediumUrl" />
+        </a>
     }
 
-    @if (Model.IsDisplayYouTubeUrl)
+    if (Model.IsDisplayYouTubeUrl)
     {
-        <li class="list-inline-item"><a href="@Model.YouTubeUrl" target="_blank"><i class="fab fa-youtube"></i></a></li>
+        <a href="@Model.YouTubeUrl" target="_blank">
+            <img src="~/assets/imgs/theme/icons/icons8-youtube.svg" alt="@Model.YouTubeUrl" />
+        </a>
     }
-</ul>
+}

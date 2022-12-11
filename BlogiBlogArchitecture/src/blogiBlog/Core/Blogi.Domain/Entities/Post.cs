@@ -8,6 +8,7 @@ namespace Blogi.Domain.Entities
         public Post()
         {
             PostTags = new HashSet<PostTags>();
+            Comments = new HashSet<Comment>();
         }
 
         public Post(int id, int userId, int languageId, int categoryId, string title, string content, string slug, byte[] image, string imageAlt, int displayCount, string metaKeywords, string metaDescription, bool isPublished, int createdById, DateTime creationTime, DateTime? updationDate, int? updatedById) : base(id)

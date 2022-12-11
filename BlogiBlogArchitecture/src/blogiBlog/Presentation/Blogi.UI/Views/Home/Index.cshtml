@@ -6,41 +6,98 @@
     ViewData["Keywords"] = @Model.WebSettings.MetaKeywords;
     ViewData["Author"] = @Model.WebSettings.Author;
     ViewData["WebSite"] = @Model.WebSettings.WebSiteUrl;
-     Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<div class="row gy-4">
-
-    @foreach (var item in Model.BlogPost)
-    {
-        <div class="col-sm-6">
-            <!-- post -->
-        <div class="post post-grid rounded bordered">
-                <div class="thumb top-rounded">
-                    <a href="categories/@item.CategorySlug-@item.CategoryId" class="category-badge position-absolute">@item.CategoryName</a>
-
-                    <a href="@item.Slug-@item.Id">
-                        <div class="inner">
-                            <img src="@string.Format("data:image/gif;base64,{0}", item.Image)" alt="@item.ImageAlt" style="width:356px;height:238px;" />
-                        </div>
-                    </a>
+<div class="shop-product-fillter mb-50 pr-30">
+    <div class="totall-product">
+        <h2>
+            <img class="w-36px mr-10" src="~/favicon.png" alt="blogiblog" />
+            Articles
+        </h2>
+    </div>
+    <div class="sort-by-product-area">
+        <div class="sort-by-cover mr-10">
+            <div class="sort-by-product-wrap">
+                <div class="sort-by">
+                    <span><i class="fi-rs-apps"></i>Show:</span>
                 </div>
-                <div class="details">
-                    <ul class="meta list-inline mb-0">
-                        <li class="list-inline-item">
-                            <a href="@item.Slug-@item.Id">
-                                <img src="@string.Format("data:image/gif;base64,{0}", item.AuthorPhoto)" class="author" alt="@item.Author" style="width:16px;height:16px;" />
-                                @item.Author
-                            </a>
-                        </li>
-                        <li class="list-inline-item">@item.CreationDate</li>
-                    </ul>
-                    <h5 class="post-title mb-3 mt-3"><a href="@item.Slug-@item.Id">@item.Title</a></h5>
+                <div class="sort-by-dropdown-wrap">
+                    <span> 50 <i class="fi-rs-angle-small-down"></i></span>
                 </div>
-
+            </div>
+            <div class="sort-by-dropdown">
+                <ul>
+                    <li><a class="active" href="#">50</a></li>
+                    <li><a href="#">100</a></li>
+                    <li><a href="#">150</a></li>
+                    <li><a href="#">200</a></li>
+                    <li><a href="#">All</a></li>
+                </ul>
             </div>
         </div>
-    }
-
+        <div class="sort-by-cover">
+            <div class="sort-by-product-wrap">
+                <div class="sort-by">
+                    <span><i class="fi-rs-apps-sort"></i>Sort:</span>
+                </div>
+                <div class="sort-by-dropdown-wrap">
+                    <span>Featured <i class="fi-rs-angle-small-down"></i></span>
+                </div>
+            </div>
+            <div class="sort-by-dropdown">
+                <ul>
+                    <li><a class="active" href="#">Featured</a></li>
+                    <li><a href="#">Newest</a></li>
+                    <li><a href="#">Most comments</a></li>
+                    <li><a href="#">Release Date</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
-@Html.PagedListPager((IPagedList)Model.BlogPost,pageNo => Url.Action("Index",new{pageNo}))
+<div class="loop-grid pr-30">
+    <div class="row">
+        @foreach (var item in Model.BlogPost)
+        {
+
+            <article class="col-xl-4 col-lg-6 col-md-6 text-center hover-up mb-30 animated">
+                <div class="post-thumb">
+                    <a href="@item.Slug-@item.Id">
+                        <img class="border-radius-15" src="@string.Format("data:image/gif;base64,{0}", item.Image)" alt="@item.ImageAlt" style="width:368px;height:309px;" />
+                    </a>
+
+                </div>
+                <div class="entry-content-2">
+                    <h6 class="mb-10 font-sm"><a class="entry-meta text-muted" href="category/@item.CategorySlug-@item.CategoryId">@item.CategoryName</a></h6>
+                    <h4 class="post-title mb-15">
+                        <a href="@item.Slug-@item.Id">@item.Title</a>
+                    </h4>
+                    <div class="entry-meta font-xs color-grey mt-10 pb-10">
+                        <div>
+                            <span class="post-on mr-10">@item.CreationDate</span>
+                            <span class="hit-count has-dot mr-10">@item.DisplayCount</span>
+                            <span class="hit-count has-dot">4 mins read</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        }
+    </div>
+</div>
+
+
+<div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-start">
+            @Html.PagedListPager((IPagedList)Model.BlogPost,pageNo => Url.Action("Index",new{pageNo}), new PagedListRenderOptions {
+            DisplayLinkToIndividualPages = true,
+            DisplayPageCountAndCurrentLocation = false,
+            MaximumPageNumbersToDisplay = 10,
+            LiElementClasses = new string[] { "page-item" },
+            PageClasses = new string[] { "page-link" },
+            ActiveLiElementClass="active"
+            })
+        </ul>
+    </nav>
+</div>

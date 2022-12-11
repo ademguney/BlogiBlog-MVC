@@ -27,7 +27,7 @@
             builder.HasOne(u => u.Categories);
             builder.HasOne(u => u.Languages).WithMany().OnDelete(DeleteBehavior.Restrict);
             builder.HasMany(u => u.PostTags).WithOne().OnDelete(DeleteBehavior.Restrict).HasForeignKey(x=>x.PostId);
-
+            builder.HasMany(u => u.Comments).WithOne().OnDelete(DeleteBehavior.Restrict).HasForeignKey(x => x.PostId);
 
             builder.HasData(
                 new Post

@@ -13,8 +13,7 @@ namespace Blogi.Domain.Entities
         }
 
         public int PostId { get; set; }
-        public int TagId { get; set; }       
-        public Tag Tags { get; set; }
-
+        public int TagId { get; set; }
+        public Tag Tags { get; set; }       
     }
 }

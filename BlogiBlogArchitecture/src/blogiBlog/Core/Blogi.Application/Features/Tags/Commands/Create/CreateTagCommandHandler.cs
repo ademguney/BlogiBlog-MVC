@@ -34,6 +34,7 @@ namespace Blogi.Application.Features.Tags.Commands.Create
             }
             else
             {
+                request.Slug = request.Slug.FriendlyUrl();
                 var tagMapp = _mapper.Map<Tag>(request);
                 var result = await _tagWriteRepository.AddAsync(tagMapp);
                 var resultMapp = _mapper.Map<GetTagOutput>(result);
