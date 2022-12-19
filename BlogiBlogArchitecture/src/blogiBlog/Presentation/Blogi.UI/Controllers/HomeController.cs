@@ -16,11 +16,11 @@ namespace Blogi.UI.Controllers
     {
 
         [HttpGet]
-        public async Task<IActionResult> Index(int pageNo = 1, int pageSize = 9)
+        public async Task<IActionResult> Index(string searchText, int pageNo = 1, int pageSize = 9)
         {
 
             var currentCulture = Thread.CurrentThread.CurrentUICulture.Name;
-            var blogList = await Mediator.Send(new GetListBlogPostQuery() { Culture = currentCulture });
+            var blogList = await Mediator.Send(new GetListBlogPostQuery() { Culture = currentCulture, SearchText = searchText });
             var webSettings = await Mediator.Send(new GetWebSettingQuery());
             var viewModel = new HomeIndexViewModel
             {

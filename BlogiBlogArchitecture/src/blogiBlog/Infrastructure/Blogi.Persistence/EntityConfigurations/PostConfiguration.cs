@@ -12,8 +12,7 @@
             builder.Property(u => u.Content).IsRequired(true);
             builder.Property(u => u.Slug).IsRequired(true).HasMaxLength(500);
             builder.Property(u => u.Image).IsRequired(false);
-            builder.Property(u => u.ImageAlt).IsRequired(true).HasMaxLength(255);
-            builder.Property(u => u.DisplayCount);
+            builder.Property(u => u.ImageAlt).IsRequired(true).HasMaxLength(255);           
             builder.Property(u => u.IsPublished).IsRequired(true);
             builder.Property(u => u.MetaKeywords).IsRequired(true).HasMaxLength(500);
             builder.Property(u => u.MetaDescription).IsRequired(true).HasMaxLength(500);
@@ -40,8 +39,7 @@
                     Content = "Blogi blog an open source project.",
                     Slug = "test-content",
                     Image = null,
-                    ImageAlt = "blogiBlog",
-                    DisplayCount = 0,
+                    ImageAlt = "blogiBlog",                   
                     MetaKeywords = "blogiblog,open source, blog project",
                     MetaDescription = "is an open source multi language blog project Blog BLOG",
                     IsPublished = true,

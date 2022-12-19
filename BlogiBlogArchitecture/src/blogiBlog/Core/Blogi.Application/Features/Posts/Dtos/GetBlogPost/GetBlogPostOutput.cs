@@ -14,8 +14,7 @@
         public string Image { get; set; }
         public string ImageAlt { get; set; }
         public string MetaKeywords { get; set; }
-        public string MetaDescription { get; set; }
-        public int DisplayCount { get; set; }
+        public string MetaDescription { get; set; }       
         public string CreationDate { get; set; }
         public Dictionary<int,string> Tags { get; set; }
     }

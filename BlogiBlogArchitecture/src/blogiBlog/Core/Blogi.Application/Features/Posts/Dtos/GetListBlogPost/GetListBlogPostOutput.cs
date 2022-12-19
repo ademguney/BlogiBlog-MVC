@@ -11,8 +11,7 @@
         public string Slug { get; set; }
         public string AuthorPhoto { get; set; }
         public string Image { get; set; }
-        public string ImageAlt { get; set; }
-        public int DisplayCount { get; set; }
+        public string ImageAlt { get; set; }     
         public string CreationDate { get; set; }
 
     }

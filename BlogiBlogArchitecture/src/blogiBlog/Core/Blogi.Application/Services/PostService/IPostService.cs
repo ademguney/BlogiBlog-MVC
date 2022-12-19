@@ -8,6 +8,6 @@ namespace Blogi.Application.Services.PostService
     {
         Task<GetBlogPostOutput> GetBlogPost(int id);
         Task<List<GetListPostOutput>> GetListAsync();
-        Task<List<GetListBlogPostOutput>> GetListBlogPostAsync(string culture);
+        Task<List<GetListBlogPostOutput>> GetListBlogPostAsync(string culture, string searchText);
     }
 }

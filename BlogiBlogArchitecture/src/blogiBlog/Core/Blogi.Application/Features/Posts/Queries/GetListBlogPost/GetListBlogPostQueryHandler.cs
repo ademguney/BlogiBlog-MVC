@@ -14,7 +14,7 @@ namespace Blogi.Application.Features.Posts.Queries.GetListBlogPost
         public async Task<BaseCommandResponse<List<GetListBlogPostOutput>>> Handle(GetListBlogPostQuery request, CancellationToken cancellationToken)
         {
             var response = new BaseCommandResponse<List<GetListBlogPostOutput>>();
-            var result = await _postService.GetListBlogPostAsync(request.Culture);
+            var result = await _postService.GetListBlogPostAsync(request.Culture, request.SearchText);
             if (!result.Any())
             {
                 response.Success = false;

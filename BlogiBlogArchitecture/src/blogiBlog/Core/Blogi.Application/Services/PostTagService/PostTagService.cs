@@ -67,8 +67,7 @@ namespace Blogi.Application.Services.PostTagService
                      Author = x.Users.Name + " " + x.Users.Surname,
                      AuthorPhoto = x.Users.Photo != null ? Convert.ToBase64String(x.Users.Photo) : null,
                      Slug = x.Slug,
-                     CreationDate = x.CreationDate.ToLongDateString(),
-                     DisplayCount = x.DisplayCount,
+                     CreationDate = x.CreationDate.ToLongDateString(),                   
                      Image = x.Image != null ? Convert.ToBase64String(x.Image) : null,
                      ImageAlt = x.ImageAlt
                  }).FirstOrDefaultAsync();

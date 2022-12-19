@@ -11,7 +11,7 @@ namespace Blogi.Domain.Entities
             Comments = new HashSet<Comment>();
         }
 
-        public Post(int id, int userId, int languageId, int categoryId, string title, string content, string slug, byte[] image, string imageAlt, int displayCount, string metaKeywords, string metaDescription, bool isPublished, int createdById, DateTime creationTime, DateTime? updationDate, int? updatedById) : base(id)
+        public Post(int id, int userId, int languageId, int categoryId, string title, string content, string slug, byte[] image, string imageAlt, string metaKeywords, string metaDescription, bool isPublished, int createdById, DateTime creationTime, DateTime? updationDate, int? updatedById) : base(id)
         {
             UserId = userId;
             LanguageId = languageId;
@@ -21,7 +21,6 @@ namespace Blogi.Domain.Entities
             Slug = slug;
             Image = image;
             ImageAlt = imageAlt;
-            DisplayCount = displayCount;
             MetaKeywords = metaKeywords;
             MetaDescription = metaDescription;
             IsPublished = isPublished;
@@ -39,7 +38,6 @@ namespace Blogi.Domain.Entities
         public string Slug { get; set; }
         public byte[] Image { get; set; }
         public string ImageAlt { get; set; }
-        public int DisplayCount { get; set; }
         public string MetaKeywords { get; set; }
         public string MetaDescription { get; set; }
 

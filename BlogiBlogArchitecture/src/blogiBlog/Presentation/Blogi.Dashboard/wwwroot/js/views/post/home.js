@@ -24,9 +24,6 @@
                 "data": "title", "autoWidth": true
             },
             {
-                "data": "displayCount", "autoWidth": true
-            },
-            {
                 "data": "isPublished", "autoWidth": true
             },
             {

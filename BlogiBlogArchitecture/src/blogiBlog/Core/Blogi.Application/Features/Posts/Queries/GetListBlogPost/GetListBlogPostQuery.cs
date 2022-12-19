@@ -5,5 +5,6 @@ namespace Blogi.Application.Features.Posts.Queries.GetListBlogPost
     public class GetListBlogPostQuery : IRequest<BaseCommandResponse<List<GetListBlogPostOutput>>>
     {
         public string Culture { get; set; }
+        public string SearchText { get; set; }
     }
 }

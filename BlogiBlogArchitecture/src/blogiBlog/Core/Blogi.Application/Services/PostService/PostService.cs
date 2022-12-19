@@ -39,13 +39,12 @@ namespace Blogi.Application.Services.PostService
                    Id = x.Id,
                    CategoryId = x.CategoryId,
                    CategoryName = x.Categories.Name,
-                   CategorySlug=x.Categories.Slug,
+                   CategorySlug = x.Categories.Slug,
                    Title = x.Title,
                    Author = x.Users.Name + " " + x.Users.Surname,
                    AuthorPhoto = x.Users.Photo != null ? Convert.ToBase64String(x.Users.Photo) : null,
                    Slug = x.Slug,
                    CreationDate = x.CreationDate.ToLongDateString(),
-                   DisplayCount = x.DisplayCount,
                    Image = x.Image != null ? Convert.ToBase64String(x.Image) : null,
                    ImageAlt = x.ImageAlt,
                    Content = x.Content,
@@ -68,16 +67,15 @@ namespace Blogi.Application.Services.PostService
                 LanguageName = x.Languages.Name,
                 CategoryName = x.Categories.Name,
                 Title = x.Title,
-                DisplayCount = x.DisplayCount,
                 IsPublished = x.IsPublished,
                 CreationDate = x.CreationDate.ToShortDateString(),
                 UpdationDate = x.UpdationDate.HasValue ? x.UpdationDate.Value.ToShortDateString() : null
             }).ToListAsync();
         }
 
-        public async Task<List<GetListBlogPostOutput>> GetListBlogPostAsync(string culture)
+        public async Task<List<GetListBlogPostOutput>> GetListBlogPostAsync(string culture, string searchText)
         {
-            var query = await _postReadRepository
+            var query = _postReadRepository
                 .GetAll(x => x.Languages.Culture.Trim().ToLower() == culture.Trim().ToLower())
                 .Include(x => x.Languages)
                 .Include(x => x.Users)
@@ -94,12 +92,14 @@ namespace Blogi.Application.Services.PostService
                     AuthorPhoto = x.Users.Photo != null ? Convert.ToBase64String(x.Users.Photo) : null,
                     Slug = x.Slug,
                     CreationDate = x.CreationDate.ToLongDateString(),
-                    DisplayCount = x.DisplayCount,
                     Image = x.Image != null ? Convert.ToBase64String(x.Image) : null,
                     ImageAlt = x.ImageAlt
-                })
-                .ToListAsync();
-            return query;
+                });
+
+            if (!string.IsNullOrEmpty(searchText))
+                query = query.Where(x => x.Title.Contains(searchText) || x.CategoryName.Contains(searchText));
+
+            return await query.ToListAsync();
         }
     }
 }
