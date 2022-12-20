@@ -13,10 +13,10 @@
             <section class="mb-50">
                 <div class="row mb-60">
                     <div class="col-md-4 mb-4 mb-md-0">
-                        <h4 class="mb-15 text-brand">Information</h4>
+                        <h4 class="mb-15 text-brand"> @Localize("blog_ui_contact_information")</h4>
                         @Model.Location<br>
-                        <abbr title="Phone">Phone:</abbr> @Model.Phone<br>
-                        <abbr title="Email">Email: </abbr>@Model.Email<br><br>
+                        <abbr title="Phone">@Localize("blog_ui_contact_phone"):</abbr> @Model.Phone<br>
+                        <abbr title="Email">@Localize("blog_ui_contact_email"): </abbr>@Model.Email<br><br>
                         @Html.Raw(Model.Content)
                     </div>
 
@@ -24,34 +24,33 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="contact-from-area padding-20-row-col">
-                            <h5 class="text-brand mb-10">Contact form</h5>
-                            <h2 class="mb-10">Drop Us a Line</h2>
-                            <p class="text-muted mb-30 font-sm">Your email address will not be published. Required fields are marked *</p>
-                            <form class="contact-form-style mt-30" id="contact-form" action="#" method="post">
+                            <h5 class="text-brand mb-10">@Localize("blog_ui_contact_form")</h5>
+                            <p class="text-muted mb-30 font-sm">@Localize("blog_ui_contact_description")</p>
+                            <form class="contact-form-style mt-30" id="contact-form">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
                                         <div class="input-style mb-20">
-                                            <input name="name" placeholder="First Name" type="text">
+                                            <input name="name" placeholder="First Name" type="text" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
                                         <div class="input-style mb-20">
-                                            <input name="email" placeholder="Your Email" type="email">
+                                            <input name="surname" placeholder="Surname" type="text" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
                                         <div class="input-style mb-20">
-                                            <input name="telephone" placeholder="Your Phone" type="tel">
+                                            <input name="email" placeholder="Your Email" type="email" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
                                         <div class="input-style mb-20">
-                                            <input name="subject" placeholder="Subject" type="text">
+                                            <input name="subject" placeholder="Subject" type="text" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12">
-                                        <div class="textarea-style mb-30">
-                                            <textarea name="message" placeholder="Message"></textarea>
+                                        <div class="textarea-style mb-30" required>
+                                            <textarea name="body" placeholder="Message"></textarea>
                                         </div>
                                         <button class="submit submit-auto-width" type="submit">Send message</button>
                                     </div>
@@ -60,11 +59,29 @@
                             <p class="form-messege"></p>
                         </div>
                     </div>
-                    <div class="col-lg-4 pl-50 d-lg-block d-none">
-                        <img class="border-radius-15 mt-50" src="assets/imgs/page/contact-2.png" alt="">
-                    </div>
+
                 </div>
             </section>
         </div>
     </div>
 </div>
+
+<script>
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit',function(e){
+       e.preventDefault();
+
+      const payload= new FormData(form);
+
+     fetch('/home/SendMail',{
+             method: "POST",
+             body:payload
+     })
+     .then(res=>res.json())
+     .then(data=>console.log(data))
+     .catch(err=>console.log(err))
+     document.getElementById("contact-form").reset();
+    })
+
+</script>

@@ -95,7 +95,7 @@
             @Html.PagedListPager((IPagedList)Model.BlogPost,pageNo => Url.Action("Index",new{pageNo}), new PagedListRenderOptions {
             DisplayLinkToIndividualPages = true,
             DisplayPageCountAndCurrentLocation = false,
-            MaximumPageNumbersToDisplay = 10,
+            MaximumPageNumbersToDisplay = 5,
             LiElementClasses = new string[] { "page-item" },
             PageClasses = new string[] { "page-link" },
             ActiveLiElementClass="active"

@@ -14,6 +14,31 @@ namespace Blogi.Application.Services.MailFactoryService
             _mailConfig = mailConfig;
         }
 
+        public async Task SendContactdMail(string email, string name, string surName, string subject, string body)
+        {
+            var mailSettings = await _mailConfig.GetAll().FirstOrDefaultAsync();
+            var deccPassword = EnDecode.Decrypt(mailSettings.Password, StaticParams.PasswordParams);
+            var config = new MailConfig
+            {
+                FullName = mailSettings.FullName,
+                Email = mailSettings.Email,
+                Password = deccPassword,
+                Host = mailSettings.Host,
+                Port = mailSettings.Port
+
+            };
+
+            var mail = new Mail
+            {
+                Subject = "BLOGI BLOG," + subject,
+                ToEmail = mailSettings.Email,
+                Attachments = null,
+                Body = "Name Surname: , " + name + " " + surName + "<br>" + "Email: " + email + "<br>" + body
+            };
+
+            await _mailService.SendMail(mail, config);
+        }
+
         public async Task SendForgotPasswordMail(string toEmail, string newPassword)
         {
             var mailSettings = await _mailConfig.GetAll().FirstOrDefaultAsync();

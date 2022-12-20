@@ -4,7 +4,7 @@
             <div class="footer-bottom"></div>
         </div>
         <div class="col-xl-4 col-lg-6 col-md-6">
-            <p class="font-sm mb-0">&copy;<strong class="text-brand">Blogi Blog</strong> - an Open Source Multi Language Blog Project <br /></p>
+            <p class="font-sm mb-0">&copy; <a href="https://github.com/ademguney/BlogiBlog-MVC" target="_blank"><strong class="text-brand">Blogi Blog</strong></a> - @Localize("blog_ui_footer_title") <br /></p>
         </div>
         <div class="col-xl-4 col-lg-6 text-center d-none d-xl-block">
             <div class="hotline d-lg-inline-flex mr-30">
@@ -14,7 +14,7 @@
         </div>
         <div class="col-xl-4 col-lg-6 col-md-6 text-end d-none d-md-block">
             <div class="mobile-social-icon">
-                <h6>Follow Us</h6>
+                <h6>@Localize("blog_ui_follow_us")</h6>
                 @await Component.InvokeAsync("SocialLinks")
             </div>
 

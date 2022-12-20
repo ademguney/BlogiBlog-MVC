@@ -2,13 +2,13 @@
     <div class="sidebar-widget-2 widget_search mb-50">
         <div class="search-form">
             <form asp-controller="Home" asp-action="Index" method="get">
-                <input type="text" name="searchText" placeholder="Search…" />
+                <input type="text" name="searchText" placeholder="@Localize("blog_ui_place_holder_search")" />
                 <button type="submit"><i class="fi-rs-search"></i></button>
             </form>
         </div>
     </div>
     <div class="sidebar-widget widget-category-2 mb-50">
-        <h5 class="section-title style-1 mb-30">Category</h5>
+        <h5 class="section-title style-1 mb-30">@Localize("blog_ui_category")</h5>
         <ul>
             @await Component.InvokeAsync("CategoryMenu")
         </ul>
@@ -17,7 +17,7 @@
 
     <!--Tags-->
     <div class="sidebar-widget widget-tags mb-50 pb-10">
-        <h5 class="section-title style-1 mb-30">Popular Tags</h5>
+        <h5 class="section-title style-1 mb-30">@Localize("blog_ui_popular_tags")</h5>
         <ul class="tags-list">
             @await Component.InvokeAsync("TagMenu")
         </ul>

@@ -1,6 +1,7 @@
 ﻿using Blogi.Application.Features.Abouts.Queries.Get;
 using Blogi.Application.Features.Categories.Queries.GetListBlogCategory;
 using Blogi.Application.Features.Contacts.Queries.Get;
+using Blogi.Application.Features.MailSends.Commands.ContactMailSend;
 using Blogi.Application.Features.Posts.Queries.GetBlogPost;
 using Blogi.Application.Features.Posts.Queries.GetListBlogPost;
 using Blogi.Application.Features.PostsTags.Queries.GetListBlogPostTag;
@@ -85,6 +86,12 @@ namespace Blogi.UI.Controllers
             return View(result.Data);
         }
 
+        [HttpPost]
+        public async Task<JsonResult> SendMail(ContactMailSendCommand input)
+        {
+            var result = await Mediator.Send(input);
+            return Json(new { data = result.Data });
+        }
 
         [HttpPost]
         public IActionResult ChangeLanguage(string culture, string returnUrl)
@@ -100,5 +107,6 @@ namespace Blogi.UI.Controllers
 
             return LocalRedirect(returnUrl);
         }
+
     }
 }
