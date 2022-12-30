@@ -1,4 +1,5 @@
-﻿using Blogi.Application.Features.Posts.Dtos.GetBlogPost;
+﻿using Blogi.Application.Features.Comment.Dtos.GetBlogComment;
+using Blogi.Application.Features.Posts.Dtos.GetBlogPost;
 using Blogi.Application.Features.Posts.Dtos.GetList;
 using Blogi.Application.Features.Posts.Dtos.GetListBlogPost;
 
@@ -33,6 +34,7 @@ namespace Blogi.Application.Services.PostService
                .Include(x => x.Languages)
                .Include(x => x.Users)
                .Include(x => x.Categories)
+               .Include(x => x.Comments)
                .OrderByDescending(x => x.CreationDate)
                .Select(x => new GetBlogPostOutput
                {
@@ -50,7 +52,16 @@ namespace Blogi.Application.Services.PostService
                    Content = x.Content,
                    MetaDescription = x.MetaDescription,
                    MetaKeywords = x.MetaKeywords,
-                   Tags = tagList
+                   Tags = tagList,
+                   Comments = x.Comments.Where(c => c.IsPublish == false).Select(c => new GetBlogCommentOutput
+                   {
+                       Id = c.Id,
+                       ParentId = c.ParentId,
+                       FullName = c.FullName,
+                       Content = c.Content,
+                       CreationDate = c.CreationDate.ToLongDateString()
+
+                   }).ToList()
                })
                .FirstOrDefaultAsync();
             return query;

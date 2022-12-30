@@ -12,7 +12,7 @@
             builder.Property(u => u.Content).IsRequired(true);
             builder.Property(u => u.IsPublish).IsRequired(true);
             builder.Property(i => i.CreationDate).IsRequired(true);
-            builder.HasOne(x => x.Posts);
+            builder.HasOne(x => x.Posts).WithMany(x => x.Comments).HasForeignKey(x => x.PostId);
         }
     }
 }

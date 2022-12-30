@@ -1154,3 +1154,4 @@ C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\obj\Debug\net6.0\ref\Blogi.Dashboard.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\obj\Debug\net6.0\Blogi.Dashboard.pdb
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\obj\Debug\net6.0\Blogi.Dashboard.genruntimeconfig.cache
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\obj\Debug\net6.0\Blogi.Dashboard.MvcApplicationPartsAssemblyInfo.cs

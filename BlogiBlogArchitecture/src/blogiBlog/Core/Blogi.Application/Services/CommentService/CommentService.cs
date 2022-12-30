@@ -14,7 +14,7 @@ namespace Blogi.Application.Services.CommentService
 
         public async Task<GetCommentOutput> GetAsync(int id)
         {
-
+            var test= _commentReadRepository.GetAll(x=>x.Id == id).Include(x => x.Posts).FirstOrDefault();
             return await _commentReadRepository.GetAll(x => x.Id == id).Include(x => x.Posts).Select(x => new GetCommentOutput
             {
                 Id = x.Id,

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blogi.Persistence.Migrations
 {
     [DbContext(typeof(BlogiBlogDbContext))]
-    [Migration("20221211093147_InitDb")]
+    [Migration("20221230121159_InitDb")]
     partial class InitDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -188,14 +188,9 @@ namespace Blogi.Persistence.Migrations
                     b.Property<int>("PostId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PostsId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("PostId");
-
-                    b.HasIndex("PostsId");
 
                     b.ToTable("Comments", (string)null);
                 });
@@ -365,7 +360,7 @@ namespace Blogi.Persistence.Migrations
                             Email = "blogi@blog.com",
                             FullName = "BlogiBlog",
                             Host = "smtp.gmail.com",
-                            Password = "x4Bv5taY+v4UUtPqaOt56StJ+XfYx52OE7voN3H7ByBVe8kvdyoTNj1113AQgre2",
+                            Password = "sSFUaY25ArFeHs6ttu+RFCh37T0pXL8OzuGyrpLFhUrEzcttjL+EL+K/5F/+CaG0",
                             Port = 587,
                             SslEnabled = false,
                             UseDefaultCredentials = false
@@ -392,9 +387,6 @@ namespace Blogi.Persistence.Migrations
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("DisplayCount")
-                        .HasColumnType("int");
 
                     b.Property<byte[]>("Image")
                         .HasColumnType("varbinary(max)");
@@ -456,8 +448,7 @@ namespace Blogi.Persistence.Migrations
                             CategoryId = 1,
                             Content = "Blogi blog an open source project.",
                             CreatedById = 1,
-                            CreationDate = new DateTime(2022, 12, 11, 9, 31, 46, 956, DateTimeKind.Utc).AddTicks(6537),
-                            DisplayCount = 0,
+                            CreationDate = new DateTime(2022, 12, 30, 12, 11, 58, 864, DateTimeKind.Utc).AddTicks(7301),
                             ImageAlt = "blogiBlog",
                             IsPublished = true,
                             LanguageId = 1,
@@ -607,7 +598,7 @@ namespace Blogi.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            LanguageId = 2,
+                            LanguageId = 1,
                             Name = "Csharp",
                             Slug = "c-sharp"
                         },
@@ -660,7 +651,7 @@ namespace Blogi.Persistence.Migrations
                             Id = 1,
                             Email = "blogi@blog.com",
                             Name = "BLOGI",
-                            Password = "jUmK8bJpansi0tu9lJS/DYFdqvAcwoD6HSk2P22T6LqObXG8oJ7YlV81OYrTy/mh",
+                            Password = "c3G8C3H2/hjcWX3MkWEyS0oENDxON2dLAqCC46P5c4hybW7HP1W8WU/qxkxQqPWe",
                             Surname = "BLOG"
                         });
                 });
@@ -803,15 +794,11 @@ namespace Blogi.Persistence.Migrations
 
             modelBuilder.Entity("Blogi.Domain.Entities.Comment", b =>
                 {
-                    b.HasOne("Blogi.Domain.Entities.Post", null)
+                    b.HasOne("Blogi.Domain.Entities.Post", "Posts")
                         .WithMany("Comments")
                         .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("Blogi.Domain.Entities.Post", "Posts")
-                        .WithMany()
-                        .HasForeignKey("PostsId");
 
                     b.Navigation("Posts");
                 });

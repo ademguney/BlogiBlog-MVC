@@ -1,5 +1,6 @@
 ﻿using Blogi.Application.Features.Abouts.Queries.Get;
 using Blogi.Application.Features.Categories.Queries.GetListBlogCategory;
+using Blogi.Application.Features.Comment.Commands.CommentCreate;
 using Blogi.Application.Features.Contacts.Queries.Get;
 using Blogi.Application.Features.MailSends.Commands.ContactMailSend;
 using Blogi.Application.Features.Posts.Queries.GetBlogPost;
@@ -39,6 +40,14 @@ namespace Blogi.UI.Controllers
             var result = await Mediator.Send(new GetBlogPostQuery() { Id = id });
             return View(result.Data);
         }
+
+        [HttpPost]
+        public async Task<JsonResult> Comment(CreateCommentCommand input)
+        {
+            var result = await Mediator.Send(input);
+            return Json(new { data = result });
+        }
+
 
         [HttpGet]
         [Route("category/{categoryName}-{id}")]
@@ -90,7 +99,7 @@ namespace Blogi.UI.Controllers
         public async Task<JsonResult> SendMail(ContactMailSendCommand input)
         {
             var result = await Mediator.Send(input);
-            return Json(new { data = result.Data });
+            return Json(new { data = result.Message });
         }
 
         [HttpPost]

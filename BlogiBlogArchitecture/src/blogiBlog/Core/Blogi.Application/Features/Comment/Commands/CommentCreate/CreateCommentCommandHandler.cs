@@ -31,7 +31,7 @@
                 commentMapp.CreationDate = DateTime.UtcNow;
 
                 var result = await _commentWriteRepository.AddAsync(commentMapp);
-                response.Id = result.Id;
+                response.Id = request.PostId;
                 response.Data = true;
                 response.Success = true;
                 response.Message = CommentMessages.CreatedSuccess;

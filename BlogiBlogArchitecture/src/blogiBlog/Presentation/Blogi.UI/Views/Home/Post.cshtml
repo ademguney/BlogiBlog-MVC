@@ -65,29 +65,27 @@
                                             </div>
                                             <div class="comment-form">
                                                 <h3 class="mb-15">Leave a Comment</h3>
-                                                <div class="product-rate d-inline-block mb-30"></div>
+                                             
                                                 <div class="row">
                                                     <div class="col-lg-9 col-md-12">
-                                                        <form class="form-contact comment_form mb-50" action="#" id="commentForm">
+                                                        <form class="form-contact comment_form mb-50" id="commentForm">
+
+                                                            <input type="hidden" name="PostId" value="@Model.Id" />
+
                                                             <div class="row">
                                                                 <div class="col-12">
                                                                     <div class="form-group">
-                                                                        <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9" placeholder="Write Comment"></textarea>
+                                                                        <textarea class="form-control w-100" name="Content" id="comment" cols="30" rows="9" placeholder="Write Comment" required></textarea>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-6">
                                                                     <div class="form-group">
-                                                                        <input class="form-control" name="name" id="name" type="text" placeholder="Name">
+                                                                        <input class="form-control" name="FullName" id="FullName" type="text" placeholder="Name Surname" required>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-6">
                                                                     <div class="form-group">
-                                                                        <input class="form-control" name="email" id="email" type="email" placeholder="Email">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <input class="form-control" name="website" id="website" type="text" placeholder="Website">
+                                                                        <input class="form-control" name="Email" id="email" type="email" placeholder="Email" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -98,63 +96,27 @@
                                                         <div class="comments-area">
                                                             <h3 class="mb-30">Comments</h3>
                                                             <div class="comment-list">
-                                                                <div class="single-comment justify-content-between d-flex mb-30">
-                                                                    <div class="user justify-content-between d-flex">
-                                                                        <div class="thumb text-center">
-                                                                            <img src="assets/imgs/blog/author-2.png" alt="">
-                                                                            <a href="#" class="font-heading text-brand">Sienna</a>
-                                                                        </div>
-                                                                        <div class="desc">
-                                                                            <div class="d-flex justify-content-between mb-10">
-                                                                                <div class="d-flex align-items-center">
-                                                                                    <span class="font-xs text-muted">December 4, 2021 at 3:12 pm </span>
-                                                                                </div>
-                                                                                <div class="product-rate d-inline-block">
-                                                                                    <div class="product-rating" style="width: 80%"></div>
-                                                                                </div>
+                                                                @foreach (var comment in Model.Comments)
+                                                                {
+                                                                    <div class="single-comment justify-content-between d-flex mb-30">
+                                                                        <div class="user justify-content-between d-flex">
+                                                                            <div class="thumb text-center">
+                                                                                <img src="assets/imgs/blog/author-2.png" alt="">
+                                                                                <a href="#" class="font-heading text-brand">@comment.FullName</a>
                                                                             </div>
-                                                                            <p class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, suscipit exercitationem accusantium obcaecati quos voluptate nesciunt facilis itaque modi commodi dignissimos sequi repudiandae minus ab deleniti totam officia id incidunt? <a href="#" class="reply">Reply</a></p>
+                                                                            <div class="desc">
+                                                                                <div class="d-flex justify-content-between mb-10">
+                                                                                    <div class="d-flex align-items-center">
+                                                                                        <span class="font-xs text-muted">@comment.CreationDate </span>
+                                                                                    </div>
+                                                                                  
+                                                                                </div>
+                                                                                <p class="mb-10">@comment.Content <a href="#" class="reply">Reply</a></p>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                                <div class="single-comment justify-content-between d-flex mb-30 ml-30">
-                                                                    <div class="user justify-content-between d-flex">
-                                                                        <div class="thumb text-center">
-                                                                            <img src="assets/imgs/blog/author-3.png" alt="">
-                                                                            <a href="#" class="font-heading text-brand">Brenna</a>
-                                                                        </div>
-                                                                        <div class="desc">
-                                                                            <div class="d-flex justify-content-between mb-10">
-                                                                                <div class="d-flex align-items-center">
-                                                                                    <span class="font-xs text-muted">December 4, 2021 at 3:12 pm </span>
-                                                                                </div>
-                                                                                <div class="product-rate d-inline-block">
-                                                                                    <div class="product-rating" style="width: 80%"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <p class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, suscipit exercitationem accusantium obcaecati quos voluptate nesciunt facilis itaque modi commodi dignissimos sequi repudiandae minus ab deleniti totam officia id incidunt? <a href="#" class="reply">Reply</a></p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="single-comment justify-content-between d-flex">
-                                                                    <div class="user justify-content-between d-flex">
-                                                                        <div class="thumb text-center">
-                                                                            <img src="assets/imgs/blog/author-4.png" alt="">
-                                                                            <a href="#" class="font-heading text-brand">Gemma</a>
-                                                                        </div>
-                                                                        <div class="desc">
-                                                                            <div class="d-flex justify-content-between mb-10">
-                                                                                <div class="d-flex align-items-center">
-                                                                                    <span class="font-xs text-muted">December 4, 2021 at 3:12 pm </span>
-                                                                                </div>
-                                                                                <div class="product-rate d-inline-block">
-                                                                                    <div class="product-rating" style="width: 80%"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <p class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, suscipit exercitationem accusantium obcaecati quos voluptate nesciunt facilis itaque modi commodi dignissimos sequi repudiandae minus ab deleniti totam officia id incidunt? <a href="#" class="reply">Reply</a></p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                                }
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -172,3 +134,29 @@
         </div>
     </div>
 </main>
+
+<script>
+
+    const form = document.getElementById('commentForm');
+
+     form.addEventListener('submit',function(e){
+        e.preventDefault();
+
+       const payload= new FormData(form);
+
+      fetch('/home/Comment',{
+              method: "POST",
+              body:payload
+      })
+      .then(res=>res.json())
+      .then(response=>{
+          toastr["info"](response.data.message)
+      })
+      .catch(err=>console.log(err))
+
+     location.reload();
+     })
+
+
+
+</script>

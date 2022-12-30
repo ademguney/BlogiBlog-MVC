@@ -220,7 +220,6 @@ namespace Blogi.Persistence.Migrations
                     Slug = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     Image = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
                     ImageAlt = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    DisplayCount = table.Column<int>(type: "int", nullable: false),
                     MetaKeywords = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     MetaDescription = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     IsPublished = table.Column<bool>(type: "bit", nullable: false),
@@ -264,8 +263,7 @@ namespace Blogi.Persistence.Migrations
                     Email = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsPublish = table.Column<bool>(type: "bit", nullable: false),
-                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PostsId = table.Column<int>(type: "int", nullable: true)
+                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -276,11 +274,6 @@ namespace Blogi.Persistence.Migrations
                         principalTable: "Posts",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Comments_Posts_PostsId",
-                        column: x => x.PostsId,
-                        principalTable: "Posts",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -321,12 +314,12 @@ namespace Blogi.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "MailConfigs",
                 columns: new[] { "Id", "Email", "FullName", "Host", "Password", "Port", "SslEnabled", "UseDefaultCredentials" },
-                values: new object[] { 1, "blogi@blog.com", "BlogiBlog", "smtp.gmail.com", "x4Bv5taY+v4UUtPqaOt56StJ+XfYx52OE7voN3H7ByBVe8kvdyoTNj1113AQgre2", 587, false, false });
+                values: new object[] { 1, "blogi@blog.com", "BlogiBlog", "smtp.gmail.com", "sSFUaY25ArFeHs6ttu+RFCh37T0pXL8OzuGyrpLFhUrEzcttjL+EL+K/5F/+CaG0", 587, false, false });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Email", "Name", "Password", "Photo", "Surname" },
-                values: new object[] { 1, "blogi@blog.com", "BLOGI", "jUmK8bJpansi0tu9lJS/DYFdqvAcwoD6HSk2P22T6LqObXG8oJ7YlV81OYrTy/mh", null, "BLOG" });
+                values: new object[] { 1, "blogi@blog.com", "BLOGI", "c3G8C3H2/hjcWX3MkWEyS0oENDxON2dLAqCC46P5c4hybW7HP1W8WU/qxkxQqPWe", null, "BLOG" });
 
             migrationBuilder.InsertData(
                 table: "WebSettings",
@@ -382,14 +375,14 @@ namespace Blogi.Persistence.Migrations
                 columns: new[] { "Id", "LanguageId", "Name", "Slug" },
                 values: new object[,]
                 {
-                    { 1, 2, "Csharp", "c-sharp" },
+                    { 1, 1, "Csharp", "c-sharp" },
                     { 2, 2, "Csharp", "c-sharp" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Posts",
-                columns: new[] { "Id", "CategoryId", "Content", "CreatedById", "CreationDate", "DisplayCount", "Image", "ImageAlt", "IsPublished", "LanguageId", "MetaDescription", "MetaKeywords", "Slug", "Title", "UpdatedById", "UpdationDate", "UserId" },
-                values: new object[] { 1, 1, "Blogi blog an open source project.", 1, new DateTime(2022, 12, 11, 9, 31, 46, 956, DateTimeKind.Utc).AddTicks(6537), 0, null, "blogiBlog", true, 1, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "test-content", "Multi Language Blogi Blog", null, null, 1 });
+                columns: new[] { "Id", "CategoryId", "Content", "CreatedById", "CreationDate", "Image", "ImageAlt", "IsPublished", "LanguageId", "MetaDescription", "MetaKeywords", "Slug", "Title", "UpdatedById", "UpdationDate", "UserId" },
+                values: new object[] { 1, 1, "Blogi blog an open source project.", 1, new DateTime(2022, 12, 30, 12, 11, 58, 864, DateTimeKind.Utc).AddTicks(7301), null, "blogiBlog", true, 1, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "test-content", "Multi Language Blogi Blog", null, null, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Abouts_LanguageId",
@@ -405,11 +398,6 @@ namespace Blogi.Persistence.Migrations
                 name: "IX_Comments_PostId",
                 table: "Comments",
                 column: "PostId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Comments_PostsId",
-                table: "Comments",
-                column: "PostsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Contacts_LanguageId",

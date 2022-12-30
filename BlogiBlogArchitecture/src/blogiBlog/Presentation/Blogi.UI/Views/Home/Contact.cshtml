@@ -79,7 +79,9 @@
              body:payload
      })
      .then(res=>res.json())
-     .then(data=>console.log(data))
+    .then(response=>{
+              toastr["info"](response.data)
+          })
      .catch(err=>console.log(err))
      document.getElementById("contact-form").reset();
     })

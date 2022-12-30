@@ -1,4 +1,6 @@
-﻿namespace Blogi.Application.Features.Posts.Dtos.GetBlogPost
+﻿using Blogi.Application.Features.Comment.Dtos.GetBlogComment;
+
+namespace Blogi.Application.Features.Posts.Dtos.GetBlogPost
 {
     public class GetBlogPostOutput
     {
@@ -17,5 +19,6 @@
         public string MetaDescription { get; set; }       
         public string CreationDate { get; set; }
         public Dictionary<int,string> Tags { get; set; }
+        public List<GetBlogCommentOutput> Comments { get; set; }
     }
 }
