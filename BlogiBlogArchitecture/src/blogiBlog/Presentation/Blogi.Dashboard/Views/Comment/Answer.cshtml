@@ -1,4 +1,4 @@
-﻿@model Blogi.Application.Features.Comment.Dtos.Get.GetCommentOutput
+﻿@model Blogi.Application.Features.Comments.Dtos.Get.GetCommentOutput
 @{
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -10,17 +10,17 @@
             <div class="row">
                 <div class="col-md-6 col-lg-6">
                     <h4 class="xp-page-title">
-                        <a asp-controller="Dashboard" asp-action="Home" style="color: #8A98AC"><i class="icon-home"></i> @Localize("bread_crumb_home")</a>
+                        <a asp-controller="Dashboard" asp-action="Home" style="color: #8A98AC"><i class="icon-home"></i> @Localize("page_default_label_home")</a>
                     </h4>
                 </div>
                 <div class="col-md-6 col-lg-6">
                     <div class="xp-breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a asp-controller="Comment" asp-action="Home"><i class="icon-home"></i></a>
+                                <a asp-controller="Post" asp-action="Home"><i class="icon-home"></i></a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                <a asp-controller="Comment" asp-action="Home">@Localize("page_comment_label_back_to_list")</a>
+                                <a asp-controller="Post" asp-action="Home">@Localize("page_default_back_to_list")</a>
                             </li>
                         </ol>
                     </div>
@@ -30,7 +30,6 @@
     </div>
 </div>
 <br />
-
 
 <div class="row">
     <div class="col-lg-12">
@@ -44,39 +43,48 @@
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Category</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" asp-for="CategoryName">
-                            <span class="text-danger" asp-validation-for="CategoryName"></span>
+                            <input type="text" class="form-control" asp-for="CategoryName" disabled>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Post Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" asp-for="PostName">
-                            <span class="text-danger" asp-validation-for="PostName"></span>
+                            <input type="text" class="form-control" asp-for="PostName" disabled>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Sender Name Surname</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" asp-for="FullName" required>
-                            <span class="text-danger" asp-validation-for="FullName"></span>
+                            <input type="text" class="form-control" asp-for="FullName" disabled>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label">Sender Email</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" asp-for="Email" required>
-                            <span class="text-danger" asp-validation-for="Email"></span>
+                            <input type="text" class="form-control" asp-for="Email" disabled>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-4 col-form-label">IsPublish</label>
+                        <label class="col-sm-4 col-form-label">Comment Date</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" asp-for="IsPublish" required>
-                            <span class="text-danger" asp-validation-for="IsPublish"></span>
+                            <input type="text" class="form-control" asp-for="CreationDate" disabled>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success btn-rounded btn-lg btn-block"> Create<i class="mdi mdi-plus ml-2"></i></button>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Comment</label>
+                        <div class="col-sm-8">
+                            <textarea type="text" class="form-control" asp-for="Comment" disabled> </textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" asp-for="IsPublish">
+                        <label class="form-check-label" asp-for="IsPublish">
+                            @Localize("page_post_label_is_published")
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-block btn-warning"> @Localize("page_default_button_update")<i class="mdi mdi-plus ml-2"></i></button>
                 </form>
             </div>
         </div>

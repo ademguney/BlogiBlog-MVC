@@ -1,6 +1,6 @@
 ﻿using Blogi.Application.Features.Abouts.Queries.Get;
 using Blogi.Application.Features.Categories.Queries.GetListBlogCategory;
-using Blogi.Application.Features.Comment.Commands.CommentCreate;
+using Blogi.Application.Features.Comments.Commands.Create;
 using Blogi.Application.Features.Contacts.Queries.Get;
 using Blogi.Application.Features.MailSends.Commands.ContactMailSend;
 using Blogi.Application.Features.Posts.Queries.GetBlogPost;

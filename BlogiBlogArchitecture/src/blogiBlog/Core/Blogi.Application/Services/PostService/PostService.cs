@@ -1,4 +1,4 @@
-﻿using Blogi.Application.Features.Comment.Dtos.GetBlogComment;
+﻿using Blogi.Application.Features.Comments.Dtos.GetBlogComment;
 using Blogi.Application.Features.Posts.Dtos.GetBlogPost;
 using Blogi.Application.Features.Posts.Dtos.GetList;
 using Blogi.Application.Features.Posts.Dtos.GetListBlogPost;

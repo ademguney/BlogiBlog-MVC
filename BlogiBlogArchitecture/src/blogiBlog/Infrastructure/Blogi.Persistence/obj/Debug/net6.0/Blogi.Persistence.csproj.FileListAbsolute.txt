@@ -21,11 +21,6 @@ C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog
 C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\ref\Blogi.Persistence.dll
 C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\Blogi.Persistence.pdb
 C:\Users\ademg\Desktop\MyRepos\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\Blogi.Persistence.genruntimeconfig.cache
-C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\Blogi.Persistence.csproj.AssemblyReference.cache
-C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\Blogi.Persistence.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\Blogi.Persistence.AssemblyInfoInputs.cache
-C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\Blogi.Persistence.AssemblyInfo.cs
-C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\Blogi.Persistence.csproj.CoreCompileInputs.cache
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\bin\Debug\net6.0\Blogi.Persistence.deps.json
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\bin\Debug\net6.0\Blogi.Persistence.runtimeconfig.json
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\bin\Debug\net6.0\Blogi.Persistence.dll
@@ -41,6 +36,11 @@ C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\bin\Debug\net6.0\Core.Application.pdb
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\bin\Debug\net6.0\Core.Infrastructure.pdb
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\bin\Debug\net6.0\Core.Persistence.pdb
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\Blogi.Persistence.csproj.AssemblyReference.cache
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\Blogi.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\Blogi.Persistence.AssemblyInfoInputs.cache
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\Blogi.Persistence.AssemblyInfo.cs
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\Blogi.Persistence.csproj.CoreCompileInputs.cache
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\Blogi.Persistence.csproj.CopyComplete
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\Blogi.Persistence.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Persistence\obj\Debug\net6.0\ref\Blogi.Persistence.dll

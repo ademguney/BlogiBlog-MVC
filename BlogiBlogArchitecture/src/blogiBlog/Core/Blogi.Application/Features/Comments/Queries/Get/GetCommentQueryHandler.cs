@@ -1,6 +1,6 @@
-﻿using Blogi.Application.Features.Comment.Dtos.Get;
+﻿using Blogi.Application.Features.Comments.Dtos.Get;
 
-namespace Blogi.Application.Features.Comment.Queries.Get
+namespace Blogi.Application.Features.Comments.Queries.Get
 {
     public class GetCommentQueryHandler : IRequestHandler<GetCommentQuery, BaseCommandResponse<GetCommentOutput>>
     {
@@ -16,7 +16,7 @@ namespace Blogi.Application.Features.Comment.Queries.Get
             var response = new BaseCommandResponse<GetCommentOutput>();
             var result = await _commentService.GetAsync(request.Id);
 
-           
+
             response.Data = result;
             response.Success = true;
             response.Message = TagMessages.GetListExists;

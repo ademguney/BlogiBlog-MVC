@@ -1,5 +1,7 @@
-﻿using Blogi.Application.Features.Comment.Queries.Get;
-using Blogi.Application.Features.Comment.Queries.GetList;
+﻿
+using Blogi.Application.Features.Comments.Commands.Delete;
+using Blogi.Application.Features.Comments.Queries.Get;
+using Blogi.Application.Features.Comments.Queries.GetList;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,6 +24,13 @@ namespace Blogi.Dashboard.Controllers
 
         }
 
+        [HttpPost]
+        public async Task<JsonResult> Delete(DeleteCommentCommand input)
+        {
+            var result = await Mediator.Send(input);
+            return Json(new { data = result });
+
+        }
 
         [HttpGet]
         public async Task<JsonResult> DataTable()

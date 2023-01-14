@@ -1,6 +1,6 @@
-﻿using Blogi.Application.Features.Comment.Dtos.Get;
+﻿using Blogi.Application.Features.Comments.Dtos.Get;
 
-namespace Blogi.Application.Features.Comment.Queries.Get
+namespace Blogi.Application.Features.Comments.Queries.Get
 {
     public class GetCommentQuery : IRequest<BaseCommandResponse<GetCommentOutput>>
     {

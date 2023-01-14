@@ -1,5 +1,5 @@
-﻿using Blogi.Application.Features.Comment.Dtos.Get;
-using Blogi.Application.Features.Comment.Dtos.GetList;
+﻿using Blogi.Application.Features.Comments.Dtos.Get;
+using Blogi.Application.Features.Comments.Dtos.GetList;
 
 namespace Blogi.Application.Services.CommentService
 {
@@ -14,14 +14,15 @@ namespace Blogi.Application.Services.CommentService
 
         public async Task<GetCommentOutput> GetAsync(int id)
         {
-            var test= _commentReadRepository.GetAll(x=>x.Id == id).Include(x => x.Posts).FirstOrDefault();
-            return await _commentReadRepository.GetAll(x => x.Id == id).Include(x => x.Posts).Select(x => new GetCommentOutput
+            return await _commentReadRepository.GetAll(x => x.Id == id).Include(x => x.Posts).Include(x => x.Posts.Categories).Select(x => new GetCommentOutput
             {
                 Id = x.Id,
+                ParentId=x.ParentId.Value,
                 CategoryName = x.Posts.Categories.Name,
                 PostName = x.Posts.Title,
                 FullName = x.FullName,
                 Email = x.Email,
+                Comment=x.Content,
                 IsPublish = x.IsPublish,
                 CreationDate = x.CreationDate.ToShortDateString()
 

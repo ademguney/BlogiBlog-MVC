@@ -14,6 +14,7 @@ C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibrar
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\bin\Debug\net6.0\Core.Infrastructure.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\bin\Debug\net6.0\ref\Core.Infrastructure.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\bin\Debug\net6.0\Core.Infrastructure.pdb
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\Core.Infrastructure.csproj.AssemblyReference.cache
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\Core.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\Core.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Infrastructure\obj\Debug\net6.0\Core.Infrastructure.AssemblyInfo.cs

@@ -13,6 +13,7 @@ C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibrar
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Application\bin\Debug\net6.0\Core.Application.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Application\bin\Debug\net6.0\ref\Core.Application.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Application\bin\Debug\net6.0\Core.Application.pdb
+C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Application\obj\Debug\net6.0\Core.Application.csproj.AssemblyReference.cache
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Application\obj\Debug\net6.0\Core.Application.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Application\obj\Debug\net6.0\Core.Application.AssemblyInfoInputs.cache
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Application\obj\Debug\net6.0\Core.Application.AssemblyInfo.cs

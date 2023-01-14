@@ -16,18 +16,18 @@ builder.Services.AddLocalization();
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation().AddViewLocalization();
 
 //Localization
-//var languageService = lang.BuildServiceProvider().GetService<ILanguageService>();
-//var languages = languageService.GetListAsync().Result;
-//var cultures = languages.Select(x => new CultureInfo(x.Culture)).ToArray();
+var languageService = lang.BuildServiceProvider().GetService<ILanguageService>();
+var languages = languageService.GetListAsync().Result;
+var cultures = languages.Select(x => new CultureInfo(x.Culture)).ToArray();
 
-//builder.Services.Configure<RequestLocalizationOptions>(options =>
-//{
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
 
-//    var engCulture = cultures.FirstOrDefault(x => x.Name == "en-US");
-//    options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture(engCulture.Name ?? "en-US");
-//    options.SupportedCultures = cultures;
-//    options.SupportedUICultures = cultures;
-//});
+    var engCulture = cultures.FirstOrDefault(x => x.Name == "en-US");
+    options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture(engCulture.Name ?? "en-US");
+    options.SupportedCultures = cultures;
+    options.SupportedUICultures = cultures;
+});
 
 
 

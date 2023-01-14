@@ -1,4 +1,4 @@
-﻿namespace Blogi.Application.Features.Comment.Commands.CommentCreate
+﻿namespace Blogi.Application.Features.Comments.Commands.Create
 {
     public class CreateCommentCommand : IRequest<BaseCommandResponse<bool>>
     {

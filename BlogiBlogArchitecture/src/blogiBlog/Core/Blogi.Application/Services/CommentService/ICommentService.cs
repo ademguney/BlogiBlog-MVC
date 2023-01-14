@@ -1,5 +1,5 @@
-﻿using Blogi.Application.Features.Comment.Dtos.Get;
-using Blogi.Application.Features.Comment.Dtos.GetList;
+﻿using Blogi.Application.Features.Comments.Dtos.Get;
+using Blogi.Application.Features.Comments.Dtos.GetList;
 
 namespace Blogi.Application.Services.CommentService
 {
