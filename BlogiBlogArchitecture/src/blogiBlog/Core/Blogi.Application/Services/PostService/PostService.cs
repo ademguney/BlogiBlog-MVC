@@ -53,7 +53,7 @@ namespace Blogi.Application.Services.PostService
                    MetaDescription = x.MetaDescription,
                    MetaKeywords = x.MetaKeywords,
                    Tags = tagList,
-                   Comments = x.Comments.Where(c => c.IsPublish == false).Select(c => new GetBlogCommentOutput
+                   Comments = x.Comments.Where(c => c.IsPublish == true).Select(c => new GetBlogCommentOutput
                    {
                        Id = c.Id,
                        ParentId = c.ParentId,
@@ -69,7 +69,7 @@ namespace Blogi.Application.Services.PostService
 
         public async Task<List<GetListPostOutput>> GetListAsync()
         {
-            var query = _postReadRepository.GetAll(x => x.IsPublished)
+            var query = _postReadRepository.GetAll()
                                            .Include(x => x.Categories)
                                            .Include(x => x.Languages);
             return await query.Select(x => new GetListPostOutput
@@ -87,7 +87,7 @@ namespace Blogi.Application.Services.PostService
         public async Task<List<GetListBlogPostOutput>> GetListBlogPostAsync(string culture, string searchText)
         {
             var query = _postReadRepository
-                .GetAll(x => x.Languages.Culture.Trim().ToLower() == culture.Trim().ToLower())
+                .GetAll(x => x.Languages.Culture.Trim().ToLower() == culture.Trim().ToLower() && x.IsPublished)
                 .Include(x => x.Languages)
                 .Include(x => x.Users)
                 .Include(x => x.Categories)

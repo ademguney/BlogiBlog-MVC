@@ -14,11 +14,11 @@
         <div class="col-lg-12">
             <div class="card m-b-30">
                 <div class="card-header bg-default" style="color:black">
-                    <i class='fa fa-fa-setting'></i> Meta Configuration
+                    <i class='fa fa-fa-setting'></i> @Localize("page_web_setting_label_meta_configuration")
                 </div>
                 <div class="card-body">
                     <div class="form-group row">
-                        <label class="col-sm-4 col-form-label">WebSiteUrl</label>
+                        <label class="col-sm-4 col-form-label">Web Site Url</label>
                         <div class="col-sm-8">
                             <input asp-for="WebSiteUrl" type="text" class="form-control" required>
                             <span class="text-danger" asp-validation-for="WebSiteUrl"></span>
@@ -32,28 +32,28 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-4 col-form-label">Title</label>
+                        <label class="col-sm-4 col-form-label">@Localize("page_web_setting_label_title")</label>
                         <div class="col-sm-8">
                             <input asp-for="Title" type="text" class="form-control" required>
                             <span class="text-danger" asp-validation-for="Title"></span>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-4 col-form-label">Author</label>
+                        <label class="col-sm-4 col-form-label">@Localize("page_web_setting_label_author")</label>
                         <div class="col-sm-8">
                             <input asp-for="Author" type="text" class="form-control" required>
                             <span class="text-danger" asp-validation-for="Author"></span>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-4 col-form-label">MetaDescription</label>
+                        <label class="col-sm-4 col-form-label">@Localize("page_web_setting_label_meta_description")</label>
                         <div class="col-sm-8">
                             <input asp-for="MetaDescription" type="text" class="form-control" required>
                             <span class="text-danger" asp-validation-for="MetaDescription"></span>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-4 col-form-label">MetaKeywords</label>
+                        <label class="col-sm-4 col-form-label">@Localize("page_web_setting_label_meta_keywords")</label>
                         <div class="col-sm-8">
                             <input asp-for="MetaKeywords" type="text" class="form-control" required>
                             <span class="text-danger" asp-validation-for="MetaKeywords"></span>
@@ -66,77 +66,77 @@
         <div class="col-lg-12">
             <div class="card m-b-30">
                 <div class="card-header bg-default" style="color:black">
-                    <i class='fa fa-fa-setting'></i> Social Site Links
+                    <i class='fa fa-fa-setting'></i> @Localize("page_web_setting_label_social_site_link")
                 </div>
                 <div class="card-body">
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">FacebookUrl</label>
+                        <label class="col-sm-3 col-form-label">Facebook Url</label>
                         <div class="col-sm-6">
                             <input asp-for="FacebookUrl" type="text" class="form-control">
                             <span class="text-danger" asp-validation-for="FacebookUrl"></span>
                         </div>
                         <div class="col-sm-3">
-                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayFacebbokUrl">Show Facebook
+                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayFacebbokUrl"> @Localize("page_web_setting_label_show_facebook")
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">TwitterUrl</label>
+                        <label class="col-sm-3 col-form-label">Twitter Url</label>
                         <div class="col-sm-6">
                             <input asp-for="TwitterUrl" type="text" class="form-control">
                             <span class="text-danger" asp-validation-for="TwitterUrl"></span>
                         </div>
                         <div class="col-sm-3">
-                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayTwitterUrl">Show Twitter
+                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayTwitterUrl"> @Localize("page_web_setting_label_show_twitter")
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">InstagramUrl</label>
+                        <label class="col-sm-3 col-form-label">Instagram Url</label>
                         <div class="col-sm-6">
                             <input asp-for="InstagramUrl" type="text" class="form-control">
                             <span class="text-danger" asp-validation-for="InstagramUrl"></span>
                         </div>
                         <div class="col-sm-3">
-                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayInstagramUrl">Show Instagram
+                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayInstagramUrl"> @Localize("page_web_setting_label_show_instagram")
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">YouTubeUrl</label>
+                        <label class="col-sm-3 col-form-label">YouTube Url</label>
                         <div class="col-sm-6">
                             <input asp-for="YouTubeUrl" type="text" class="form-control">
                             <span class="text-danger" asp-validation-for="YouTubeUrl"></span>
                         </div>
                         <div class="col-sm-3">
-                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayYouTubeUrl">Show Youtube
+                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayYouTubeUrl"> @Localize("page_web_setting_label_show_youtube")
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">MediumUrl</label>
+                        <label class="col-sm-3 col-form-label">Medium Url</label>
                         <div class="col-sm-6">
                             <input asp-for="MediumUrl" type="text" class="form-control">
                             <span class="text-danger" asp-validation-for="MediumUrl"></span>
                         </div>
                         <div class="col-sm-3">
-                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayMediumUrl">Show Medium
+                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayMediumUrl"> @Localize("page_web_setting_label_show_medium")
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">GithubUrl</label>
+                        <label class="col-sm-3 col-form-label">Github Url</label>
                         <div class="col-sm-6">
                             <input asp-for="GithubUrl" type="text" class="form-control">
                             <span class="text-danger" asp-validation-for="GithubUrl"></span>
                         </div>
                         <div class="col-sm-3">
-                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayGithubUrl">Show Github
+                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayGithubUrl"> @Localize("page_web_setting_label_show_github")
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">LinkedinUrl</label>
+                        <label class="col-sm-3 col-form-label">Linkedin Url</label>
                         <div class="col-sm-6">
                             <input asp-for="LinkedinUrl" type="text" class="form-control">
                             <span class="text-danger" asp-validation-for="LinkedinUrl"></span>
                         </div>
                         <div class="col-sm-3">
-                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayLinkedinUrl">Show Linkedin
+                            <input class="form-check-input" type="checkbox" asp-for="IsDisplayLinkedinUrl"> @Localize("page_web_setting_label_show_linkedin")
                         </div>
                     </div>
                     <div class="form-group row">

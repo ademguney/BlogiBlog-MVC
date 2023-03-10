@@ -22,3 +22,15 @@ C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibrar
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Persistence\obj\Debug\net6.0\Core.Persistence.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Persistence\obj\Debug\net6.0\ref\Core.Persistence.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Persistence\obj\Debug\net6.0\Core.Persistence.pdb
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Persistence\bin\Debug\net6.0\Core.Persistence.deps.json
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Persistence\bin\Debug\net6.0\Core.Persistence.dll
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Persistence\bin\Debug\net6.0\Core.Persistence.pdb
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Persistence\obj\Debug\net6.0\Core.Persistence.csproj.AssemblyReference.cache
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Persistence\obj\Debug\net6.0\Core.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Persistence\obj\Debug\net6.0\Core.Persistence.AssemblyInfoInputs.cache
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Persistence\obj\Debug\net6.0\Core.Persistence.AssemblyInfo.cs
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Persistence\obj\Debug\net6.0\Core.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Persistence\obj\Debug\net6.0\Core.Persistence.dll
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Persistence\obj\Debug\net6.0\refint\Core.Persistence.dll
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Persistence\obj\Debug\net6.0\Core.Persistence.pdb
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\coreLibraries\Core.Persistence\obj\Debug\net6.0\ref\Core.Persistence.dll

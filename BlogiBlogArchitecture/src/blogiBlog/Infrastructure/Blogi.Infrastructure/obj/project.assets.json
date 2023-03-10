@@ -8,10 +8,14 @@
           "MimeKit": "3.4.2"
         },
         "compile": {
-          "lib/net6.0/MailKit.dll": {}
+          "lib/net6.0/MailKit.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/MailKit.dll": {}
+          "lib/net6.0/MailKit.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "MimeKit/3.4.2": {
@@ -21,28 +25,40 @@
           "System.Security.Cryptography.Pkcs": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/MimeKit.dll": {}
+          "lib/net6.0/MimeKit.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/MimeKit.dll": {}
+          "lib/net6.0/MimeKit.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Portable.BouncyCastle/1.9.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Formats.Asn1/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/System.Formats.Asn1.dll": {}
+          "lib/net6.0/System.Formats.Asn1.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Formats.Asn1.dll": {}
+          "lib/net6.0/System.Formats.Asn1.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -54,10 +70,14 @@
           "System.Formats.Asn1": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/System.Security.Cryptography.Pkcs.dll": {}
+          "lib/net6.0/System.Security.Cryptography.Pkcs.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net6.0/System.Security.Cryptography.Pkcs.dll": {}
+          "lib/net6.0/System.Security.Cryptography.Pkcs.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -215,19 +235,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ademg\\.nuget\\packages\\": {}
+    "C:\\Users\\adem.guney\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Infrastructure\\Blogi.Infrastructure\\Blogi.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\adem.guney\\Desktop\\OldDesktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Infrastructure\\Blogi.Infrastructure\\Blogi.Infrastructure.csproj",
       "projectName": "Blogi.Infrastructure",
-      "projectPath": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Infrastructure\\Blogi.Infrastructure\\Blogi.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\ademg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ademg\\Desktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Infrastructure\\Blogi.Infrastructure\\obj\\",
+      "projectPath": "C:\\Users\\adem.guney\\Desktop\\OldDesktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Infrastructure\\Blogi.Infrastructure\\Blogi.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\adem.guney\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\adem.guney\\Desktop\\OldDesktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Infrastructure\\Blogi.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ademg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\adem.guney\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -235,8 +260,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://pkgs.dev.azure.com/ZerDevOps/promena_solutions/_packaging/Zer.Framework/nuget/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
@@ -269,7 +293,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -278,7 +303,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

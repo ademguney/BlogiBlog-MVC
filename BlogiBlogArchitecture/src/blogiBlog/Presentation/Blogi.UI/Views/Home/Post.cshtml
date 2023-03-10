@@ -1,161 +1,161 @@
 ﻿@model Blogi.Application.Features.Posts.Dtos.GetBlogPost.GetBlogPostOutput
 @{
-    ViewData["Title"] = @Model.Title;
-    ViewData["Description"] = @Model.MetaDescription;
-    ViewData["Keywords"] = @Model.MetaKeywords;
-    ViewData["Author"] = @Model.Author;
-    ViewData["WebSite"] = @Model.Slug;
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewData["Title"] = @Model.Title;
+	ViewData["Description"] = @Model.MetaDescription;
+	ViewData["Keywords"] = @Model.MetaKeywords;
+	ViewData["Author"] = @Model.Author;
+	ViewData["WebSite"] = @Model.Slug;
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <main class="main">
-    <div class="page-header breadcrumb-wrap">
-        <div class="container">
-            <div class="breadcrumb">
-                <a asp-controller="Home" asp-action="Index" rel="nofollow"><i class="fi-rs-home mr-5"></i>@Localize("blog_ui_navbar_home")</a>
-                <span></span> <a href="category/@Model.Slug-@Model.CategoryId">@Model.CategoryName</a> <span></span> @Model.Title
-            </div>
-        </div>
-    </div>
-    <div class="page-content mb-50">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-11 col-lg-12 m-auto">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="single-page pt-50 pr-30">
-                                <div class="single-header style-2">
-                                    <div class="row">
-                                        <div class="col-xl-10 col-lg-12 m-auto">
-                                            <h2 class="mb-10">@Model.Title</h2>
-                                            <div class="single-header-meta">
-                                                <div class="entry-meta meta-1 font-xs mt-15 mb-15">
-                                                    <a class="author-avatar" asp-controller="Home" asp-action="About">
-                                                        <img class="img-circle" src="@string.Format("data:image/gif;base64,{0}", @Model.AuthorPhoto)" alt="@Model.Author" style="border-radius: 50%;" />
-                                                    </a>
-                                                    <span class="post-by">By <a asp-controller="Home" asp-action="About">@Model.Author</a></span>
-                                                    <span class="post-on has-dot">@Model.CreationDate</span>
-                                                    <span class="time-reading has-dot">8 mins read</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figure class="single-thumbnail">
-                                    <img src="@string.Format("data:image/gif;base64,{0}", @Model.Image)" alt="@Model.ImageAlt" />
-                                </figure>
-                                <div class="single-content">
-                                    <div class="row">
-                                        <div class="col-xl-10 col-lg-12 m-auto">
-                                            @Html.Raw(Model.Content)
+	<div class="page-header breadcrumb-wrap">
+		<div class="container">
+			<div class="breadcrumb">
+				<a asp-controller="Home" asp-action="Index" rel="nofollow"><i class="fi-rs-home mr-5"></i>@Localize("blog_ui_navbar_home")</a>
+				<span></span> <a href="category/@Model.Slug-@Model.CategoryId">@Model.CategoryName</a> <span></span> @Model.Title
+			</div>
+		</div>
+	</div>
+	<div class="page-content mb-50">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-11 col-lg-12 m-auto">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="single-page pt-50 pr-30">
+								<div class="single-header style-2">
+									<div class="row">
+										<div class="col-xl-10 col-lg-12 m-auto">
+											<h2 class="mb-10">@Model.Title</h2>
+											<div class="single-header-meta">
+												<div class="entry-meta meta-1 font-xs mt-15 mb-15">
+													<a class="author-avatar" asp-controller="Home" asp-action="About">
+														<img class="img-circle" src="@string.Format("data:image/gif;base64,{0}", @Model.AuthorPhoto)" alt="@Model.Author" style="border-radius: 50%;" />
+													</a>
+													<span class="post-by">By <a asp-controller="Home" asp-action="About">@Model.Author</a></span>
+													<span class="post-on has-dot">@Model.CreationDate</span>
+													@* <span class="time-reading has-dot">8 mins read</span>*@
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<figure class="single-thumbnail">
+									<img src="@string.Format("data:image/gif;base64,{0}", @Model.Image)" alt="@Model.ImageAlt" />
+								</figure>
+								<div class="single-content">
+									<div class="row">
+										<div class="col-xl-10 col-lg-12 m-auto">
+											@Html.Raw(Model.Content)
 
-                                            <div class="entry-bottom mt-50 mb-30">
-                                                <div class="tags w-50 w-sm-100">
-                                                    @foreach (var tag in Model.Tags)
-                                                    {
-                                                        <a href="/tag/@tag.Value-@tag.Key" rel="tag" class="hover-up btn btn-sm btn-rounded mr-10">@tag.Value</a>
-                                                    }
+											<div class="entry-bottom mt-50 mb-30">
+												<div class="tags w-50 w-sm-100">
+													@foreach (var tag in Model.Tags)
+													{
+														<a href="/tag/@tag.Value-@tag.Key" rel="tag" class="hover-up btn btn-sm btn-rounded mr-10">@tag.Value</a>
+													}
 
-                                                </div>
-                                                <div class="social-icons single-share">
-                                                    <ul class="text-grey-5 d-inline-block">
-                                                        @await Component.InvokeAsync("SocialLinks")
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="comment-form">
-                                                <h3 class="mb-15">Leave a Comment</h3>
-                                             
-                                                <div class="row">
-                                                    <div class="col-lg-9 col-md-12">
-                                                        <form class="form-contact comment_form mb-50" id="commentForm">
+												</div>
+												<div class="social-icons single-share">
+													<ul class="text-grey-5 d-inline-block">
+														@await Component.InvokeAsync("SocialLinks")
+													</ul>
+												</div>
+											</div>
+											<div class="comment-form">
+												<h3 class="mb-15">@Localize("blog_ui_post_leave_comment")</h3>
 
-                                                            <input type="hidden" name="PostId" value="@Model.Id" />
+												<div class="row">
+													<div class="col-lg-9 col-md-12">
+														<form class="form-contact comment_form mb-50" id="commentForm">
 
-                                                            <div class="row">
-                                                                <div class="col-12">
-                                                                    <div class="form-group">
-                                                                        <textarea class="form-control w-100" name="Content" id="comment" cols="30" rows="9" placeholder="Write Comment" required></textarea>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <input class="form-control" name="FullName" id="FullName" type="text" placeholder="Name Surname" required>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <input class="form-control" name="Email" id="email" type="email" placeholder="Email" required>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <button type="submit" class="button button-contactForm">Post Comment</button>
-                                                            </div>
-                                                        </form>
-                                                        <div class="comments-area">
-                                                            <h3 class="mb-30">Comments</h3>
-                                                            <div class="comment-list">
-                                                                @foreach (var comment in Model.Comments)
-                                                                {
-                                                                    <div class="single-comment justify-content-between d-flex mb-30">
-                                                                        <div class="user justify-content-between d-flex">
-                                                                            <div class="thumb text-center">
-                                                                                <img src="assets/imgs/blog/author-2.png" alt="">
-                                                                                <a href="#" class="font-heading text-brand">@comment.FullName</a>
-                                                                            </div>
-                                                                            <div class="desc">
-                                                                                <div class="d-flex justify-content-between mb-10">
-                                                                                    <div class="d-flex align-items-center">
-                                                                                        <span class="font-xs text-muted">@comment.CreationDate </span>
-                                                                                    </div>
-                                                                                  
-                                                                                </div>
-                                                                                <p class="mb-10">@comment.Content <a href="#" class="reply">Reply</a></p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                }
+															<input type="hidden" name="PostId" value="@Model.Id" />
 
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+															<div class="row">
+																<div class="col-12">
+																	<div class="form-group">
+																		<textarea class="form-control w-100" name="Content" id="comment" cols="30" rows="9" placeholder="@Localize("blog_ui_post_write_comment")" required></textarea>
+																	</div>
+																</div>
+																<div class="col-sm-6">
+																	<div class="form-group">
+																		<input class="form-control" name="FullName" id="FullName" type="text" placeholder="@Localize("blog_ui_post_name_surname")" required>
+																	</div>
+																</div>
+																<div class="col-sm-6">
+																	<div class="form-group">
+																		<input class="form-control" name="Email" id="email" type="email" placeholder="@Localize("blog_ui_post_email")" required>
+																	</div>
+																</div>
+															</div>
+															<div class="form-group">
+																<button type="submit" class="button button-contactForm">@Localize("blog_ui_post_post_comment")</button>
+															</div>
+														</form>
+														<div class="comments-area">
+															<h3 class="mb-30">@Localize("blog_ui_post_comments")</h3>
+															<div class="comment-list">
+																@foreach (var comment in Model.Comments)
+																{
+																	<div class="single-comment justify-content-between d-flex mb-30">
+																		<div class="user justify-content-between d-flex">
+																			<div class="thumb text-center">
+																				<img src="assets/imgs/blog/author-2.png" alt="">
+																				<a href="#" class="font-heading text-brand">@comment.FullName</a>
+																			</div>
+																			<div class="desc">
+																				<div class="d-flex justify-content-between mb-10">
+																					<div class="d-flex align-items-center">
+																						<span class="font-xs text-muted">@comment.CreationDate </span>
+																					</div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+																				</div>
+																				<p class="mb-10">@comment.Content <a href="#" class="reply">Reply</a></p>
+																			</div>
+																		</div>
+																	</div>
+																}
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </main>
 
 <script>
 
-    const form = document.getElementById('commentForm');
+	const form = document.getElementById('commentForm');
 
-     form.addEventListener('submit',function(e){
-        e.preventDefault();
+	form.addEventListener('submit', function (e) {
+		e.preventDefault();
 
-       const payload= new FormData(form);
+		const payload = new FormData(form);
 
-      fetch('/home/Comment',{
-              method: "POST",
-              body:payload
-      })
-      .then(res=>res.json())
-      .then(response=>{
-          toastr["info"](response.data.message)
-      })
-      .catch(err=>console.log(err))
+		fetch('/home/Comment', {
+			method: "POST",
+			body: payload
+		})
+			.then(res => res.json())
+			.then(response => {
+				toastr["info"](response.data.message)
+			})
+			.catch(err => console.log(err))
 
-     location.reload();
-     })
+		location.reload();
+	})
 
 
 

@@ -21,3 +21,15 @@ C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\obj\Debug\net6.0\Blogi.Infrastructure.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\obj\Debug\net6.0\ref\Blogi.Infrastructure.dll
 C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\obj\Debug\net6.0\Blogi.Infrastructure.pdb
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\bin\Debug\net6.0\Blogi.Infrastructure.deps.json
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\bin\Debug\net6.0\Blogi.Infrastructure.dll
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\bin\Debug\net6.0\Blogi.Infrastructure.pdb
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\obj\Debug\net6.0\Blogi.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\obj\Debug\net6.0\Blogi.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\obj\Debug\net6.0\Blogi.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\obj\Debug\net6.0\Blogi.Infrastructure.AssemblyInfo.cs
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\obj\Debug\net6.0\Blogi.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\obj\Debug\net6.0\Blogi.Infrastructure.dll
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\obj\Debug\net6.0\refint\Blogi.Infrastructure.dll
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\obj\Debug\net6.0\Blogi.Infrastructure.pdb
+C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Infrastructure\Blogi.Infrastructure\obj\Debug\net6.0\ref\Blogi.Infrastructure.dll

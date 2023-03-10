@@ -5,164 +5,165 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Blogi.Dashboard
 build_property.RootNamespace = Blogi.Dashboard
-build_property.ProjectDir = C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\
+build_property.ProjectDir = C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\ademg\Desktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard
+build_property.MSBuildProjectDirectory = C:\Users\adem.guney\Desktop\OldDesktop\Github\BlogiBlog-MVC\BlogiBlogArchitecture\src\blogiBlog\Presentation\Blogi.Dashboard
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/About/Create.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/About/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/About/Edit.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/About/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/About/Home.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/About/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSG9tZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Account/ForgotPassword.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Account/Login.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Account/Profile.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Account/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Category/Create.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Category/Edit.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Category/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Category/Home.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Category/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSG9tZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Comment/Answer.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Comment/Answer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxBbnN3ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Comment/Home.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Comment/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Contact/Create.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Contact/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Contact/Edit.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Contact/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Contact/Home.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Contact/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Dashboard/Home.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Dashboard/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEhvbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Language/Create.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Language/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGFuZ3VhZ2VcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Language/Edit.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Language/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGFuZ3VhZ2VcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Language/Home.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Language/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGFuZ3VhZ2VcSG9tZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/MailSetting/Home.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/MailSetting/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpbFNldHRpbmdcSG9tZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Post/Create.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Post/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Post/Edit.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Post/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Post/Home.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Post/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Shared/_AdminLayout.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Shared/_breadCrumb.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Shared/_breadCrumb.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9icmVhZENydW1iLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Shared/_footer.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Shared/_footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9mb290ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Shared/_leftSideBar.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Shared/_leftSideBar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9sZWZ0U2lkZUJhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Shared/_Login.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Shared/_Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Shared/_notificationPartial.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Shared/_notificationPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9ub3RpZmljYXRpb25QYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Shared/_topBar.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Shared/_topBar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF90b3BCYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/StringResource/Create.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/StringResource/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RyaW5nUmVzb3VyY2VcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/StringResource/Edit.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/StringResource/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RyaW5nUmVzb3VyY2VcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/StringResource/Home.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/StringResource/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RyaW5nUmVzb3VyY2VcSG9tZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Tag/Create.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Tag/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Tag/Edit.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Tag/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Tag/Home.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/Tag/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnXEhvbWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/WebSetting/Home.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/WebSetting/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2ViU2V0dGluZ1xIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/_ViewImports.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ademg/Desktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/_ViewStart.cshtml]
+[C:/Users/adem.guney/Desktop/OldDesktop/Github/BlogiBlog-MVC/BlogiBlogArchitecture/src/blogiBlog/Presentation/Blogi.Dashboard/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
