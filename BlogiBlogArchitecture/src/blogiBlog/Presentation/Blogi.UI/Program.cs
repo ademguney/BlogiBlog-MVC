@@ -8,24 +8,23 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddApplicationServices();
-var lang = builder.Services.AddPersistenceServices(builder.Configuration);
+builder.Services.AddPersistenceServices(builder.Configuration);
 builder.Services.AddLocalization();
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation().AddViewLocalization();
 
 // Localization
-var languageService = lang.BuildServiceProvider().GetService<ILanguageService>();
-var languages = languageService.GetListAsync().Result;
-var cultures = languages.Select(x => new CultureInfo(x.Culture)).ToArray();
-
 builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
+	var serviceProvider = builder.Services.BuildServiceProvider();
+	var languageService = serviceProvider.GetRequiredService<ILanguageService>();
+	var languages = languageService.GetListAsync().Result;
+	var cultures = languages.Select(x => new CultureInfo(x.Culture)).ToArray();
 
-    var engCulture = cultures.FirstOrDefault(x => x.Name == "en-US");
+	var engCulture = cultures.FirstOrDefault(x => x.Name == "en-US");
     options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture(engCulture.Name ?? "en-US");
     options.SupportedCultures = cultures;
     options.SupportedUICultures = cultures;
 });
-
 
 var app = builder.Build();
 

@@ -1,5 +1,4 @@
 ﻿using Blogi.Application.Features.Categories.Dtos.Get;
-using Blogi.Application.Services.CategoryService;
 
 namespace Blogi.Application.Features.Categories.Queries.Get
 {

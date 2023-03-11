@@ -8,6 +8,7 @@
     ViewData["WebSite"] = @Model.WebSettings.WebSiteUrl;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div class="shop-product-fillter mb-50 pr-30">
     <div class="totall-product">
         <h2>
@@ -25,20 +26,26 @@
             <article class="col-xl-4 col-lg-6 col-md-6 text-center hover-up mb-30 animated">
                 <div class="post-thumb">
                     <a href="@item.Slug-@item.Id">
-                        <img class="border-radius-15" src="@string.Format("data:image/gif;base64,{0}", item.Image)" alt="@item.ImageAlt" style="width:368px;height:309px;" />
+                       @if(@item.Image is null){
+                            <img class="border-radius-15" src="~/assets/imgs/blog/slogan.png" alt="@item.ImageAlt" style="width:368px;height:309px;" />
+                        }
+                        else
+                        {
+                            <img class="border-radius-15" src="@string.Format("data:image/gif;base64,{0}", item.Image)" alt="@item.ImageAlt" style="width:368px;height:309px;" />
+                        }
                     </a>
 
                 </div>
                 <div class="entry-content-2">
                     <h6 class="mb-10 font-sm"><a class="entry-meta text-muted" href="category/@item.CategorySlug-@item.CategoryId">@item.CategoryName</a></h6>
-                    <h4 class="post-title mb-15">
+                    <h5 class="post-title mb-15">
                         <a href="@item.Slug-@item.Id">@item.Title</a>
-                    </h4>
+                    </h5>
                     <div class="entry-meta font-xs color-grey mt-10 pb-10">
                         <div>
-                            <span class="post-on mr-10">@item.CreationDate</span>
-                            <span class="hit-count has-dot mr-10"></span>
-                            <span class="hit-count has-dot">4 mins read</span>
+                            <span class="post-on mr-3">@item.CreationDate</span>
+                            <span class="hit-count has-dot">@item.CountOfComment  @Localize("blog_ui_articles_count_comment")</span>
+                            <span class="hit-count has-dot">@item.CountOfView @Localize("blog_ui_articles_count_view")</span>
                         </div>
                     </div>
                 </div>
@@ -67,4 +74,11 @@
 </div>
 }
 
+<div class="shop-product-fillter mb-50 pr-30">
+    <div class="totall-product">
+        <h2>
+            &nbsp;
+        </h2>
+    </div>
 
+</div>

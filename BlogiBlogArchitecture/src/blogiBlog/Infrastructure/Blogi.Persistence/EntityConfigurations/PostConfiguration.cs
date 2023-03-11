@@ -35,7 +35,7 @@
                     LanguageId = 1,
                     CategoryId = 1,
                     UserId = 1,
-                    Title = "Multi Language Blogi Blog",
+                    Title = "Multi Language Blog Project",
                     Content = "Blogi blog an open source project.",
                     Slug = "test-content",
                     Image = null,
@@ -46,7 +46,25 @@
                     CreatedById = 1,
                     CreationDate = DateTime.UtcNow
 
-                });
+                },
+                 new Post
+                 {
+                     Id = 2,
+                     LanguageId = 2,
+                     CategoryId = 1,
+                     UserId = 1,
+                     Title = "Multi Language Blog Project",
+                     Content = "Blogi blog an open source project.",
+                     Slug = "test-content",
+                     Image = null,
+                     ImageAlt = "blogiBlog",
+                     MetaKeywords = "blogiblog,open source, blog project",
+                     MetaDescription = "is an open source multi language blog project Blog BLOG",
+                     IsPublished = true,
+                     CreatedById = 1,
+                     CreationDate = DateTime.UtcNow
+
+                 });
         }
     }
 }

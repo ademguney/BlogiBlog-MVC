@@ -18,6 +18,8 @@ namespace Blogi.Application.Features.Posts.Dtos.GetBlogPost
         public string MetaKeywords { get; set; }
         public string MetaDescription { get; set; }       
         public string CreationDate { get; set; }
+        public int CountOfView { get; set; }
+        public int CountOfComment { get; set; }
         public Dictionary<int,string> Tags { get; set; }
         public List<GetBlogCommentOutput> Comments { get; set; }
     }

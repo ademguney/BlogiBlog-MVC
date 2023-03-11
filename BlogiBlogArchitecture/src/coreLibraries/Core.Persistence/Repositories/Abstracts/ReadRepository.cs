@@ -13,9 +13,14 @@ namespace Core.Persistence.Repositories.Abstracts
             Context = context;
         }
 
-        public Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate = null)
+        public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate = null)
         {
-            return Context.Set<TEntity>().AnyAsync(predicate);
+            return await Context.Set<TEntity>().AnyAsync(predicate);
+        }
+
+        public async Task<int> CountAsync()
+        {
+            return await Context.Set<TEntity>().CountAsync();
         }
 
         public TEntity Get(Expression<Func<TEntity, bool>> predicate = null)

@@ -31,18 +31,33 @@
 											<div class="single-header-meta">
 												<div class="entry-meta meta-1 font-xs mt-15 mb-15">
 													<a class="author-avatar" asp-controller="Home" asp-action="About">
-														<img class="img-circle" src="@string.Format("data:image/gif;base64,{0}", @Model.AuthorPhoto)" alt="@Model.Author" style="border-radius: 50%;" />
+														@if (Model.AuthorPhoto is null)
+														{
+															<img class="img-circle" src="~/favicon.png" alt="@Model.Author" style="border-radius: 50%;" />
+														}
+														else
+														{
+															<img class="img-circle" src="@string.Format("data:image/gif;base64,{0}", @Model.AuthorPhoto)" alt="@Model.Author" style="border-radius: 50%;" />
+														}
 													</a>
 													<span class="post-by">By <a asp-controller="Home" asp-action="About">@Model.Author</a></span>
 													<span class="post-on has-dot">@Model.CreationDate</span>
-													@* <span class="time-reading has-dot">8 mins read</span>*@
+													<span class="time-reading has-dot">@Model.CountOfComment @Localize("blog_ui_articles_count_comment")</span>
+													<span class="time-reading has-dot">@Model.CountOfView @Localize("blog_ui_articles_count_view")</span>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 								<figure class="single-thumbnail">
-									<img src="@string.Format("data:image/gif;base64,{0}", @Model.Image)" alt="@Model.ImageAlt" />
+									@if (@Model.Image is null)
+									{
+										<img src="~/assets/imgs/blog/slogan.png" alt="@Model.ImageAlt" />
+									}
+									else
+									{
+										<img src="@string.Format("data:image/gif;base64,{0}", @Model.Image)" alt="@Model.ImageAlt" />
+									}
 								</figure>
 								<div class="single-content">
 									<div class="row">
@@ -111,7 +126,7 @@
 																					</div>
 
 																				</div>
-																				<p class="mb-10">@comment.Content <a href="#" class="reply">Reply</a></p>
+																				<p class="mb-10">@comment.Content <a href="#" class="reply">@Localize("blog_ui_post_reply")</a></p>
 																			</div>
 																		</div>
 																	</div>

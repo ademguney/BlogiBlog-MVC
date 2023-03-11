@@ -13,6 +13,8 @@
         public string Image { get; set; }
         public string ImageAlt { get; set; }     
         public string CreationDate { get; set; }
+        public int CountOfView { get; set; }
+        public int CountOfComment { get; set; }
 
     }
 }
