@@ -27,8 +27,8 @@
             }
             else
             {
-                var contactMapp = _mapper.Map<Comment>(request);
-                var result = await _commentWriteRepository.DeleteAsync(contactMapp);
+                var commentMapp = _mapper.Map<Comment>(request);
+                var result = await _commentWriteRepository.DeleteAsync(commentMapp);
 
                 response.Id = result.Id;
                 response.Data = true;

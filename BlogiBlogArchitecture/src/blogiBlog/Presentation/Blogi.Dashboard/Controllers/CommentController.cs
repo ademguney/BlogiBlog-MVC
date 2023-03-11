@@ -1,5 +1,6 @@
 ﻿
 using Blogi.Application.Features.Comments.Commands.Delete;
+using Blogi.Application.Features.Comments.Commands.IsPublish;
 using Blogi.Application.Features.Comments.Queries.Get;
 using Blogi.Application.Features.Comments.Queries.GetList;
 using Microsoft.AspNetCore.Authorization;
@@ -21,6 +22,23 @@ namespace Blogi.Dashboard.Controllers
         {
             var result = await Mediator.Send(input);
             return View(result.Data);
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, bool isPublish)
+        {
+            var result = await Mediator.Send(new IsPublishCommentCommand { Id = id, IsPublish=isPublish });
+            if (result.Success)
+            {
+                NotifySuccess(result.Message);
+                return RedirectToAction("Home", "Comment");
+            }
+            else
+            {
+                NotifyError(result.Errors);
+                return RedirectToAction("Home", "Comment");
+            }
 
         }
 

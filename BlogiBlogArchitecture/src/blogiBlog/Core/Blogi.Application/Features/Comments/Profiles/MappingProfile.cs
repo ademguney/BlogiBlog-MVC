@@ -1,5 +1,6 @@
 ﻿using Blogi.Application.Features.Comments.Commands.Create;
 using Blogi.Application.Features.Comments.Commands.Delete;
+using Blogi.Application.Features.Comments.Commands.IsPublish;
 
 namespace Blogi.Application.Features.Comments.Profiles
 {
@@ -9,6 +10,7 @@ namespace Blogi.Application.Features.Comments.Profiles
         {
             CreateMap<Comment, CreateCommentCommand>().ReverseMap();
             CreateMap<Comment, DeleteCommentCommand>().ReverseMap();
+            CreateMap<Comment, IsPublishCommentCommand>().ReverseMap();
         }
     }
 }
