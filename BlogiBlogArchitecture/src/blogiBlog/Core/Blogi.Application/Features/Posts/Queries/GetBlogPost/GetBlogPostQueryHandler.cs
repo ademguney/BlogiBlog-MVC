@@ -37,6 +37,21 @@ namespace Blogi.Application.Features.Posts.Queries.GetBlogPost
             }
             else
             {
+                #region Visitor Information
+
+                var ipAddress = GetIpAddress.GetIpAddres();
+                var post = await _postReadRepository.GetAsync(x => x.Id == request.Id);
+                var visitor = await _visitorInformationService.GetAsync(ipAddress, post.Slug);              
+
+                if (!visitor)
+                {
+                    post.CountOfView++;
+                    _postWriteRepository.Update(post);
+                    await _visitorInformationService.AddAsync(ipAddress, post.Slug);
+                }
+
+                #endregion
+
                 var result = await _postService.GetBlogPost(request.Id);
                 response.Id = result.Id;
                 response.Data = result;
@@ -44,19 +59,7 @@ namespace Blogi.Application.Features.Posts.Queries.GetBlogPost
                 response.Message = PostMessages.GetByIdExists;
                 response.Errors = null;
 
-                #region Visitor Information
-
-                var ipAddress = GetIpAddress.GetIpAddres();
-                var visitor = await _visitorInformationService.GetAsync(ipAddress, result.Slug);
-                if (!visitor)
-                {
-                    var post = await _postReadRepository.GetAsync(x => x.Id == request.Id);
-                    post.CountOfView++;
-                    _postWriteRepository.Update(post);
-                    await _visitorInformationService.AddAsync(ipAddress, post.Slug);
-                }
-
-                #endregion
+                
             }
             return response;
         }
