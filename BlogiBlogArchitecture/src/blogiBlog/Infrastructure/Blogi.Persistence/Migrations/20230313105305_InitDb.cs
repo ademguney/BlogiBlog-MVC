@@ -113,6 +113,7 @@ namespace Blogi.Persistence.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     LanguageId = table.Column<int>(type: "int", nullable: false),
+                    CountOfView = table.Column<int>(type: "int", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     MetaDescription = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     MetaKeywords = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
@@ -159,6 +160,7 @@ namespace Blogi.Persistence.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     LanguageId = table.Column<int>(type: "int", nullable: false),
+                    CountOfView = table.Column<int>(type: "int", nullable: false),
                     Location = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     Phone = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
@@ -330,12 +332,12 @@ namespace Blogi.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "MailConfigs",
                 columns: new[] { "Id", "Email", "FullName", "Host", "Password", "Port", "SslEnabled", "UseDefaultCredentials" },
-                values: new object[] { 1, "blogi@blog.com", "BlogiBlog", "smtp.gmail.com", "FofYoBKzF2tAoQpZCj6fgkCMdQrL/t0YX0QIh94Sm1QdHvTiE9Lt7TnArc/KQlgn", 587, false, false });
+                values: new object[] { 1, "blogi@blog.com", "BlogiBlog", "smtp.gmail.com", "IG/D8eq7f0sA7RNR2bg8KILbzJQ78Jkp9wJp2J+hdmpH7y+sCQuaWHqvOFAR3dq3", 587, false, false });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Email", "Name", "Password", "Photo", "Surname" },
-                values: new object[] { 1, "blogi@blog.com", "BLOGI", "rAZflrzzu13zLaO2ewFHqiC1s59fdjNxwSpH5YRRu5Km4ak8pcLPwcqPeVv8Ccko", null, "BLOG" });
+                values: new object[] { 1, "blogi@blog.com", "BLOGI", "SGTaVXAKVuodRUaOiecBCsf7TJRBJUZAyWQ5fmVLnMYO6Zs3L3NePL8peobjq1zA", null, "BLOG" });
 
             migrationBuilder.InsertData(
                 table: "WebSettings",
@@ -344,11 +346,11 @@ namespace Blogi.Persistence.Migrations
 
             migrationBuilder.InsertData(
                 table: "Abouts",
-                columns: new[] { "Id", "Content", "LanguageId", "MetaDescription", "MetaKeywords", "Slug", "Title" },
+                columns: new[] { "Id", "Content", "CountOfView", "LanguageId", "MetaDescription", "MetaKeywords", "Slug", "Title" },
                 values: new object[,]
                 {
-                    { 1, "Selamlar, Ben Adem!", 1, "Blogi Blog acik kaynak kodlu cok dil destegi bulunan web blog projesidir.", "open source, blogi blog, blogiblog, web project, multi language", "hakkimda", "Yazilimci :) Adem GUNEY" },
-                    { 2, "He, I'm Adem :)", 2, "Blogi Blog open source multi language web blog project.", "open source, blogi blog, blogiblog, web project, multi language", "about-me", "Senior Software Developer Adem GUNEY" }
+                    { 1, "Selamlar, Ben Adem!", 0, 1, "Blogi Blog acik kaynak kodlu cok dil destegi bulunan web blog projesidir.", "open source, blogi blog, blogiblog, web project, multi language", "hakkimda", "Yazilimci :) Adem GUNEY" },
+                    { 2, "He, I'm Adem :)", 0, 2, "Blogi Blog open source multi language web blog project.", "open source, blogi blog, blogiblog, web project, multi language", "about-me", "Senior Software Developer Adem GUNEY" }
                 });
 
             migrationBuilder.InsertData(
@@ -364,11 +366,11 @@ namespace Blogi.Persistence.Migrations
 
             migrationBuilder.InsertData(
                 table: "Contacts",
-                columns: new[] { "Id", "Content", "Email", "LanguageId", "Location", "MetaDescription", "MetaKeywords", "Phone", "Slug", "Title" },
+                columns: new[] { "Id", "Content", "CountOfView", "Email", "LanguageId", "Location", "MetaDescription", "MetaKeywords", "Phone", "Slug", "Title" },
                 values: new object[,]
                 {
-                    { 1, "iletisim bilgilerim", "guneyadem63@gmail.com", 1, "Turkiye/SanliUrfa", "Blogi Blog acik kaynak kodlu cok dil destegi bulunan web blog projesidir.", "open source, blogi blog, blogiblog, web project, multi language", "0090 (XXX) 000 00 00", "iletisim", "Gel Gel Ne Olursan Ol Yine Gel, Mevlana!" },
-                    { 2, "my contact information", "guneyadem63@gmail.com", 2, "Turkey/SanliUrfa", "Blogi Blog open source multi language web blog project.", "open source, blogi blog, blogiblog, web project, multi language", "0090 (XXX) 000 00 00", "contact", "Come, come, whoever you are, Jelaluddin Rumi!" }
+                    { 1, "iletisim bilgilerim", 0, "guneyadem63@gmail.com", 1, "Turkiye/SanliUrfa", "Blogi Blog acik kaynak kodlu cok dil destegi bulunan web blog projesidir.", "open source, blogi blog, blogiblog, web project, multi language", "0090 (XXX) 000 00 00", "iletisim", "Gel Gel Ne Olursan Ol Yine Gel, Mevlana!" },
+                    { 2, "my contact information", 0, "guneyadem63@gmail.com", 2, "Turkey/SanliUrfa", "Blogi Blog open source multi language web blog project.", "open source, blogi blog, blogiblog, web project, multi language", "0090 (XXX) 000 00 00", "contact", "Come, come, whoever you are, Jelaluddin Rumi!" }
                 });
 
             migrationBuilder.InsertData(
@@ -699,12 +701,12 @@ namespace Blogi.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "Posts",
                 columns: new[] { "Id", "CategoryId", "Content", "CountOfView", "CreatedById", "CreationDate", "Image", "ImageAlt", "IsPublished", "LanguageId", "MetaDescription", "MetaKeywords", "Slug", "Title", "UpdatedById", "UpdationDate", "UserId" },
-                values: new object[] { 1, 1, "Blogi blog an open source project.", 0, 1, new DateTime(2023, 3, 13, 8, 17, 15, 78, DateTimeKind.Utc).AddTicks(9992), null, "blogiBlog", true, 1, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "test-content", "Multi Language Blog Project", null, null, 1 });
+                values: new object[] { 1, 1, "Blogi blog an open source project.", 0, 1, new DateTime(2023, 3, 13, 10, 53, 5, 204, DateTimeKind.Utc).AddTicks(9795), null, "blogiBlog", true, 1, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "test-content", "Multi Language Blog Project", null, null, 1 });
 
             migrationBuilder.InsertData(
                 table: "Posts",
                 columns: new[] { "Id", "CategoryId", "Content", "CountOfView", "CreatedById", "CreationDate", "Image", "ImageAlt", "IsPublished", "LanguageId", "MetaDescription", "MetaKeywords", "Slug", "Title", "UpdatedById", "UpdationDate", "UserId" },
-                values: new object[] { 2, 1, "Blogi blog an open source project.", 0, 1, new DateTime(2023, 3, 13, 8, 17, 15, 78, DateTimeKind.Utc).AddTicks(9995), null, "blogiBlog", true, 2, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "test-content", "Multi Language Blog Project", null, null, 1 });
+                values: new object[] { 2, 1, "Blogi blog an open source project.", 0, 1, new DateTime(2023, 3, 13, 10, 53, 5, 204, DateTimeKind.Utc).AddTicks(9798), null, "blogiBlog", true, 2, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "test-content", "Multi Language Blog Project", null, null, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Abouts_LanguageId",

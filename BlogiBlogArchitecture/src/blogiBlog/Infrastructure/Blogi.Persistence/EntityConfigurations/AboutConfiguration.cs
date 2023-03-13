@@ -6,6 +6,7 @@
         {
             builder.ToTable("Abouts");
             builder.Property(u => u.LanguageId).IsRequired(true);
+            builder.Property(u => u.CountOfView).IsRequired(true);
             builder.Property(u => u.Content).IsRequired(true);
             builder.Property(u => u.Title).IsRequired(true).HasMaxLength(500);
             builder.Property(u => u.Slug).IsRequired(true).HasMaxLength(500);
@@ -18,6 +19,7 @@
                 {
                     Id = 1,
                     LanguageId = 1,
+                    CountOfView = 1,
                     Content = "Selamlar, Ben Adem!",
                     Slug = "hakkimda",
                     Title = "Yazilimci :) Adem GUNEY",
@@ -29,6 +31,7 @@
                 {
                     Id = 2,
                     LanguageId = 2,
+                    CountOfView = 1,
                     Content = "He, I'm Adem :)",
                     Slug = "about-me",
                     Title = "Senior Software Developer Adem GUNEY",

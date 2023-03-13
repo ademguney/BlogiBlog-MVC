@@ -2,70 +2,100 @@
 using Blogi.Application.Features.Posts.Dtos.GetBlogPost;
 using Blogi.Application.Features.Posts.Dtos.GetList;
 using Blogi.Application.Features.Posts.Dtos.GetListBlogPost;
+using Org.BouncyCastle.Asn1.Ocsp;
 
 namespace Blogi.Application.Services.PostService
 {
 	public class PostService : IPostService
 	{
 		private readonly IPostReadRepository _postReadRepository;
-		private readonly IPostTagsReadRepository _postTagsReadRepository;
+        private readonly IPostWriteRepository _postWriteRepository;
+        private readonly IPostTagsReadRepository _postTagsReadRepository;
+        private readonly IVisitorInformationService _visitorInformationService;
 
-		public PostService(IPostReadRepository postReadRepository, IPostTagsReadRepository postTagsReadRepository)
+        public PostService(
+			IPostReadRepository postReadRepository, 
+			IPostWriteRepository postWriteRepository, 
+			IPostTagsReadRepository postTagsReadRepository, 
+			IVisitorInformationService visitorInformationService
+			)
+        {
+            _postReadRepository = postReadRepository;
+            _postWriteRepository = postWriteRepository;
+            _postTagsReadRepository = postTagsReadRepository;
+            _visitorInformationService = visitorInformationService;
+        }
+
+        public async Task<GetBlogPostOutput> GetBlogPost(int id)
 		{
-			_postReadRepository = postReadRepository;
-			_postTagsReadRepository = postTagsReadRepository;
-		}
 
-		public async Task<GetBlogPostOutput> GetBlogPost(int id)
-		{
+            #region Tag List
 
-			var tags = await _postTagsReadRepository.GetAll(x => x.PostId == id).Include(x => x.Tags).ToListAsync();
-			var tagList = new Dictionary<int, string>();
-			if (tags is not null)
-			{
-				foreach (var item in tags)
-				{
-					tagList.Add(item.TagId, item.Tags.Slug);
-				}
-			}
+            var tags = await _postTagsReadRepository.GetAll(x => x.PostId == id).Include(x => x.Tags).ToListAsync();
+            var tagList = new Dictionary<int, string>();
+            if (tags is not null)
+            {
+                foreach (var item in tags)
+                {
+                    tagList.Add(item.TagId, item.Tags.Slug);
+                }
+            }
 
-			var query = await _postReadRepository
+            #endregion
+
+            #region Visitor Information
+                        
+            var post = await _postReadRepository.GetAsync(x => x.Id == id);
+
+            var ipAddress = GetIpAddress.GetIpAddres();
+            var visitor = await _visitorInformationService.GetAsync(ipAddress, post.Slug);
+            if (!visitor)
+            {
+                post.CountOfView++;
+                _postWriteRepository.Update(post);
+                await _visitorInformationService.AddAsync(ipAddress, post.Slug);
+            }
+
+            #endregion
+
+            var query = await _postReadRepository
 			   .GetAll(x => x.Id == id)
 			   .Include(x => x.Languages)
 			   .Include(x => x.Users)
 			   .Include(x => x.Categories)
 			   .Include(x => x.Comments)
 			   .OrderByDescending(x => x.CreationDate)
-			   .Select(x => new GetBlogPostOutput
-			   {
-				   Id = x.Id,
-				   CategoryId = x.CategoryId,
-				   CategoryName = x.Categories.Name,
-				   CategorySlug = x.Categories.Slug,
-				   Title = x.Title,
-				   Author = x.Users.Name + " " + x.Users.Surname,
-				   AuthorPhoto = x.Users.Photo != null ? Convert.ToBase64String(x.Users.Photo) : null,
-				   Slug = x.Slug,
-				   CreationDate = x.CreationDate.ToLongDateString(),
-				   Image = x.Image != null ? Convert.ToBase64String(x.Image) : null,
-				   ImageAlt = x.ImageAlt,
-				   Content = x.Content,
-				   MetaDescription = x.MetaDescription,
-				   MetaKeywords = x.MetaKeywords,
-				   Tags = tagList,
-				   CountOfView = x.CountOfView,
-				   CountOfComment = x.Comments.Count,
-				   Comments = x.Comments.Where(c => c.IsPublish == true).Select(c => new GetBlogCommentOutput
-				   {
-					   Id = c.Id,
-					   ParentId = c.ParentId,
-					   FullName = c.FullName,
-					   Content = c.Content,
-					   CreationDate = c.CreationDate.ToLongDateString()
+               .Select(x => new GetBlogPostOutput
+               {
+                   Id = x.Id,
+                   CategoryId = x.CategoryId,
+                   CategoryName = x.Categories.Name,
+                   CategorySlug = x.Categories.Slug,
+                   Title = x.Title,
+                   Author = x.Users.Name + " " + x.Users.Surname,
+                   AuthorPhoto = x.Users.Photo != null ? Convert.ToBase64String(x.Users.Photo) : null,
+                   Slug = x.Slug,
+                   CreationDate = x.CreationDate.ToLongDateString(),
+                   Image = x.Image != null ? Convert.ToBase64String(x.Image) : null,
+                   ImageAlt = x.ImageAlt,
+                   Content = x.Content,
+                   MetaDescription = x.MetaDescription,
+                   MetaKeywords = x.MetaKeywords,
+                   Tags = tagList,
+                   CountOfView = x.CountOfView,
+                   CountOfComment = x.Comments.Count,
+                   Comments = x.Comments.Where(c => c.IsPublish == true).Select(c => new GetBlogCommentOutput
+                   {
+                       Id = c.Id,
+                       ParentId = c.ParentId,
+                       FullName = c.FullName,
+                       Content = c.Content,
+                       CreationDate = c.CreationDate.ToLongDateString()
 
-				   }).ToList()
-			   })
-			   .FirstOrDefaultAsync();
+                   }).ToList()
+               })
+               .FirstOrDefaultAsync();		
+
 			return query;
 		}
 

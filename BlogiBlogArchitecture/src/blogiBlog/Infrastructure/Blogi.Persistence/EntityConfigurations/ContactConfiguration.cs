@@ -6,6 +6,7 @@
         {
             builder.ToTable("Contacts");
             builder.Property(u => u.LanguageId).IsRequired(true);
+            builder.Property(u => u.CountOfView).IsRequired(true);
             builder.Property(u => u.Content).IsRequired(false);
             builder.Property(u => u.Phone).IsRequired(false).HasMaxLength(30);
             builder.Property(u => u.Email).IsRequired(false).HasMaxLength(255);
@@ -21,6 +22,7 @@
                 {
                     Id = 1,
                     LanguageId = 1,
+                    CountOfView = 1,
                     Content = "iletisim bilgilerim",
                     Phone = "0090 (XXX) 000 00 00",
                     Email = "guneyadem63@gmail.com",
@@ -34,6 +36,7 @@
                   {
                       Id = 2,
                       LanguageId = 2,
+                      CountOfView = 1,
                       Content = "my contact information",
                       Phone = "0090 (XXX) 000 00 00",
                       Email = "guneyadem63@gmail.com",

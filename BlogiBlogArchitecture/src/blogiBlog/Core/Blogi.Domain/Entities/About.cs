@@ -6,9 +6,10 @@ namespace Blogi.Domain.Entities
     {
         public About() { }
 
-        public About(int id, int languageId, string title, string metaDescription, string metaKeywords, string content, string slug) : base(id)
+        public About(int id, int languageId, int countOfView, string title, string metaDescription, string metaKeywords, string content, string slug) : base(id)
         {
             LanguageId = languageId;
+            CountOfView = countOfView;
             Title = title;
             MetaDescription = metaDescription;
             MetaKeywords = metaKeywords;
@@ -17,6 +18,7 @@ namespace Blogi.Domain.Entities
         }
 
         public int LanguageId { get; set; }
+        public int CountOfView { get; set; }
         public string Title { get; set; }
         public string MetaDescription { get; set; }
         public string MetaKeywords { get; set; }

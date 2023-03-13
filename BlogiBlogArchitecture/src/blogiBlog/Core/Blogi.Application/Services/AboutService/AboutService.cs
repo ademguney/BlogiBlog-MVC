@@ -1,5 +1,7 @@
 ﻿using Blogi.Application.Features.Abouts.Dtos.Get;
 using Blogi.Application.Features.Abouts.Dtos.GetList;
+using Blogi.Application.Repositories.PostRepository;
+using Blogi.Domain.Entities;
 
 namespace Blogi.Application.Services.AboutService
 {
@@ -7,11 +9,20 @@ namespace Blogi.Application.Services.AboutService
     {
         private readonly IMapper _mapper;
         private readonly IAboutReadRepository _aboutReadRepository;
+        private readonly IAboutWriteRepository _aboutWriteRepository;
+        private readonly IVisitorInformationService _visitorInformationService;
 
-        public AboutService(IMapper mapper, IAboutReadRepository aboutReadRepository)
+        public AboutService(
+            IMapper mapper,
+            IAboutReadRepository aboutReadRepository,
+            IAboutWriteRepository aboutWriteRepository,
+            IVisitorInformationService visitorInformationService
+            )
         {
             _mapper = mapper;
             _aboutReadRepository = aboutReadRepository;
+            _aboutWriteRepository = aboutWriteRepository;
+            _visitorInformationService = visitorInformationService;
         }
 
         public async Task<GetAboutOutput> GetAsync(int id, string culture)
@@ -27,6 +38,19 @@ namespace Blogi.Application.Services.AboutService
                         .GetAll(x => x.Languages.Culture.Trim().ToLower() == culture.Trim().ToLower())
                         .Include(x => x.Languages)
                         .FirstOrDefaultAsync();
+
+                #region Visitor Information
+
+                var ipAddress = GetIpAddress.GetIpAddres();
+                var visitor = await _visitorInformationService.GetAsync(ipAddress, result.Slug);
+                if (!visitor)
+                {
+                    result.CountOfView++;
+                    _aboutWriteRepository.Update(result);
+                    await _visitorInformationService.AddAsync(ipAddress, result.Slug);
+                }
+
+                #endregion
             }
 
             var resultMapp = _mapper.Map<GetAboutOutput>(result);

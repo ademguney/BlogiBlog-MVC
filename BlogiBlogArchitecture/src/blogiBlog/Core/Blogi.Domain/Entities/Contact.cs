@@ -6,9 +6,10 @@ namespace Blogi.Domain.Entities
     {
         public Contact() { }
 
-        public Contact(int id, int languageId, string location, string phone, string email, string slug, string title, string metaDescription, string metaKeywords, string content) : base(id)
+        public Contact(int id, int languageId, int countOfView, string location, string phone, string email, string slug, string title, string metaDescription, string metaKeywords, string content) : base(id)
         {
             LanguageId = languageId;
+            CountOfView = countOfView;
             Location = location;
             Phone = phone;
             Email = email;
@@ -20,6 +21,7 @@ namespace Blogi.Domain.Entities
         }
 
         public int LanguageId { get; set; }
+        public int CountOfView { get; set; }
         public string Location { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }

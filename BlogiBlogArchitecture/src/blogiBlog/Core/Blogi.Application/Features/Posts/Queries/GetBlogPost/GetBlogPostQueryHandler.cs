@@ -6,20 +6,15 @@ namespace Blogi.Application.Features.Posts.Queries.GetBlogPost
     {
         private readonly IPostService _postService;
         private readonly IPostReadRepository _postReadRepository;
-        private readonly IPostWriteRepository _postWriteRepository;
-        private readonly IVisitorInformationService _visitorInformationService;
 
         public GetBlogPostQueryHandler(
             IPostService postService,
-            IPostReadRepository postReadRepository,
-            IPostWriteRepository postWriteRepository,
-            IVisitorInformationService visitorInformationService
+            IPostReadRepository postReadRepository
             )
         {
             _postService = postService;
             _postReadRepository = postReadRepository;
-            _postWriteRepository = postWriteRepository;
-            _visitorInformationService = visitorInformationService;
+
         }
 
         public async Task<BaseCommandResponse<GetBlogPostOutput>> Handle(GetBlogPostQuery request, CancellationToken cancellationToken)
@@ -37,21 +32,6 @@ namespace Blogi.Application.Features.Posts.Queries.GetBlogPost
             }
             else
             {
-                #region Visitor Information
-
-                var ipAddress = GetIpAddress.GetIpAddres();
-                var post = await _postReadRepository.GetAsync(x => x.Id == request.Id);
-                var visitor = await _visitorInformationService.GetAsync(ipAddress, post.Slug);              
-
-                if (!visitor)
-                {
-                    post.CountOfView++;
-                    _postWriteRepository.Update(post);
-                    await _visitorInformationService.AddAsync(ipAddress, post.Slug);
-                }
-
-                #endregion
-
                 var result = await _postService.GetBlogPost(request.Id);
                 response.Id = result.Id;
                 response.Data = result;
@@ -59,7 +39,6 @@ namespace Blogi.Application.Features.Posts.Queries.GetBlogPost
                 response.Message = PostMessages.GetByIdExists;
                 response.Errors = null;
 
-                
             }
             return response;
         }

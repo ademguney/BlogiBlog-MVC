@@ -34,6 +34,9 @@ namespace Blogi.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("CountOfView")
+                        .HasColumnType("int");
+
                     b.Property<int>("LanguageId")
                         .HasColumnType("int");
 
@@ -68,6 +71,7 @@ namespace Blogi.Persistence.Migrations
                         {
                             Id = 1,
                             Content = "Selamlar, Ben Adem!",
+                            CountOfView = 0,
                             LanguageId = 1,
                             MetaDescription = "Blogi Blog acik kaynak kodlu cok dil destegi bulunan web blog projesidir.",
                             MetaKeywords = "open source, blogi blog, blogiblog, web project, multi language",
@@ -78,6 +82,7 @@ namespace Blogi.Persistence.Migrations
                         {
                             Id = 2,
                             Content = "He, I'm Adem :)",
+                            CountOfView = 0,
                             LanguageId = 2,
                             MetaDescription = "Blogi Blog open source multi language web blog project.",
                             MetaKeywords = "open source, blogi blog, blogiblog, web project, multi language",
@@ -204,6 +209,9 @@ namespace Blogi.Persistence.Migrations
                     b.Property<string>("Content")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("CountOfView")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
                         .HasMaxLength(255)
                         .HasColumnType("nvarchar(255)");
@@ -250,6 +258,7 @@ namespace Blogi.Persistence.Migrations
                         {
                             Id = 1,
                             Content = "iletisim bilgilerim",
+                            CountOfView = 0,
                             Email = "guneyadem63@gmail.com",
                             LanguageId = 1,
                             Location = "Turkiye/SanliUrfa",
@@ -263,6 +272,7 @@ namespace Blogi.Persistence.Migrations
                         {
                             Id = 2,
                             Content = "my contact information",
+                            CountOfView = 0,
                             Email = "guneyadem63@gmail.com",
                             LanguageId = 2,
                             Location = "Turkey/SanliUrfa",
@@ -358,7 +368,7 @@ namespace Blogi.Persistence.Migrations
                             Email = "blogi@blog.com",
                             FullName = "BlogiBlog",
                             Host = "smtp.gmail.com",
-                            Password = "FofYoBKzF2tAoQpZCj6fgkCMdQrL/t0YX0QIh94Sm1QdHvTiE9Lt7TnArc/KQlgn",
+                            Password = "IG/D8eq7f0sA7RNR2bg8KILbzJQ78Jkp9wJp2J+hdmpH7y+sCQuaWHqvOFAR3dq3",
                             Port = 587,
                             SslEnabled = false,
                             UseDefaultCredentials = false
@@ -450,7 +460,7 @@ namespace Blogi.Persistence.Migrations
                             Content = "Blogi blog an open source project.",
                             CountOfView = 0,
                             CreatedById = 1,
-                            CreationDate = new DateTime(2023, 3, 13, 8, 17, 15, 78, DateTimeKind.Utc).AddTicks(9992),
+                            CreationDate = new DateTime(2023, 3, 13, 10, 53, 5, 204, DateTimeKind.Utc).AddTicks(9795),
                             ImageAlt = "blogiBlog",
                             IsPublished = true,
                             LanguageId = 1,
@@ -467,7 +477,7 @@ namespace Blogi.Persistence.Migrations
                             Content = "Blogi blog an open source project.",
                             CountOfView = 0,
                             CreatedById = 1,
-                            CreationDate = new DateTime(2023, 3, 13, 8, 17, 15, 78, DateTimeKind.Utc).AddTicks(9995),
+                            CreationDate = new DateTime(2023, 3, 13, 10, 53, 5, 204, DateTimeKind.Utc).AddTicks(9798),
                             ImageAlt = "blogiBlog",
                             IsPublished = true,
                             LanguageId = 2,
@@ -2483,7 +2493,7 @@ namespace Blogi.Persistence.Migrations
                             Id = 1,
                             Email = "blogi@blog.com",
                             Name = "BLOGI",
-                            Password = "rAZflrzzu13zLaO2ewFHqiC1s59fdjNxwSpH5YRRu5Km4ak8pcLPwcqPeVv8Ccko",
+                            Password = "SGTaVXAKVuodRUaOiecBCsf7TJRBJUZAyWQ5fmVLnMYO6Zs3L3NePL8peobjq1zA",
                             Surname = "BLOG"
                         });
                 });
