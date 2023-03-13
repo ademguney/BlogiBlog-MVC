@@ -1,4 +1,18 @@
-﻿
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{
+    string returnUrl = ViewContext.HttpContext.Request.Path;
+
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = LocOptions.Value.SupportedUICultures
+          .Select(c => new SelectListItem { Value = c.Name, Text = c.NativeName })
+          .ToList();
+}
+
+
 <div class="xp-topbar">
     <!-- Start XP Row -->
     <div class="row">
@@ -14,7 +28,20 @@
         <!-- Start XP Col -->
         <div class="col-10 col-md-11 col-lg-11 order-1 order-md-2">
             <div class="xp-profilebar text-right">
-                <ul class="list-inline mb-0">                   
+                <ul class="list-inline mb-0">       
+                    <li class="list-inline-item">
+                        <form asp-action="ChangeLanguage" asp-controller="Account" method="post">
+                            <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
+                            <select id="culture"
+                                    name="culture"
+                                    class="form-control"
+                                    onchange="this.form.submit();"
+                                    asp-items="cultureItems"
+                                    asp-for="@requestCulture.RequestCulture.UICulture.Name">
+                            </select>
+                        </form>
+                    </li>
+
                     <li class="list-inline-item mr-0">
                         <div class="dropdown xp-userprofile">
                             <a class="dropdown-toggle " href="#" role="button" id="xp-userprofile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="~/assets/images/topbar/user.png" alt="user-profile" class="rounded-circle img-fluid"><span class="xp-user-live"></span></a>

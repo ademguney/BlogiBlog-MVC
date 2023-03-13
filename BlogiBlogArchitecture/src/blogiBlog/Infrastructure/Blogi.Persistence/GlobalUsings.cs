@@ -30,3 +30,5 @@ global using Blogi.Application.Repositories.MailSettingRepository;
 global using Blogi.Persistence.Repositories.MailSettingRepository;
 global using Blogi.Application.Repositories.StringResourceRepository;
 global using Blogi.Persistence.Repositories.StringResourceRepository;
+global using Blogi.Application.Repositories.VisitorInformationRepository;
+global using Blogi.Persistence.Repositories.VisitorInformationRepository;

@@ -1,6 +1,4 @@
-﻿using Core.Application.Security.Hashing;
-
-namespace Blogi.Application.Features.Auth.Commands.Login
+﻿namespace Blogi.Application.Features.Auth.Commands.Login
 {
     public class LoginUserCommandHandlerValidatior : AbstractValidator<LoginUserCommand>
     {

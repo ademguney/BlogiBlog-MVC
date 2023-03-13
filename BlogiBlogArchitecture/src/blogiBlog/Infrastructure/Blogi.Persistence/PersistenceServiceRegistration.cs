@@ -37,6 +37,8 @@
             services.AddScoped<IMailSettingWriteRepository, MailSettingWriteRepository>();
             services.AddScoped<IStringResourceReadRepository, StringResourceReadRepository>();
             services.AddScoped<IStringResourceWriteRepository, StringResourceWriteRepository>();
+            services.AddScoped<IVisitorInformationReadRepository, VisitorInformationReadRepository>();
+            services.AddScoped<IVisitorInformationWriteRepository, VisitorInformationWriteRepository>();
 
 
             return services;

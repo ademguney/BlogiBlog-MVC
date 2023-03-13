@@ -22,7 +22,8 @@
             services.AddScoped<IMailFactoryService, MailFactoryService>();
             services.AddScoped<IStringResourceService, StringResourceService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-           
+            services.AddScoped<IVisitorInformationService, VisitorInformationService>();
+
             return services;
         }
     }

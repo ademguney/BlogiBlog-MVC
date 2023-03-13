@@ -358,7 +358,7 @@ namespace Blogi.Persistence.Migrations
                             Email = "blogi@blog.com",
                             FullName = "BlogiBlog",
                             Host = "smtp.gmail.com",
-                            Password = "Plz2A0YSaO1HJ8YCVVVB5xZmZAS7qIq3ItkAjivn5ANv0l5J4JKkScN5XM/Tf++i",
+                            Password = "FofYoBKzF2tAoQpZCj6fgkCMdQrL/t0YX0QIh94Sm1QdHvTiE9Lt7TnArc/KQlgn",
                             Port = 587,
                             SslEnabled = false,
                             UseDefaultCredentials = false
@@ -450,7 +450,7 @@ namespace Blogi.Persistence.Migrations
                             Content = "Blogi blog an open source project.",
                             CountOfView = 0,
                             CreatedById = 1,
-                            CreationDate = new DateTime(2023, 3, 11, 22, 32, 32, 168, DateTimeKind.Utc).AddTicks(8066),
+                            CreationDate = new DateTime(2023, 3, 13, 8, 17, 15, 78, DateTimeKind.Utc).AddTicks(9992),
                             ImageAlt = "blogiBlog",
                             IsPublished = true,
                             LanguageId = 1,
@@ -467,7 +467,7 @@ namespace Blogi.Persistence.Migrations
                             Content = "Blogi blog an open source project.",
                             CountOfView = 0,
                             CreatedById = 1,
-                            CreationDate = new DateTime(2023, 3, 11, 22, 32, 32, 168, DateTimeKind.Utc).AddTicks(8069),
+                            CreationDate = new DateTime(2023, 3, 13, 8, 17, 15, 78, DateTimeKind.Utc).AddTicks(9995),
                             ImageAlt = "blogiBlog",
                             IsPublished = true,
                             LanguageId = 2,
@@ -2483,9 +2483,31 @@ namespace Blogi.Persistence.Migrations
                             Id = 1,
                             Email = "blogi@blog.com",
                             Name = "BLOGI",
-                            Password = "Oh9EvAOS7ucfC8FiZuy6kyP1OCEp84IDvLq10gLA1T9vp6uQ8Vqyyly4XIEODRfi",
+                            Password = "rAZflrzzu13zLaO2ewFHqiC1s59fdjNxwSpH5YRRu5Km4ak8pcLPwcqPeVv8Ccko",
                             Surname = "BLOG"
                         });
+                });
+
+            modelBuilder.Entity("Blogi.Domain.Entities.VisitorInformation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("IpAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Path")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("VisitorInformation");
                 });
 
             modelBuilder.Entity("Blogi.Domain.Entities.WebSetting", b =>

@@ -12,6 +12,9 @@
     <Compile Remove="Features\Categories\Dtos\GetList\**" />
     <Compile Remove="Features\Categories\Dtos\Update\**" />
     <Compile Remove="Features\MailSettings\Dtos\Update\**" />
+    <Compile Remove="Features\PostsTags\Dtos\**" />
+    <Compile Remove="Features\Posts\Dtos\Create\**" />
+    <Compile Remove="Features\Posts\Dtos\Delete\**" />
     <Compile Remove="Features\Tags\Dtos\Create\**" />
     <Compile Remove="Features\Tags\Dtos\Delete\**" />
     <Compile Remove="Features\Tags\Dtos\GetList\**" />
@@ -22,6 +25,9 @@
     <EmbeddedResource Remove="Features\Categories\Dtos\GetList\**" />
     <EmbeddedResource Remove="Features\Categories\Dtos\Update\**" />
     <EmbeddedResource Remove="Features\MailSettings\Dtos\Update\**" />
+    <EmbeddedResource Remove="Features\PostsTags\Dtos\**" />
+    <EmbeddedResource Remove="Features\Posts\Dtos\Create\**" />
+    <EmbeddedResource Remove="Features\Posts\Dtos\Delete\**" />
     <EmbeddedResource Remove="Features\Tags\Dtos\Create\**" />
     <EmbeddedResource Remove="Features\Tags\Dtos\Delete\**" />
     <EmbeddedResource Remove="Features\Tags\Dtos\GetList\**" />
@@ -32,6 +38,9 @@
     <None Remove="Features\Categories\Dtos\GetList\**" />
     <None Remove="Features\Categories\Dtos\Update\**" />
     <None Remove="Features\MailSettings\Dtos\Update\**" />
+    <None Remove="Features\PostsTags\Dtos\**" />
+    <None Remove="Features\Posts\Dtos\Create\**" />
+    <None Remove="Features\Posts\Dtos\Delete\**" />
     <None Remove="Features\Tags\Dtos\Create\**" />
     <None Remove="Features\Tags\Dtos\Delete\**" />
     <None Remove="Features\Tags\Dtos\GetList\**" />
@@ -53,12 +62,6 @@
     <ProjectReference Include="..\..\..\coreLibraries\Core.Infrastructure\Core.Infrastructure.csproj" />
     <ProjectReference Include="..\..\..\coreLibraries\Core.Persistence\Core.Persistence.csproj" />
     <ProjectReference Include="..\Blogi.Domain\Blogi.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Features\Posts\Dtos\Create\" />
-    <Folder Include="Features\Posts\Dtos\Delete\" />
-    <Folder Include="Features\PostsTags\Dtos\" />
   </ItemGroup>
 
 </Project>

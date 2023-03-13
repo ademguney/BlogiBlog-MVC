@@ -14,6 +14,7 @@
         public DbSet<WebSetting> WebSettings { get; set; }
         public DbSet<MailSetting> MailSettings { get; set; }
         public DbSet<StringResource> StringResources { get; set; }
+        public DbSet<VisitorInformation> VisitorInformation { get; set; }
 
         protected IConfiguration Configuration { get; set; }
 

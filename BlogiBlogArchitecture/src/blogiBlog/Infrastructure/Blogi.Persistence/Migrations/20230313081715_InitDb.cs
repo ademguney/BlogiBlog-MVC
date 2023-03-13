@@ -60,6 +60,21 @@ namespace Blogi.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "VisitorInformation",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IpAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Path = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_VisitorInformation", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "WebSettings",
                 columns: table => new
                 {
@@ -315,12 +330,12 @@ namespace Blogi.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "MailConfigs",
                 columns: new[] { "Id", "Email", "FullName", "Host", "Password", "Port", "SslEnabled", "UseDefaultCredentials" },
-                values: new object[] { 1, "blogi@blog.com", "BlogiBlog", "smtp.gmail.com", "Plz2A0YSaO1HJ8YCVVVB5xZmZAS7qIq3ItkAjivn5ANv0l5J4JKkScN5XM/Tf++i", 587, false, false });
+                values: new object[] { 1, "blogi@blog.com", "BlogiBlog", "smtp.gmail.com", "FofYoBKzF2tAoQpZCj6fgkCMdQrL/t0YX0QIh94Sm1QdHvTiE9Lt7TnArc/KQlgn", 587, false, false });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Email", "Name", "Password", "Photo", "Surname" },
-                values: new object[] { 1, "blogi@blog.com", "BLOGI", "Oh9EvAOS7ucfC8FiZuy6kyP1OCEp84IDvLq10gLA1T9vp6uQ8Vqyyly4XIEODRfi", null, "BLOG" });
+                values: new object[] { 1, "blogi@blog.com", "BLOGI", "rAZflrzzu13zLaO2ewFHqiC1s59fdjNxwSpH5YRRu5Km4ak8pcLPwcqPeVv8Ccko", null, "BLOG" });
 
             migrationBuilder.InsertData(
                 table: "WebSettings",
@@ -684,12 +699,12 @@ namespace Blogi.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "Posts",
                 columns: new[] { "Id", "CategoryId", "Content", "CountOfView", "CreatedById", "CreationDate", "Image", "ImageAlt", "IsPublished", "LanguageId", "MetaDescription", "MetaKeywords", "Slug", "Title", "UpdatedById", "UpdationDate", "UserId" },
-                values: new object[] { 1, 1, "Blogi blog an open source project.", 0, 1, new DateTime(2023, 3, 11, 22, 32, 32, 168, DateTimeKind.Utc).AddTicks(8066), null, "blogiBlog", true, 1, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "test-content", "Multi Language Blog Project", null, null, 1 });
+                values: new object[] { 1, 1, "Blogi blog an open source project.", 0, 1, new DateTime(2023, 3, 13, 8, 17, 15, 78, DateTimeKind.Utc).AddTicks(9992), null, "blogiBlog", true, 1, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "test-content", "Multi Language Blog Project", null, null, 1 });
 
             migrationBuilder.InsertData(
                 table: "Posts",
                 columns: new[] { "Id", "CategoryId", "Content", "CountOfView", "CreatedById", "CreationDate", "Image", "ImageAlt", "IsPublished", "LanguageId", "MetaDescription", "MetaKeywords", "Slug", "Title", "UpdatedById", "UpdationDate", "UserId" },
-                values: new object[] { 2, 1, "Blogi blog an open source project.", 0, 1, new DateTime(2023, 3, 11, 22, 32, 32, 168, DateTimeKind.Utc).AddTicks(8069), null, "blogiBlog", true, 2, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "test-content", "Multi Language Blog Project", null, null, 1 });
+                values: new object[] { 2, 1, "Blogi blog an open source project.", 0, 1, new DateTime(2023, 3, 13, 8, 17, 15, 78, DateTimeKind.Utc).AddTicks(9995), null, "blogiBlog", true, 2, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "test-content", "Multi Language Blog Project", null, null, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Abouts_LanguageId",
@@ -766,6 +781,9 @@ namespace Blogi.Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "StringResources");
+
+            migrationBuilder.DropTable(
+                name: "VisitorInformation");
 
             migrationBuilder.DropTable(
                 name: "WebSettings");
