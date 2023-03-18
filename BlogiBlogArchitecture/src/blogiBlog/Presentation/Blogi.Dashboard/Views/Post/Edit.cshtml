@@ -178,15 +178,11 @@
 </form>
 
 @section scripts {
-<script>
-    $(document).ready(function() {
-           $('.js-example-basic-multiple').select2();
-      });
-
-     var previewImg=function (event){
-               var result= document.getElementById("imgPreview");
-               result.src=URL.createObjectURL(event.target.files[0]);
-      };
-
-</script>
+    <script src="~/js/views/post/editor-config.js" asp-append-version="true"></script>
+    <script>
+        var previewImg = function (event) {
+            var result = document.getElementById("imgPreview");
+            result.src = URL.createObjectURL(event.target.files[0]);
+        };
+    </script>
 }

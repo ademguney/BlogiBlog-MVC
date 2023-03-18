@@ -8,6 +8,8 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+
 <main class="main">
 	<div class="page-header breadcrumb-wrap">
 		<div class="container">
@@ -150,28 +152,33 @@
 	</div>
 </main>
 
-<script>
 
-	const form = document.getElementById('commentForm');
 
-	form.addEventListener('submit', function (e) {
-		e.preventDefault();
+@section scripts{
 
-		const payload = new FormData(form);
+	<script>
 
-		fetch('/home/Comment', {
-			method: "POST",
-			body: payload
-		})
-			.then(res => res.json())
-			.then(response => {
-				toastr["info"](response.data.message)
+		const form = document.getElementById('commentForm');
+
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
+
+			const payload = new FormData(form);
+
+			fetch('/home/Comment', {
+				method: "POST",
+				body: payload
 			})
-			.catch(err => console.log(err))
+				.then(res => res.json())
+				.then(response => {
+					toastr["info"](response.data.message)
+				})
+				.catch(err => console.log(err))
 
-		document.getElementById("commentForm").reset();
-	})
+			document.getElementById("commentForm").reset();
+		})
 
 
 
-</script>
+	</script>
+}

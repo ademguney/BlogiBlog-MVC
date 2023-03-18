@@ -30,6 +30,10 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="~/assets/css/main.css?v=3.2" />
     <link href="~/assets/css/plugins/toastr.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/js/editor/prism.css" rel="stylesheet" type="text/css">
+
+    <!-- End CSS -->
+    @RenderSection("style", required: false)
 </head>
 
 <body>
@@ -103,5 +107,7 @@
     <script src="~/assets/js/main.js?v=3.2"></script>
     <script src="~/assets/js/shop.js?v=3.2"></script>
     <script src="~/assets/js/plugins/toastr.min.js"></script>
+    <script src="~/assets/js/editor/prism.js"></script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>

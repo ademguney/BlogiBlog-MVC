@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FRmM1i2qeJu8pC2+UAeEx7y/Q5OJcDLwrBS8Qtkne1s=",
+  "Hash": "6NNxiD6TmSu8vtxKPDd92CL7LUvIcOE/OLXNuzkw0l4=",
   "Source": "Blogi.Dashboard",
   "BasePath": "_content/Blogi.Dashboard",
   "Mode": "Default",
@@ -21760,23 +21760,6 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\detect.js"
     },
     {
-      "Identity": "C:\\Users\\adem.guney\\Desktop\\OldDesktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\wwwroot\\assets\\js\\init\\form-editor-init.js",
-      "SourceId": "Blogi.Dashboard",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\adem.guney\\Desktop\\OldDesktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\wwwroot\\",
-      "BasePath": "_content/Blogi.Dashboard",
-      "RelativePath": "assets/js/init/form-editor-init.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\js\\init\\form-editor-init.js"
-    },
-    {
       "Identity": "C:\\Users\\adem.guney\\Desktop\\OldDesktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\wwwroot\\assets\\js\\jquery.min.js",
       "SourceId": "Blogi.Dashboard",
       "SourceType": "Discovered",
@@ -29629,6 +29612,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\views\\language\\home.js"
+    },
+    {
+      "Identity": "C:\\Users\\adem.guney\\Desktop\\OldDesktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\wwwroot\\js\\views\\post\\editor-config.js",
+      "SourceId": "Blogi.Dashboard",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\adem.guney\\Desktop\\OldDesktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\wwwroot\\",
+      "BasePath": "_content/Blogi.Dashboard",
+      "RelativePath": "js/views/post/editor-config.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\views\\post\\editor-config.js"
     },
     {
       "Identity": "C:\\Users\\adem.guney\\Desktop\\OldDesktop\\Github\\BlogiBlog-MVC\\BlogiBlogArchitecture\\src\\blogiBlog\\Presentation\\Blogi.Dashboard\\wwwroot\\js\\views\\post\\home.js",

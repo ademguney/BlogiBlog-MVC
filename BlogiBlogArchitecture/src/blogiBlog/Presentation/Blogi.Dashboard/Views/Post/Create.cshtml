@@ -1,194 +1,190 @@
 ﻿@model Blogi.Dashboard.Models.PostCreateViewModel
 @{
-    ViewData["Title"] = "Create";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+	ViewData["Title"] = "Create";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="row">
-    <div class="col-lg-12">
-        <div class="xp-breadcrumbbar">
-            <div class="row">
-                <div class="col-md-6 col-lg-6">
-                    <h4 class="xp-page-title">
-                        <a asp-controller="Dashboard" asp-action="Home" style="color: #8A98AC"><i class="icon-home"></i> @Localize("page_default_label_home")</a>
-                    </h4>
-                </div>
-                <div class="col-md-6 col-lg-6">
-                    <div class="xp-breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <a asp-controller="Post" asp-action="Home"><i class="icon-home"></i></a>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page">
-                                <a asp-controller="Post" asp-action="Home">@Localize("page_default_back_to_list")</a>
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="col-lg-12">
+		<div class="xp-breadcrumbbar">
+			<div class="row">
+				<div class="col-md-6 col-lg-6">
+					<h4 class="xp-page-title">
+						<a asp-controller="Dashboard" asp-action="Home" style="color: #8A98AC"><i class="icon-home"></i> @Localize("page_default_label_home")</a>
+					</h4>
+				</div>
+				<div class="col-md-6 col-lg-6">
+					<div class="xp-breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a asp-controller="Post" asp-action="Home"><i class="icon-home"></i></a>
+							</li>
+							<li class="breadcrumb-item active" aria-current="page">
+								<a asp-controller="Post" asp-action="Home">@Localize("page_default_back_to_list")</a>
+							</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <br />
 
 <form asp-controller="Post" asp-action="Create" method="post" enctype="multipart/form-data">
-    @Html.AntiForgeryToken()
-    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
-    <input type="hidden" asp-for="Post.UserId" name="Post.UserId" value="@User.FindFirst(ClaimTypes.NameIdentifier).Value" />
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card m-b-30">
-                <div class="card-header bg-primary" style="color:white">
-                    <i class='fa fa-file-image-o'></i> @Localize("page_post_label_header_image")
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">@Localize("page_post_label_image")</label>
-                                <div class="col-sm-10">
-                                    <input type="file" class="form-control" name="File" onchange="previewImg(event)">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">@Localize("page_post_label_image_alt")</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" asp-for="Post.ImageAlt" required>
-                                    <span class="text-danger" asp-validation-for="Post.ImageAlt"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form-group row">
-                                <img id="imgPreview" class="img-fluid" style="width:400px; height:200px;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br />
-            <div class="card m-b-30">
-                <div class="card-header bg-primary" style="color:white">
-                    <i class='ion ion-ios-information-circle'></i> @Localize("page_post_label_seo")
-                </div>
-                <div class="card-body">
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">@Localize("page_post_label_tags")</label>
-                        <div class="col-sm-10">
-                            <select asp-for="TagIds"
-                                    class="js-example-basic-multiple"
-                                    name="TagIds[]"
-                                    multiple="multiple"
-                                    required>
-                                @foreach (var tag in Model.TagList)
-                                {
-                                    <option value="@tag.Id">@tag.Name, @tag.LanguageName</option>
-                                }
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">@Localize("page_post_label_meta_keywords")</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" asp-for="Post.MetaKeywords" required>
-                            <span class="text-danger" asp-validation-for="Post.MetaKeywords"></span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">@Localize("page_post_label_meta_description")</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" asp-for="Post.MetaDescription" required>
-                            <span class="text-danger" asp-validation-for="Post.MetaDescription"></span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">@Localize("page_post_label_url")</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" asp-for="Post.Slug" required>
-                            <span class="text-danger" asp-validation-for="Post.Slug"></span>
-                        </div>
-                    </div>
+	@Html.AntiForgeryToken()
+	<div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+	<input type="hidden" asp-for="Post.UserId" name="Post.UserId" value="@User.FindFirst(ClaimTypes.NameIdentifier).Value" />
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="card m-b-30">
+				<div class="card-header bg-primary" style="color:white">
+					<i class='fa fa-file-image-o'></i> @Localize("page_post_label_header_image")
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col-lg-8">
+							<div class="form-group row">
+								<label class="col-sm-2 col-form-label">@Localize("page_post_label_image")</label>
+								<div class="col-sm-10">
+									<input type="file" class="form-control" name="File" onchange="previewImg(event)">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label class="col-sm-2 col-form-label">@Localize("page_post_label_image_alt")</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" asp-for="Post.ImageAlt" required>
+									<span class="text-danger" asp-validation-for="Post.ImageAlt"></span>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group row">
+								<img id="imgPreview" class="img-fluid" style="width:400px; height:200px;">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br />
+			<div class="card m-b-30">
+				<div class="card-header bg-primary" style="color:white">
+					<i class='ion ion-ios-information-circle'></i> @Localize("page_post_label_seo")
+				</div>
+				<div class="card-body">
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">@Localize("page_post_label_tags")</label>
+						<div class="col-sm-10">
+							<select asp-for="TagIds"
+		 class="js-example-basic-multiple"
+									name="TagIds[]"
+		 multiple="multiple"
+									required>
+								@foreach (var tag in Model.TagList)
+								{
+									<option value="@tag.Id">@tag.Name, @tag.LanguageName</option>
+								}
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">@Localize("page_post_label_meta_keywords")</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" asp-for="Post.MetaKeywords" required>
+							<span class="text-danger" asp-validation-for="Post.MetaKeywords"></span>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">@Localize("page_post_label_meta_description")</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" asp-for="Post.MetaDescription" required>
+							<span class="text-danger" asp-validation-for="Post.MetaDescription"></span>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">@Localize("page_post_label_url")</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" asp-for="Post.Slug" required>
+							<span class="text-danger" asp-validation-for="Post.Slug"></span>
+						</div>
+					</div>
 
-                </div>
-            </div>
-            <br />
-            <div class="card m-b-30">
-                <div class="card-header bg-primary" style="color:white">
-                    <i class='icon-book-open'></i> @Localize("page_post_label_post")
-                </div>
-                <div class="card-body">
+				</div>
+			</div>
+			<br />
+			<div class="card m-b-30">
+				<div class="card-header bg-primary" style="color:white">
+					<i class='icon-book-open'></i> @Localize("page_post_label_post")
+				</div>
+				<div class="card-body">
 
-                    <fieldset class="form-group">
-                        <div class="row">
-                            <label class="col-sm-2 col-form-label">@Localize("page_default_label_language")</label>
-                            <div class="col-sm-10">
-                                <select asp-for="Post.LanguageId" class="form-control" required>
-                                    <option selected="selected" value="0">@Localize("page_default_label_select_language")</option>
-                                    @foreach (var item in Model.LanguageList)
-                                    {
-                                        <option value="@item.Id">@item.Name</option>
-                                    }
-                                </select>
-                            </div>
-                        </div>
-                    </fieldset>
+					<fieldset class="form-group">
+						<div class="row">
+							<label class="col-sm-2 col-form-label">@Localize("page_default_label_language")</label>
+							<div class="col-sm-10">
+								<select asp-for="Post.LanguageId" class="form-control" required>
+									<option selected="selected" value="0">@Localize("page_default_label_select_language")</option>
+									@foreach (var item in Model.LanguageList)
+									{
+										<option value="@item.Id">@item.Name</option>
+									}
+								</select>
+							</div>
+						</div>
+					</fieldset>
 
-                    <fieldset class="form-group">
-                        <div class="row">
-                            <label class="col-sm-2 col-form-label">@Localize("page_default_label_category")</label>
-                            <div class="col-sm-10">
-                                <select asp-for="Post.CategoryId" class="form-control" required>
-                                    <option selected="selected" value="0">@Localize("page_default_label_select_category")</option>
-                                    @foreach (var category in Model.CategoryList)
-                                    {
-                                        <option value="@category.Id">@category.Name, @category.Culture</option>
-                                    }
-                                </select>
-                            </div>
-                        </div>
-                    </fieldset>
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">@Localize("page_post_label_title")</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" asp-for="Post.Title" required>
-                            <span class="text-danger" asp-validation-for="Post.Title"></span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-12">
-                            <textarea id="xp-tinymce" asp-for="Post.Content" required></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" asp-for="Post.IsPublished">
-                            <label class="form-check-label" asp-for="Post.IsPublished">
-                               @Localize("page_post_label_is_published")
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <button type="submit" class="btn btn-success btn-rounded btn-lg btn-block"> @Localize("page_default_button_create")<i class="mdi mdi-plus ml-2"></i></button>
-                    </div>
+					<fieldset class="form-group">
+						<div class="row">
+							<label class="col-sm-2 col-form-label">@Localize("page_default_label_category")</label>
+							<div class="col-sm-10">
+								<select asp-for="Post.CategoryId" class="form-control" required>
+									<option selected="selected" value="0">@Localize("page_default_label_select_category")</option>
+									@foreach (var category in Model.CategoryList)
+									{
+										<option value="@category.Id">@category.Name, @category.Culture</option>
+									}
+								</select>
+							</div>
+						</div>
+					</fieldset>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">@Localize("page_post_label_title")</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" asp-for="Post.Title" required>
+							<span class="text-danger" asp-validation-for="Post.Title"></span>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-sm-12">
+							<textarea id="xp-tinymce" asp-for="Post.Content" required></textarea>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" asp-for="Post.IsPublished">
+							<label class="form-check-label" asp-for="Post.IsPublished">
+								@Localize("page_post_label_is_published")
+							</label>
+						</div>
+					</div>
+					<div class="form-group row">
+						<button type="submit" class="btn btn-success btn-rounded btn-lg btn-block"> @Localize("page_default_button_create")<i class="mdi mdi-plus ml-2"></i></button>
+					</div>
 
-                </div>
-            </div>
-        </div>
-    </div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </form>
 
 
 @section scripts {
-<script>
-    $(document).ready(function() {
-           $('.js-example-basic-multiple').select2();
-      });
-
-     var previewImg=function (event){
-               var result= document.getElementById("imgPreview");
-               result.src=URL.createObjectURL(event.target.files[0]);
-      };
-
-</script>
+	<script src="~/js/views/post/editor-config.js" asp-append-version="true"></script>
+	<script>
+		var previewImg = function (event) {
+			var result = document.getElementById("imgPreview");
+			result.src = URL.createObjectURL(event.target.files[0]);
+		};
+	</script>
 }
