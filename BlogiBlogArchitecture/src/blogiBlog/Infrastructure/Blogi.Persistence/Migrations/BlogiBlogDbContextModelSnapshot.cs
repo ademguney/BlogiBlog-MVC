@@ -71,7 +71,7 @@ namespace Blogi.Persistence.Migrations
                         {
                             Id = 1,
                             Content = "Selamlar, Ben Adem!",
-                            CountOfView = 0,
+                            CountOfView = 1,
                             LanguageId = 1,
                             MetaDescription = "Blogi Blog acik kaynak kodlu cok dil destegi bulunan web blog projesidir.",
                             MetaKeywords = "open source, blogi blog, blogiblog, web project, multi language",
@@ -82,7 +82,7 @@ namespace Blogi.Persistence.Migrations
                         {
                             Id = 2,
                             Content = "He, I'm Adem :)",
-                            CountOfView = 0,
+                            CountOfView = 1,
                             LanguageId = 2,
                             MetaDescription = "Blogi Blog open source multi language web blog project.",
                             MetaKeywords = "open source, blogi blog, blogiblog, web project, multi language",
@@ -258,7 +258,7 @@ namespace Blogi.Persistence.Migrations
                         {
                             Id = 1,
                             Content = "iletisim bilgilerim",
-                            CountOfView = 0,
+                            CountOfView = 1,
                             Email = "guneyadem63@gmail.com",
                             LanguageId = 1,
                             Location = "Turkiye/SanliUrfa",
@@ -272,7 +272,7 @@ namespace Blogi.Persistence.Migrations
                         {
                             Id = 2,
                             Content = "my contact information",
-                            CountOfView = 0,
+                            CountOfView = 1,
                             Email = "guneyadem63@gmail.com",
                             LanguageId = 2,
                             Location = "Turkey/SanliUrfa",
@@ -368,7 +368,7 @@ namespace Blogi.Persistence.Migrations
                             Email = "blogi@blog.com",
                             FullName = "BlogiBlog",
                             Host = "smtp.gmail.com",
-                            Password = "IG/D8eq7f0sA7RNR2bg8KILbzJQ78Jkp9wJp2J+hdmpH7y+sCQuaWHqvOFAR3dq3",
+                            Password = "xnQ0cJrXgIRlRdLSsjsR4kLc1gIO8LhpRj/PIfovj9RPiH2swllq53Lp1llj6tQP",
                             Port = 587,
                             SslEnabled = false,
                             UseDefaultCredentials = false
@@ -460,7 +460,7 @@ namespace Blogi.Persistence.Migrations
                             Content = "Blogi blog an open source project.",
                             CountOfView = 0,
                             CreatedById = 1,
-                            CreationDate = new DateTime(2023, 3, 13, 10, 53, 5, 204, DateTimeKind.Utc).AddTicks(9795),
+                            CreationDate = new DateTime(2023, 3, 13, 11, 6, 8, 905, DateTimeKind.Utc).AddTicks(6379),
                             ImageAlt = "blogiBlog",
                             IsPublished = true,
                             LanguageId = 1,
@@ -477,7 +477,7 @@ namespace Blogi.Persistence.Migrations
                             Content = "Blogi blog an open source project.",
                             CountOfView = 0,
                             CreatedById = 1,
-                            CreationDate = new DateTime(2023, 3, 13, 10, 53, 5, 204, DateTimeKind.Utc).AddTicks(9798),
+                            CreationDate = new DateTime(2023, 3, 13, 11, 6, 8, 905, DateTimeKind.Utc).AddTicks(6383),
                             ImageAlt = "blogiBlog",
                             IsPublished = true,
                             LanguageId = 2,
@@ -2493,7 +2493,7 @@ namespace Blogi.Persistence.Migrations
                             Id = 1,
                             Email = "blogi@blog.com",
                             Name = "BLOGI",
-                            Password = "SGTaVXAKVuodRUaOiecBCsf7TJRBJUZAyWQ5fmVLnMYO6Zs3L3NePL8peobjq1zA",
+                            Password = "gR9qb1tV9Pg/DFMyX12mPMiWT/1XCYLc3V7wJE77zh52nDdppivx+EYBUiWTuNEk",
                             Surname = "BLOG"
                         });
                 });

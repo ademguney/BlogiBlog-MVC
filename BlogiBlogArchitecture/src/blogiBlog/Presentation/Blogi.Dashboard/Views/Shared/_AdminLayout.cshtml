@@ -2,117 +2,118 @@
 <html lang="en">
 <head>
 
-    <meta charset="UTF-8">
-    <title> @ViewData["Title"] | Blogi Blog Admin Panel</title>
-    <meta name="robots" content="noindex,nofollow" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta charset="UTF-8">
+	<title> @ViewData["Title"] | Blogi Blog Admin Panel</title>
+	<meta name="robots" content="noindex,nofollow" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.png">
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="~/favicon.png">
 
-    <!-- DataTables CSS -->
-    <link href="~/assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
-    <link href="~/assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" />
-    <link href="~/assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" />
+	<!-- DataTables CSS -->
+	<link href="~/assets/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+	<link href="~/assets/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" />
+	<link href="~/assets/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" />
 
-    <!-- Start CSS -->
-    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="~/assets/css/icons.css" rel="stylesheet" type="text/css">
-    <link href="~/assets/css/style.css" rel="stylesheet" type="text/css">
-    <link href="~/assets/plugins/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/assets/plugins/toastrjs/toastr.min.css" rel="stylesheet" type="text/css" />
+	<!-- Start CSS -->
+	<link href="~/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="~/assets/css/icons.css" rel="stylesheet" type="text/css">
+	<link href="~/assets/css/style.css" rel="stylesheet" type="text/css">
+	<link href="~/assets/plugins/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
+	<link href="~/assets/plugins/toastrjs/toastr.min.css" rel="stylesheet" type="text/css" />
 
-     <link href="~/assets/plugins/tinymce/plugins/codesample/css/prism.css" rel="stylesheet" type="text/css" />
 
-    <!-- End CSS -->
-    @RenderSection("style", required: false)
+	<!-- Text Editor CSS -->
+	<link href="~/assets/plugins/tinymce/plugins/codesample/css/prism.css" rel="stylesheet" type="text/css" />
+
+	<!-- End CSS -->
+	@RenderSection("style", required: false)
 </head>
 
 <body class="xp-vertical">
 
-    <!-- Start XP Container -->
-    <div id="xp-container">
+	<!-- Start XP Container -->
+	<div id="xp-container">
 
-        <!-- Start XP Leftbar -->
-        <partial name="_leftSideBar" />
-        <!-- End XP Leftbar -->
-        <!-- Start XP Rightbar -->
-        <div class="xp-rightbar">
+		<!-- Start XP Leftbar -->
+		<partial name="_leftSideBar" />
+		<!-- End XP Leftbar -->
+		<!-- Start XP Rightbar -->
+		<div class="xp-rightbar">
 
-            <!-- Start XP Topbar -->
-            <partial name="_topBar" />
-            <!-- End XP Topbar -->
+			<!-- Start XP Topbar -->
+			<partial name="_topBar" />
+			<!-- End XP Topbar -->
+			<!-- Start XP Contentbar -->
+			<div class="xp-contentbar">
 
-            <!-- Start XP Contentbar -->
-            <div class="xp-contentbar">
+				<!-- Start XP Row -->
+				<div class="row">
 
-                <!-- Start XP Row -->
-                <div class="row">
+					<!-- Start XP Col -->
+					<div class="col-md-12 col-lg-12 col-xl-12">
+						@RenderBody()
+					</div>
+					<!-- End XP Col -->
 
-                    <!-- Start XP Col -->
-                    <div class="col-md-12 col-lg-12 col-xl-12">
-                        @RenderBody()
-                    </div>
-                    <!-- End XP Col -->
+				</div>
+				<!-- End XP Row -->
 
-                </div>
-                <!-- End XP Row -->
+			</div>
+			<!-- End XP Contentbar -->
+			<!-- Start XP Footerbar -->
+			<partial name="_footer" />
+			<!-- End XP Footerbar -->
 
-            </div>
-            <!-- End XP Contentbar -->
+		</div>
+		<!-- End XP Rightbar -->
 
-            <!-- Start XP Footerbar -->
-            <partial name="_footer" />
-            <!-- End XP Footerbar -->
-
-        </div>
-        <!-- End XP Rightbar -->
-
-    </div>
-    <!-- End XP Container -->
-    <!-- Start JS -->
-    <script src="~/assets/js/jquery.min.js"></script>
-    <script src="~/assets/js/popper.min.js"></script>
-    <script src="~/assets/js/bootstrap.min.js"></script>
-    <script src="~/assets/js/modernizr.min.js"></script>
-    <script src="~/assets/js/detect.js"></script>
-    <script src="~/assets/js/jquery.slimscroll.js"></script>
-    <script src="~/assets/js/sidebar-menu.js"></script>
-    <script src="~/assets/plugins/sweet-alert2/sweetalert2@9.js"></script>
-    <script src="~/assets/plugins/toastrjs/toastr.min.js"></script>
+	</div>
+	<!-- End XP Container -->
+	<!-- Start JS -->
+	<script src="~/assets/js/jquery.min.js"></script>
+	<script src="~/assets/js/popper.min.js"></script>
+	<script src="~/assets/js/bootstrap.min.js"></script>
+	<script src="~/assets/js/modernizr.min.js"></script>
+	<script src="~/assets/js/detect.js"></script>
+	<script src="~/assets/js/jquery.slimscroll.js"></script>
+	<script src="~/assets/js/sidebar-menu.js"></script>
+	<script src="~/assets/plugins/sweet-alert2/sweetalert2@9.js"></script>
+	<script src="~/assets/plugins/toastrjs/toastr.min.js"></script>
 
 
-    <!-- DataTable JS -->
-    <script src="~/assets/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="~/assets/plugins/datatables/dataTables.responsive.min.js"></script>
-    <script src="~/assets/plugins/datatables/dataTables.buttons.min.js"></script>
-    <script src="~/assets/plugins/datatables/buttons.bootstrap4.min.js"></script>
-    <script src="~/assets/plugins/datatables/jszip.min.js"></script>
-    <script src="~/assets/plugins/datatables/pdfmake.min.js"></script>
-    <script src="~/assets/plugins/datatables/vfs_fonts.js"></script>
-    <script src="~/assets/plugins/datatables/buttons.print.min.js"></script>
-    <script src="~/assets/plugins/datatables/buttons.html5.min.js"></script>
-    <script src="~/assets/plugins/datatables/buttons.colVis.min.js"></script>
+	<!-- DataTable JS -->
+	<script src="~/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="~/assets/plugins/datatables/dataTables.responsive.min.js"></script>
+	<script src="~/assets/plugins/datatables/dataTables.buttons.min.js"></script>
+	<script src="~/assets/plugins/datatables/buttons.bootstrap4.min.js"></script>
+	<script src="~/assets/plugins/datatables/jszip.min.js"></script>
+	<script src="~/assets/plugins/datatables/pdfmake.min.js"></script>
+	<script src="~/assets/plugins/datatables/vfs_fonts.js"></script>
+	<script src="~/assets/plugins/datatables/buttons.print.min.js"></script>
+	<script src="~/assets/plugins/datatables/buttons.html5.min.js"></script>
+	<script src="~/assets/plugins/datatables/buttons.colVis.min.js"></script>
 
-    <!-- Wysiwig JS -->
-    <script src="~/assets/plugins/tinymce/tinymce.min.js"></script>
-    <script src="~/assets/js/init/form-editor-init.js"></script>
-     <script src="~/assets/plugins/tinymce/plugins/template/plugin.min.js"></script>
-      <script src="~/assets/plugins/tinymce/plugins/code/plugin.min.js"></script>
-       <script src="~/assets/plugins/tinymce/plugins/codesample/plugin.min.js"></script>
-    <script src="~/assets/plugins/select2/dist/js/select2.full.min.js"></script>
+	<!-- Wysiwig JS -->
+	<script src="~/assets/plugins/tinymce/tinymce.min.js"></script>
+	<script src="~/assets/js/init/form-editor-init.js"></script>
+	<script src="~/assets/plugins/tinymce/plugins/template/plugin.min.js"></script>
+	<script src="~/assets/plugins/tinymce/plugins/code/plugin.min.js"></script>
+	<script src="~/assets/plugins/tinymce/plugins/codesample/plugin.min.js"></script>
+	<script src="~/assets/plugins/select2/dist/js/select2.full.min.js"></script>
 
-    <!-- Validation JS -->
-    <script src="~/assets/plugins/validate/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="~/assets/plugins/validate/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+	<!-- Validation JS -->
+	<script src="~/assets/plugins/validate/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="~/assets/plugins/validate/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+	
+
+	<!-- Main JS -->
+	<script src="~/assets/js/main.js"></script>
 
 
-    <!-- Main JS -->
-    <script src="~/assets/js/main.js"></script>
-
-
-    @await Html.PartialAsync("_notificationPartial")
-    @RenderSection("Scripts", required: false)
+	@await Html.PartialAsync("_notificationPartial")
+	@RenderSection("Scripts", required: false)
 </body>
 </html>

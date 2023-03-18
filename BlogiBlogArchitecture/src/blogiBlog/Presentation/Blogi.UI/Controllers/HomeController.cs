@@ -48,7 +48,6 @@ namespace Blogi.UI.Controllers
             return Json(new { data = result });
         }
 
-
         [HttpGet]
         [Route("category/{categoryName}-{id}")]
         public async Task<IActionResult> Category(int id, int pageNo = 1, int pageSize = 9)
