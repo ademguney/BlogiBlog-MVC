@@ -149,7 +149,7 @@ namespace Blogi.Application.Services.PostService
 
 		public async Task<List<GetMostReadPostOutput>> GetMostReadAsync()
 		{
-			var result = await _postReadRepository.GetAll()
+			var result = await _postReadRepository.GetAll(x=>x.CreationDate.Year==DateTime.Now.Year)
 												.OrderByDescending(x => x.CountOfView)
 												.Select(x => new GetMostReadPostOutput
 														{

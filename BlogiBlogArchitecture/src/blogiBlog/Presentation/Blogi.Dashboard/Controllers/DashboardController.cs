@@ -34,7 +34,7 @@ namespace Blogi.Dashboard.Controllers
 		public async Task<JsonResult> GetMostRead()
 		{
 			var result = await Mediator.Send(new GetMostReadPostQuery());
-			return Json(new { data = result.Data });
+			return Json(new { result.Data });
 		}
 	}
 }
