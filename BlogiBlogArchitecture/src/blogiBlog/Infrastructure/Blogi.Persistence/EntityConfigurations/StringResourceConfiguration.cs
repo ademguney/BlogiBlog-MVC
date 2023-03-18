@@ -449,7 +449,19 @@
 ,
 	new StringResource { Id = 270, LanguageId = 2, Key = "blog_ui_post_reply", Value = "Reply" }
 
-				);
+	,
+	new StringResource { Id = 271, LanguageId = 1, Key = "page_home_label_read_article", Value = "Bu yıl en çok okunan 10 makale." },
+	new StringResource { Id = 272, LanguageId = 2, Key = "page_home_label_read_article", Value = "Top 10 most read articles this year." },
+	new StringResource { Id = 273, LanguageId = 1, Key = "page_home_label_count_of_tag", Value = "Etiket Sayısı" },
+	new StringResource { Id = 274, LanguageId = 2, Key = "page_home_label_count_of_tag", Value = "Count of Tag" },
+	new StringResource { Id = 275, LanguageId = 1, Key = "page_home_label_count_of_comment", Value = "Yorum Sayısı" },
+	new StringResource { Id = 276, LanguageId = 2, Key = "page_home_label_count_of_comment", Value = "Count of Comment" },
+	new StringResource { Id = 277, LanguageId = 1, Key = "page_home_label_count_of_category", Value = "Kategori Sayısı" },
+	new StringResource { Id = 278, LanguageId = 2, Key = "page_home_label_count_of_category", Value = "Count of Category" },
+	new StringResource { Id = 279, LanguageId = 1, Key = "page_home_label_count_of_article", Value = "Makale Sayısı" },
+	new StringResource { Id = 280, LanguageId = 2, Key = "page_home_label_count_of_article", Value = "Count of Article" }
+
+		 );
 		}
 	}
 }

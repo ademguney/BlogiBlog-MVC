@@ -12,7 +12,7 @@
 				<div class="xp-widget-box">
 					<div class="float-left">
 						<h4 class="xp-counter text-white">@Model.CountOfArticle</h4>
-						<p class="mb-0 text-white">Count of Article</p>
+						<p class="mb-0 text-white">@Localize("page_home_label_count_of_article")</p>
 					</div>
 					<div class="float-right">
 						<div class="xp-widget-icon xp-widget-icon-bg">
@@ -32,7 +32,7 @@
 				<div class="xp-widget-box">
 					<div class="float-left">
 						<h4 class="xp-counter text-white">@Model.CountOfCategory</h4>
-						<p class="mb-0 text-white">Count of Category</p>
+						<p class="mb-0 text-white">@Localize("page_home_label_count_of_category")</p>
 					</div>
 					<div class="float-right">
 						<div class="xp-widget-icon xp-widget-icon-bg">
@@ -52,7 +52,7 @@
 				<div class="xp-widget-box">
 					<div class="float-left">
 						<h4 class="xp-counter text-white">@Model.CountOfComment</h4>
-						<p class="mb-0 text-white">Count of Comment</p>
+						<p class="mb-0 text-white">@Localize("page_home_label_count_of_category")</p>
 					</div>
 					<div class="float-right">
 						<div class="xp-widget-icon xp-widget-icon-bg">
@@ -72,7 +72,7 @@
 				<div class="xp-widget-box">
 					<div class="float-left">
 						<h4 class="xp-counter text-white">@Model.CountOfTag</h4>
-						<p class="mb-0 text-white">Count of Tag</p>
+						<p class="mb-0 text-white">@Localize("page_home_label_count_of_tag")</p>
 					</div>
 					<div class="float-right">
 						<div class="xp-widget-icon xp-widget-icon-bg bg-white">
@@ -87,10 +87,10 @@
 </div>
 
 <div class="row">
-	<div class="col-lg-6">
+	<div class="col-lg-12">
 		<div class="card m-b-30">
 			<div class="card-header bg-white">
-				<h5 class="card-title text-black">Top 10 most read articles this month.</h5>
+				<h5 class="card-title text-black">@Localize("page_home_label_read_article")</h5>
 			</div>
 			<div class="card-body">
 				<div id="pie-chart"></div>
