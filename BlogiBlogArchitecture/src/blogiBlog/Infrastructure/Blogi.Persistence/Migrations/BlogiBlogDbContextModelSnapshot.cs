@@ -368,7 +368,7 @@ namespace Blogi.Persistence.Migrations
                             Email = "blogi@blog.com",
                             FullName = "BlogiBlog",
                             Host = "smtp.gmail.com",
-                            Password = "xnQ0cJrXgIRlRdLSsjsR4kLc1gIO8LhpRj/PIfovj9RPiH2swllq53Lp1llj6tQP",
+                            Password = "cK487eCI2lgIhFJd9w/o2Qw5ayOUYRXqENLXc3FTerfQzf4M7eMe3yl0+adCJZAN",
                             Port = 587,
                             SslEnabled = false,
                             UseDefaultCredentials = false
@@ -457,34 +457,34 @@ namespace Blogi.Persistence.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            Content = "Blogi blog an open source project.",
-                            CountOfView = 0,
+                            Content = "<h2 dir=\"auto\" style=\"text-align: center;\"tabindex=\"-1\">Blogi Blog Open Source Multi Language Blog Project</h2>\r\n<p>An Open-Source multi language blogging platform built with <strong>Onion Architecture</strong> In Asp.net Core MVC With <strong>CQRS</strong>.</p>\r\n<p>&nbsp;&nbsp;</p>\r\n<h2 dir=\"auto\" tabindex=\"-1\">Used Technologies</h2>\r\n<ul dir=\"auto\">\r\n<li>CQRS</li>\r\n<li>.NET CORE 6</li>\r\n<li>SOLID Principles</li>\r\n<li>Asp.net Core MVC</li>\r\n<li>Repository Pattern</li>\r\n<li>MediatR version=\"11.0.0\"</li>\r\n<li>AutoMapper version=\"12.0.0\"</li>\r\n<li>FluentValidation version=\"11.2.2\"</li>\r\n<li>EntityFrameworkCore version=\"6.0.10\"</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<h2 dir=\"auto\" tabindex=\"-1\">Give a Star!</h2>\r\n<p>If you like or are using this project to learn or start your solution, please give it a star. Thanks!</p>\r\n<p>&nbsp;</p>\r\n<h2 dir=\"auto\" tabindex=\"-1\">License</h2>\r\n<p>This blog is open-sourced software licensed under the&nbsp;<a href=\"http://opensource.org/licenses/MIT\" rel=\"nofollow\">MIT license</a>.</p>",
+                            CountOfView = 1,
                             CreatedById = 1,
-                            CreationDate = new DateTime(2023, 3, 13, 11, 6, 8, 905, DateTimeKind.Utc).AddTicks(6379),
+                            CreationDate = new DateTime(2023, 3, 19, 0, 2, 12, 215, DateTimeKind.Utc).AddTicks(813),
                             ImageAlt = "blogiBlog",
                             IsPublished = true,
                             LanguageId = 1,
                             MetaDescription = "is an open source multi language blog project Blog BLOG",
                             MetaKeywords = "blogiblog,open source, blog project",
-                            Slug = "test-content",
-                            Title = "Multi Language Blog Project",
+                            Slug = "blogi-blog-acik-kaynak",
+                            Title = "Blogi Blog?",
                             UserId = 1
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 1,
-                            Content = "Blogi blog an open source project.",
-                            CountOfView = 0,
+                            Content = "<h2 dir=\"auto\" style=\"text-align: center;\"tabindex=\"-1\">Blogi Blog Open Source Multi Language Blog Project</h2>\r\n<p>An Open-Source multi language blogging platform built with <strong>Onion Architecture</strong> In Asp.net Core MVC With <strong>CQRS</strong>.</p>\r\n<p>&nbsp;&nbsp;</p>\r\n<h2 dir=\"auto\" tabindex=\"-1\">Used Technologies</h2>\r\n<ul dir=\"auto\">\r\n<li>CQRS</li>\r\n<li>.NET CORE 6</li>\r\n<li>SOLID Principles</li>\r\n<li>Asp.net Core MVC</li>\r\n<li>Repository Pattern</li>\r\n<li>MediatR version=\"11.0.0\"</li>\r\n<li>AutoMapper version=\"12.0.0\"</li>\r\n<li>FluentValidation version=\"11.2.2\"</li>\r\n<li>EntityFrameworkCore version=\"6.0.10\"</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<h2 dir=\"auto\" tabindex=\"-1\">Give a Star!</h2>\r\n<p>If you like or are using this project to learn or start your solution, please give it a star. Thanks!</p>\r\n<p>&nbsp;</p>\r\n<h2 dir=\"auto\" tabindex=\"-1\">License</h2>\r\n<p>This blog is open-sourced software licensed under the&nbsp;<a href=\"http://opensource.org/licenses/MIT\" rel=\"nofollow\">MIT license</a>.</p>",
+                            CountOfView = 1,
                             CreatedById = 1,
-                            CreationDate = new DateTime(2023, 3, 13, 11, 6, 8, 905, DateTimeKind.Utc).AddTicks(6383),
+                            CreationDate = new DateTime(2023, 3, 19, 0, 2, 12, 215, DateTimeKind.Utc).AddTicks(822),
                             ImageAlt = "blogiBlog",
                             IsPublished = true,
                             LanguageId = 2,
                             MetaDescription = "is an open source multi language blog project Blog BLOG",
                             MetaKeywords = "blogiblog,open source, blog project",
-                            Slug = "test-content",
-                            Title = "Multi Language Blog Project",
+                            Slug = "blogi-blog-open-source",
+                            Title = "Blogi Blog?",
                             UserId = 1
                         });
                 });
@@ -2408,6 +2408,76 @@ namespace Blogi.Persistence.Migrations
                             Key = "blog_ui_post_reply",
                             LanguageId = 2,
                             Value = "Reply"
+                        },
+                        new
+                        {
+                            Id = 271,
+                            Key = "page_home_label_read_article",
+                            LanguageId = 1,
+                            Value = "Bu yıl en çok okunan 10 makale."
+                        },
+                        new
+                        {
+                            Id = 272,
+                            Key = "page_home_label_read_article",
+                            LanguageId = 2,
+                            Value = "Top 10 most read articles this year."
+                        },
+                        new
+                        {
+                            Id = 273,
+                            Key = "page_home_label_count_of_tag",
+                            LanguageId = 1,
+                            Value = "Etiket Sayısı"
+                        },
+                        new
+                        {
+                            Id = 274,
+                            Key = "page_home_label_count_of_tag",
+                            LanguageId = 2,
+                            Value = "Count of Tag"
+                        },
+                        new
+                        {
+                            Id = 275,
+                            Key = "page_home_label_count_of_comment",
+                            LanguageId = 1,
+                            Value = "Yorum Sayısı"
+                        },
+                        new
+                        {
+                            Id = 276,
+                            Key = "page_home_label_count_of_comment",
+                            LanguageId = 2,
+                            Value = "Count of Comment"
+                        },
+                        new
+                        {
+                            Id = 277,
+                            Key = "page_home_label_count_of_category",
+                            LanguageId = 1,
+                            Value = "Kategori Sayısı"
+                        },
+                        new
+                        {
+                            Id = 278,
+                            Key = "page_home_label_count_of_category",
+                            LanguageId = 2,
+                            Value = "Count of Category"
+                        },
+                        new
+                        {
+                            Id = 279,
+                            Key = "page_home_label_count_of_article",
+                            LanguageId = 1,
+                            Value = "Makale Sayısı"
+                        },
+                        new
+                        {
+                            Id = 280,
+                            Key = "page_home_label_count_of_article",
+                            LanguageId = 2,
+                            Value = "Count of Article"
                         });
                 });
 
@@ -2493,7 +2563,7 @@ namespace Blogi.Persistence.Migrations
                             Id = 1,
                             Email = "blogi@blog.com",
                             Name = "BLOGI",
-                            Password = "gR9qb1tV9Pg/DFMyX12mPMiWT/1XCYLc3V7wJE77zh52nDdppivx+EYBUiWTuNEk",
+                            Password = "kLp2Bsbj4l2q512xogcX7YOG3dLgMoW0J3s9Z+Ke8uP3rnbQJpabTRSyLJpmVPBX",
                             Surname = "BLOG"
                         });
                 });

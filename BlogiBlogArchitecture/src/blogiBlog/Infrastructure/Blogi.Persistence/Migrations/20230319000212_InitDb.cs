@@ -332,12 +332,12 @@ namespace Blogi.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "MailConfigs",
                 columns: new[] { "Id", "Email", "FullName", "Host", "Password", "Port", "SslEnabled", "UseDefaultCredentials" },
-                values: new object[] { 1, "blogi@blog.com", "BlogiBlog", "smtp.gmail.com", "xnQ0cJrXgIRlRdLSsjsR4kLc1gIO8LhpRj/PIfovj9RPiH2swllq53Lp1llj6tQP", 587, false, false });
+                values: new object[] { 1, "blogi@blog.com", "BlogiBlog", "smtp.gmail.com", "cK487eCI2lgIhFJd9w/o2Qw5ayOUYRXqENLXc3FTerfQzf4M7eMe3yl0+adCJZAN", 587, false, false });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Email", "Name", "Password", "Photo", "Surname" },
-                values: new object[] { 1, "blogi@blog.com", "BLOGI", "gR9qb1tV9Pg/DFMyX12mPMiWT/1XCYLc3V7wJE77zh52nDdppivx+EYBUiWTuNEk", null, "BLOG" });
+                values: new object[] { 1, "blogi@blog.com", "BLOGI", "kLp2Bsbj4l2q512xogcX7YOG3dLgMoW0J3s9Z+Ke8uP3rnbQJpabTRSyLJpmVPBX", null, "BLOG" });
 
             migrationBuilder.InsertData(
                 table: "WebSettings",
@@ -686,7 +686,17 @@ namespace Blogi.Persistence.Migrations
                     { 267, "blog_ui_contact_send_message", 1, "Mesajı Gönder" },
                     { 268, "blog_ui_contact_send_message", 2, "Send Message" },
                     { 269, "blog_ui_post_reply", 1, "Cevapla" },
-                    { 270, "blog_ui_post_reply", 2, "Reply" }
+                    { 270, "blog_ui_post_reply", 2, "Reply" },
+                    { 271, "page_home_label_read_article", 1, "Bu yıl en çok okunan 10 makale." },
+                    { 272, "page_home_label_read_article", 2, "Top 10 most read articles this year." },
+                    { 273, "page_home_label_count_of_tag", 1, "Etiket Sayısı" },
+                    { 274, "page_home_label_count_of_tag", 2, "Count of Tag" },
+                    { 275, "page_home_label_count_of_comment", 1, "Yorum Sayısı" },
+                    { 276, "page_home_label_count_of_comment", 2, "Count of Comment" },
+                    { 277, "page_home_label_count_of_category", 1, "Kategori Sayısı" },
+                    { 278, "page_home_label_count_of_category", 2, "Count of Category" },
+                    { 279, "page_home_label_count_of_article", 1, "Makale Sayısı" },
+                    { 280, "page_home_label_count_of_article", 2, "Count of Article" }
                 });
 
             migrationBuilder.InsertData(
@@ -701,12 +711,12 @@ namespace Blogi.Persistence.Migrations
             migrationBuilder.InsertData(
                 table: "Posts",
                 columns: new[] { "Id", "CategoryId", "Content", "CountOfView", "CreatedById", "CreationDate", "Image", "ImageAlt", "IsPublished", "LanguageId", "MetaDescription", "MetaKeywords", "Slug", "Title", "UpdatedById", "UpdationDate", "UserId" },
-                values: new object[] { 1, 1, "Blogi blog an open source project.", 0, 1, new DateTime(2023, 3, 13, 11, 6, 8, 905, DateTimeKind.Utc).AddTicks(6379), null, "blogiBlog", true, 1, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "test-content", "Multi Language Blog Project", null, null, 1 });
+                values: new object[] { 1, 1, "<h2 dir=\"auto\" style=\"text-align: center;\"tabindex=\"-1\">Blogi Blog Open Source Multi Language Blog Project</h2>\r\n<p>An Open-Source multi language blogging platform built with <strong>Onion Architecture</strong> In Asp.net Core MVC With <strong>CQRS</strong>.</p>\r\n<p>&nbsp;&nbsp;</p>\r\n<h2 dir=\"auto\" tabindex=\"-1\">Used Technologies</h2>\r\n<ul dir=\"auto\">\r\n<li>CQRS</li>\r\n<li>.NET CORE 6</li>\r\n<li>SOLID Principles</li>\r\n<li>Asp.net Core MVC</li>\r\n<li>Repository Pattern</li>\r\n<li>MediatR version=\"11.0.0\"</li>\r\n<li>AutoMapper version=\"12.0.0\"</li>\r\n<li>FluentValidation version=\"11.2.2\"</li>\r\n<li>EntityFrameworkCore version=\"6.0.10\"</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<h2 dir=\"auto\" tabindex=\"-1\">Give a Star!</h2>\r\n<p>If you like or are using this project to learn or start your solution, please give it a star. Thanks!</p>\r\n<p>&nbsp;</p>\r\n<h2 dir=\"auto\" tabindex=\"-1\">License</h2>\r\n<p>This blog is open-sourced software licensed under the&nbsp;<a href=\"http://opensource.org/licenses/MIT\" rel=\"nofollow\">MIT license</a>.</p>", 1, 1, new DateTime(2023, 3, 19, 0, 2, 12, 215, DateTimeKind.Utc).AddTicks(813), null, "blogiBlog", true, 1, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "blogi-blog-acik-kaynak", "Blogi Blog?", null, null, 1 });
 
             migrationBuilder.InsertData(
                 table: "Posts",
                 columns: new[] { "Id", "CategoryId", "Content", "CountOfView", "CreatedById", "CreationDate", "Image", "ImageAlt", "IsPublished", "LanguageId", "MetaDescription", "MetaKeywords", "Slug", "Title", "UpdatedById", "UpdationDate", "UserId" },
-                values: new object[] { 2, 1, "Blogi blog an open source project.", 0, 1, new DateTime(2023, 3, 13, 11, 6, 8, 905, DateTimeKind.Utc).AddTicks(6383), null, "blogiBlog", true, 2, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "test-content", "Multi Language Blog Project", null, null, 1 });
+                values: new object[] { 2, 1, "<h2 dir=\"auto\" style=\"text-align: center;\"tabindex=\"-1\">Blogi Blog Open Source Multi Language Blog Project</h2>\r\n<p>An Open-Source multi language blogging platform built with <strong>Onion Architecture</strong> In Asp.net Core MVC With <strong>CQRS</strong>.</p>\r\n<p>&nbsp;&nbsp;</p>\r\n<h2 dir=\"auto\" tabindex=\"-1\">Used Technologies</h2>\r\n<ul dir=\"auto\">\r\n<li>CQRS</li>\r\n<li>.NET CORE 6</li>\r\n<li>SOLID Principles</li>\r\n<li>Asp.net Core MVC</li>\r\n<li>Repository Pattern</li>\r\n<li>MediatR version=\"11.0.0\"</li>\r\n<li>AutoMapper version=\"12.0.0\"</li>\r\n<li>FluentValidation version=\"11.2.2\"</li>\r\n<li>EntityFrameworkCore version=\"6.0.10\"</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<h2 dir=\"auto\" tabindex=\"-1\">Give a Star!</h2>\r\n<p>If you like or are using this project to learn or start your solution, please give it a star. Thanks!</p>\r\n<p>&nbsp;</p>\r\n<h2 dir=\"auto\" tabindex=\"-1\">License</h2>\r\n<p>This blog is open-sourced software licensed under the&nbsp;<a href=\"http://opensource.org/licenses/MIT\" rel=\"nofollow\">MIT license</a>.</p>", 1, 1, new DateTime(2023, 3, 19, 0, 2, 12, 215, DateTimeKind.Utc).AddTicks(822), null, "blogiBlog", true, 2, "is an open source multi language blog project Blog BLOG", "blogiblog,open source, blog project", "blogi-blog-open-source", "Blogi Blog?", null, null, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Abouts_LanguageId",
