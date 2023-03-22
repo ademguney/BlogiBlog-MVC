@@ -4,6 +4,6 @@ namespace Blogi.Application.Features.Posts.Queries.GetList
 {
     public class GetListPostQuery : IRequest<BaseCommandResponse<List<GetListPostOutput>>>
     {
-
+        public int LanguageId { get; set; }
     }
 }

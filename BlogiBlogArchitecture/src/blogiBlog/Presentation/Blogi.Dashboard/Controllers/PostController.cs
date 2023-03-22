@@ -1,4 +1,5 @@
 ﻿using Blogi.Application.Features.Categories.Queries.GetList;
+using Blogi.Application.Features.Languages.Queries.Get;
 using Blogi.Application.Features.Languages.Queries.GetList;
 using Blogi.Application.Features.Posts.Commands.Create;
 using Blogi.Application.Features.Posts.Commands.Delete;
@@ -28,12 +29,10 @@ namespace Blogi.Dashboard.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            var languageList = await Mediator.Send(new GetListLanguageQuery());
-            var categoryList = await Mediator.Send(new GetListCategoryQuery());
-            var tagList = await Mediator.Send(new GetListTagQuery());
+            var categoryList = await Mediator.Send(new GetListCategoryQuery() { LanguageId = GetCurrentLanguageId() });
+            var tagList = await Mediator.Send(new GetListTagQuery() { Culture = GetCurrentCulture });
             var model = new PostCreateViewModel
             {
-                LanguageList = languageList.Data,
                 CategoryList = categoryList.Data,
                 TagList = tagList.Data
             };
@@ -43,7 +42,7 @@ namespace Blogi.Dashboard.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(PostCreateViewModel input)
         {
-
+            #region Byte File Processing
             byte[] fileBytes = null;
             if (input.File is not null)
             {
@@ -51,12 +50,13 @@ namespace Blogi.Dashboard.Controllers
                 input.File.CopyTo(memoryStream);
                 fileBytes = memoryStream.ToArray();
             }
+            #endregion
 
             var result = await Mediator.Send(new CreatePostCommand()
             {
                 UserId = input.Post.UserId,
                 CategoryId = input.Post.CategoryId,
-                LanguageId = input.Post.LanguageId,
+                LanguageId = GetCurrentLanguageId(),
                 Title = input.Post.Title,
                 Content = input.Post.Content,
                 Image = fileBytes,
@@ -68,12 +68,10 @@ namespace Blogi.Dashboard.Controllers
             });
             if (!result.Success)
             {
-                var languageList = await Mediator.Send(new GetListLanguageQuery());
                 var categoryList = await Mediator.Send(new GetListCategoryQuery());
-                var tagList = await Mediator.Send(new GetListTagQuery());
+                var tagList = await Mediator.Send(new GetListTagQuery() { Culture = GetCurrentCulture });
                 var model = new PostCreateViewModel
                 {
-                    LanguageList = languageList.Data,
                     CategoryList = categoryList.Data,
                     TagList = tagList.Data,
                     Post = input.Post,
@@ -112,16 +110,15 @@ namespace Blogi.Dashboard.Controllers
         public async Task<IActionResult> Edit(GetPostQuery input)
         {
             var result = await Mediator.Send(input);
-            var languageList = await Mediator.Send(new GetListLanguageQuery());
-            var categoryList = await Mediator.Send(new GetListCategoryQuery());
-            var tagList = await Mediator.Send(new GetListTagQuery());
+
+            var categoryList = await Mediator.Send(new GetListCategoryQuery() { LanguageId = GetCurrentLanguageId() });
+            var tagList = await Mediator.Send(new GetListTagQuery() { Culture = GetCurrentCulture });
             var tagIds = await Mediator.Send(new GetPostTagQuery() { PostId = input.Id });
             var model = new PostEditViewModel();
 
             if (result.Success)
             {
                 model.Post = result.Data;
-                model.LanguageList = languageList.Data;
                 model.CategoryList = categoryList.Data;
                 model.TagList = tagList.Data;
                 model.TagIds = tagIds.Data;
@@ -133,12 +130,12 @@ namespace Blogi.Dashboard.Controllers
                 return View(model);
             }
 
-
         }
 
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(PostEditViewModel input)
         {
+            #region Byte File Processing
             byte[] fileBytes = null;
             if (input.File is not null)
             {
@@ -146,12 +143,13 @@ namespace Blogi.Dashboard.Controllers
                 input.File.CopyTo(memoryStream);
                 fileBytes = memoryStream.ToArray();
             }
+            #endregion
 
             var result = await Mediator.Send(new UpdatePostCommand()
             {
                 Id = input.Post.Id,
                 UserId = input.Post.UserId,
-                LanguageId = input.Post.LanguageId,
+                LanguageId = GetCurrentLanguageId(),
                 CategoryId = input.Post.CategoryId,
                 Title = input.Post.Title,
                 Content = input.Post.Content,
@@ -162,6 +160,7 @@ namespace Blogi.Dashboard.Controllers
                 MetaDescription = input.Post.MetaDescription,
                 IsPublished = input.Post.IsPublished
             });
+
             if (result.Success)
             {
                 await Mediator.Send(new UpdatePostTagCommand() { PostId = result.Id, TagIds = input.TagIds });
@@ -171,14 +170,12 @@ namespace Blogi.Dashboard.Controllers
             }
             else
             {
-                var languageList = await Mediator.Send(new GetListLanguageQuery());
-                var categoryList = await Mediator.Send(new GetListCategoryQuery());
-                var tagList = await Mediator.Send(new GetListTagQuery());
+                var categoryList = await Mediator.Send(new GetListCategoryQuery() { LanguageId = GetCurrentLanguageId() });
+                var tagList = await Mediator.Send(new GetListTagQuery() { Culture = GetCurrentCulture });
                 var tagIds = await Mediator.Send(new GetPostTagQuery() { PostId = input.Post.Id });
                 var model = new PostEditViewModel
                 {
                     Post = result.Data,
-                    LanguageList = languageList.Data,
                     CategoryList = categoryList.Data,
                     TagList = tagList.Data,
                     TagIds = tagIds.Data
@@ -191,7 +188,7 @@ namespace Blogi.Dashboard.Controllers
         [HttpGet]
         public async Task<JsonResult> DataTable()
         {
-            var result = await Mediator.Send(new GetListPostQuery());
+            var result = await Mediator.Send(new GetListPostQuery() { LanguageId = GetCurrentLanguageId() });
             return Json(new { data = result.Data });
         }
     }

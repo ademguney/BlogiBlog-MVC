@@ -9,7 +9,7 @@ namespace Blogi.Application.Services.PostService
     {
         Task<List<GetMostReadPostOutput>> GetMostReadAsync();
         Task<GetBlogPostOutput> GetBlogPost(int id);
-        Task<List<GetListPostOutput>> GetListAsync();
+        Task<List<GetListPostOutput>> GetListAsync(int languageId);
         Task<List<GetListBlogPostOutput>> GetListBlogPostAsync(string culture, string searchText);
     }
 }

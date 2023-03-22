@@ -85,7 +85,7 @@
                                     required>
                                 @foreach (var tag in Model.TagList)
                                 {
-                                        <option value="@tag.Id">@tag.Name, @tag.LanguageName</option>
+                                        <option value="@tag.Id">@tag.Name</option>
                                 }
                             </select>
                         </div>
@@ -118,21 +118,7 @@
                 <div class="card-header bg-primary" style="color:white">
                     <i class='icon-book-open'></i> @Localize("page_post_label_post")
                 </div>
-                <div class="card-body">
-                    <fieldset class="form-group">
-                        <div class="row">
-                            <label class="col-sm-2 col-form-label">@Localize("page_default_label_language")</label>
-                            <div class="col-sm-10">
-                                <select asp-for="Post.LanguageId" class="form-control" required>
-                                    <option selected="selected" value="0">@Localize("page_default_label_select_language")</option>
-                                    @foreach (var item in Model.LanguageList)
-                                    {
-                                            <option value="@item.Id">@item.Name</option>
-                                    }
-                                </select>
-                            </div>
-                        </div>
-                    </fieldset>
+                <div class="card-body">                   
                     <fieldset class="form-group">
                         <div class="row">
                             <label class="col-sm-2 col-form-label">@Localize("page_default_label_category")</label>
@@ -141,7 +127,7 @@
                                     <option selected="selected" value="0">@Localize("page_default_label_select_category")</option>
                                     @foreach (var category in Model.CategoryList)
                                     {
-                                            <option value="@category.Id">@category.Name, @category.Culture</option>
+                                            <option value="@category.Id">@category.Name</option>
                                     }
                                 </select>
                             </div>

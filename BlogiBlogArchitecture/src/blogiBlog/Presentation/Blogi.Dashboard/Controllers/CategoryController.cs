@@ -116,7 +116,7 @@ namespace Blogi.Dashboard.Controllers
         [HttpGet]
         public async Task<JsonResult> DataTable()
         {
-            var result = await Mediator.Send(new GetListCategoryQuery());
+            var result = await Mediator.Send(new GetListCategoryQuery() { LanguageId = GetCurrentLanguageId() });
             return Json(new { data = result.Data });
         }
     }

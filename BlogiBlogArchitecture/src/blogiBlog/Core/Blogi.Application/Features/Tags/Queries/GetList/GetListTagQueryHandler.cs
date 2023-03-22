@@ -1,9 +1,8 @@
-﻿using Blogi.Application.Features.Tags.Dtos.Get;
-
+﻿using Blogi.Application.Features.Tags.Dtos.GetTagList;
 
 namespace Blogi.Application.Features.Tags.Queries.GetList
 {
-    public class GetListTagQueryHandler : IRequestHandler<GetListTagQuery, BaseCommandResponse<List<GetTagOutput>>>
+    public class GetListTagQueryHandler : IRequestHandler<GetListTagQuery, BaseCommandResponse<List<GetTagListOutput>>>
     {
         private readonly IMapper _mapper;
         private readonly ITagService _tagService;
@@ -14,22 +13,21 @@ namespace Blogi.Application.Features.Tags.Queries.GetList
             _tagService = tagService;
         }
 
-        public async Task<BaseCommandResponse<List<GetTagOutput>>> Handle(GetListTagQuery request, CancellationToken cancellationToken)
+        public async Task<BaseCommandResponse<List<GetTagListOutput>>> Handle(GetListTagQuery request, CancellationToken cancellationToken)
         {
-            var response= new BaseCommandResponse<List<GetTagOutput>>();
-            var result = await _tagService.GetListAsync();
+            var response= new BaseCommandResponse<List<GetTagListOutput>>();
+            var result = await _tagService.GetListAsync(request.Culture);
 
             if (!result.Any())
             {
                 response.Success = false;
                 response.Message = TagMessages.GetListNotExists;
                 response.Errors = null;
-                response.Data = new List<GetTagOutput>();
+                response.Data = new List<GetTagListOutput>();
             }
             else
-            {
-                var resultMapp = _mapper.Map<List<GetTagOutput>>(result);
-                response.Data = resultMapp;
+            {               
+                response.Data = result;
                 response.Success = true;
                 response.Message = TagMessages.GetListExists;
                 response.Errors = null;

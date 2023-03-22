@@ -16,7 +16,7 @@ namespace Blogi.Application.Features.Categories.Queries.GetList
         public async Task<BaseCommandResponse<List<GetCategoryOutput>>> Handle(GetListCategoryQuery request, CancellationToken cancellationToken)
         {
             var response = new BaseCommandResponse<List<GetCategoryOutput>>();
-            var result = await _categoryService.GetListAsync();
+            var result = await _categoryService.GetListAsync(request.LanguageId);
 
             if (!result.Any())
             {

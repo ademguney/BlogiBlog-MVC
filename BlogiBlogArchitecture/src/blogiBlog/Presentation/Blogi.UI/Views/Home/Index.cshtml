@@ -16,7 +16,7 @@
             @Localize("blog_ui_articles")
         </h2>
     </div>
-  
+
 </div>
 <div class="loop-grid pr-30">
     <div class="row">
@@ -26,7 +26,8 @@
             <article class="col-xl-4 col-lg-6 col-md-6 text-center hover-up mb-30 animated">
                 <div class="post-thumb">
                     <a href="@item.Slug-@item.Id">
-                       @if(@item.Image is null){
+                        @if (@item.Image is null)
+                        {
                             <img class="border-radius-15" src="~/assets/imgs/blog/slogan.png" alt="@item.ImageAlt" style="width:368px;height:309px;" />
                         }
                         else
@@ -59,9 +60,9 @@
 @if (Model.BlogPost.Count() > 1)
 {
     <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-start">
-            @Html.PagedListPager((IPagedList)Model.BlogPost,pageNo => Url.Action("Index",new{pageNo}), new PagedListRenderOptions {
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-start">
+                @Html.PagedListPager((IPagedList)Model.BlogPost,pageNo => Url.Action("Index",new{pageNo}), new PagedListRenderOptions {
             DisplayLinkToIndividualPages = true,
             DisplayPageCountAndCurrentLocation = false,
             MaximumPageNumbersToDisplay = 5,
@@ -69,9 +70,9 @@
             PageClasses = new string[] { "page-link" },
             ActiveLiElementClass="active"
             })
-        </ul>
-    </nav>
-</div>
+            </ul>
+        </nav>
+    </div>
 }
 
 <div class="shop-product-fillter mb-50 pr-30">

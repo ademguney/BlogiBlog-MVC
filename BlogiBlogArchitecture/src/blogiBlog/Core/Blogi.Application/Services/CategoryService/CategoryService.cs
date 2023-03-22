@@ -29,18 +29,39 @@ namespace Blogi.Application.Services.CategoryService
             }).FirstOrDefaultAsync();
         }
 
-        public async Task<List<GetCategoryOutput>> GetListAsync()
+        public async Task<List<GetCategoryOutput>> GetListAsync(int? languageId)
         {
-            return await _categoryReadRepository.GetAll().Include(x => x.Languages).Select(x => new GetCategoryOutput
+            var result = new List<GetCategoryOutput>();
+            if (languageId.HasValue)
             {
-                Id = x.Id,
-                LanguageId = x.LanguageId,
-                LanguageName = x.Languages.Name,
-                Culture = x.Languages.Culture,
-                Name = x.Name,
-                Description = x.Description,
-                Slug = x.Slug
-            }).ToListAsync();
+                return result = await _categoryReadRepository.GetAll(x => x.LanguageId == languageId)
+                .Include(x => x.Languages)
+                .Select(x => new GetCategoryOutput
+                {
+                    Id = x.Id,
+                    LanguageId = x.LanguageId,
+                    LanguageName = x.Languages.Name,
+                    Culture = x.Languages.Culture,
+                    Name = x.Name,
+                    Description = x.Description,
+                    Slug = x.Slug
+                }).ToListAsync();
+            }
+            else
+            {
+                return result = await _categoryReadRepository.GetAll()
+                .Include(x => x.Languages)
+                .Select(x => new GetCategoryOutput
+                {
+                    Id = x.Id,
+                    LanguageId = x.LanguageId,
+                    LanguageName = x.Languages.Name,
+                    Culture = x.Languages.Culture,
+                    Name = x.Name,
+                    Description = x.Description,
+                    Slug = x.Slug
+                }).ToListAsync();
+            }
         }
 
         public async Task<List<GetCategoryListOutput>> GetListAsync(string culture)
@@ -70,12 +91,12 @@ namespace Blogi.Application.Services.CategoryService
                 Id = x.Id,
                 CategoryId = x.CategoryId,
                 CategoryName = x.Categories.Name,
-                CategorySlug=x.Categories.Slug,
+                CategorySlug = x.Categories.Slug,
                 Title = x.Title,
                 Author = x.Users.Name + " " + x.Users.Surname,
                 AuthorPhoto = x.Users.Photo != null ? Convert.ToBase64String(x.Users.Photo) : null,
                 Slug = x.Slug,
-                CreationDate = x.CreationDate.ToLongDateString(),               
+                CreationDate = x.CreationDate.ToLongDateString(),
                 Image = x.Image != null ? Convert.ToBase64String(x.Image) : null,
                 ImageAlt = x.ImageAlt
             }).ToListAsync();

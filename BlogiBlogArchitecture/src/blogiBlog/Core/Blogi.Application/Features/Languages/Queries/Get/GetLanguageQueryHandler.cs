@@ -16,29 +16,19 @@ namespace Blogi.Application.Features.Languages.Queries.Get
 
         public async Task<BaseCommandResponse<GetLanguageOutput>> Handle(GetLanguageQuery request, CancellationToken cancellationToken)
         {
-            var response = new BaseCommandResponse<GetLanguageOutput>();
-            var validator = new GetLanguageQueryHandlerValidatior(_languageReadRepository);
-            var validatorResult = await validator.ValidateAsync(request, cancellationToken);
+            var response = new BaseCommandResponse<GetLanguageOutput>();          
 
-            if (!validatorResult.IsValid)
-            {
-                response.Data = null;
-                response.Success = false;
-                response.Message = null;
-                response.Errors = validatorResult.Errors.Select(e => e.ErrorMessage).ToList();
+            var result = request.Id.HasValue ?
+                        await _languageReadRepository.GetAsync(x => x.Id == request.Id)
+                      : await _languageReadRepository.GetAsync(x => x.Culture == request.Culture);
+            var resultMapp = _mapper.Map<GetLanguageOutput>(result);
 
-            }
-            else
-            {
-                var result = await _languageReadRepository.GetAsync(x => x.Id == request.Id);
-                var resultMapp = _mapper.Map<GetLanguageOutput>(result);
+            response.Id = resultMapp.Id;
+            response.Data = resultMapp;
+            response.Success = true;
+            response.Message = LanguageMessages.GetListExists;
+            response.Errors = null;
 
-                response.Id = resultMapp.Id;
-                response.Data = resultMapp;
-                response.Success = true;
-                response.Message = LanguageMessages.GetListExists;
-                response.Errors = null;
-            }
             return response;
         }
     }

@@ -16,7 +16,7 @@ namespace Blogi.Application.Features.Posts.Queries.GetList
         public async Task<BaseCommandResponse<List<GetListPostOutput>>> Handle(GetListPostQuery request, CancellationToken cancellationToken)
         {
             var response = new BaseCommandResponse<List<GetListPostOutput>>();
-            var result = await _postService.GetListAsync();
+            var result = await _postService.GetListAsync(request.LanguageId);
             if (!result.Any())
             {
                 response.Success = false;

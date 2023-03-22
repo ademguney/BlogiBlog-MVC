@@ -4,5 +4,6 @@ namespace Blogi.Application.Features.Categories.Queries.GetList
 {
     public class GetListCategoryQuery : IRequest<BaseCommandResponse<List<GetCategoryOutput>>>
     {
+        public int? LanguageId { get; set; }
     }
 }

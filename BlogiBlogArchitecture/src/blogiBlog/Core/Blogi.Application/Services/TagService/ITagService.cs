@@ -5,8 +5,7 @@ namespace Blogi.Application.Services.TagService
 {
     public interface ITagService
     {
-        Task<GetTagOutput> GetAsync(int id);
-        Task<List<GetTagOutput>> GetListAsync();       
+        Task<GetTagOutput> GetAsync(int id);       
         Task<List<GetTagListOutput>> GetListAsync(string culture);
     }
 }

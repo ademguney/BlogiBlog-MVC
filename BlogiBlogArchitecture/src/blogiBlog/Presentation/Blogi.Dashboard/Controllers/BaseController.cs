@@ -1,4 +1,5 @@
-﻿using Blogi.Dashboard.Models;
+﻿using Blogi.Application.Features.Languages.Queries.Get;
+using Blogi.Dashboard.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -10,6 +11,12 @@ namespace Blogi.Dashboard.Controllers
         protected IMediator? Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
         private IMediator? _mediator;
 
+        public string GetCurrentCulture => Thread.CurrentThread.CurrentUICulture.Name;
+        public int GetCurrentLanguageId()
+        {
+            return Mediator.Send(new GetLanguageQuery() { Culture = GetCurrentCulture }).Result.Id;
+
+        }
         public void NotifySuccess(string successMessage)
         {
             var msg = new
@@ -17,7 +24,7 @@ namespace Blogi.Dashboard.Controllers
                 message = successMessage,
                 title = "BLOGI BLOG",
                 icon = NotificationType.success.ToString(),
-                type = NotificationType.success.ToString(),               
+                type = NotificationType.success.ToString(),
                 provider = GetProvider()
             };
 

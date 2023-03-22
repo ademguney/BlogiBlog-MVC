@@ -2,12 +2,12 @@
 {
     public static class PersistenceServiceRegistration
     {
-        public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddPersistenceServices(this IServiceCollection services)
         {
             services.AddDbContext<BlogiBlogDbContext>(
                 opt =>
                 {
-                    opt.UseSqlServer(configuration.GetConnectionString("BlogiBlogConnectionString"));
+                    opt.UseSqlServer(ConnectionStrings.serverString);
                     opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 });
 

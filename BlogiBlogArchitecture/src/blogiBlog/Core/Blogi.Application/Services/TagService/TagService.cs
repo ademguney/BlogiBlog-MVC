@@ -23,30 +23,35 @@ namespace Blogi.Application.Services.TagService
             }).FirstOrDefaultAsync();
         }
 
-        public async Task<List<GetTagOutput>> GetListAsync()
-        {
-            return await _tagReadRepository.GetAll().Include(x => x.Languages).Select(x => new GetTagOutput
-            {
-                Id = x.Id,
-                LanguageId = x.Languages.Id,
-                LanguageName = x.Languages.Name,
-                Name = x.Name,
-                Slug = x.Slug
-            }).ToListAsync();
-        }
-
         public async Task<List<GetTagListOutput>> GetListAsync(string culture)
         {
-            var query = await _tagReadRepository
+            var result = new List<GetTagListOutput>();
+            if (string.IsNullOrEmpty(culture))
+            {
+                result = await _tagReadRepository.GetAll()
+               .Include(x => x.Languages)
+               .Select(x => new GetTagListOutput
+               {
+                   Id = x.Id,
+                   Name = x.Name,
+                   LanguageName = x.Languages.Name,
+                   Slug = x.Slug
+               }).ToListAsync();
+                return result;
+            }
+
+            result = await _tagReadRepository
                 .GetAll(x => x.Languages.Culture.Trim().ToLower() == culture.Trim().ToLower())
+                .Include(x => x.Languages)
                 .Select(x => new GetTagListOutput
                 {
                     Id = x.Id,
                     Name = x.Name,
+                    LanguageName = x.Languages.Name,
                     Slug = x.Slug
                 }).ToListAsync();
 
-            return query;
+            return result;
         }
     }
 }

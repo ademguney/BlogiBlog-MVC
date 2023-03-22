@@ -13,48 +13,10 @@
     <div class="totall-product">
         <h2>
             <img class="w-36px mr-10" src="~/favicon.png" alt="blogiblog" />
-            Articles
+            @Localize("blog_ui_articles")
         </h2>
     </div>
-    <div class="sort-by-product-area">
-        <div class="sort-by-cover mr-10">
-            <div class="sort-by-product-wrap">
-                <div class="sort-by">
-                    <span><i class="fi-rs-apps"></i>Show:</span>
-                </div>
-                <div class="sort-by-dropdown-wrap">
-                    <span> 50 <i class="fi-rs-angle-small-down"></i></span>
-                </div>
-            </div>
-            <div class="sort-by-dropdown">
-                <ul>
-                    <li><a class="active" href="#">50</a></li>
-                    <li><a href="#">100</a></li>
-                    <li><a href="#">150</a></li>
-                    <li><a href="#">200</a></li>
-                    <li><a href="#">All</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="sort-by-cover">
-            <div class="sort-by-product-wrap">
-                <div class="sort-by">
-                    <span><i class="fi-rs-apps-sort"></i>Sort:</span>
-                </div>
-                <div class="sort-by-dropdown-wrap">
-                    <span>Featured <i class="fi-rs-angle-small-down"></i></span>
-                </div>
-            </div>
-            <div class="sort-by-dropdown">
-                <ul>
-                    <li><a class="active" href="#">Featured</a></li>
-                    <li><a href="#">Newest</a></li>
-                    <li><a href="#">Most comments</a></li>
-                    <li><a href="#">Release Date</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+
 </div>
 <div class="loop-grid pr-30">
     <div class="row">
@@ -64,7 +26,14 @@
             <article class="col-xl-4 col-lg-6 col-md-6 text-center hover-up mb-30 animated">
                 <div class="post-thumb">
                     <a href="/@item.Slug-@item.Id">
-                        <img class="border-radius-15" src="@string.Format("data:image/gif;base64,{0}", item.Image)" alt="@item.ImageAlt" style="width:368px;height:309px;" />
+                        @if (@item.Image is null)
+                        {
+                            <img class="border-radius-15" src="~/assets/imgs/blog/slogan.png" alt="@item.ImageAlt" style="width:368px;height:309px;" />
+                        }
+                        else
+                        {
+                            <img class="border-radius-15" src="@string.Format("data:image/gif;base64,{0}", item.Image)" alt="@item.ImageAlt" style="width:368px;height:309px;" />
+                        }
                     </a>
 
                 </div>
@@ -75,9 +44,9 @@
                     </h4>
                     <div class="entry-meta font-xs color-grey mt-10 pb-10">
                         <div>
-                            <span class="post-on mr-10">@item.CreationDate</span>
-                            <span class="hit-count has-dot mr-10"></span>
-                            <span class="hit-count has-dot">4 mins read</span>
+                            <span class="post-on mr-3">@item.CreationDate</span>
+                            <span class="hit-count has-dot">@item.CountOfComment  @Localize("blog_ui_articles_count_comment")</span>
+                            <span class="hit-count has-dot">@item.CountOfView @Localize("blog_ui_articles_count_view")</span>
                         </div>
                     </div>
                 </div>
@@ -90,9 +59,9 @@
 @if (Model.BlogPost.Count() > 1)
 {
     <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-start">
-            @Html.PagedListPager((IPagedList)Model.BlogPost,pageNo => Url.Action("Index",new{pageNo}), new PagedListRenderOptions {
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-start">
+                @Html.PagedListPager((IPagedList)Model.BlogPost,pageNo => Url.Action("Index",new{pageNo}), new PagedListRenderOptions {
             DisplayLinkToIndividualPages = true,
             DisplayPageCountAndCurrentLocation = false,
             MaximumPageNumbersToDisplay = 5,
@@ -100,8 +69,16 @@
             PageClasses = new string[] { "page-link" },
             ActiveLiElementClass="active"
             })
-        </ul>
-    </nav>
-</div>
+            </ul>
+        </nav>
+    </div>
 }
 
+<div class="shop-product-fillter mb-50 pr-30">
+    <div class="totall-product">
+        <h2>
+            &nbsp;
+        </h2>
+    </div>
+
+</div>

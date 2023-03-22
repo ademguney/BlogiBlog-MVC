@@ -69,21 +69,21 @@
 <script>
     const form = document.getElementById('contact-form');
 
-    form.addEventListener('submit',function(e){
-       e.preventDefault();
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-      const payload= new FormData(form);
+        const payload = new FormData(form);
 
-     fetch('/home/SendMail',{
-             method: "POST",
-             body:payload
-     })
-     .then(res=>res.json())
-    .then(response=>{
-              toastr["info"](response.data)
-          })
-     .catch(err=>console.log(err))
-     document.getElementById("contact-form").reset();
+        fetch('/home/SendMail', {
+            method: "POST",
+            body: payload
+        })
+            .then(res => res.json())
+            .then(response => {
+                toastr["info"](response.data)
+            })
+            .catch(err => console.log(err))
+        document.getElementById("contact-form").reset();
     })
 
 </script>

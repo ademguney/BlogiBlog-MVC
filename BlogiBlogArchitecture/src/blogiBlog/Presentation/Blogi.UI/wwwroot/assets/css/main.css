@@ -59,6 +59,19 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
+.count-of {
+    display: inline-block;
+    background-color: #BCE3C9;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 20px;
+    margin-left: 5px;
+    font-size: 12px;
+    color: #253D4E;
+}
+
 thead {
   font-weight: 600;
 }
