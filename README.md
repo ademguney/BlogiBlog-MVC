@@ -6,6 +6,9 @@
 
 # Blogi Blog Open Source Multi Language Blog Project
 An Open-Source multi language blogging platform built with Onion Architecture In Asp.net Core MVC With CQRS.
+#### Admin Panel Demo: http://213.238.171.161:84/ 
+#### Web UI Demo: http://213.238.171.161:83/ 
+#### Live: http://guneyadem.com/
 
 ## Used Technologies
 <ul>
