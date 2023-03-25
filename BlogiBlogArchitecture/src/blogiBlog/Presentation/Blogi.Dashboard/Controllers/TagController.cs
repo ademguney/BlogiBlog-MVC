@@ -66,6 +66,8 @@ namespace Blogi.Dashboard.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(GetTagQuery input)
         {
+            if (input.Id == 0) return RedirectToAction("Home", "Tag");
+
             var result = await Mediator.Send(input);
             var languageList = await Mediator.Send(new GetListLanguageQuery());
             var model = new TagEditViewModel();
@@ -111,7 +113,7 @@ namespace Blogi.Dashboard.Controllers
         [HttpGet]
         public async Task<JsonResult> DataTable()
         {
-            var result = await Mediator.Send(new GetListTagQuery() { Culture=null});
+            var result = await Mediator.Send(new GetListTagQuery() { Culture = GetCurrentCulture });
             return Json(new { data = result.Data });
         }
     }

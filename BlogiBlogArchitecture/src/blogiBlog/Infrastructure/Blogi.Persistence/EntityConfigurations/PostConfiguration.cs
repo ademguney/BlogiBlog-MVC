@@ -35,7 +35,7 @@
                     LanguageId = 1,
                     CategoryId = 1,
                     UserId = 1,
-                    Title = "Blogi Blog?",
+                    Title = "Blogi Blog, Nedir?",
                     Content = "<h2 dir=\"auto\" style=\"text-align: center;\"tabindex=\"-1\">Blogi Blog Open Source Multi Language Blog Project</h2>\r\n<p>An Open-Source multi language blogging platform built with <strong>Onion Architecture</strong> In Asp.net Core MVC With <strong>CQRS</strong>.</p>\r\n<p>&nbsp;&nbsp;</p>\r\n<h2 dir=\"auto\" tabindex=\"-1\">Used Technologies</h2>\r\n<ul dir=\"auto\">\r\n<li>CQRS</li>\r\n<li>.NET CORE 6</li>\r\n<li>SOLID Principles</li>\r\n<li>Asp.net Core MVC</li>\r\n<li>Repository Pattern</li>\r\n<li>MediatR version=\"11.0.0\"</li>\r\n<li>AutoMapper version=\"12.0.0\"</li>\r\n<li>FluentValidation version=\"11.2.2\"</li>\r\n<li>EntityFrameworkCore version=\"6.0.10\"</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<h2 dir=\"auto\" tabindex=\"-1\">Give a Star!</h2>\r\n<p>If you like or are using this project to learn or start your solution, please give it a star. Thanks!</p>\r\n<p>&nbsp;</p>\r\n<h2 dir=\"auto\" tabindex=\"-1\">License</h2>\r\n<p>This blog is open-sourced software licensed under the&nbsp;<a href=\"http://opensource.org/licenses/MIT\" rel=\"nofollow\">MIT license</a>.</p>",
                     Slug = "blogi-blog-acik-kaynak",
                     Image = null,

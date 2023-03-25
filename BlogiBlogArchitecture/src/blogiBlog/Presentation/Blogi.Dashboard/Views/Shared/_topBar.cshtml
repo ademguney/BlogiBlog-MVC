@@ -5,6 +5,7 @@
 
 @{
     string returnUrl = ViewContext.HttpContext.Request.Path;
+    
 
     var requestCulture = Context.Features.Get<IRequestCultureFeature>();
     var cultureItems = LocOptions.Value.SupportedUICultures

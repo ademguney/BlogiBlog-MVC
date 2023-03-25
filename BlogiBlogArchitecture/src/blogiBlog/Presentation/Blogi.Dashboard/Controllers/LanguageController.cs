@@ -24,7 +24,7 @@ namespace Blogi.Dashboard.Controllers
             return View();
         }
 
-        [HttpPost,ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CreateLanguageCommand input)
         {
             var result = await Mediator.Send(input);
@@ -51,6 +51,8 @@ namespace Blogi.Dashboard.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(GetLanguageQuery input)
         {
+            if (input.Id == 0 || input.Id is null) return RedirectToAction("Home", "Language");
+
             var result = await Mediator.Send(input);
             if (result.Success)
                 return View(result.Data);

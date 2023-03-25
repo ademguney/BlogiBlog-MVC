@@ -20,6 +20,8 @@ namespace Blogi.Dashboard.Controllers
         [HttpGet]
         public async Task<IActionResult> Answer(GetCommentQuery input)
         {
+            if (input.Id == 0) return RedirectToAction("Home", "Comment");
+
             var result = await Mediator.Send(input);
             return View(result.Data);
 
@@ -27,7 +29,7 @@ namespace Blogi.Dashboard.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Edit(int id, bool isPublish)
-        {
+        {          
             var result = await Mediator.Send(new IsPublishCommentCommand { Id = id, IsPublish=isPublish });
             if (result.Success)
             {

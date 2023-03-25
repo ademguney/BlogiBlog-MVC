@@ -109,8 +109,9 @@ namespace Blogi.Dashboard.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(GetPostQuery input)
         {
-            var result = await Mediator.Send(input);
+            if (input.Id == 0) return RedirectToAction("Home", "Post");
 
+            var result = await Mediator.Send(input);           
             var categoryList = await Mediator.Send(new GetListCategoryQuery() { LanguageId = GetCurrentLanguageId() });
             var tagList = await Mediator.Send(new GetListTagQuery() { Culture = GetCurrentCulture });
             var tagIds = await Mediator.Send(new GetPostTagQuery() { PostId = input.Id });

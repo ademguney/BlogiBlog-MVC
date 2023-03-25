@@ -57,6 +57,8 @@ namespace Blogi.Dashboard.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(GetCategoryQuery input)
         {
+            if (input.Id == 0) return RedirectToAction("Home", "Category");
+
             var result = await Mediator.Send(input);
             var languageList = await Mediator.Send(new GetListLanguageQuery());
             var model = new CategoryEditViewModel();
