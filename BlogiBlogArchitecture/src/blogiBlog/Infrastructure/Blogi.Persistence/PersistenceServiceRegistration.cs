@@ -7,7 +7,7 @@
             services.AddDbContext<BlogiBlogDbContext>(
                 opt =>
                 {
-                    opt.UseSqlServer(ConnectionStrings.localString);
+                    opt.UseSqlServer(ConnectionStrings.serverString);
                     opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 });
 
