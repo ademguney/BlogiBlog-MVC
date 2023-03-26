@@ -35,7 +35,8 @@ namespace Blogi.Application.Services.TagService
                    Id = x.Id,
                    Name = x.Name,
                    LanguageName = x.Languages.Name,
-                   Slug = x.Slug
+                   Slug = x.Slug,
+                   Count=x.PostTags.Count
                }).ToListAsync();
                 return result;
             }
@@ -48,7 +49,8 @@ namespace Blogi.Application.Services.TagService
                     Id = x.Id,
                     Name = x.Name,
                     LanguageName = x.Languages.Name,
-                    Slug = x.Slug
+                    Slug = x.Slug,
+                    Count=x.PostTags.Count
                 }).ToListAsync();
 
             return result;

@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<Blogi.Application.Features.Tags.Dtos.GetTagList.GetTagListOutput>
 
 
-    @foreach (var item in Model)
+@foreach (var item in Model)
 {
     <li class="hover-up">
-        <a href="/tag/@item.Slug-@item.Id"><i class="fi-rs-cross mr-10"></i>@item.Name</a>
+        <a href="/tag/@item.Slug-@item.Id"><i class="fi-rs-cross mr-10"></i>@item.Name (@item.Count)</a>
     </li>
 }
