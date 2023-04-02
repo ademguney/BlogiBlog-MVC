@@ -15,16 +15,32 @@
         ],
         "columns": [
             {
-                "data": "languageName", "autoWidth": true
+                "data": "languageName", "autoWidth": true,
+                "render": function (data, type, row, meta) {
+                    var sanitized = $.fn.dataTable.render.text().display(data, type, row, meta);
+                    return sanitized;
+                }
             },
             {
-                "data": "email", "autoWidth": true
+                "data": "email", "autoWidth": true,
+                "render": function (data, type, row, meta) {
+                    var sanitized = $.fn.dataTable.render.text().display(data, type, row, meta);
+                    return sanitized;
+                }
             },
             {
-                "data": "phone", "autoWidth": true
+                "data": "phone", "autoWidth": true,
+                "render": function (data, type, row, meta) {
+                    var sanitized = $.fn.dataTable.render.text().display(data, type, row, meta);
+                    return sanitized;
+                }
             },
             {
-                "data": "location", "autoWidth": true
+                "data": "location", "autoWidth": true,
+                "render": function (data, type, row, meta) {
+                    var sanitized = $.fn.dataTable.render.text().display(data, type, row, meta);
+                    return sanitized;
+                }
             },
             {
                 "data": "slug", "autoWidth": true

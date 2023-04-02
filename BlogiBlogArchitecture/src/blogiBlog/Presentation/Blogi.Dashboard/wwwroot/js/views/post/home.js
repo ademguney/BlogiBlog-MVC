@@ -16,12 +16,26 @@
         "columns": [
             {
                 "data": "languageName", "autoWidth": true
+                ,
+                "render": function (data, type, row, meta) {
+                    var sanitized = $.fn.dataTable.render.text().display(data, type, row, meta);
+                    return sanitized;
+                }
             },
             {
                 "data": "categoryName", "autoWidth": true
+                ,
+                "render": function (data, type, row, meta) {
+                    var sanitized = $.fn.dataTable.render.text().display(data, type, row, meta);
+                    return sanitized;
+                }
             },
             {
-                "data": "title", "autoWidth": true
+                "data": "title", "autoWidth": true,
+                "render": function (data, type, row, meta) {
+                    var sanitized = $.fn.dataTable.render.text().display(data, type, row, meta);
+                    return sanitized;
+                }
             },
             {
                 "data": "isPublished", "autoWidth": true

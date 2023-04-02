@@ -15,10 +15,18 @@
         ],
         "columns": [
             {
-                "data": "fullName", "autoWidth": true
+                "data": "fullName", "autoWidth": true,
+                "render": function (data, type, row, meta) {
+                    var sanitized = $.fn.dataTable.render.text().display(data, type, row, meta);
+                    return sanitized;
+                }
             },
             {
-                "data": "email", "autoWidth": true
+                "data": "email", "autoWidth": true,
+                "render": function (data, type, row, meta) {
+                    var sanitized = $.fn.dataTable.render.text().display(data, type, row, meta);
+                    return sanitized;
+                }
             },
             {
                 "data": "isPublish", "autoWidth": true

@@ -15,13 +15,25 @@
         ],
         "columns": [
             {
-                "data": "language", "autoWidth": true
+                "data": "language", "autoWidth": true,
+                "render": function (data, type, row, meta) {
+                    var sanitized = $.fn.dataTable.render.text().display(data, type, row, meta);
+                    return sanitized;
+                }
             },
             {
-                "data": "key", "autoWidth": true
+                "data": "key", "autoWidth": true,
+                "render": function (data, type, row, meta) {
+                    var sanitized = $.fn.dataTable.render.text().display(data, type, row, meta);
+                    return sanitized;
+                }
             },
             {
-                "data": "value", "autoWidth": true
+                "data": "value", "autoWidth": true,
+                "render": function (data, type, row, meta) {
+                    var sanitized = $.fn.dataTable.render.text().display(data, type, row, meta);
+                    return sanitized;
+                }
             },
             {
                 "data": "id",

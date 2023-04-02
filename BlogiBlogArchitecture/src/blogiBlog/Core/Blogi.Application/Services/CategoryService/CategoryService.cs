@@ -83,7 +83,7 @@ namespace Blogi.Application.Services.CategoryService
         public async Task<List<GetListBlogPostOutput>> GetListBlogCategoryAsync(int id)
         {
             var query = _postReadRepository
-                .GetAll(x => x.CategoryId == id)
+                .GetAll(x => x.CategoryId == id && x.IsPublished)
                 .Include(x => x.Categories)
                 .Include(x => x.Languages);
             return await query.Select(x => new GetListBlogPostOutput

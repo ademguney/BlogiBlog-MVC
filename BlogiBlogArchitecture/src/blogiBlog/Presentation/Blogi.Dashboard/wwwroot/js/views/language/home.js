@@ -16,10 +16,18 @@
         "columns": [
 
             {
-                "data": "name", "autoWidth": true
+                "data": "name", "autoWidth": true,
+                "render": function (data, type, row, meta) {
+                    var sanitized = $.fn.dataTable.render.text().display(data, type, row, meta);
+                    return sanitized;
+                }
             },
             {
-                "data": "culture", "autoWidth": true
+                "data": "culture", "autoWidth": true,
+                "render": function (data, type, row, meta) {
+                    var sanitized = $.fn.dataTable.render.text().display(data, type, row, meta);
+                    return sanitized;
+                }
             },            
             {
                 "data": "id",

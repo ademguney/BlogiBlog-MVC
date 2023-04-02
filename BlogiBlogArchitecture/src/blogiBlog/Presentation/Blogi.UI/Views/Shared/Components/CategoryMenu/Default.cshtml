@@ -1,8 +1,25 @@
 ﻿@model IEnumerable<Blogi.Application.Features.Categories.Dtos.GetCategoryList.GetCategoryListOutput>
 
+@{
+	var SubName = string.Empty;
+}
 <ul>
-    @foreach (var item in Model)
-    {
-        <li><a href="/category/@item.Slug-@item.Id">@item.Name</a><span class="count">@item.Count</span></li>
-    }
+	@foreach (var item in Model)
+	{
+		<li>
+			<a href="/category/@item.Slug-@item.Id">
+				@if (item.Name.Length > 20)
+				{
+					SubName = item.Name.Substring(0, 20);
+					@SubName
+
+					<i>...</i>
+				}
+				else{
+					@item.Name
+				}
+			</a>
+			<span class="count">@item.Count</span>
+		</li>
+	}
 </ul>

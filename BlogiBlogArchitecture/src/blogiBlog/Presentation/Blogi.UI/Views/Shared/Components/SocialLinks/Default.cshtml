@@ -5,7 +5,7 @@
     if (Model.IsDisplayFacebbokUrl)
     {
         <a href="@Model.FacebookUrl" target="_blank">
-            <img src="~/assets/imgs/theme/icons/icons8-facebook.svg" alt="@Model.FacebookUrl"/>
+            <img src="~/assets/imgs/theme/icons/icons8-facebook.svg" alt="@Model.FacebookUrl" />
         </a>
     }
 
@@ -41,6 +41,12 @@
     {
         <a href="@Model.YouTubeUrl" target="_blank">
             <img src="~/assets/imgs/theme/icons/icons8-youtube.svg" alt="@Model.YouTubeUrl" />
+        </a>
+    }
+    if (Model.IsDisplayLinkedinUrl)
+    {
+        <a href="@Model.LinkedinUrl" target="_blank">
+            <img src="~/assets/imgs/theme/icons/icons8-linkedin-circled.svg" alt="@Model.LinkedinUrl" />
         </a>
     }
 }

@@ -1,9 +1,28 @@
 ﻿@model IEnumerable<Blogi.Application.Features.Tags.Dtos.GetTagList.GetTagListOutput>
 
+@{
+	var SubName = string.Empty;
+}
+
 
 @foreach (var item in Model)
 {
-    <li class="hover-up">
-        <a href="/tag/@item.Slug-@item.Id"><i class="fi-rs-cross mr-10"></i>@item.Name (@item.Count)</a>
-    </li>
+	<li class="hover-up">
+		<a href="/tag/@item.Slug-@item.Id">
+			<i class="fi-rs-cross mr-10"></i>
+			@if (item.Name.Length > 20)
+			{
+				SubName = item.Name.Substring(0,20);
+				@SubName
+
+				<i>...</i>
+			}
+			else
+			{
+				@item.Name 
+				
+			}
+			(@item.Count)
+		</a>
+	</li>
 }
